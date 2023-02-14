@@ -1,3 +1,10 @@
+<?php 
+
+	require 'templates/connection.php'
+
+ ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
