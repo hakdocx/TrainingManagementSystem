@@ -1,0 +1,104 @@
+body {
+    margin:0px;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/*left side column */
+.lside {
+  -ms-flex: 30%; /* IE10 */
+  flex: 40%;
+  padding: 150px 10px 1px;
+  background-image: url('PUP.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.usermodule-title{
+    margin: 130px 10px 20px;
+}
+
+h1.usermodule-title{
+    color: white;
+    text-align: center;
+    font-family: Times New Roman;
+    letter-spacing: 1px;
+    font-size: 35px;
+}
+
+/*right side column */
+.rside { 
+  -ms-flex: 70%; /* IE10 */
+  flex: 30%;
+  padding: 10px 30px 0px;
+  float: right;
+  background: white;
+}
+
+.lform {
+    margin: 100px 155px 232px 155px;
+    width: 330px;
+    padding: 30px 25px 20px;
+    background: white;
+    border-radius: 15px;
+    float: right;
+}
+
+h1.login-title {
+    color: #666;
+    margin: 0px auto 25px;
+    font-size: 25px;
+    font-weight: 300;
+    text-align: center;
+    font-weight: bold;
+}
+
+h5.login-title {
+    color: black;
+    margin: 0px auto 20px;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    font-weight: bold;
+}
+
+.access-button {
+    color: #fff;
+    background: #5c1424;
+    border: 0;
+    outline: 0;
+    width: 273px;
+    height: 50px;
+    font-size: 27px;
+    font-family: Times New Roman;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.access-button:hover {
+  background-color: #360e17;
+}
+
+a:link{
+  color: #666;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #360e17;
+}
+
+p.register{
+  color: #666;  
+  text-align: center;
+}
+
