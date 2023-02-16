@@ -3,12 +3,12 @@
 	session_start();
 
 	// connect to database
-	$con=mysqli_connect("localhost","root","","project");
+	$con = mysqli_connect("localhost","root","","project");
 
 	if($con){
 		echo "Congrats you are connected.";
 	}
 	else {
-		die("Failed to connect because ". $mysqli_error());
+		die('Connection Failed'. mysqli_connect_error());
 	}
 ?>
