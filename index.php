@@ -37,17 +37,22 @@
 					<input style='font-size: 17px;' type="text" name="mtap_course" id ='mtap-course' required>
 				</div>
 				<div class = "form-row">
-					<label style='font-size: 17px;' for = 'mtap-course'>Prerequisite*</label>
-					<input style='font-size: 17px;' type="text" name="pre_requisite_course" id ='Prerequisite' required>
-				</div>
-				<div class = "form-row">
 					<label style='font-size: 17px;' for = 'mtap-course'>Implementation*</label>
 					<input style='font-size: 17px;' type="text" name="implementation" id ='Implementation' required>
 				</div>
 	
 				<br><br>
 				<center>
-				<button style='font-size: 15px; background-color: #1e97f3;  height: 30px; border: 1px; border-radius: 5px; width: 15%;' name="save_student" type = "submit" class="btn btn-primary" >Submit</button> </center>
+				  <button style='
+            font-size: 15px; 
+            background-color: #0055b3;  
+            height: 35px; 
+            border: 1px; 
+            border-radius: 5px; 
+            width: 25%;
+            ' 
+            name="save_student" type = "submit" class="btn btn-primary" >Submit</button> 
+        </center>
 	
 		</form>
 	</dialog>
@@ -62,63 +67,58 @@
             <table id="myTable" style="width:100%" class='table borderless'>
 			         <button id = 'create-training-button' class= 'button1'> <i class="fa fa-plus"></i> ADD COURSE</button>
                 <div class="form-group has-search">
-                <span class="fa fa-search form-control-feedback"></span>
-			          <input type="text" id="myInput"  class="fa fa-search icon" onkeyup="myFunction()"  placeholder="Search for training.. " >
+                  <span class="fa fa-search form-control-feedback"></span>
+			            <input type="text" id="myInput"  class="fa fa-search icon" onkeyup="myFunction()"  placeholder="Search for training.. " >
                 </div>
 		
               <thead>
                 <tr>
-				  <th>COURSE ID</th>
-				  <th>COURSE TITLE</th>
+				          <th>COURSE ID</th>
+				          <th>COURSE TITLE</th>
                   <th>DURATION</th>
                   <th>MTAP COURSE</th>
                   <th>PREREQUISITE</th>
                   <th>IMPLEMENTATION</th>
-				  
-		
                 </tr>
               </thead>
               <tbody>
-                                <?php 
-                                    $query = "SELECT * FROM course";
-                                    $query_run = mysqli_query($conn, $query);
+                <?php 
+                  $query = "SELECT * FROM course";
+                  $query_run = mysqli_query($conn, $query);
 
-                                    if(mysqli_num_rows($query_run) > 0)
-                                    {
-                                        foreach($query_run as $student)
-                                        {
-                                            ?>
-                                            <tr>
+                  if(mysqli_num_rows($query_run) > 0)
+                  {
+                    foreach($query_run as $student)
+                    {
+                        ?>
+                        <tr>
 											    <td><?= $student['course_id']; ?></td>
-                                                <td><?= $student['course_title']; ?></td>
-                                                <td><?= $student['number_of_days']; ?></td>
-                                                <td><?= $student['mtap_course']; ?></td>
-                                                <td><?= $student['pre_requisite_course']; ?></td>
-												<td><?= $student['implementation']; ?></td>
+                          <td><?= $student['course_title']; ?></td>
+                          <td><?= $student['number_of_days']; ?></td>
+                          <td><?= $student['mtap_course']; ?></td>
+                          <td><?= $student['pre_requisite_course']; ?></td>
+												  <td><?= $student['implementation']; ?></td>
 												</tr>
-                                            <?php
-                                        }
-                                    }
-                                    else
-                                    {
-                                        echo "<h5> No Record Found </h5>";
-                                    }
-                                ?>
-            
-                
-               
+                      <?php
+                    }
+                      }
+                        else
+                          {
+                            echo "<h5> No Record Found </h5>";
+                          }
+                      ?>
               </tbody>
             </table>
           </div>
-		  <nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
-</nav>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
