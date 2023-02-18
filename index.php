@@ -47,7 +47,6 @@
 		<form method = "POST" action = "code.php">
 			<div class="form-container">
 				<h2> ADD TRAINING FORM </h2>
-<<<<<<< HEAD
 			<br>
 			<div class = "form-row">
 				<label style='font-size: 17px;' for = 'course-title'>Course Title*</label>
@@ -177,76 +176,6 @@
 			</div>
 		</div>
 	</div>
-=======
-  <div class="container py-5">
-    <div class="row py-5">
-      <div class="col-lg-10 mx-auto">
-       <div class="card rounded shadow border-0">
-          <div class="card-body p-5 bg-white rounded">
-            <div class="table-responsive">
-              <table id="myTable" style="width:100%" class='table borderless'>
-                <button id = 'create-training-button' class= 'button1'> <i class="fa fa-plus"></i> ADD COURSE</button>
-                  <div class="form-group has-search">
-                    <span class="fa fa-search form-control-feedback"></span>
-                      <input type="text" id="myInput"  class="fa fa-search icon" onkeyup="myFunction()"  placeholder="Search for training.. " >
-                        </div>
-      
-                    <thead>
-                      <tr>
-                        <th style="font-weight:normal">COURSE TITLE</th>
-                        <th style="font-weight:normal">DURATION</th>
-                        <th style="font-weight:normal">MTAP COURSE</th>
-                        <th style="font-weight:normal">YEAR CERTIFIED</th>
-                        <th style="font-weight:normal">ACTION</th>
-                      </tr>
-                    </thead>
-                    
-                  <tbody>
-                    <?php 
-                      $query = "SELECT * FROM course";
-                      $query_run = mysqli_query($conn, $query);
-
-                      if(mysqli_num_rows($query_run) > 0)
-                      {
-                        foreach($query_run as $student)
-                        {
-                            ?>
-                            <tr>
-                              <td><?= $student['course_title']; ?></td>
-                              <td><?= $student['number_of_days']; ?></td>
-                              <td><?= $student['mtap_course']; ?></td>
-                              <td><?= $student['pre_requisite_course']; ?></td>
-                              <td> 
-                              <a href="viewrecord.php?id=<?= $student['course_id']; ?>" class="btn btn-primary">VIEW</a>
-                              </td>
-                            </tr>
-                          <?php
-                        }
-                      }
-                            else
-                              {
-                                echo "<h5> No Record Found </h5>";
-                              } 
-                          ?>
-                          
-                  </tbody>
-              </table>
-            <nav aria-label="Page navigation example">
-              <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-              </ul>
-            </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
->>>>>>> 9489d3daa9a91ce4bfa246d4c626d023b1001c21
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
