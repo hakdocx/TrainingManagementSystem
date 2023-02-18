@@ -136,7 +136,7 @@
 									</a>
 								</li>
 							<?php } ?>
-								<li class="page-item">
+								<li class="page-item  active">
 									<a class="page-link" href = "index.php?page=<?= $page ?>">
 										<?=	$page ?>
 									</a>
