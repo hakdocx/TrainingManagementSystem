@@ -34,7 +34,7 @@
           <div class="col-7 me-4" style="background-color: #fffcfa;">
             <div class="row mb-4 p-3 shadow border-0">
               <h4>
-                Implementation
+                <strong>IMPLEMENTATION</strong>
               </h4>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -43,7 +43,7 @@
             
             <div class="row mb-4 p-3 shadow border-0">
               <h4>
-                MTAP Course
+                <strong>MTAP COURSE</strong>
               </h4>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -52,7 +52,7 @@
 
             <div class="row mb-4 p-3 shadow border-0">
               <h4>
-                Pre-requisites
+                <strong>PREREQUISITES</strong>
               </h4>
               <p>
                 Content here.
@@ -94,7 +94,7 @@
           <div class="col" style="background-color: #fffcfa;">
             <div class="row shadow border-0 p-3">
               <h4>
-                Instructors
+                <strong>INSTRUCTORS</strong>
               </h4>
               <p>
                 Content here.
