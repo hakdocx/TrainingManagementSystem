@@ -7,9 +7,10 @@
 	$itemsPerPage = 4;
 	$allItems = mysqli_query($conn, "SELECT * FROM `course`");
 	$total = mysqli_num_rows($allItems);
+	$totalPages = ceil($total/$itemsPerPage);
 
 	if(isset($_GET['page']) && !empty($_GET['page'])) {
-	$page = $_GET['page'];
+	$page = (int) $_GET['page'];
 	} else {
 	$page = 1;
 	}
@@ -79,7 +80,7 @@
 							<button id = 'create-training-button' class= 'button1'> <i class="fa fa-plus"></i> ADD COURSE</button>
 							<div class="form-group has-search">
 								<span class="fa fa-search form-control-feedback"></span>
-								<input type="text" id="myInput"  class="fa fa-search icon" onkeyup="myFunction()"  placeholder="Search for training.. " >
+								<input type="search" id="myInput"  class="fa fa-search icon"   placeholder="Search for training.. " >
 							</div>
 							<table id="myTable" style="width:100%" class='table borderless'>
 								<thead>
@@ -114,13 +115,52 @@
 								</tbody>
 							</table>
 						</div>
-						<nav aria-label="Page navigation example">
+						<nav>
 							<ul class="pagination">
-								<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-								<li class="page-item"><a class="page-link" href="#">1</a></li>
-								<li class="page-item"><a class="page-link" href="#">2</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">Next</a></li>
+							<?php if($page > 1) { ?>
+								<li class="page-item">
+									<a class="page-link" href = "index.php?page=<?php echo $page - 1 ?>">Previous</a>
+								</li>
+							<?php } ?>
+							<?php if($page - 2 > 0) { ?>
+								<li class="page-item">
+									<a class="page-link" href = "index.php?page=<?= $page - 2 ?>">
+										<?= $page - 2 ?>
+									</a>
+								</li>
+							<?php } ?>
+							<?php if($page - 1 > 0) { ?>
+								<li class="page-item">
+									<a class="page-link" href = "index.php?page=<?= $page - 1 ?>">
+										<?= $page - 1 ?>
+									</a>
+								</li>
+							<?php } ?>
+								<li class="page-item">
+									<a class="page-link" href = "index.php?page=<?= $page ?>">
+										<?=	$page ?>
+									</a>
+								</li>
+							<?php if($page + 1 <= $totalPages) { ?>
+								<li class="page-item">
+									<a class="page-link" href = "index.php?page=<?= $page + 1 ?>">
+										<?= $page + 1 ?>
+									</a>
+								</li>
+							<?php } ?>
+							<?php if($page + 2 <= $totalPages) { ?>
+								<li class="page-item">
+									<a class="page-link" href = "index.php?page=<?= $page + 2 ?>">
+										<?= $page + 2 ?>
+									</a>
+								</li>
+							<?php } ?>
+
+							<?php if($page < $totalPages) { ?>
+								<li class="page-item">
+										<a class="page-link" href = "index.php?page=<?php echo $page + 1 ?>">Next</a>
+									</li>
+							<?php } ?>
 							</ul>
 						</nav>
 					</div>
