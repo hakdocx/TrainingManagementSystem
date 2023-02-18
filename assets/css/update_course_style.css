@@ -1,0 +1,50 @@
+.row-box {
+  display:flex; 
+  flex-direction: column; 
+  gap:5px;
+  margin-bottom: 20px;
+}
+
+.asterisk {
+  color:red;
+}
+
+#mtap-course, #implementation, #number-of-days, #course-title{
+  border: 2px solid lightgray; 
+  border-radius: 5px; 
+}
+
+#implementation, #mtap-course {
+  height: 100px;
+}
+
+#search-input{
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+  margin-left: -38px;
+	width: 80%;
+  border: 2px solid lightgray;
+	border-radius: 10px;
+	font-size: 17px;
+	padding: 2px 45px; 
+}
+
+#search-icon {
+  padding: 10px;
+  opacity: 50%;
+}
+
+.add-btn {
+  border: 2px solid #681a1a;
+  background-color: #681a1a;
+  text-align: center;
+  color:white;
+  padding: 10px;  
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: bold;
+  flex: 1;
+}
+
+
+
