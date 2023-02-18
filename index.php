@@ -1,8 +1,25 @@
 <?php 
 
-	require 'templates/connection.php'
+	require 'templates/connection.php';
 
- ?>
+	// querying displayed data per page
+
+	$itemsPerPage = 4;
+	$allItems = mysqli_query($conn, "SELECT * FROM `course`");
+	$total = mysqli_num_rows($allItems);
+
+	if(isset($_GET['page']) && !empty($_GET['page'])) {
+	$page = $_GET['page'];
+	} else {
+	$page = 1;
+	}
+
+	$offset = ($page - 1) * $itemsPerPage;
+
+	$query = "SELECT * FROM `course` LIMIT $itemsPerPage OFFSET $offset";
+	$result = mysqli_query($conn, $query);
+
+?>
 
 
 <!DOCTYPE html>
@@ -17,113 +34,100 @@
 	<script type="text/javascript" src = "assets/js/training-form.js" defer></script>
 </head>
 <body>
-
 	<dialog id = 'training-form'>
 		<form method = "POST" action = "code.php">
-
 			<div class="form-container">
 				<h2> ADD TRAINING FORM </h2>
-				<br>
-				<div class = "form-row">
-					<label style='font-size: 17px;' for = 'course-title'>Course Title*</label>
-					<input style='font-size: 17px;' type="text" name="course_title" id ='course-title' required>
-				</div>
-				<div class = "form-row">
-					<label style='font-size: 17px;' for = 'number-of-days'>Number of Days*</label>
-					<input style='font-size: 17px;' type="number" name="number_of_days" id ='number-of-days' required>
-				</div>
-				<div class = "form-row">
-					<label style='font-size: 17px;' for = 'mtap-course'>MTAP Course*</label>
-					<input style='font-size: 17px;' type="text" name="mtap_course" id ='mtap-course' required>
-				</div>
-				<div class = "form-row">
-					<label style='font-size: 17px;' for = 'mtap-course'>Implementation*</label>
-					<input style='font-size: 17px;' type="text" name="implementation" id ='Implementation' required>
-				</div>
-	
-				<br><br>
-				<center>
-				  <button style='
-            font-size: 15px; 
-            background-color: #0055b3;  
-            height: 35px; 
-            border: 1px; 
-            border-radius: 5px; 
-            width: 25%;
-            ' 
-            name="save_student" type = "submit" class="btn btn-primary" >Submit</button> 
-        </center>
-	
+			<br>
+			<div class = "form-row">
+				<label style='font-size: 17px;' for = 'course-title'>Course Title*</label>
+				<input style='font-size: 17px;' type="text" name="course_title" id ='course-title' required>
+			</div>
+			<div class = "form-row">
+				<label style='font-size: 17px;' for = 'number-of-days'>Number of Days*</label>
+				<input style='font-size: 17px;' type="number" name="number_of_days" id ='number-of-days' required>
+			</div>
+			<div class = "form-row">
+				<label style='font-size: 17px;' for = 'mtap-course'>MTAP Course*</label>
+				<input style='font-size: 17px;' type="text" name="mtap_course" id ='mtap-course' required>
+			</div>
+			<div class = "form-row">
+				<label style='font-size: 17px;' for = 'mtap-course'>Implementation*</label>
+				<input style='font-size: 17px;' type="text" name="implementation" id ='Implementation' required>
+			</div>
+			<br><br>
+			<center>
+			<button style='
+			font-size: 15px; 
+			background-color: #0055b3;  
+			height: 35px; 
+			border: 1px; 
+			border-radius: 5px; 
+			width: 25%;
+			' 
+			name="save_student" type = "submit" class="btn btn-primary" >Submit</button> 
+			</center>
 		</form>
 	</dialog>
-
 	<div class="container py-5">
-   <div class="row py-5">
-    <div class="col-lg-10 mx-auto">
-	     <h1> Course Management </h1><br>
-      <div class="card rounded shadow border-0">
-        <div class="card-body p-5 bg-white rounded">
-          <div class="table-responsive">
-            <table id="myTable" style="width:100%" class='table borderless'>
-			         <button id = 'create-training-button' class= 'button1'> <i class="fa fa-plus"></i> ADD COURSE</button>
-                <div class="form-group has-search">
-                  <span class="fa fa-search form-control-feedback"></span>
-			            <input type="text" id="myInput"  class="fa fa-search icon" onkeyup="myFunction()"  placeholder="Search for training.. " >
-                </div>
-		
-              <thead>
-                <tr>
-				          <th>COURSE ID</th>
-				          <th>COURSE TITLE</th>
-                  <th>DURATION</th>
-                  <th>MTAP COURSE</th>
-                  <th>PREREQUISITE</th>
-                  <th>IMPLEMENTATION</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php 
-                  $query = "SELECT * FROM course";
-                  $query_run = mysqli_query($conn, $query);
-
-                  if(mysqli_num_rows($query_run) > 0)
-                  {
-                    foreach($query_run as $student)
-                    {
-                        ?>
-                        <tr>
-											    <td><?= $student['course_id']; ?></td>
-                          <td><?= $student['course_title']; ?></td>
-                          <td><?= $student['number_of_days']; ?></td>
-                          <td><?= $student['mtap_course']; ?></td>
-                          <td><?= $student['pre_requisite_course']; ?></td>
-												  <td><?= $student['implementation']; ?></td>
-												</tr>
-                      <?php
-                    }
-                      }
-                        else
-                          {
-                            echo "<h5> No Record Found </h5>";
-                          }
-                      ?>
-              </tbody>
-            </table>
-          </div>
-          <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+		<div class="row py-5">
+			<div class="col-lg-10 mx-auto">
+				<h1> Course Management </h1><br>
+				<div class="card rounded shadow border-0">
+					<div class="card-body p-5 bg-white rounded">
+						<div class="table-responsive">
+							<button id = 'create-training-button' class= 'button1'> <i class="fa fa-plus"></i> ADD COURSE</button>
+							<div class="form-group has-search">
+								<span class="fa fa-search form-control-feedback"></span>
+								<input type="text" id="myInput"  class="fa fa-search icon" onkeyup="myFunction()"  placeholder="Search for training.. " >
+							</div>
+							<table id="myTable" style="width:100%" class='table borderless'>
+								<thead>
+									<tr>
+										<th>COURSE TITLE</th>
+										<th>DURATION</th>
+										<th>MTAP COURSE</th>
+										<th>YEAR CERTIFIED</th>
+										<th>PREREQUISITE</th>
+										<th>Action</th>
+									</tr>
+									</thead>
+								<tbody>
+								<?php 
+									if($total > 0) {
+										foreach($result as $student) {
+								?>
+									<tr>
+										<td><?= $student['course_title']; ?></td>
+										<td><?= $student['number_of_days']; ?></td>
+										<td><?= $student['mtap_course']; ?></td>
+										<td></td>
+										<td><?= $student['pre_requisite_course']; ?></td>
+										<td>Link Here</td>
+									</tr>
+								<?php 	
+										}
+									} else {
+										echo "<h5> No Record Found </h5>";
+									}
+								?>
+								</tbody>
+							</table>
+						</div>
+						<nav aria-label="Page navigation example">
+							<ul class="pagination">
+								<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+								<li class="page-item"><a class="page-link" href="#">1</a></li>
+								<li class="page-item"><a class="page-link" href="#">2</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">Next</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
