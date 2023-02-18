@@ -29,9 +29,17 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Training Management System</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS File -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- JS File -->
 	<script type="text/javascript" src = "assets/js/training-form.js" defer></script>
 </head>
 <body>
@@ -39,6 +47,7 @@
 		<form method = "POST" action = "code.php">
 			<div class="form-container">
 				<h2> ADD TRAINING FORM </h2>
+<<<<<<< HEAD
 			<br>
 			<div class = "form-row">
 				<label style='font-size: 17px;' for = 'course-title'>Course Title*</label>
@@ -59,14 +68,14 @@
 			<br><br>
 			<center>
 			<button style='
-			font-size: 15px; 
-			background-color: #0055b3;  
-			height: 35px; 
-			border: 1px; 
-			border-radius: 5px; 
-			width: 25%;
-			' 
-			name="save_student" type = "submit" class="btn btn-primary" >Submit</button> 
+            font-size: 15px; 
+            background-color: #681a1a;  
+            height: 35px; 
+            border: 1px; 
+            border-radius: 5px; 
+            width: 25%;
+            ' 
+            name="save_student" type = "submit" class="btn btn-primary" >Submit</button> 
 			</center>
 		</form>
 	</dialog>
@@ -168,6 +177,76 @@
 			</div>
 		</div>
 	</div>
+=======
+  <div class="container py-5">
+    <div class="row py-5">
+      <div class="col-lg-10 mx-auto">
+       <div class="card rounded shadow border-0">
+          <div class="card-body p-5 bg-white rounded">
+            <div class="table-responsive">
+              <table id="myTable" style="width:100%" class='table borderless'>
+                <button id = 'create-training-button' class= 'button1'> <i class="fa fa-plus"></i> ADD COURSE</button>
+                  <div class="form-group has-search">
+                    <span class="fa fa-search form-control-feedback"></span>
+                      <input type="text" id="myInput"  class="fa fa-search icon" onkeyup="myFunction()"  placeholder="Search for training.. " >
+                        </div>
+      
+                    <thead>
+                      <tr>
+                        <th style="font-weight:normal">COURSE TITLE</th>
+                        <th style="font-weight:normal">DURATION</th>
+                        <th style="font-weight:normal">MTAP COURSE</th>
+                        <th style="font-weight:normal">YEAR CERTIFIED</th>
+                        <th style="font-weight:normal">ACTION</th>
+                      </tr>
+                    </thead>
+                    
+                  <tbody>
+                    <?php 
+                      $query = "SELECT * FROM course";
+                      $query_run = mysqli_query($conn, $query);
+
+                      if(mysqli_num_rows($query_run) > 0)
+                      {
+                        foreach($query_run as $student)
+                        {
+                            ?>
+                            <tr>
+                              <td><?= $student['course_title']; ?></td>
+                              <td><?= $student['number_of_days']; ?></td>
+                              <td><?= $student['mtap_course']; ?></td>
+                              <td><?= $student['pre_requisite_course']; ?></td>
+                              <td> 
+                              <a href="viewrecord.php?id=<?= $student['course_id']; ?>" class="btn btn-primary">VIEW</a>
+                              </td>
+                            </tr>
+                          <?php
+                        }
+                      }
+                            else
+                              {
+                                echo "<h5> No Record Found </h5>";
+                              } 
+                          ?>
+                          
+                  </tbody>
+              </table>
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+>>>>>>> 9489d3daa9a91ce4bfa246d4c626d023b1001c21
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
