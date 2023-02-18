@@ -1,6 +1,7 @@
 <?php 
 	require 'templates/connection.php';
- ?>
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,7 +19,6 @@
     >
   </head>
 
-
   <body style = "font-family: Montserrat; overflow-x:hidden; background-color:#fffcfa;">
     <div class = "box">
       <div class="row pt-5 pb-3" style="background-color: #681a1a; color: white; padding-left:100px">
@@ -28,7 +28,7 @@
           <h6>
             # Days
           </h6>
-      </div>          
+      </div>      
       <div class="container mt-2 p-3" style="background-color: #fffcfa;">
         <div class="row">
           <div class="col-7 me-4" style="background-color: #fffcfa;">
@@ -59,7 +59,6 @@
               </p>
             </div>
           </div>
-          
           <div class="col" style="background-color: #fffcfa;">
             <div class="row shadow border-0 p-3">
               <h4>
@@ -75,4 +74,4 @@
       </div>
     </div>
   </body>
-</html>s
+</html>
