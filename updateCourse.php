@@ -24,23 +24,23 @@
       <div class="row mt-4">
         <div class="col me-5">
           <div class="row-box">
-            <label style='font-size: 17px;' for='course-title'>Course Title <label class="asterisk"> *</label></label>
-            <input style='font-size: 17px;' type="text" name="course_title" id='course-title' required>
+            <label style='font-size: 15px;' for='course-title'>Course Title <label class="asterisk"> *</label></label>
+            <input style='font-size: 15px;' type="text" name="course_title" id='course-title' required>
           </div>
           <div class="row-box">
-            <label style='font-size: 17px;' for='number-of-days'>Number of Days to Complete <label class="asterisk"> *</label></label>
-            <input style='font-size: 17px;' type="number" name="number_of_days" id='number-of-days' required>
+            <label style='font-size: 15px;' for='number-of-days'>Number of Days to Complete <label class="asterisk"> *</label></label>
+            <input style='font-size: 15px;' type="number" name="number_of_days" id='number-of-days' required>
           </div>
           <div class="row-box">
-            <label style='font-size: 17px;' for='implementation'>Implementation <label class="asterisk"> *</label></label>
-            <textarea style='font-size: 17px;' name="implementation" id='implementation' rows="3" required></textarea>
+            <label style='font-size: 15px;' for='implementation'>Implementation <label class="asterisk"> *</label></label>
+            <textarea style='font-size: 15px;' name="implementation" id='implementation' rows="3" required></textarea>
           </div>
           <div class="row-box">
-            <label style='font-size: 17px;' for='mtap-course'>MTAP Course <label class="asterisk"> *</label></label>
-            <textarea style='font-size: 17px;' name="mtap_course" id='mtap-course' rows="3" required></textarea>
+            <label style='font-size: 15px;' for='mtap-course'>MTAP Course <label class="asterisk"> *</label></label>
+            <textarea style='font-size: 15px;' name="mtap_course" id='mtap-course' rows="3" required></textarea>
           </div>
           <div class="row-box">
-            <label style='font-size: 17px;'>Prerequisite Course <label class="asterisk"> *</label></label>
+            <label style='font-size: 15px;'>Prerequisite Course <label class="asterisk"> *</label></label>
             <div class="row">
               <div class="input-group">
                 <span class="input-group-append">
@@ -54,7 +54,7 @@
             </div>
           </div>
           <div class="row-box mt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 10px; padding-left: 15px;text-align:left;">
-              <h5>Content here.</h5>
+              <h6>Content here.</h6>
           </div>
         </div>
 
@@ -74,13 +74,13 @@
             </div>
           </div>
           <div class="row-box mt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 15px; text-align:left;">
-              <h5>Content here.</h5>
+              <h6>Content here.</h6>
           </div>
           <div class="row-box mt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 15px; text-align:left;">
-              <h5>Content here.</h5>
+              <h6>Content here.</h6>
           </div>
           <div class="row-box mt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 15px; text-align:left;">
-              <h5>Content here.</h5>
+              <h6>Content here.</h6>
           </div>
         </div>
       </div>
