@@ -13,7 +13,7 @@
 </dialog>
 <body style = "font-family: Montserrat; overflow-x:hidden; background-color:#fffcfa;">
   <div class = "box">
-    <div class="row pb-3" style="background-color: #681a1a; color: white; padding-left:100px; padding-top: 70px;">
+    <div class="row pb-3" style="background-color: #681a1a; color: white; padding-left:100px; padding-top: 60px;">
         <h1 style = "font-size: 48px;">
           <strong>View Course</strong>
         </h1>
