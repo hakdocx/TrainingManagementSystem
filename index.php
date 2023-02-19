@@ -2,10 +2,17 @@
 
 	require 'templates/connection.php';
 
+	if(isset($_GET['search']) && !empty($_GET['search'])) {
+		$searchQuery = "SELECT * FROM `course` WHERE course_title LIKE '%{$_GET['search']}%' ";
+	}  else {
+		$searchQuery = "SELECT * FROM `course` ";
+	}
+
+
 	// querying displayed data per page
 
 	$itemsPerPage = 4;
-	$allItems = mysqli_query($conn, "SELECT * FROM `course`");
+	$allItems = mysqli_query($conn, $searchQuery);
 	$total = mysqli_num_rows($allItems);
 	$totalPages = ceil($total/$itemsPerPage);
 
@@ -17,8 +24,15 @@
 
 	$offset = ($page - 1) * $itemsPerPage;
 
-	$query = "SELECT * FROM `course` LIMIT $itemsPerPage OFFSET $offset";
+	$query = $searchQuery . " LIMIT $itemsPerPage OFFSET $offset";
+
 	$result = mysqli_query($conn, $query);
+
+	function retainSearch() {
+		if(isset($_GET['search'])) {
+			return '&search=' . $_GET['search'];
+		}
+	}
 
 ?>
 
@@ -90,7 +104,9 @@
 							<button id = 'create-training-button' class= 'button1'> <i class="fa fa-plus"></i> ADD COURSE</button>
 							<div class="form-group has-search">
 								<span class="fa fa-search form-control-feedback"></span>
-								<input type="search" id="myInput"  class="fa fa-search icon"   placeholder="Search for training.. " >
+								<form method = "GET">
+									<input type="search" id="myInput"  class="fa fa-search icon"   placeholder="Search for training.. " name = "search">
+								</form>
 							</div>
 							<table id="myTable" style="width:100%" class='table borderless'>
 								<thead>
@@ -131,47 +147,50 @@
 							<ul class="pagination">
 							<?php if($page > 1) { ?>
 								<li class="page-item">
-									<a class="page-link" href = "index.php?page=<?php echo $page - 1 ?>">Previous</a>
+									<a class="page-link" href = "index.php?page=<?= $page - 1 . retainSearch() ?>">
+										Previous
+									</a>
 								</li>
 							<?php } ?>
 							<?php if($page - 2 > 0) { ?>
 								<li class="page-item">
-									<a class="page-link" href = "index.php?page=<?= $page - 2 ?>">
+									<a class="page-link" href = "index.php?page=<?= $page - 2 . retainSearch() ?>">
 										<?= $page - 2 ?>
 									</a>
 								</li>
 							<?php } ?>
 							<?php if($page - 1 > 0) { ?>
 								<li class="page-item">
-									<a class="page-link" href = "index.php?page=<?= $page - 1 ?>">
+									<a class="page-link" href = "index.php?page=<?= $page - 1 . retainSearch() ?>">
 										<?= $page - 1 ?>
 									</a>
 								</li>
 							<?php } ?>
 								<li class="page-item  active">
-									<a class="page-link" href = "index.php?page=<?= $page ?>">
+									<a class="page-link" href = "index.php?page=<?= $page . retainSearch() ?>">
 										<?=	$page ?>
 									</a>
 								</li>
 							<?php if($page + 1 <= $totalPages) { ?>
 								<li class="page-item">
-									<a class="page-link" href = "index.php?page=<?= $page + 1 ?>">
+									<a class="page-link" href = "index.php?page=<?= $page + 1 . retainSearch() ?>">
 										<?= $page + 1 ?>
 									</a>
 								</li>
 							<?php } ?>
 							<?php if($page + 2 <= $totalPages) { ?>
 								<li class="page-item">
-									<a class="page-link" href = "index.php?page=<?= $page + 2 ?>">
+									<a class="page-link" href = "index.php?page=<?= $page + 2 . retainSearch() ?>">
 										<?= $page + 2 ?>
 									</a>
 								</li>
 							<?php } ?>
-
 							<?php if($page < $totalPages) { ?>
 								<li class="page-item">
-										<a class="page-link" href = "index.php?page=<?php echo $page + 1 ?>">Next</a>
-									</li>
+									<a class="page-link" href = "index.php?page=<?= $page + 1 . retainSearch() ?>">
+										Next
+									</a>
+								</li>
 							<?php } ?>
 							</ul>
 						</nav>
