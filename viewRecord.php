@@ -1,24 +1,11 @@
 <?php 
 	require 'templates/connection.php';
+  require 'templates/header.php';
 ?>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset = "UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>View Course</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
-          rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
-          crossorigin="anonymous"
-    >
-  </head>
-
+  <dialog id = 'deleteForm'>
+    Delete This ?
+  </dialog>
   <body style = "font-family: Montserrat; overflow-x:hidden; background-color:#fffcfa;">
     <div class = "box">
       <div class="row pt-5 pb-3" style="background-color: #681a1a; color: white; padding-left:100px">
@@ -87,6 +74,7 @@
                         border-radius: 10px;
                         font-weight:bold;
                         "
+                        id = "deleteBtn"
                 >DELETE</button>
               </div>
             </div>
@@ -104,5 +92,6 @@
         </div>
       </div>
     </div>
+    <script src = "assets/js/delete.js"></script>
   </body>
 </html>

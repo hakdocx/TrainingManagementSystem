@@ -15,7 +15,6 @@
 		$searchQuery = "SELECT * FROM `course` ";
 	}
 
-
 	// querying displayed data per page
 
 	// edit this to change number of items per page
@@ -51,19 +50,19 @@
 				<h2> ADD TRAINING FORM </h2>
 				<br>
 				<div class = "form-row">
-					<label style='font-size: 17px;' for = 'course-title'>Course Title*</label>
+					<label for = 'course-title'>Course Title*</label>
 					<input style='font-size: 17px;' type="text" name="course_title" id ='course-title' required>
 				</div>
 				<div class = "form-row">
-					<label style='font-size: 17px;' for = 'number-of-days'>Number of Days*</label>
+					<label for = 'number-of-days'>Number of Days*</label>
 					<input style='font-size: 17px;' type="number" name="number_of_days" id ='number-of-days' required>
 				</div>
-				<div class = "form-row">
-					<label style='font-size: 17px;' for = 'mtap-course'>MTAP Course*</label>
+				<div class = "form-row mt-2">
+					<label for = 'mtap-course'>MTAP Course*</label>
 					<input style='font-size: 17px;' type="text" name="mtap_course" id ='mtap-course' required>
 				</div>
 				<div class = "form-row">
-					<label style='font-size: 17px;' for = 'mtap-course'>Implementation*</label>
+					<label for = 'mtap-course'>Implementation*</label>
 					<input style='font-size: 17px;' type="text" name="implementation" id ='Implementation' required>
 				</div>
 	
@@ -200,6 +199,7 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript" src = "assets/js/training-form.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
