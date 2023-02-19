@@ -34,40 +34,71 @@
           <div class="col-7 me-4" style="background-color: #fffcfa;">
             <div class="row mb-4 p-3 shadow border-0">
               <h4>
-                Implementation
+                <strong>IMPLEMENTATION</strong>
               </h4>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
               </p>
             </div>
             
             <div class="row mb-4 p-3 shadow border-0">
               <h4>
-                MTAP Course
+                <strong>MTAP COURSE</strong>
               </h4>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
               </p>
             </div>
 
             <div class="row mb-4 p-3 shadow border-0">
               <h4>
-                Pre-requisites
+                <strong>PREREQUISITES</strong>
               </h4>
               <p>
                 Content here.
               </p>
             </div>
+
+            <div class="row mt-5">
+              <div class="col-2 me-4 p-0">
+                <button type="button" class="update-btn" style="
+                        border: 2px solid #681a1a;
+                        background-color: #fffcfa;
+                        text-align: center;
+                        color: #681a1a;
+                        padding: 10px;
+                        padding-left: 30px;
+                        padding-right: 30px;
+                        border-radius: 10px;
+                        font-weight: bold;
+                        "
+                >UPDATE</button>
+              </div>
+              <div class="col-2 p-0">
+                <button type="button" class="del-btn"
+                        style="
+                        border: 2px solid #681a1a;
+                        background-color: #681a1a;
+                        text-align: center;
+                        color:white;
+                        padding: 10px;
+                        padding-left: 30px;
+                        padding-right: 30px;
+                        border-radius: 10px;
+                        font-weight:bold;
+                        "
+                >DELETE</button>
+              </div>
+            </div>
           </div>
           <div class="col" style="background-color: #fffcfa;">
             <div class="row shadow border-0 p-3">
               <h4>
-                Instructors
+                <strong>INSTRUCTORS</strong>
               </h4>
               <p>
                 Content here.
               </p>
-
             </div>
           </div>
         </div>
