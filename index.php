@@ -93,7 +93,7 @@
 										type="search" 
 										id="myInput"  
 										class="form-control form-input" 
-										placeholder="Search for training.." 
+										placeholder="Search for training..." 
 										name = "search"
 
 										<?php if(isset($_SESSION['search'])) { ?>
