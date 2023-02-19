@@ -1,7 +1,7 @@
 .row-box {
   display:flex; 
   flex-direction: column; 
-  gap:5px;
+  gap:2px;
   margin-bottom: 20px;
 }
 
@@ -46,5 +46,16 @@
   flex: 1;
 }
 
+.save-changes-btn {
+  border: 2px solid #681a1a;
+  background-color: #fffcfa;
+  text-align: center;
+  color: #681a1a;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 10px;
+  font-weight: bold;
+}
 
 
