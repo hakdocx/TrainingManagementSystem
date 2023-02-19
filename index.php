@@ -2,15 +2,22 @@
 
 	require 'templates/connection.php';
 
+	session_start();
+
+	// alter query based on whether search value is present 
+
 	if(isset($_GET['search']) && !empty($_GET['search'])) {
+		$_SESSION['search'] = $_GET['search'];	
 		$searchQuery = "SELECT * FROM `course` WHERE course_title LIKE '%{$_GET['search']}%' ";
 	}  else {
+		unset($_SESSION['search']);
 		$searchQuery = "SELECT * FROM `course` ";
 	}
 
 
 	// querying displayed data per page
 
+	// edit this to change number of items per page
 	$itemsPerPage = 4;
 	$allItems = mysqli_query($conn, $searchQuery);
 	$total = mysqli_num_rows($allItems);
@@ -29,8 +36,8 @@
 	$result = mysqli_query($conn, $query);
 
 	function retainSearch() {
-		if(isset($_GET['search'])) {
-			return '&search=' . $_GET['search'];
+		if(isset($_SESSION['search'])) {
+			return '&search=' . $_SESSION['search'];
 		}
 	}
 
@@ -104,8 +111,18 @@
 							<button id = 'create-training-button' class= 'button1'> <i class="fa fa-plus"></i> ADD COURSE</button>
 							<div class="form-group has-search">
 								<span class="fa fa-search form-control-feedback"></span>
-								<form method = "GET">
-									<input type="search" id="myInput"  class="fa fa-search icon"   placeholder="Search for training.. " name = "search">
+								<form method = "GET" action = 'index.php'>
+									<input 
+											type="search" 
+											id="myInput"  
+											class="fa fa-search icon" 
+											placeholder="Search for training.." 
+											name = "search"
+
+											<?php if(isset($_SESSION['search'])) { ?>
+												value = "<?= 	$_SESSION['search'] ?>"
+											<?php }	?>
+									>
 								</form>
 							</div>
 							<table id="myTable" style="width:100%" class='table borderless'>
