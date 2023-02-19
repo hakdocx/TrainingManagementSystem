@@ -85,118 +85,111 @@
   <div class="container py-5">
     <div class="row py-5">
       <div class="col-lg-10 mx-auto">
-      	<h1> Course Management </h1><br>
-       	<div class="card rounded shadow border-0">
-					<div class="card-body p-5 bg-white rounded">
-						<div class="table-responsive">
-							<button id = 'create-training-button' class= 'button1'> <i class="fa fa-plus"></i> ADD COURSE</button>
-							<div class="form-group has-search">
-								<span class="fa fa-search form-control-feedback"></span>
-								<form method = "GET" action = 'index.php'>
-									<input 
-											type="search" 
-											id="myInput"  
-											class="fa fa-search icon" 
-											placeholder="Search for training.." 
-											name = "search"
+				<div class="table-responsive">
+					<button id = 'create-training-button' class= 'button1'> ADD COURSE</button>
+					<form method = "GET" action = 'index.php'>
+						<div class="form">
+								<input 
+										type="search" 
+										id="myInput"  
+										class="form-control form-input" 
+										placeholder="Search for training.." 
+										name = "search"
 
-											<?php if(isset($_SESSION['search'])) { ?>
-												value = "<?= 	$_SESSION['search'] ?>"
-											<?php }	?>
-									>
-								</form>
-							</div>
-							<table id="myTable" style="width:100%" class='table borderless'>
-								<thead>
-									<tr>
-										<th>COURSE TITLE</th>
-										<th>DURATION</th>
-										<th>MTAP COURSE</th>
-										<th>YEAR CERTIFIED</th>
-										<th>PREREQUISITE</th>
-										<th>Action</th>
-									</tr>
-									</thead>
-								<tbody>
-								<?php 
-									if($total > 0) {
-										foreach($result as $student) {
-								?>
-									<tr>
-										<td><?= $student['course_title']; ?></td>
-										<td><?= $student['number_of_days']; ?></td>
-										<td><?= $student['mtap_course']; ?></td>
-										<td></td>
-										<td><?= $student['pre_requisite_course']; ?></td>
-										<td>	
-										<a href="viewrecord.php?id=<?= $student['course_id']; ?>" class="btn btn-primary">VIEW</a>
-										</td>
-									</tr>
-								<?php 	
-										}
-									} else {
+										<?php if(isset($_SESSION['search'])) { ?>
+											value = "<?= 	$_SESSION['search'] ?>"
+										<?php }	?>
+								>
+						</div>
+					</form>
+					<table id="myTable" style="width:100%" class='table borderless'>
+						<thead>
+							<tr>
+								<th>COURSE TITLE</th>
+								<th>DURATION</th>
+								<th>MTAP COURSE</th>
+								<th>YEAR CERTIFIED</th>
+								<th>PREREQUISITE</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+						<?php 
+							if($total > 0) {
+								foreach($result as $student) {
+						?>
+							<tr>
+								<td><?= $student['course_title']; ?></td>
+								<td><?= $student['number_of_days']; ?></td>
+								<td><?= $student['mtap_course']; ?></td>
+								<td></td>
+								<td><?= $student['pre_requisite_course']; ?></td>
+								<td>	
+								<a href="viewrecord.php?id=<?= $student['course_id']; ?>" class="btn btn-primary">VIEW</a>
+								</td>
+							</tr>
+							<?php }
+								} else {
 										echo "<h5> No Record Found </h5>";
 									}
-								?>
-								</tbody>
-							</table>
-						</div>
-						<nav>
-							<ul class="pagination">
-							<?php if($page > 1) { ?>
-								<li class="page-item">
-									<a class="page-link" href = "index.php?page=<?= $page - 1 . retainSearch() ?>">
-										<i class="fa-solid fa-angle-left"></i>
-									</a>
-								</li>
-							<?php } ?>
-							<?php if($page - 2 > 0) { ?>
-								<li class="page-item">
-									<a class="page-link" href = "index.php?page=<?= $page - 2 . retainSearch() ?>">
-										<?= $page - 2 ?>
-									</a>
-								</li>
-							<?php } ?>
-							<?php if($page - 1 > 0) { ?>
-								<li class="page-item">
-									<a class="page-link" href = "index.php?page=<?= $page - 1 . retainSearch() ?>">
-										<?= $page - 1 ?>
-									</a>
-								</li>
-							<?php } ?>
-								<li class="page-item  active">
-									<a class="page-link" href = "index.php?page=<?= $page . retainSearch() ?>">
-										<?=	$page ?>
-									</a>
-								</li>
-							<?php if($page + 1 <= $totalPages) { ?>
-								<li class="page-item">
-									<a class="page-link" href = "index.php?page=<?= $page + 1 . retainSearch() ?>">
-										<?= $page + 1 ?>
-									</a>
-								</li>
-							<?php } ?>
-							<?php if($page + 2 <= $totalPages) { ?>
-								<li class="page-item">
-									<a class="page-link" href = "index.php?page=<?= $page + 2 . retainSearch() ?>">
-										<?= $page + 2 ?>
-									</a>
-								</li>
-							<?php } ?>
-							<?php if($page < $totalPages) { ?>
-								<li class="page-item">
-									<a class="page-link" href = "index.php?page=<?= $page + 1 . retainSearch() ?>">
-										<i class="fa-solid fa-angle-left"></i>
-									</a>
-								</li>
-							<?php } ?>
-							</ul>
-						</nav>
-					</div>
+							?>
+						</tbody>
+					</table>
 				</div>
+				<nav>
+					<ul class="pagination">
+					<?php if($page > 1) { ?>
+						<li class="page-item">
+							<a class="page-link" href = "index.php?page=<?= $page - 1 . retainSearch() ?>">
+								<i class="fa-solid fa-angle-left"></i>
+							</a>
+						</li>
+					<?php } ?>
+					<?php if($page - 2 > 0) { ?>
+						<li class="page-item">
+							<a class="page-link" href = "index.php?page=<?= $page - 2 . retainSearch() ?>">
+								<?= $page - 2 ?>
+							</a>
+						</li>
+					<?php } ?>
+					<?php if($page - 1 > 0) { ?>
+						<li class="page-item">
+							<a class="page-link" href = "index.php?page=<?= $page - 1 . retainSearch() ?>">
+								<?= $page - 1 ?>
+							</a>
+						</li>
+					<?php } ?>
+						<li class="page-item  active">
+							<a class="page-link" href = "index.php?page=<?= $page . retainSearch() ?>">
+								<?=	$page ?>
+							</a>
+						</li>
+					<?php if($page + 1 <= $totalPages) { ?>
+						<li class="page-item">
+							<a class="page-link" href = "index.php?page=<?= $page + 1 . retainSearch() ?>">
+								<?= $page + 1 ?>
+							</a>
+						</li>
+					<?php } ?>
+					<?php if($page + 2 <= $totalPages) { ?>
+						<li class="page-item">
+							<a class="page-link" href = "index.php?page=<?= $page + 2 . retainSearch() ?>">
+								<?= $page + 2 ?>
+							</a>
+						</li>
+					<?php } ?>
+					<?php if($page < $totalPages) { ?>
+						<li class="page-item">
+							<a class="page-link" href = "index.php?page=<?= $page + 1 . retainSearch() ?>">
+								<i class="fa-solid fa-angle-right"></i>
+							</a>
+						</li>
+					<?php } ?>
+					</ul>
+				</nav>				
 			</div>
 		</div>
 	</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
