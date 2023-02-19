@@ -110,17 +110,17 @@
 				<div class="table-responsive">
 					<table id="myTable" style="width:100%" class='table borderless'>
 						<colgroup>
-							<col/>
+							<col style = 'max-width: 10px;'>
 							<col span = '4' style = 'color:#5b5b5b' />
 						</colgroup>
 						<thead>
-							<tr>
-								<th scope = 'col' class = "fw-semibold">COURSE TITLE</th>
-								<th scope = 'col' class = "fw-semibold">DURATION</th>
-								<th scope = 'col' class = "fw-semibold">MTAP COURSE</th>
-								<th scope = 'col' class = "fw-semibold">YEAR CERTIFIED</th>
-								<th scope = 'col' class = 'fw-semibold'>PREREQUISITE</th>
-								<th scope = 'col' class = 'fw-semibold'>Action</th>
+							<tr style = 'font-weight: 500;'>
+								<td scope = 'col'>COURSE TITLE</th>
+								<td scope = 'col'>DURATION</th>
+								<td scope = 'col'>MTAP COURSE</th>
+								<td scope = 'col'>YEAR CERTIFIED</th>
+								<td scope = 'col'>PREREQUISITE</th>
+								<td scope = 'col'>Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -129,7 +129,7 @@
 								foreach($result as $student) {
 						?>
 							<tr>
-								<td class = "fs-5 fw-bold"><?= $student['course_title']; ?></td>
+								<td class = "fs-5" style = 'font-weight: 600'><?= $student['course_title']; ?></td>
 								<td class = "fs-5"><?= $student['number_of_days'] . " days"; ?></td>
 								<td class = "fs-5"><?= $student['mtap_course']; ?></td>
 								<td class = "fs-5"></td>
