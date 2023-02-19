@@ -15,5 +15,5 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 	<!-- JS File -->
-	<script type="text/javascript" src = "assets/js/training-form.js" defer></script>
+	
 </head>

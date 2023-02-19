@@ -24,6 +24,10 @@ dialog {
 	gap:5px;
 }
 
+.form-row label {
+	font-size:16px !important;
+}
+
 .form-container {
 	display:flex;
 	flex-direction: column;
