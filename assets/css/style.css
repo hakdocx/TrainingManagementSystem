@@ -89,7 +89,7 @@ body {
 
 .pagination {
 	float: right;
-	}
+}
   
   dialog::backdrop {
 	  backdrop-filter: blur(4px);
@@ -181,4 +181,8 @@ tbody>tr>:nth-child(1){
 
 .pagination .page-item {
 	margin:0 3px;
+}
+
+.active > a {
+	background:#4a1212 !important;
 }
