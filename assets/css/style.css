@@ -232,3 +232,13 @@ dialog::backdrop {
     flex: right auto;
     width: 10%;
 }
+
+#noCourseFoundHeading {
+	font-weight: 800;
+	font-size: 36px;
+}
+
+#noCourseFoundSub {
+	font-weight: 500;
+	font-size: 15px;
+}
