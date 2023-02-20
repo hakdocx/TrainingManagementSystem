@@ -154,10 +154,7 @@
 													echo $course["course_title"];
 												 ?>
 										</span>
-									<?php } else { ?>
-
 									<?php } ?>
-									
 								</td>
 								<td class = "fs-5">	
 								<a href="viewrecord.php?id=<?= $student['course_id']; ?>" class="btn btn-primary">VIEW</a>
