@@ -136,7 +136,7 @@
 						?>
 							<tr>
 								<td class = "fs-5" style = 'font-weight: 600'><?= $student['course_title']; ?></td>
-								<td class = "fs-5"><?= $student['number_of_days'] . " days"; ?></td>
+								<td class = "fs-5"><?php $student['number_of_days'] . " days"; ?></td>
 								<td class = "fs-5">
 									<?php 
 											if($student['mtap_course']) {
@@ -145,7 +145,12 @@
 												echo "NA";
 											}
 									?></td>
-								<td class = "fs-5"><?= $student['year_certified']; ?></td>
+								<td class = "fs-5">
+									<?php 
+										$timestamp = strtotime($student['year_certified']); 
+										echo date("Y", $timestamp);
+									?>
+								</td>
 								<td class = "fs-5"> 
 								<?php 	 ?>
 									<?php 
