@@ -137,7 +137,14 @@
 							<tr>
 								<td class = "fs-5" style = 'font-weight: 600'><?= $student['course_title']; ?></td>
 								<td class = "fs-5"><?= $student['number_of_days'] . " days"; ?></td>
-								<td class = "fs-5"><?= $student['mtap_course']; ?></td>
+								<td class = "fs-5">
+									<?php 
+											if($student['mtap_course']) {
+												echo $student['mtap_course'];
+											}  else {
+												echo "NA";
+											}
+									?></td>
 								<td class = "fs-5"><?= $student['year_certified']; ?></td>
 								<td class = "fs-5"> 
 								<?php 	 ?>
