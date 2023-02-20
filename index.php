@@ -41,6 +41,10 @@
 		}
 	}
 
+	
+		
+	
+
 ?>
 
 <body class = "py-5">
@@ -136,9 +140,25 @@
 								<td class = "fs-5"><?= $student['mtap_course']; ?></td>
 								<td class = "fs-5"><?= $student['year_certified']; ?></td>
 								<td class = "fs-5"> 
-								<span class="badge bg-secondary"><?= $student['pre_requisite_course']; ?> </span>
-								<span class="badge bg-secondary"><?= $student['pre_requisite_course']; ?> </span><br>
-								<span class="badge bg-secondary"><?= $student['pre_requisite_course']; ?> </span>		
+								<?php 	 ?>
+									<?php 
+									if($student["pre_requisite_course"]) { ?>
+										<span class="badge bg-secondary">
+												<?php 	
+													$pre_req = $student["pre_requisite_course"];
+													
+													$sql = "SELECT * FROM `course` WHERE course_id = '$pre_req'";
+													$query = mysqli_query($conn, $sql);
+													$course = mysqli_fetch_assoc($query);
+
+													echo $course["course_title"];
+												 ?>
+										</span>
+									<?php } else { ?>
+
+									<?php } ?>
+									
+								</td>
 								<td class = "fs-5">	
 								<a href="viewrecord.php?id=<?= $student['course_id']; ?>" class="btn btn-primary">VIEW</a>
 								</td>
