@@ -18,7 +18,7 @@
 	// querying displayed data per page
 
 	// edit this to change number of items per page
-	$itemsPerPage = 4;
+	$itemsPerPage = 5;
 	$allItems = mysqli_query($conn, $searchQuery);
 	$total = mysqli_num_rows($allItems);
 	$totalPages = ceil($total/$itemsPerPage);

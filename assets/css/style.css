@@ -41,12 +41,13 @@ body {
 #myInput {
 	background-position: 10px 10px;
 	background-repeat: no-repeat;
-	width: 100%;
+	width: 105%;
 	border-radius: 10px;
 	font-size: 15px;
 	padding: 10px 20px 12px 40px;
 	border: 1px solid #ddd;
 	margin-bottom: 15px;
+	float: right;
 }
 
 #myTable {

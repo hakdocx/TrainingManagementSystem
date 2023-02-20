@@ -2,10 +2,16 @@
 	require 'templates/connection.php';
   require 'templates/header.php';
   if(isset($_GET['id'])){
+    $id = $_GET['id'];
   }
   else{
     header("Location: index.php");
   }
+
+  $query = "SELECT * FROM `course` WHERE course_id='$id' ";
+  $query_run = mysqli_query($conn, $query);
+  $result = mysqli_fetch_assoc($query_run);
+  
 ?>
 
 <dialog id = 'deleteForm'>
@@ -15,10 +21,11 @@
   <div class = "box">
     <div class="row pb-3" style="background-color: #681a1a; color: white; padding-left:100px; padding-top: 60px;">
         <h1 style = "font-size: 48px;">
-          <strong>View Course</strong>
+         <?php echo $result['course_title']; ?>
         </h1>
         <h6>
-          # Days
+          #
+        <?php echo $result ['number_of_days'] . " Days"; ?>
         </h6>
     </div>      
     <div class="container mt-2 p-5" style="background-color: #fffcfa;">
@@ -53,7 +60,7 @@
 
           <div class="row mt-5">
             <div class="col-2 me-4 p-0">
-              <button type="button" class="update-btn" style="
+              <a href="updateCourse.php" type="button" class="update-btn" style="
                       border: 2px solid #681a1a;
                       background-color: #fffcfa;
                       text-align: center;
@@ -63,8 +70,9 @@
                       padding-right: 30px;
                       border-radius: 10px;
                       font-weight: bold;
+                      text-decoration: none;
                       "
-              >UPDATE</button>
+              >UPDATE</a>
             </div>
             <div class="col-2 p-0">
               <button type="button" class="del-btn"
