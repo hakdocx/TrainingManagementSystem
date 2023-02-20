@@ -86,6 +86,9 @@
 				<div class="col-2">
     			<button id = 'create-training-button' class= 'button1'> ADD COURSE</button>
 				</div>
+				<div class="col-3 p-0">
+				<button onclick="window.location.href='index.php';" class="button2"> <i class="fa fa-refresh"></i></button>
+				</div>
 				<div class="form col-10">
 					<form method = "GET" action = 'index.php'>
 							<input 
@@ -131,8 +134,11 @@
 								<td class = "fs-5" style = 'font-weight: 600'><?= $student['course_title']; ?></td>
 								<td class = "fs-5"><?= $student['number_of_days'] . " days"; ?></td>
 								<td class = "fs-5"><?= $student['mtap_course']; ?></td>
-								<td class = "fs-5"></td>
-								<td class = "fs-5"><?= $student['pre_requisite_course']; ?></td>
+								<td class = "fs-5"><?= $student['year_certified']; ?></td>
+								<td class = "fs-5"> 
+								<span class="badge bg-secondary"><?= $student['pre_requisite_course']; ?> </span>
+								<span class="badge bg-secondary"><?= $student['pre_requisite_course']; ?> </span><br>
+								<span class="badge bg-secondary"><?= $student['pre_requisite_course']; ?> </span>		
 								<td class = "fs-5">	
 								<a href="viewrecord.php?id=<?= $student['course_id']; ?>" class="btn btn-primary">VIEW</a>
 								</td>

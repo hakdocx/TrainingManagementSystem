@@ -1,3 +1,17 @@
+<?php 
+	require 'templates/connection.php';
+  if(isset($_GET['id'])){
+    $id = $_GET['id'];
+  }
+  else{
+    header("Location: index.php");
+  }
+
+  $query = "SELECT * FROM `course` WHERE course_id='$id' ";
+  $query_run = mysqli_query($conn, $query);
+  $result = mysqli_fetch_assoc($query_run);
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,77 +41,81 @@
       <h1 style="color:#681a1a">
         <strong>Update Course</strong>
       </h1>
-      <div class="row mt-1">
-        <div class="col me-5">
-          <div class="row-box">
-            <label style='font-size: 15px; font-weight:bold;' for='course-title'>Course Title <label class="asterisk"> *</label></label>
-            <input style='font-size: 15px;' type="text" name="course_title" id='course-title' required>
-          </div>
-          <div class="row-box">
-            <label style='font-size: 15px; font-weight:bold;' for='number-of-days'>Number of Days to Complete <label class="asterisk"> *</label></label>
-            <input style='font-size: 15px;' type="number" name="number_of_days" id='number-of-days' required>
-          </div>
-          <div class="row-box">
-            <label style='font-size: 15px; font-weight:bold;' for='implementation'>Implementation <label class="asterisk"> *</label></label>
-            <textarea style='font-size: 15px;' name="implementation" id='implementation' rows="3" required></textarea>
-          </div>
-          <div class="row-box">
-            <label style='font-size: 15px; font-weight:bold;' for='mtap-course'>MTAP Course <label class="asterisk"> *</label></label>
-            <textarea style='font-size: 15px;' name="mtap_course" id='mtap-course' rows="3" required></textarea>
-          </div>
-          <div class="row-box">
-            <label style='font-size: 15px; font-weight:bold;'>Prerequisite Course <label class="asterisk"> *</label></label>
-            <div class="row">
-              <div class="input-group">
-                <span class="input-group-append">
-                  <span class="btn" id="search-icon">
-                        <i class="fa fa-search"></i>
+      <form action="code.php" method="POST">
+        <div class="row mt-1">
+          <div class="col me-5">
+            <div class="row-box">
+              <label style='font-size: 15px; font-weight:bold;' for='course-title'>Course Title <label class="asterisk"> *</label></label>
+              <input style='font-size: 15px;' value = "<?php echo $result['course_title'] ?>" type="text" name="course_title" id='course-title' required>
+            </div>
+            <div class="row-box">
+              <label style='font-size: 15px; font-weight:bold;' for='number-of-days'>Number of Days to Complete <label class="asterisk"> *</label></label>
+              <input style='font-size: 15px;' value = "<?php echo $result['number_of_days'] ?>" type="number" name="number_of_days" id='number-of-days' required>
+            </div>
+            <div class="row-box">
+              <label style='font-size: 15px; font-weight:bold;' for='implementation'>Implementation <label class="asterisk"> *</label></label>
+              <input style='font-size: 15px;' value = "<?php echo $result['implementation'] ?>" name="implementation" id='implementation' rows="3" required></input>
+            </div>
+            <div class="row-box">
+              <label style='font-size: 15px; font-weight:bold;' for='mtap-course'>MTAP Course <label class="asterisk"> *</label></label>
+              <input style='font-size: 15px;' value = "<?php echo $result['mtap_course'] ?>" name="mtap_course" id='mtap-course' rows="3" required></input>
+            </div>
+            <div class="row-box">
+              <label style='font-size: 15px; font-weight:bold;'>Prerequisite Course <label class="asterisk"> *</label></label>
+              <div class="row">
+                <div class="input-group">
+                  <span class="input-group-append">
+                    <span class="btn" id="search-icon">
+                          <i class="fa fa-search"></i>
+                    </span>
                   </span>
-                </span>
-                <input type="text" id="search-input" placeholder="Search for course">
-                <button type="button" class="add-btn" style="margin-left: 10px; border-radius: 10px;">ADD</button>
+                  <input type="text" id="search-input" placeholder="Search for course">
+                  <button type="button" class="add-btn" style="margin-left: 10px; border-radius: 10px;">ADD</button>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row-box pt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 8px; padding-left: 15px;text-align:left;">
-              <h6>Content here.</h6>
-          </div>
-          <div class="row-box pt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 8px; padding-left: 15px;text-align:left;">
-              <h6>Content here.</h6>
-          </div>
-          <div class="row-box pt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 8px; padding-left: 15px;text-align:left;">
-              <h6>Content here.</h6>
+            <div class="row-box pt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 8px; padding-left: 15px;text-align:left;">
+                <h6>Content here.</h6>
+            </div>
+            <div class="row-box pt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 8px; padding-left: 15px;text-align:left;">
+                <h6>Content here.</h6>
+            </div>
+            <div class="row-box pt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 8px; padding-left: 15px;text-align:left;">
+                <h6>Content here.</h6>
+            </div>
+
+            <button type="submit" name="update_course" class="save-changes-btn mt-4">
+              SAVE CHANGES
+            </button>
           </div>
 
-          <button type="button" class="save-changes-btn mt-4">SAVE CHANGES</button>
-        </div>
-
-        <div class="col">
-          <div class="row-box">
-            <label style='font-size: 15px; font-weight:bold;'>Instructors <label class="asterisk"> *</label></label>
-            <div class="row">
-              <div class="input-group">
-                <span class="input-group-append">
-                  <span class="btn" id="search-icon">
-                        <i class="fa fa-search"></i>
+          <div class="col">
+            <div class="row-box">
+              <label style='font-size: 15px; font-weight:bold;'>Instructors <label class="asterisk"> *</label></label>
+              <div class="row">
+                <div class="input-group">
+                  <span class="input-group-append">
+                    <span class="btn" id="search-icon">
+                          <i class="fa fa-search"></i>
+                    </span>
                   </span>
-                </span>
-                <input type="text" id="search-input" placeholder="Search for instructor">
-                <button type="button" class="add-btn" style="margin-left: 10px; border-radius: 10px;">ADD</button>
+                  <input type="text" id="search-input" placeholder="Search for instructor">
+                  <button type="button" class="add-btn" style="margin-left: 10px; border-radius: 10px;">ADD</button>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row-box mt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 15px; text-align:left;">
-              <h6>Content here.</h6>
-          </div>
-          <div class="row-box mt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 15px; text-align:left;">
-              <h6>Content here.</h6>
-          </div>
-          <div class="row-box mt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 15px; text-align:left;">
-              <h6>Content here.</h6>
+            <div class="row-box mt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 15px; text-align:left;">
+                <h6>Content here.</h6>
+            </div>
+            <div class="row-box mt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 15px; text-align:left;">
+                <h6>Content here.</h6>
+            </div>
+            <div class="row-box mt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 15px; text-align:left;">
+                <h6>Content here.</h6>
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
   </body>

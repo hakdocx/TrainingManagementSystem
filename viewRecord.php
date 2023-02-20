@@ -60,7 +60,7 @@
 
           <div class="row mt-5">
             <div class="col-2 me-4 p-0">
-              <a href="updateCourse.php" type="button" class="update-btn" style="
+              <a href="updateCourse.php?id=<?php echo $id ?>" type="button" class="update-btn" style="
                       border: 2px solid #681a1a;
                       background-color: #fffcfa;
                       text-align: center;
