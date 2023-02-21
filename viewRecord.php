@@ -14,6 +14,7 @@
   
 ?>
 
+<?php include('assets/popup/message.php'); ?>
 
 <dialog id ='deleteForm' style="font-family: Montserrat;">
   <div class="del-form-box pt-5 ps-5 pe-5">
@@ -30,7 +31,7 @@
       <div class="row mt-5" id="button-box">
         <input type="hidden" value="<?=$result['course_id'];?>" name="c_id">
         <div class="col text-end">
-          <button id="cancel-btn-vr">Cancel</button>
+          <a href="index.php"; id="cancel-btn-vr">Cancel</a>
         </div>
         <div class="col text-start">
           <button type="submit" name="delete_course" id="del-course-btn">Delete</button>
