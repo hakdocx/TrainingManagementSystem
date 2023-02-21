@@ -126,7 +126,7 @@
 						?>
 							<tr>
 								<td class = "fs-5" style = 'font-weight: 600'><?= $student['course_title']; ?></td>
-								<td class = "fs-5"><?php $student['number_of_days'] . " days"; ?></td>
+								<td class = "fs-5"><?php echo $student['number_of_days'] . " days"; ?></td>
 								<td class = "fs-5">
 									<?php 
 											if($student['mtap_course']) {
