@@ -45,22 +45,22 @@
         <div class="row mt-1">
           <div class="col me-5">
             <form action="code.php" method ="POST">
-              <input type="hidden" value="<?php echo $id?>" name="id"></form>
+              <input type="hidden" value="<?php echo $id?>" name="id">
               <div class="row-box mb-3">
                 <label style='font-size: 15px; font-weight:bold;' for='course-title'>Course Title <label class="asterisk"> *</label></label>
-                <input style='font-size: 15px;' value = "<?php echo $result['course_title'] ?>" type="text" name="course_title" id='course-title' required>
+                <input style='font-size: 15px;' value="<?php echo $result['course_title']?>" type="text" name="course_title" id='course-title' required>
               </div>
               <div class="row-box mb-3">
                 <label style='font-size: 15px; font-weight:bold;' for='number-of-days'>Number of Days to Complete <label class="asterisk"> *</label></label>
-                <input style='font-size: 15px;' value = "<?php echo $result['number_of_days'] ?>" type="number" name="number_of_days" id='number-of-days' required>
+                <input style='font-size: 15px;' value="<?php echo $result['number_of_days']?>" type="number" name="number_of_days" id='number-of-days' required>
               </div>
               <div class="row-box mb-3">
                 <label style='font-size: 15px; font-weight:bold;' for='implementation'>Implementation <label class="asterisk"> *</label></label>
-                <input style='font-size: 15px;' value = "<?php echo $result['implementation'] ?>" type ="text" name="implementation" id='implementation' required></input>
+                <input style='font-size: 15px;' value="<?php echo $result['implementation']?>" type ="text" name="implementation" id='implementation' required></input>
               </div>
               <div class="row-box mb-3">
                 <label style='font-size: 15px; font-weight:bold;' for='mtap-course'>MTAP Course <label class="asterisk"> *</label></label>
-                <input style='font-size: 15px;' value = "<?php echo $result['mtap_course'] ?>" type="text" name="mtap_course" id='mtap-course' required></input>
+                <input style='font-size: 15px;' value="<?php echo $result['mtap_course']?>" type="text" name="mtap_course" id='mtap-course' required></input>
               </div>
               <button type="submit" name="update_course" class="save-changes-btn mt-4">
                 Save Changes
