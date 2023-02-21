@@ -106,7 +106,7 @@
             </div>
           <?php } else {?>
             <div>
-              <div style='font-size: 15px; font-weight:bold;'>Prerequisite</div>
+              <div class="overflow-auto mb-2" style='font-size: 15px; font-weight:bold; max-height: 300px;'>Prerequisite</div>
               <div>
                 <?php 
                   $pre_req = $result["pre_requisite_course"];
@@ -115,13 +115,13 @@
                     $query = mysqli_query($conn, $sql);
                     $course = mysqli_fetch_assoc($query);
                   ?>
-                    <div class="row-box" style="background: #f0dcdc; border-radius: 5px; padding: 10px; padding-left:20px;";><?= $course['course_title'] ?></div>
+                    <div class="row-box mb-2" style="background: #f0dcdc; border-radius: 5px; padding: 10px; padding-left:20px;";><?= $course['course_title'] ?></div>
                   <?php 
                     $pre_req = $course['pre_requisite_course'];
                   }
                   ?>
                   <form method ="POST">
-                    <button class=""></button>
+                    <button class="mt-4" id="clear-btn">Clear Pre-requisite</button>
                   </form>
               </div>
             </div>

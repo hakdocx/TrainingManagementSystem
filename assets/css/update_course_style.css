@@ -57,4 +57,10 @@
   font-weight: bold;
 }
 
+#clear-btn {
+  all: unset;
+  cursor:pointer; 
+  color:red;
+  font-weight:bold;
+}
 
