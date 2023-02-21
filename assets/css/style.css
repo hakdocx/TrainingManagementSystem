@@ -166,13 +166,13 @@ dialog::backdrop {
 }
 
 .page-link {
-    position: relative;
-    display: block;
-    color: #7b7a7a;
-    text-decoration: none;
-    background-color: #fff;
-    border: 1px solid #dee2e6;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  position: relative;
+  display: block;
+  color: #7b7a7a;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .page-link {
@@ -224,13 +224,13 @@ dialog::backdrop {
 }
 
 .col-2 {
-    flex: 0 0 auto;
-    width: 14%;
+  flex: 0 0 auto;
+  width: 14%;
 }
 
 .col-3 {
-    flex: right auto;
-    width: 10%;
+  flex: right auto;
+  width: 10%;
 }
 
 #noCourseFoundHeading {
@@ -241,4 +241,23 @@ dialog::backdrop {
 #noCourseFoundSub {
 	font-weight: 500;
 	font-size: 15px;
+}
+
+.asterisk {
+	color:red;
+}
+
+#mtap-course, #Implementation, #number-of-days, #course-title{
+  border: 2px solid lightgray; 
+  border-radius: 5px; 
+}
+
+#submit-btn {
+	font-size: 15px; 
+	background-color: #681a1a; 
+	border: 1px; 
+	border-radius: 5px; 
+	padding: 10px;
+	padding-right: 25px;
+	padding-left: 25px;
 }
