@@ -31,7 +31,7 @@
       <div class="row mt-5" id="button-box">
         <input type="hidden" value="<?=$result['course_id'];?>" name="c_id">
         <div class="col text-end">
-          <a href="index.php"; id="cancel-btn-vr">Cancel</a>
+          <a href="index.php" id="cancel-btn-vr" type="button";>Cancel</a>
         </div>
         <div class="col text-start">
           <button type="submit" name="delete_course" id="del-course-btn">Delete</button>
