@@ -15,13 +15,13 @@ if(isset($_POST['save_student']))
     $query_run = mysqli_query($conn, $query);
     if($query_run)
     {
-        $_SESSION['message'] = "Course Created Successfully";
+        $_SESSION['message'] = "Course Created!";
         header("Location: index.php");
         exit(0);
     }
     else
     {
-        $_SESSION['message'] = "Course Not Created";
+        $_SESSION['message'] = "Course Not Created!";
         header("Location: index.php");
         exit(0);
     }
@@ -42,14 +42,14 @@ if(isset($_POST['update_course']))
 
     if($query_run)
     {
-        $_SESSION['message'] = "Course Updated Successfully";
-        header("Location: index.php");
+        $_SESSION['message'] = "Course Updated!";
+        header("Location: updateCourse.php");
         exit(0);
     }
     else
     {
-        $_SESSION['message'] = "Course Not Updated";
-        header("Location: index.php");
+        $_SESSION['message'] = "Course Not Updated!";
+        header("Location: updateCourse.php");
         exit(0);
     }
 
@@ -65,14 +65,14 @@ if(isset($_POST['delete_course']))
 
     if($query_run)
     {
-        $_SESSION['message'] = "Course Deleted Successfully";
-        header("Location: index.php");
+        $_SESSION['message'] = "Course Deleted!";
+        header("Location: viewRecord.php");
         exit(0);
     }
     else
     {
-        $_SESSION['message'] = "Course Not Deleted";
-        header("Location: index.php");
+        $_SESSION['message'] = "Course Not Deleted!";
+        header("Location: viewRecord.php");
         exit(0);
     }
 }
