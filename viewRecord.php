@@ -14,9 +14,32 @@
   
 ?>
 
-<dialog id = 'deleteForm'>
-  Delete This ?
+
+<dialog id ='deleteForm' style="font-family: Montserrat;">
+  <div class="del-form-box pt-5 ps-5 pe-5">
+    <div class="row">
+      <h3 class="del-course-desc-vr">Delete this course?</h3>
+    </div>
+    <div class="row">
+      <hr>
+      <h4 class="del-course-title-vr">
+          <?php echo $result['course_title']; ?> will be remove from the list.
+      </h4>
+    </div>
+    <form action="code.php" method="POST">
+      <div class="row mt-5" id="button-box">
+        <input type="hidden" value="<?=$result['course_id'];?>" name="c_id">
+        <div class="col text-end">
+          <button id="cancel-btn-vr">Cancel</button>
+        </div>
+        <div class="col text-start">
+          <button type="submit" name="delete_course" id="del-course-btn">Delete</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </dialog>
+
 <body style = "font-family: Montserrat; overflow-x:hidden; background-color:#fefcfb;">
   <div class = "box">
     <div class="row pb-3" style="background-color: #681a1a; color: white; padding-left:100px; padding-top: 60px;">
@@ -77,35 +100,10 @@
 
           <div class="row mt-5">
             <div class="col-2 me-4 p-0">
-              <a href="updateCourse.php?id=<?php echo $id ?>" type="button" class="update-btn" style="
-                      border: 2px solid #681a1a;
-                      background-color: #fffcfa;
-                      text-align: center;
-                      color: #681a1a;
-                      padding: 10px;
-                      padding-left: 30px;
-                      padding-right: 30px;
-                      border-radius: 10px;
-                      font-weight: bold;
-                      text-decoration: none;
-                      "
-              >UPDATE</a>
+              <a href="updateCourse.php?id=<?php echo $id ?>" type="button" class="update-btn-vr">UPDATE</a>
             </div>
             <div class="col-2 p-0">
-              <button type="button" class="del-btn"
-                      style="
-                      border: 2px solid #681a1a;
-                      background-color: #681a1a;
-                      text-align: center;
-                      color:white;
-                      padding: 10px;
-                      padding-left: 30px;
-                      padding-right: 30px;
-                      border-radius: 10px;
-                      font-weight:bold;
-                      "
-                      id = "deleteBtn"
-              >DELETE</button>
+              <button type="button" class="del-btn-vr" id ="deleteBtn">DELETE</button>
             </div>
           </div>
         </div>
