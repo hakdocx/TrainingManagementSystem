@@ -144,18 +144,23 @@
 								<td class = "fs-5"> 
 								<?php 	 ?>
 									<?php 
-									if($student["pre_requisite_course"]) { ?>
-										<span class="badge bg-secondary">
-												<?php 	
-													$pre_req = $student["pre_requisite_course"];
-													
-													$sql = "SELECT * FROM `course` WHERE course_id = '$pre_req'";
-													$query = mysqli_query($conn, $sql);
-													$course = mysqli_fetch_assoc($query);
-
-													echo $course["course_title"];
-												 ?>
-										</span>
+									if($student["pre_requisite_course"]) { ?>	
+										<?php
+											$ctr = 0; 	
+											$pre_req = $student["pre_requisite_course"];
+										while($ctr < 3 && $pre_req) {
+											$sql = "SELECT * FROM `course` WHERE course_id = '$pre_req'";
+											$query = mysqli_query($conn, $sql);
+											$course = mysqli_fetch_assoc($query); ?>
+											<?php if($ctr == 2) {
+												echo '<br>';
+											} ?>
+											<span class="badge bg-secondary">
+												<?php	echo $course["course_title"];?>
+											</span>
+											<?php $ctr++;?>
+											<?php $pre_req = $course['pre_requisite_course']; ?>
+										<?php } ?>
 									<?php } ?>
 								</td>
 								<td class = "fs-5">	
