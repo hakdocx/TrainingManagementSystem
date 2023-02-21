@@ -173,13 +173,26 @@
 								</td>
 							</tr>
 							<?php }
-								} else {
-										echo "<h5> No Record Found </h5>";
-									}
+								} // else {
+								//		echo "<h5> No Record Found </h5>";
+								//	}
 							?>
 						</tbody>
 					</table>
 				</div>
+				
+				<?php
+					// Display no course message if no course returned
+					if($total == 0) {
+						echo 
+						'<div class="container h-100 d-flex">
+    						<div class="jumbotron my-auto mx-auto">
+								<h1 id="noCourseFoundHeading" class="text-center mb-0"> Course not found </h1>
+								<p id="noCourseFoundSub" class="text-center mt-0"> No records found in database </p>
+    						</div>
+						</div>';
+					}
+				?>
 				<nav class = "my-3">
 					<ul class="pagination justify-content-center pagination-md">
 					<?php if($page > 1) { ?>
