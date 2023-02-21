@@ -16,6 +16,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+  <?php include('assets/popup/message.php'); ?>
+
     <meta charset = "UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Training Management System</title>
