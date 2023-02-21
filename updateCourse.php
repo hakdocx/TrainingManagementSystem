@@ -1,5 +1,6 @@
 <?php 
 	require 'templates/connection.php';
+
   if(isset($_GET['id'])){
     $id = $_GET['id'];
   }
@@ -41,82 +42,69 @@
       <h1 style="color:#681a1a">
         <strong>Update Course</strong>
       </h1>
-      <form action="code.php" method="POST">
         <div class="row mt-1">
           <div class="col me-5">
-            <div class="row-box">
-              <label style='font-size: 15px; font-weight:bold;' for='course-title'>Course Title <label class="asterisk"> *</label></label>
-              <input style='font-size: 15px;' value = "<?php echo $result['course_title'] ?>" type="text" name="course_title" id='course-title' required>
-            </div>
-            <div class="row-box">
-              <label style='font-size: 15px; font-weight:bold;' for='number-of-days'>Number of Days to Complete <label class="asterisk"> *</label></label>
-              <input style='font-size: 15px;' value = "<?php echo $result['number_of_days'] ?>" type="number" name="number_of_days" id='number-of-days' required>
-            </div>
-            <div class="row-box">
-              <label style='font-size: 15px; font-weight:bold;' for='implementation'>Implementation <label class="asterisk"> *</label></label>
-              <input style='font-size: 15px;' value = "<?php echo $result['implementation'] ?>" name="implementation" id='implementation' rows="3" required></input>
-            </div>
-            <div class="row-box">
-              <label style='font-size: 15px; font-weight:bold;' for='mtap-course'>MTAP Course <label class="asterisk"> *</label></label>
-              <input style='font-size: 15px;' value = "<?php echo $result['mtap_course'] ?>" name="mtap_course" id='mtap-course' rows="3" required></input>
-            </div>
-            <div class="row-box">
-              <label style='font-size: 15px; font-weight:bold;'>Prerequisite Course <label class="asterisk"> *</label></label>
-              <div class="row">
-                <div class="input-group">
-                  <span class="input-group-append">
-                    <span class="btn" id="search-icon">
-                          <i class="fa fa-search"></i>
-                    </span>
-                  </span>
-                  <input type="text" id="search-input" placeholder="Search for course">
-                  <button type="button" class="add-btn" style="margin-left: 10px; border-radius: 10px;">ADD</button>
-                </div>
+            <form method = "POST">
+              <div class="row-box">
+                <label style='font-size: 15px; font-weight:bold;' for='course-title'>Course Title <label class="asterisk"> *</label></label>
+                <input style='font-size: 15px;' value = "<?php echo $result['course_title'] ?>" type="text" name="course_title" id='course-title' required>
               </div>
-            </div>
-            <div class="row-box pt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 8px; padding-left: 15px;text-align:left;">
-                <h6>Content here.</h6>
-            </div>
-            <div class="row-box pt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 8px; padding-left: 15px;text-align:left;">
-                <h6>Content here.</h6>
-            </div>
-            <div class="row-box pt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 8px; padding-left: 15px;text-align:left;">
-                <h6>Content here.</h6>
-            </div>
-
-            <button type="submit" name="update_course" class="save-changes-btn mt-4">
-              SAVE CHANGES
-            </button>
+              <div class="row-box">
+                <label style='font-size: 15px; font-weight:bold;' for='number-of-days'>Number of Days to Complete <label class="asterisk"> *</label></label>
+                <input style='font-size: 15px;' value = "<?php echo $result['number_of_days'] ?>" type="number" name="number_of_days" id='number-of-days' required>
+              </div>
+              <div class="row-box">
+                <label style='font-size: 15px; font-weight:bold;' for='implementation'>Implementation <label class="asterisk"> *</label></label>
+                <input style='font-size: 15px;' value = "<?php echo $result['implementation'] ?>" name="implementation" id='implementation' rows="3" required></input>
+              </div>
+              <div class="row-box">
+                <label style='font-size: 15px; font-weight:bold;' for='mtap-course'>MTAP Course <label class="asterisk"> *</label></label>
+                <input style='font-size: 15px;' value = "<?php echo $result['mtap_course'] ?>" name="mtap_course" id='mtap-course' rows="3" required></input>
+              </div>
+              <button type = "button" class = "save-changes-btn mt-4">
+                Save Changes
+              </button>
+            </form>
           </div>
-
           <div class="col">
-            <div class="row-box">
-              <label style='font-size: 15px; font-weight:bold;'>Instructors <label class="asterisk"> *</label></label>
-              <div class="row">
-                <div class="input-group">
-                  <span class="input-group-append">
-                    <span class="btn" id="search-icon">
-                          <i class="fa fa-search"></i>
+            <form method = "POST" action = "updateCourse.php?id=<?= $id ?>">
+              <div class="row-box">
+                <label style='font-size: 15px; font-weight:bold;'>Course Prerequisites <label class="asterisk"> *</label></label>
+                <div class="row">
+                  <div class="input-group">
+                    <span class="input-group-append">
+                      <span class="btn" id="search-icon">
+                            <i class="fa fa-search"></i>
+                      </span>
                     </span>
-                  </span>
-                  <input type="text" id="search-input" placeholder="Search for instructor">
-                  <button type="button" class="add-btn" style="margin-left: 10px; border-radius: 10px;">ADD</button>
+                    <input type="search" id="search-input" placeholder="Enter course name or id" name = 'course'>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="row-box mt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 15px; text-align:left;">
-                <h6>Content here.</h6>
-            </div>
-            <div class="row-box mt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 15px; text-align:left;">
-                <h6>Content here.</h6>
-            </div>
-            <div class="row-box mt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 15px; text-align:left;">
-                <h6>Content here.</h6>
+            </form>
+            <div class = "overflow-auto" style = 'max-height:300px'>
+            <?php 
+              if(isset($_POST['course'])) {
+                $course = $_POST['course'];
+                $sql = "
+                  SELECT * 
+                  FROM course
+                  WHERE course_title LIKE '%$course%' 
+                  OR course_id = '$course'; 
+                  ";
+                $query = mysqli_query($conn, $sql);
+                
+
+                while($course = mysqli_fetch_assoc($query)) { ?>
+                  <div class="row-box pt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 8px; padding-left: 15px;text-align:left;">
+                    <h6><?= $course['course_id'] . " - " . $course['course_title'] ?></h6>
+                  </div>
+                <?php } ?>
+              <?php } ?>
             </div>
           </div>
-        </div>
-      </form>
+        </div>    
+      </div>
     </div>
-  </div>
   </body>
 </html>
