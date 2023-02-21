@@ -45,19 +45,19 @@
         <div class="row mt-1">
           <div class="col me-5">
             <form method = "POST">
-              <div class="row-box">
+              <div class="row-box mb-3">
                 <label style='font-size: 15px; font-weight:bold;' for='course-title'>Course Title <label class="asterisk"> *</label></label>
                 <input style='font-size: 15px;' value = "<?php echo $result['course_title'] ?>" type="text" name="course_title" id='course-title' required>
               </div>
-              <div class="row-box">
+              <div class="row-box mb-3">
                 <label style='font-size: 15px; font-weight:bold;' for='number-of-days'>Number of Days to Complete <label class="asterisk"> *</label></label>
                 <input style='font-size: 15px;' value = "<?php echo $result['number_of_days'] ?>" type="number" name="number_of_days" id='number-of-days' required>
               </div>
-              <div class="row-box">
+              <div class="row-box mb-3">
                 <label style='font-size: 15px; font-weight:bold;' for='implementation'>Implementation <label class="asterisk"> *</label></label>
                 <input style='font-size: 15px;' value = "<?php echo $result['implementation'] ?>" name="implementation" id='implementation' rows="3" required></input>
               </div>
-              <div class="row-box">
+              <div class="row-box mb-3">
                 <label style='font-size: 15px; font-weight:bold;' for='mtap-course'>MTAP Course <label class="asterisk"> *</label></label>
                 <input style='font-size: 15px;' value = "<?php echo $result['mtap_course'] ?>" name="mtap_course" id='mtap-course' rows="3" required></input>
               </div>
@@ -68,7 +68,7 @@
           </div>
           <div class="col">
             <?php if(!$result['pre_requisite_course']) { ?>
-            <form method = "POST" action = "updateCourse.php?id=<?= $id ?>">
+            <form method ="POST" action ="updateCourse.php?id=<?= $id ?>">
               <div class="row-box">
                 <label style='font-size: 15px; font-weight:bold;'>Course Prerequisites <label class="asterisk"> *</label></label>
                 <div class="row">
@@ -83,7 +83,7 @@
                 </div>
               </div>
             </form>
-            <div class = "overflow-auto" style = 'max-height:300px'>
+            <div class = "list-group overflow-auto" style ='max-height:300px;'>
             <?php 
               if(isset($_POST['course'])) {
                 $course = $_POST['course'];
@@ -97,9 +97,9 @@
                 
 
                 while($course = mysqli_fetch_assoc($query)) { ?>
-                  <div class="row-box pt-3" style="background-color:#e8dad9; border-radius: 10px; padding: 8px; padding-left: 15px;text-align:left;">
+                  <a href="index.php" class="list-group-item list-group-item-action" style="padding: 8px; padding-left: 15px;text-align:left; border: 1px solid lightgray;">
                     <h6><?= $course['course_id'] . " - " . $course['course_title'] ?></h6>
-                  </div>
+                </a>
                 <?php } ?>
               <?php } ?>
             </div>
