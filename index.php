@@ -47,40 +47,30 @@
 
 ?>
 
-<body class = "py-5">
-	<dialog id = 'training-form'>
+<body class ="py-5">
+	<dialog id ='training-form'>
 		<form method = "POST" action = "code.php">
 			<div class="form-container">
 				<h2> ADD TRAINING FORM </h2>
-				<br>
-				<div class = "form-row">
-					<label for = 'course-title'>Course Title*</label>
+				<div class = "form-row mt-3">
+					<label for = 'course-title' style="font-weight: bold; color: #5B5B5B">Course Title <label class="asterisk">*</label></label>
 					<input style='font-size: 17px;' type="text" name="course_title" id ='course-title' required>
 				</div>
-				<div class = "form-row">
-					<label for = 'number-of-days'>Number of Days*</label>
+				<div class = "form-row mt-2">
+					<label for = 'number-of-days' style="font-weight: bold; color: #5B5B5B" >Number of Days <label class="asterisk">*</label></label>
 					<input style='font-size: 17px;' type="number" name="number_of_days" id ='number-of-days' required>
 				</div>
 				<div class = "form-row mt-2">
-					<label for = 'mtap-course'>MTAP Course*</label>
+					<label for = 'mtap-course' style="font-weight: bold; color: #5B5B5B">MTAP Course <label class="asterisk">*</label></label>
 					<input style='font-size: 17px;' type="text" name="mtap_course" id ='mtap-course' required>
 				</div>
-				<div class = "form-row">
-					<label for = 'mtap-course'>Implementation*</label>
+				<div class = "form-row mt-2">
+					<label for = 'mtap-course' style="font-weight: bold; color: #5B5B5B"> Implementation <label class="asterisk">*</label></label>
 					<input style='font-size: 17px;' type="text" name="implementation" id ='Implementation' required>
 				</div>
-	
-				<br><br>
+				<br>
 				<center>
-				  <button style='
-            font-size: 15px; 
-            background-color: #681a1a;  
-            height: 35px; 
-            border: 1px; 
-            border-radius: 5px; 
-            width: 25%;
-            ' 
-            name="save_student" type = "submit" class="btn btn-primary" >Submit</button> 
+				  <button name="save_student" type = "submit" class="btn btn-primary mt-3" id="submit-btn" >Submit</button> 
         </center>
 		</form>
 	</dialog>
