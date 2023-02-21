@@ -47,6 +47,8 @@
 
 ?>
 
+<?php include('assets/popup/message.php'); ?>
+
 <body class ="py-5">
 	<dialog id ='training-form'>
 		<form method = "POST" action = "code.php">
