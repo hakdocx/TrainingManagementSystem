@@ -67,6 +67,7 @@
             </form>
           </div>
           <div class="col">
+            <?php if(!$result['pre_requisite_course']) { ?>
             <form method = "POST" action = "updateCourse.php?id=<?= $id ?>">
               <div class="row-box">
                 <label style='font-size: 15px; font-weight:bold;'>Course Prerequisites <label class="asterisk"> *</label></label>
@@ -102,6 +103,26 @@
                 <?php } ?>
               <?php } ?>
             </div>
+          <?php } else {?>
+            <div>
+              <div class = "fs-4">Prerequisites</div>
+              <div>
+                <?php 
+                  $pre_req = $result["pre_requisite_course"];
+                  while($pre_req) {
+                    $sql = "SELECT * FROM course WHERE course_id = '$pre_req'";
+                    $query = mysqli_query($conn, $sql);
+                    $course = mysqli_fetch_assoc($query);
+                  ?>
+                    <div><?= $course['course_title'] ?></div>
+                  <?php 
+                    $pre_req = $course['pre_requisite_course'];
+                  }
+                   ?>
+               
+              </div>
+            </div>
+          <?php } ?>
           </div>
         </div>    
       </div>
