@@ -51,20 +51,20 @@
 			<div class="form-container">
 				<h2> ADD TRAINING FORM </h2>
 				<div class = "form-row mt-3">
-					<label for = 'course-title' class = "fw-bold" style="color: #5B5B5B">Course Title <label class="asterisk">*</label></label>
+					<label for = 'course-title' class = "fw-bold" style="color: #5B5B5B">Course Title <span class="asterisk">*</span></label>
 					<input style='font-size: 17px;' type="text" name="course_title" id ='course-title' required>
 				</div>
 				<div class = "form-row mt-2">
-					<label for = 'number-of-days' class = "fw-bold" style="color: #5B5B5B" >Number of Days <label class="asterisk">*</label></label>
+					<label for = 'number-of-days' class = "fw-bold" style="color: #5B5B5B" >Number of Days <span class="asterisk">*</span></label>
 					<input style='font-size: 17px;' type="number" name="number_of_days" id ='number-of-days' required>
 				</div>
 				<div class = "form-row mt-2">
-					<label for = 'mtap-course' class = "fw-bold" style="color: #5B5B5B">MTAP Course <label class="asterisk">*</label></label>
+					<label for = 'mtap-course' class = "fw-bold" style="color: #5B5B5B">MTAP Course</label>
 					<input style='font-size: 17px;' type="text" name="mtap_course" id ='mtap-course'>
 				</div>
 				<div class = "form-row mt-2">
-					<label for = 'mtap-course' class = "fw-bold" style="color: #5B5B5B"> Implementation <label class="asterisk">*</label></label>
-					<input style='font-size: 17px;' type="text" name="implementation" id ='Implementation' required>
+					<label for = 'mtap-course' class = "fw-bold" style="color: #5B5B5B"> Implementation</label>
+					<input style='font-size: 17px;' type="text" name="implementation" id ='Implementation'>
 				</div>
 				<br>
 				<center>
