@@ -5,7 +5,7 @@ Web Development Project is a web-based application that utilize the use of PHP, 
 This project is a requirement for the completion of the course Web Development.
 
 ## Project Requirements
-[a link](https://github.com/Arc-Data/TrainingManagementSystem/blob/report_mgmt/Requirements.md)
+[Project_Requirements.md link](https://github.com/Arc-Data/TrainingManagementSystem/blob/report_mgmt/Requirements.md)
 
 ## Project Overview:
 - user_mgmt                         - User Management Module
