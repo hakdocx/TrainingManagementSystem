@@ -81,7 +81,7 @@
         }
 
         center {
-            margin-top: 80px;
+            margin-top: 120px;
         }
 
 
@@ -181,7 +181,7 @@
 
     $conn->close();
     ?>
-    <br margin:500px>
+
     <script>
     $(document).ready(function(){
         var rows = $("#table tbody tr");

@@ -8,11 +8,14 @@
 
 	<title>Course Report</title>
 	<style>
-				*{
+		*{
             font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            }
-			
+            margin: 6px;
+        }
+		
+		nav {
+			margin: 0;
+		}
 		table {
 			margin: auto;
 			border-collapse: collapse;
@@ -27,15 +30,15 @@
             background-color: #681a1a;
             background-size: cover;
             height: 60px;
-            }
+			margin-top: 80px;
+        }
 
         header h1 {
             font-size: 20px;
-            padding: 20px;
+            padding: 2px;
             color: #ffe000;
-
-            }
-			#search-input {
+        }
+		#search-input {
             background-color: maroon;
             color: #f0ece2; 
             font-size: 15px;
@@ -49,6 +52,15 @@
             transition: opacity 1s;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8)  ;
         }
+
+		center {
+			font-size: 14px;
+		}
+		/** type submit margin top */
+		.button{
+			margin-top: 20px;
+		}
+		
         .homebutton{
             float: right ;
              margin-top: -45px;
@@ -80,7 +92,7 @@
 	<center>
 	<strong> <h1>Course Report</h1> </strong>
 	<div class="homebutton">
-        <a href="main.html"><span class="material-symbols-outlined">HOME</span></a>
+        <a href="main.php"><span class="material-symbols-outlined">HOME</span></a>
       </div>
 	</header>
 	<div class="chas">
@@ -91,7 +103,7 @@
 			<label for="end_date">End Date:</label>
 			<input type="date" name="end_date" id="end_date">
 			<br>
-			<input type="submit" value="Generate Report">
+			<input class="button" type="submit" value="Generate Report">
 	</center>
 		</form>
 	</div>

@@ -1,6 +1,6 @@
 <?php
 
-$hostname = "localhost:3308";
+/* $hostname = "localhost:3308";
 $username = "root";
 $password = "";
 $databaseName = "databasey";
@@ -9,7 +9,7 @@ $connect = mysqli_connect($hostname, $username, $password, $databaseName);
 $query = "SELECT * FROM `course`";
 
 $result1 = mysqli_query($connect, $query);
-
+ */
 ?>
 
 <!DOCTYPE html>
@@ -63,12 +63,16 @@ $result1 = mysqli_query($connect, $query);
 			</div>
 			<br>
 			<?php
-		    $conn = mysqli_connect($hostname, $username, $password, $databaseName);
+		    /* $conn = mysqli_connect($hostname, $username, $password, $databaseName);
 
 		    if ($conn->connect_error) {
 		        die("Connection failed: " . $conn->connect_error);
-		    }
+		    } */
+			require '../templates/connection.php';
+			require '../templates/header.php';
+			require '../templates/navigation.php';
 
+			session_start();
 		    $sql = "SELECT DISTINCT instructor_id FROM pool_instructor_details";
 		    $result = $conn->query($sql);
 
@@ -83,7 +87,7 @@ $result1 = mysqli_query($connect, $query);
 		    }
 
 
-		    $conn->close();
+		    #$conn->close();
 		    ?>
 
 		    <table class="table table-stripped table-hover">
@@ -93,8 +97,8 @@ $result1 = mysqli_query($connect, $query);
 						<th>Last Name</th>
 						<th>First Name</th>
 						<th>Middle Name</th>
-						<th>Qualification</th>
-						<th>Designation</th>
+						<th>Qualification Degree</th>
+						<th>Course Specialization</th>
 					</tr>
 				</thead>
 				<br>
@@ -102,7 +106,7 @@ $result1 = mysqli_query($connect, $query);
 
 				<tbody>
 				<?php
-					$servername = "localhost:3308";
+					/* $servername = "localhost:3308";
 					$username = "root";
 					$password = "";
 					$database = "databasey";
@@ -115,14 +119,18 @@ $result1 = mysqli_query($connect, $query);
 						die("Connection failed: " . $connection->connect_error);
 
 
-					}
+					} */
+					require '../templates/connection.php';
+					require '../templates/header.php';
+					require '../templates/navigation.php';
 
+					#session_start();
 					// Read all row from database table
 					$sql = "SELECT * FROM pool_instructor_details Inner Join account_details On pool_instructor_details.account_id = account_details.account_id Inner Join registration_course On registration_course.instructor_id = pool_instructor_details.instructor_id  ";
-					$result = $connection->query($sql);
+					$result = $conn->query($sql);
 
 					if (!$result) {
-                    die("Query failed: " . $connection->error);
+                    die("Query failed: " . $conn->error);
                     }
     				
 
@@ -132,14 +140,12 @@ $result1 = mysqli_query($connect, $query);
 								<td>". $row["lastname"] ."</td>
 								<td>". $row["firstname"] ."</td>
 								<td>". $row["middlename"] ."</td>
-								<td>". $row["qualification"] ."</td>
-								<td>". $row["designation"] ."</td>
+								<td>". $row["qualification_degree"] ."</td>
+								<td>". $row["course_specialization"] ."</td>
 							</tr>";
 						}
 					
-
-
-    				$connection->close();
+    				#$connection->close();
 				?>
 				</tbody>
 			</table>

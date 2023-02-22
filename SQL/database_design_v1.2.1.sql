@@ -291,10 +291,10 @@ INSERT INTO `account_details` (`account_id`, `username`, `password`, `user_type`
 --
 
 INSERT INTO `pool_instructor_details` (`instructor_id`, `account_id`, `rank`, `qualification_degree`, `course_specialization`, `other_qualification`) VALUES
-(700000, 100005, 'PCO', '', 'Computer Science', ''),
-(700001, 100006, 'PCO', '', 'Computer Science', ''),
-(700002, 100012, 'PNCO', '', 'Math', ''),
-(700003, 100013, 'NUP', '', 'Information Technology', '');
+(700000, 100005, 'PCO', 'Associate''s in Degree', 'Computer Science', ''),
+(700001, 100006, 'PCO', 'Bachelor''s in Education', 'Computer Science', ''),
+(700002, 100012, 'PNCO', 'Master''s Degree', 'Math', ''),
+(700003, 100013, 'NUP', 'Doctof of Education Degree', 'Information Technology', '');
 --
 -- Dumping data for table `student`
 --
