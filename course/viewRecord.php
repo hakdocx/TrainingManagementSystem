@@ -44,8 +44,7 @@
 <body style = "font-family: Montserrat; overflow-x:hidden; background-color:#fefcfb;">
   <?php include '../templates/navigation.php' ?>
   <div class = "box m-5 p-5">
-    <div class="row pb-3 rounded" style="background-color: #681a1a; color: white; padding-left:100px; padding-top: 60px;">
-        <p><?= $id ?></p>
+    <div class="row p-5 rounded" style="background-color: #681a1a; color: white">
         <h1 style = "font-size: 48px;">
          <?php echo $result['course_title']; ?>
         </h1>
@@ -53,6 +52,7 @@
           <i class="fa-regular fa-calendar-days"></i>
         <?php echo $result ['number_of_days'] . " Days"; ?>
         </h5>
+        <a href = "index.php" class = "text-decoration-none" style = "color:white">&#8592; View Course List</a>
     </div>      
     <div class="container mt-2 p-5" style="background-color:#fefcfb;;">
       <div class="row">
