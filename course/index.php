@@ -1,7 +1,7 @@
 <?php 
 
-	require 'templates/connection.php';
-	require 'templates/header.php';
+	require '../templates/connection.php';
+	require '../templates/header.php';
 
 	session_start();
 
@@ -41,11 +41,9 @@
 		}
 	}
 
-	
-		
-	
-
 ?>
+
+<?php include('../assets/popup/message.php'); ?>
 
 <body class ="py-5">
 	<dialog id ='training-form'>
@@ -53,20 +51,20 @@
 			<div class="form-container">
 				<h2> ADD TRAINING FORM </h2>
 				<div class = "form-row mt-3">
-					<label for = 'course-title' style="font-weight: bold; color: #5B5B5B">Course Title <label class="asterisk">*</label></label>
+					<label for = 'course-title' class = "fw-bold" style="color: #5B5B5B">Course Title <span class="asterisk">*</span></label>
 					<input style='font-size: 17px;' type="text" name="course_title" id ='course-title' required>
 				</div>
 				<div class = "form-row mt-2">
-					<label for = 'number-of-days' style="font-weight: bold; color: #5B5B5B" >Number of Days <label class="asterisk">*</label></label>
+					<label for = 'number-of-days' class = "fw-bold" style="color: #5B5B5B" >Number of Days <span class="asterisk">*</span></label>
 					<input style='font-size: 17px;' type="number" name="number_of_days" id ='number-of-days' required>
 				</div>
 				<div class = "form-row mt-2">
-					<label for = 'mtap-course' style="font-weight: bold; color: #5B5B5B">MTAP Course <label class="asterisk">*</label></label>
-					<input style='font-size: 17px;' type="text" name="mtap_course" id ='mtap-course' required>
+					<label for = 'mtap-course' class = "fw-bold" style="color: #5B5B5B">MTAP Course</label>
+					<input style='font-size: 17px;' type="text" name="mtap_course" id ='mtap-course'>
 				</div>
 				<div class = "form-row mt-2">
-					<label for = 'mtap-course' style="font-weight: bold; color: #5B5B5B"> Implementation <label class="asterisk">*</label></label>
-					<input style='font-size: 17px;' type="text" name="implementation" id ='Implementation' required>
+					<label for = 'mtap-course' class = "fw-bold" style="color: #5B5B5B"> Implementation</label>
+					<input style='font-size: 17px;' type="text" name="implementation" id ='Implementation'>
 				</div>
 				<br>
 				<center>
@@ -113,7 +111,6 @@
 							<tr style = 'font-weight: 500;'>
 								<td scope = 'col'>COURSE TITLE</th>
 								<td scope = 'col'>DURATION</th>
-								<td scope = 'col'>MTAP COURSE</th>
 								<td scope = 'col'>YEAR CERTIFIED</th>
 								<td scope = 'col'>PREREQUISITE</th>
 								<td scope = 'col'>Action</th>
@@ -127,14 +124,7 @@
 							<tr>
 								<td class = "fs-5" style = 'font-weight: 600'><?= $student['course_title']; ?></td>
 								<td class = "fs-5"><?php echo $student['number_of_days'] . " days"; ?></td>
-								<td class = "fs-5">
-									<?php 
-											if($student['mtap_course']) {
-												echo $student['mtap_course'];
-											}  else {
-												echo "NA";
-											}
-									?></td>
+								
 								<td class = "fs-5">
 									<?php 
 										$timestamp = strtotime($student['year_certified']); 
@@ -242,7 +232,7 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src = "assets/js/training-form.js" defer></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src = "../assets/js/message.js"></script>
+	<script type="text/javascript" src = "../assets/js/training-form.js" defer></script>
 </body>
 </html>

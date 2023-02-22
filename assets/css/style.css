@@ -18,6 +18,15 @@ dialog {
 	border-radius:12px;
 }
 
+.pop-up {
+	position:absolute;
+	top:40px;
+	right:0;
+	color:white;
+	font-size:16px;
+	background:green;
+}
+
 .form-row {
 	display:flex;
 	flex-direction: column;
@@ -101,6 +110,8 @@ body {
 	padding:5px 20px;
 	height: 50px;
 	justify-content: center;
+	text-decoration: none;
+	width: 55px;
 }
 
 .button2 {
@@ -161,8 +172,8 @@ dialog::backdrop {
 }
 
 .col-lg-10 {
-    flex: 0 0 auto;
-    width: 100%;
+  flex: 0 0 auto;
+  width: 100%;
 }
 
 .page-link {
@@ -190,8 +201,8 @@ dialog::backdrop {
   }
 
 .btn-primary {
-    color: #fff;
-    background-color: #681a1a;
+  color: #fff;
+  background-color: #681a1a;
 	border-color: #681a1a;
 }
 
@@ -231,6 +242,7 @@ dialog::backdrop {
 .col-3 {
   flex: right auto;
   width: 10%;
+  list-style: none;
 }
 
 #noCourseFoundHeading {
@@ -260,4 +272,34 @@ dialog::backdrop {
 	padding: 10px;
 	padding-right: 25px;
 	padding-left: 25px;
+}
+
+.alert-dismissible {
+  float: right;
+}
+
+.alert-warning {
+  color: white;
+	display: inline-block;
+  background-color: #00c04b;
+	border-color: #00c04b;
+	border-radius: 5px;
+	width: 15%;
+	padding: 5px;
+	font-size: 15px;
+	justify-content: center;
+	text-align: center;
+	height: 50px;
+}
+
+.gg-check-o {
+  box-sizing: border-box;
+  position: relative;
+	display:inline-flex;
+  transform: scale(var(--ggs,1));
+  width: 22px;
+  height: 22px;
+  border: 2px solid;
+  border-radius: 50px;
+	top: 5px;
 }
