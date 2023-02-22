@@ -43,24 +43,24 @@
     </div>
     <div class="container mt-4 pb-5 pe-5 ps-5" style="background-color:#fffcfa;">
         <div class="row mt-1">
-          <div class="col me-5">
+          <div class="col me-5 fs-5">
             <form action="code.php" method ="POST">
               <input type="hidden" value="<?php echo $id?>" name="id">
               <div class="row-box mb-3">
-                <label style='font-size: 15px; font-weight:bold;' for='course-title'>Course Title <label class="asterisk"> *</label></label>
-                <input style='font-size: 15px;' value="<?php echo $result['course_title']?>" type="text" name="course_title" id='course-title' required>
+                <label class = "fw-bold" style='font-size: 15px' for='course-title'>Course Title <span class="asterisk"> *</span></label>
+                <input value="<?php echo $result['course_title']?>" type="text" name="course_title" id='course-title' required>
               </div>
               <div class="row-box mb-3">
-                <label style='font-size: 15px; font-weight:bold;' for='number-of-days'>Number of Days to Complete <label class="asterisk"> *</label></label>
-                <input style='font-size: 15px;' value="<?php echo $result['number_of_days']?>" type="number" name="number_of_days" id='number-of-days' required>
+                <label class = "fw-bold" for='number-of-days'>Number of Days to Complete <span class="asterisk"> *</span></label>
+                <input value="<?php echo $result['number_of_days']?>" type="number" name="number_of_days" id='number-of-days' required>
               </div>
               <div class="row-box mb-3">
-                <label style='font-size: 15px; font-weight:bold;' for='implementation'>Implementation <label class="asterisk"> *</label></label>
-                <input style='font-size: 15px;' value="<?php echo $result['implementation']?>" type ="text" name="implementation" id='implementation' required></input>
+                <label class = "fw-bold" for='implementation'>Implementation</label>
+                <input value="<?php echo $result['implementation']?>" type ="text" name="implementation" id='implementation'></input>
               </div>
               <div class="row-box mb-3">
-                <label style='font-size: 15px; font-weight:bold;' for='mtap-course'>MTAP Course <label class="asterisk"> *</label></label>
-                <input style='font-size: 15px;' value="<?php echo $result['mtap_course']?>" type="text" name="mtap_course" id='mtap-course' required></input>
+                <label class = "fw-bold" for='mtap-course'>MTAP Course</label>
+                <input style='font-size: 15px;' value="<?php echo $result['mtap_course']?>" type="text" name="mtap_course" id='mtap-course'></input>
               </div>
               <button type="submit" name="update_course" class="save-changes-btn mt-4">
                 Save Changes
@@ -71,7 +71,7 @@
             <?php if(!$result['pre_requisite_course']) { ?>
             <form method ="POST" action ="updateCourse.php?id=<?= $id ?>">
               <div class="row-box">
-                <label style='font-size: 15px; font-weight:bold;'>Course Prerequisites <label class="asterisk"> *</label></label>
+                <label class = "fs-5 fw-bold">Course Prerequisites <label class="asterisk"> *</label></label>
                 <div class="row">
                   <div class="input-group">
                     <span class="input-group-append">
@@ -110,7 +110,7 @@
             </div>
           <?php } else {?>
             <div>
-              <div class="overflow-auto mb-2" style='font-size: 15px; font-weight:bold; max-height: 300px;'>Prerequisite</div>
+              <div class="overflow-auto mb-2" class = "fs-5 fw-bold" style='max-height: 300px;'>Prerequisite</div>
               <div>
                 <?php 
                   $pre_req = $result["pre_requisite_course"];
