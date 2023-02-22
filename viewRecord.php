@@ -62,8 +62,12 @@
             <h4>
               <strong>IMPLEMENTATION</strong>
             </h4>
-            <p>
-              <?php echo $result['implementation']?>
+            <p class ="ps-4 p-1">
+              <?php if ($result['implementation']) {?>
+                <?php echo $result['implementation'];?>
+              <?php }else { 
+                  echo "Placeholder text";?>
+              <?php } ?>
             </p>
           </div>
           
@@ -71,8 +75,12 @@
             <h4>
               <strong>MTAP COURSE</strong>
             </h4>
-            <p>
-              <?php echo $result['mtap_course']?>
+            <p class ="ps-4 p-1">
+              <?php if ($result['mtap_course']) {?>
+                <?php echo $result['mtap_course'];?>
+              <?php } else { 
+                  echo "Placeholder text";?>
+              <?php } ?>
             </p>
           </div>
 
@@ -83,16 +91,20 @@
           <ul style="padding-left:30px;">
             <?php 
                 $pre_req = $result["pre_requisite_course"];
-                while($pre_req) {
-                  $sql = "SELECT * FROM course WHERE course_id = '$pre_req'";
-                  $query = mysqli_query($conn, $sql);
-                  $course = mysqli_fetch_assoc($query);
-                ?>
-                  <li>
-                    <a class="fw-bold" href style="color:#9D2426;"><?= $course['course_title'] ?></a>
-                  </li>
-                <?php 
-                  $pre_req = $course['pre_requisite_course'];
+                if ($pre_req){
+                  while($pre_req) {
+                    $sql = "SELECT * FROM course WHERE course_id = '$pre_req'";
+                    $query = mysqli_query($conn, $sql);
+                    $course = mysqli_fetch_assoc($query);
+                    ?>
+                      <li class ="ps-2 pt-1">
+                        <a class="fw-bold" href style="color:#9D2426;"><?= $course['course_title'] ?></a>
+                      </li>
+                    <?php 
+                      $pre_req = $course['pre_requisite_course'];
+                  }
+                } else {
+                  echo "<li>Placeholder text</li>";
                 }
                 ?>
             <?php ?>
