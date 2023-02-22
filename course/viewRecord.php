@@ -42,16 +42,15 @@
 </dialog>
 
 <body style = "font-family: Montserrat; overflow-x:hidden; background-color:#fefcfb;">
-  <div class = "box">
-    <div class="row pb-3" style="background-color: #681a1a; color: white; padding-left:100px; padding-top: 60px;">
-        <a href="index.php" style="text-decoration:none; color:white;">
-          &#8592; Back to View
-        </a>
+  <?php include '../templates/navigation.php' ?>
+  <div class = "box m-5 p-5">
+    <div class="row pb-3 rounded" style="background-color: #681a1a; color: white; padding-left:100px; padding-top: 60px;">
+        <p><?= $id ?></p>
         <h1 style = "font-size: 48px;">
          <?php echo $result['course_title']; ?>
         </h1>
         <h5>
-          #
+          <i class="fa-regular fa-calendar-days"></i>
         <?php echo $result ['number_of_days'] . " Days"; ?>
         </h5>
     </div>      
