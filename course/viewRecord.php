@@ -1,4 +1,6 @@
 <?php 
+  session_start();
+
 	require '../templates/connection.php';
   require '../templates/header.php';
   if(isset($_GET['id'])){
@@ -43,6 +45,8 @@
 
 <body style = "font-family: Montserrat; overflow-x:hidden; background-color:#fefcfb;">
   <?php include '../templates/navigation.php' ?>
+  <?php include('../assets/popup/message.php'); ?>
+
   <div class = "box m-5 p-5">
     <div class="row p-5 rounded" style="background-color: #681a1a; color: white">
         <h1 style = "font-size: 48px;">
@@ -114,9 +118,20 @@
             <div class="col-2 me-4 p-0">
               <a href="updateCourse.php?id=<?php echo $id ?>" type="button" class="update-btn-vr">UPDATE</a>
             </div>
+            <?php 
+
+              $sql = "
+                SELECT * 
+                FROM `registration_course`
+                WHERE course_id = $id";
+
+              $query = mysqli_query($conn, $sql);
+              if(!mysqli_query($conn, $sql)) : 
+            ?>
             <div class="col-2 p-0">
               <button type="button" class="del-btn-vr" id ="deleteBtn">DELETE</button>
             </div>
+            <?php endif ?>
           </div>
         </div>
         <div class="col" style="background-color:#fefcfb;">
@@ -132,6 +147,7 @@
       </div>
     </div>
   </div>
+  <script src = "../assets/js/message.js"></script>
   <script src = "../assets/js/delete.js"></script>
 </body>
 </html>

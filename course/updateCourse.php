@@ -18,7 +18,6 @@
 <html>
   <head>
 
-  <?php include('../assets/popup/message.php'); ?>
 
     <meta charset = "UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,7 +35,9 @@
 
   </head>
   <body style="font-family: Montserrat; overflow-x:hidden; background-color:#fffcfa">
-    <?php include '../templates/navigation.php' ?>
+  <?php include '../templates/navigation.php' ?>
+  <?php include('../assets/popup/message.php'); ?>
+  
   <div class="box m-5 p-5">
     <div class="row p-5 rounded" style="background-color:#681a1a; color: white">
         <p><?= $id . " - " . $result['course_title'] ?></p>
