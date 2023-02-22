@@ -61,5 +61,8 @@ Course-Management-System
 ```
 
 ## Contributions
-SECTION BSIT 3-1N SY 2020-2024
+WHOLE SECTION BSIT 3-1N SY 2020-2024
 
+## GITHUB Collaborators
+[Contributor Name](https://github.com/Arc-Data)
+[Contributor Name](https://github.com/ron-ligsay)
