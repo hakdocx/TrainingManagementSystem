@@ -1,6 +1,6 @@
 <?php 
-	require 'templates/connection.php';
-  require 'templates/header.php';
+	require '../templates/connection.php';
+  require '../templates/header.php';
   if(isset($_GET['id'])){
     $id = $_GET['id'];
   }
@@ -14,7 +14,7 @@
   
 ?>
 
-<?php include('assets/popup/message.php'); ?>
+<?php include('../assets/popup/message.php'); ?>
 
 <dialog id ='deleteForm' style="font-family: Montserrat;">
   <div class="del-form-box pt-5 ps-5 pe-5">
@@ -133,6 +133,6 @@
       </div>
     </div>
   </div>
-  <script src = "assets/js/delete.js"></script>
+  <script src = "../assets/js/delete.js"></script>
 </body>
 </html>

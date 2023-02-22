@@ -1,5 +1,5 @@
 <?php 
-	require 'templates/connection.php';
+	require '../templates/connection.php';
 
   if(isset($_GET['id'])){
     $id = $_GET['id'];
@@ -17,7 +17,7 @@
 <html>
   <head>
 
-  <?php include('assets/popup/message.php'); ?>
+  <?php include('../assets/popup/message.php'); ?>
 
     <meta charset = "UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/update_course_style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/update_course_style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
           rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
           crossorigin="anonymous"
@@ -44,28 +44,28 @@
           <strong>Update Course</strong>
         </h1>
     </div>
-    <div class="container mt-4 pb-5 pe-5 ps-5" style="background-color:#fffcfa;">
+    <div class="container mt-4 pe-5 ps-5" style="background-color:#fffcfa;">
         <div class="row mt-1">
           <div class="col me-5 fs-5">
             <form action="code.php" method ="POST">
               <input type="hidden" value="<?php echo $id?>" name="id">
               <div class="row-box mb-3">
-                <label class = "fw-bold" style='font-size: 15px' for='course-title'>Course Title <span class="asterisk"> *</span></label>
-                <input value="<?php echo $result['course_title']?>" type="text" name="course_title" id='course-title' required>
+                <label class = "fw-bold fs-6 mb-2" for='course-title'>Course Title <span class="asterisk"> *</span></label>
+                <input class = "fs-6 p-2" value="<?php echo $result['course_title']?>" type="text" name="course_title" id='course-title' required>
               </div>
               <div class="row-box mb-3">
-                <label class = "fw-bold" for='number-of-days'>Number of Days to Complete <span class="asterisk"> *</span></label>
-                <input value="<?php echo $result['number_of_days']?>" type="number" name="number_of_days" id='number-of-days' required>
+                <label class = "fw-bold fs-6 mb-2" for='number-of-days'>Number of Days to Complete <span class="asterisk"> *</span></label>
+                <input class = "fs-6 p-2" value="<?php echo $result['number_of_days']?>" type="number" name="number_of_days" id='number-of-days' required>
               </div>
               <div class="row-box mb-3">
-                <label class = "fw-bold" for='implementation'>Implementation</label>
-                <input value="<?php echo $result['implementation']?>" type ="text" name="implementation" id='implementation'></input>
+                <label class = "fw-bold fs-6 mb-2" for='implementation'>Implementation</label>
+                <input class = "fs-6 p-2" value="<?php echo $result['implementation']?>" type ="text" name="implementation" id='implementation'></input>
               </div>
               <div class="row-box mb-3">
-                <label class = "fw-bold" for='mtap-course'>MTAP Course</label>
-                <input style='font-size: 15px;' value="<?php echo $result['mtap_course']?>" type="text" name="mtap_course" id='mtap-course'></input>
+                <label class = "fw-bold fs-6 mb-2"  for='mtap-course'>MTAP Course</label>
+                <input class = "fs-6 p-2" value="<?php echo $result['mtap_course']?>" type="text" name="mtap_course" id='mtap-course'></input>
               </div>
-              <button type="submit" name="update_course" class="save-changes-btn mt-4">
+              <button type="submit" name="update_course" class="save-changes-btn mt-4 fs-6">
                 Save Changes
               </button>
             </form>
@@ -74,7 +74,7 @@
             <?php if(!$result['pre_requisite_course']) { ?>
             <form method ="POST" action ="updateCourse.php?id=<?= $id ?>">
               <div class="row-box">
-                <label class = "fs-5 fw-bold">Course Prerequisites <label class="asterisk"> *</label></label>
+                <label class = "fs-6 fw-bold mb-2">Course Prerequisites <label class="asterisk"> *</label></label>
                 <div class="row">
                   <div class="input-group">
                     <span class="input-group-append">
@@ -82,12 +82,12 @@
                             <i class="fa fa-search"></i>
                       </span>
                     </span>
-                    <input type="search" id="search-input" placeholder="Enter course name or id" name = 'course'>
+                    <input class="fs-6" type="search" id="search-input" placeholder="Enter course name or id" name = 'course'>
                   </div>
                 </div>
               </div>
             </form>
-            <div class = "list-group overflow-auto" style ='max-height:300px; margin-right: 10px;'>
+            <div class = "list-group overflow-auto fs-6" style ='max-height:300px; margin-right: 2px;'>
             <?php 
               if(isset($_POST['course'])) {
                 $course = $_POST['course'];
@@ -102,9 +102,9 @@
                 
                 
                 while($course = mysqli_fetch_assoc($query)) { ?>
-                  <form method = "POST" action = "setPrerequisite.php?id=<?= $id  ?>">
-                    <input type="hidden" name="prerequisite_id" value = "<?= $course['course_id'] ?>">
-                    <button type = "submit" class="list-group-item list-group-item-action" style="padding: 8px; padding-left: 15px;text-align:left; border: 1px solid lightgray;">
+                  <form method ="POST" action ="setPrerequisite.php?id=<?= $id  ?>">
+                    <input type="hidden" name="prerequisite_id" value ="<?= $course['course_id'] ?>">
+                    <button type = "submit" class="list-group-item list-group-item-action fs-5" style="padding: 8px; padding-left: 15px;text-align:left; border: 1px solid lightgray;">
                       <h6><?= $course['course_id'] . " - " . $course['course_title'] ?></h6>
                     </button>
                   </form>
@@ -113,7 +113,7 @@
             </div>
           <?php } else {?>
             <div>
-              <div class="overflow-auto mb-2" class = "fs-5 fw-bold" style='max-height: 300px;'>Prerequisite</div>
+              <div class="overflow-auto mb-2" class="fs-6" style='max-height: 300px;'><strong>Prerequisite</strong></div>
               <div>
                 <?php 
                   $pre_req = $result["pre_requisite_course"];
@@ -122,14 +122,14 @@
                     $query = mysqli_query($conn, $sql);
                     $course = mysqli_fetch_assoc($query);
                   ?>
-                    <div class="row-box mb-2" style="background: #f0dcdc; border-radius: 5px; padding: 10px; padding-left:20px;";><?= $course['course_title'] ?></div>
+                    <div class="row-box mb-2 fs-6 p-2" style="background: #f0dcdc; border-radius: 5px; padding: 10px; padding-left:20px;";><?= $course['course_title'] ?></div>
                   <?php 
                     $pre_req = $course['pre_requisite_course'];
                   }
                   ?>
-                  <form method ="POST" action = "clear.php">
-                    <input type="hidden" name="id" value = "<?= $result['course_id'] ?>">
-                    <button class="mt-4" id="clear-btn" name = "">Clear Pre-requisite</button>
+                  <form method="POST" action ="clear.php">
+                    <input type="hidden" name="id" value ="<?= $result['course_id'] ?>">
+                    <button class="mt-4" id="clear-btn" >Clear Pre-requisite</button>
                   </form>
               </div>
             </div>

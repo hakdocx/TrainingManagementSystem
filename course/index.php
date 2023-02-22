@@ -1,7 +1,7 @@
 <?php 
 
-	require 'templates/connection.php';
-	require 'templates/header.php';
+	require '../templates/connection.php';
+	require '../templates/header.php';
 
 	session_start();
 
@@ -43,7 +43,7 @@
 
 ?>
 
-<?php include('assets/popup/message.php'); ?>
+<?php include('../assets/popup/message.php'); ?>
 
 <body class ="py-5">
 	<dialog id ='training-form'>
@@ -232,7 +232,7 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src = "assets/js/message.js"></script>
-	<script type="text/javascript" src = "assets/js/training-form.js" defer></script>
+	<script type="text/javascript" src = "../assets/js/message.js"></script>
+	<script type="text/javascript" src = "../assets/js/training-form.js" defer></script>
 </body>
 </html>
