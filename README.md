@@ -2,8 +2,7 @@
 
 ## Project Description
 
-## Project Overview
-
+## Project Overview:
 - user_mgmt                         - User Management Module
     - clear.php
     - code.php
