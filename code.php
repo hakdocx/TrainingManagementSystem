@@ -43,13 +43,13 @@ if(isset($_POST['update_course']))
     if($query_run)
     {
         $_SESSION['message'] = "Course Updated!";
-        header("Location: updateCourse.php");
+        header("Location: viewRecord.php?id=$id");
         exit(0);
     }
     else
     {
         $_SESSION['message'] = "Course Not Updated!";
-        header("Location: updateCourse.php");
+        header("Location: viewRecord.php?id=$id");
         exit(0);
     }
 
@@ -66,13 +66,13 @@ if(isset($_POST['delete_course']))
     if($query_run)
     {
         $_SESSION['message'] = "Course Deleted!";
-        header("Location: viewRecord.php");
+        header("Location: index.php");
         exit(0);
     }
     else
     {
         $_SESSION['message'] = "Course Not Deleted!";
-        header("Location: viewRecord.php");
+        header("Location: index.php");
         exit(0);
     }
 }
