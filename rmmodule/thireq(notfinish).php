@@ -63,7 +63,7 @@ $result1 = mysqli_query($connect, $query);
 			</div>
 			<br>
 			<?php
-		    $conn = mysqli_connect($hostname, $username, $password, $databaseName);
+		    /* $conn = mysqli_connect($hostname, $username, $password, $databaseName);
 
 		    if ($conn->connect_error) {
 		        die("Connection failed: " . $conn->connect_error);
@@ -74,7 +74,11 @@ $result1 = mysqli_query($connect, $query);
 
 		    if (!$result) {
 		        die("Query failed: " . $conn->error);
-		    }
+		    } */
+			require '../templates/connection.php';
+			require '../templates/header.php';
+
+			session_start();
 
 		    echo "<select id='search-input'>";
 		    echo "<option value='' disable>Select a course</option>";

@@ -93,11 +93,17 @@
       </div>
   </header>
     <?php
-    $conn = mysqli_connect('localhost', 'root', '', 'project') or die('Unable to connect'); 
-
+    /* $conn = mysqli_connect('localhost', 'root', '', 'project') or die('Unable to connect'); 
+    
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
-    }
+    } */
+
+    require '../templates/connection.php';
+	require '../templates/header.php';
+
+	session_start();
+
 
     $sql = "SELECT DISTINCT course.course_title FROM course";
     $result = $conn->query($sql);

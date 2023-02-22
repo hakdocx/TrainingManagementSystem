@@ -1,4 +1,3 @@
-# Course-Management-
 # Webdevelopment Project
 
 ## Project Description
@@ -49,3 +48,5 @@ Course-Management-System
 - viewRecord.php
 
 ## Contributions
+
+
