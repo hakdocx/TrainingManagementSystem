@@ -1,6 +1,12 @@
 # Webdevelopment Project
 
 ## Project Description
+Web Development Project is a web-based application that utilize the use of PHP, HTML, CSS, and JavaScript. This project is a School Management System that is used to manage the courses, students, instructors, registered course and student registered in course of the school. 
+This project is a requirement for the completion of the course Web Development.
+
+## Project Requirements
+[r2h]:
+https://github.com/Arc-Data/TrainingManagementSystem/blob/report_mgmt/Requirements.md
 
 ## Project Overview:
 - user_mgmt                         - User Management Module
@@ -56,5 +62,5 @@ Course-Management-System
 ```
 
 ## Contributions
-
+SECTION BSIT 3-1N SY 2020-2024
 
