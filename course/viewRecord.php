@@ -101,13 +101,13 @@
                     $course = mysqli_fetch_assoc($query);
                     ?>
                       <li class ="ps-2 pt-1">
-                        <a class="fw-bold" href style="color:#9D2426;"><?= $course['course_title'] ?></a>
+                        <a class="fw-bold" href = "viewRecord.php?id=<?= $course['course_id'] ?>" style="color:#9D2426;"><?= $course['course_title'] ?></a>
                       </li>
                     <?php 
                       $pre_req = $course['pre_requisite_course'];
                   }
                 } else {
-                  echo "<li>Placeholder text</li>";
+                  echo "<li>No prerequisites.</li>";
                 }
                 ?>
             <?php ?>
