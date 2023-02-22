@@ -1,11 +1,11 @@
 <?php 
-	require 'templates/connection.php';
+	require '../templates/connection.php';
 
   if(isset($_GET['id'])){
     $id = $_GET['id'];
   }
   else{
-     header("Location: index.php");
+     header("Location: ../index.php");
   }
 
   $query = "SELECT * FROM `course` WHERE course_id='$id' ";
@@ -17,7 +17,7 @@
 <html>
   <head>
 
-  <?php include('assets/popup/message.php'); ?>
+  <?php include('../assets/popup/message.php'); ?>
 
     <meta charset = "UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/update_course_style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/update_course_style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
           rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
           crossorigin="anonymous"
@@ -50,7 +50,7 @@
             <form action="code.php" method ="POST">
               <input type="hidden" value="<?php echo $id?>" name="id">
               <div class="row-box mb-3">
-                <label class = "fw-bold" style='font-size: 15px' for='course-title'>Course Title <span class="asterisk"> *</span></label>
+                <label class = "fw-bold" for='course-title'>Course Title <span class="asterisk"> *</span></label>
                 <input value="<?php echo $result['course_title']?>" type="text" name="course_title" id='course-title' required>
               </div>
               <div class="row-box mb-3">

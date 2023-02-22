@@ -1,5 +1,5 @@
 <?php 
-	require 'templates/connection.php';
+	require '../templates/connection.php';
 
 	$id = $_POST['id'];
 	$sql = "
