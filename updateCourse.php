@@ -96,11 +96,14 @@
                   ";
                 $query = mysqli_query($conn, $sql);
                 
-
+                
                 while($course = mysqli_fetch_assoc($query)) { ?>
-                  <a href="index.php" class="list-group-item list-group-item-action" style="padding: 8px; padding-left: 15px;text-align:left; border: 1px solid lightgray;">
-                    <h6><?= $course['course_id'] . " - " . $course['course_title'] ?></h6>
-                </a>
+                  <form method = "POST" action = "setPrerequisite.php?id=<?= $id  ?>">
+                    <input type="hidden" name="prerequisite_id" value = "<?= $course['course_id'] ?>">
+                    <button type = "submit" class="list-group-item list-group-item-action" style="padding: 8px; padding-left: 15px;text-align:left; border: 1px solid lightgray;">
+                      <h6><?= $course['course_id'] . " - " . $course['course_title'] ?></h6>
+                    </button>
+                  </form>
                 <?php } ?>
               <?php } ?>
             </div>
@@ -120,8 +123,8 @@
                     $pre_req = $course['pre_requisite_course'];
                   }
                   ?>
-                  <form method ="POST">
-                    <button class="mt-4" id="clear-btn">Clear Pre-requisite</button>
+                  <form method ="POST" action = "clear.php">
+                    <button class="mt-4" id="clear-btn" name = "">Clear Pre-requisite</button>
                   </form>
               </div>
             </div>
