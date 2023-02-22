@@ -1,0 +1,84 @@
+#deleteForm {
+  width: 500px;
+  height: 250px;
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+
+.del-form-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.del-course-desc-vr {
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-size: 30px;
+  color: #121212;
+}
+
+.del-course-title-vr {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: #121212;
+}
+
+.update-btn-vr {
+  border: 2px solid #681a1a;
+  background-color: #fffcfa;
+  text-align: center;
+  color: #681a1a;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.update-btn-vr:hover {
+  color: #681a1a;
+}
+
+.del-btn-vr {
+  border: 2px solid #681a1a;
+  background-color: #681a1a;
+  text-align: center;
+  color:white;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 10px;
+  font-weight:bold;
+}
+
+#del-course-btn {
+  background: #681A1A;
+  border: 2px solid #681a1a;
+  border-radius: 10px;
+  color:white;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px; 
+  font-weight:bold;
+  font-size: 14px;
+}
+
+#cancel-btn-vr {
+  color: #A6A6A6;
+  background: white;
+  border: 2px solid #A6A6A6;
+  border-radius: 10px;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;   
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#button-box {
+  flex-direction:row;
+  justify-content: center;
+}

@@ -15,13 +15,13 @@ if(isset($_POST['save_student']))
     $query_run = mysqli_query($conn, $query);
     if($query_run)
     {
-        $_SESSION['message'] = "Student Created Successfully";
+        $_SESSION['message'] = "Course Created Successfully";
         header("Location: index.php");
         exit(0);
     }
     else
     {
-        $_SESSION['message'] = "Student Not Created";
+        $_SESSION['message'] = "Course Not Created";
         header("Location: index.php");
         exit(0);
     }
@@ -31,27 +31,50 @@ if(isset($_POST['save_student']))
 
 if(isset($_POST['update_course']))
 {
+    $id = mysqli_real_escape_string($conn, $_POST['id']);
     $course_title = mysqli_real_escape_string($conn, $_POST['course_title']);
     $number_of_days = mysqli_real_escape_string($conn, $_POST['number_of_days']);
     $mtap_course = mysqli_real_escape_string($conn, $_POST['mtap_course']);
     $implementation = mysqli_real_escape_string($conn, $_POST['implementation']);
 
-    $query = "UPDATE course SET course_title='$course_title', number_of_days='$number_of_days', mtap_course='$mtap_course', implementation='$implementation' WHERE course_id='$course_title' ";
+    $query = "UPDATE course SET course_title='$course_title', number_of_days='$number_of_days', mtap_course='$mtap_course', implementation='$implementation' WHERE course_id='$id' ";
     $query_run = mysqli_query($conn, $query);
 
     if($query_run)
     {
-        $_SESSION['message'] = "Student Updated Successfully";
+        $_SESSION['message'] = "Course Updated Successfully";
         header("Location: index.php");
         exit(0);
     }
     else
     {
-        $_SESSION['message'] = "Student Not Updated";
+        $_SESSION['message'] = "Course Not Updated";
         header("Location: index.php");
         exit(0);
     }
 
+}
+
+
+if(isset($_POST['delete_course']))
+{
+    $id = mysqli_real_escape_string($conn, $_POST['c_id']);
+
+    $query = "DELETE FROM course WHERE course_id='$id'";
+    $query_run = mysqli_query($conn, $query);
+
+    if($query_run)
+    {
+        $_SESSION['message'] = "Course Deleted Successfully";
+        header("Location: index.php");
+        exit(0);
+    }
+    else
+    {
+        $_SESSION['message'] = "Course Not Deleted";
+        header("Location: index.php");
+        exit(0);
+    }
 }
 
 ?>
