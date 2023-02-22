@@ -9,6 +9,7 @@
 	$id = $_GET['id'];
 	$prereq = $_POST['prerequisite_id'];
 
+
 	# code to check for prerequisite loop
 	$prereq_id = $prereq;
 	while($prereq_id) {
@@ -20,8 +21,9 @@
 
 		if($id == $course['pre_requisite_course']) {
 			header("location: updateCourse.php?id=$id");
+			$_SESSION['message'] = "Circular dependency detected. Unable to save pre requisite course.";
+			exit();
 		}
-
 		$prereq_id = $course['pre_requisite_course'];
 	}
 
@@ -34,7 +36,7 @@
 	echo $sql;
 
 	if(mysqli_query($conn, $sql)) {
-		header("location: updateCourse.php?id=$id");
+		echo "We are here somehow";
 	}
 
  ?>

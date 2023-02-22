@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top fixed-top" style= "background-color: #681A1A;" >
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style= "background-color: #681A1A;" >
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#portfolio-nav">
 		<span class="navbar-toggler-icon"></span>
 	</button>
