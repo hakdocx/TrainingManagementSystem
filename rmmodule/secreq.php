@@ -92,7 +92,7 @@
 		<br>
 		<?php
 		if (isset($_POST["start_date"]) && isset($_POST["end_date"])) {
-			// Set the database connection parameters
+			/* // Set the database connection parameters
 			$servername = "localhost:3308";
 			$username = "root";
 			$password = "";
@@ -104,7 +104,12 @@
 			// Check for errors
 			if ($conn->connect_error) {
 				die("Connection failed: " . $conn->connect_error);
-			}
+			} */
+
+			require '../templates/connection.php';
+			require '../templates/header.php';
+
+			session_start();
 
 			// Get the start and end dates from the user
 			$start_date = $_POST["start_date"];

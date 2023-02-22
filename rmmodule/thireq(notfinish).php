@@ -1,9 +1,9 @@
 <?php
 
-$hostname = "localhost:3308";
+$hostname = "localhost";
 $username = "root";
 $password = "";
-$databaseName = "databasey";
+$databaseName = "project";
 
 $connect = mysqli_connect($hostname, $username, $password, $databaseName);
 $query = "SELECT * FROM `course`";

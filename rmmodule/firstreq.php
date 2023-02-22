@@ -93,7 +93,7 @@
       </div>
   </header>
     <?php
-    $conn = mysqli_connect("localhost:3308", "root", "", "databasey") or die('Unable to connect'); 
+    $conn = mysqli_connect('localhost', 'root', '', 'project') or die('Unable to connect'); 
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
