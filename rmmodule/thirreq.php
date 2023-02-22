@@ -1,15 +1,15 @@
 <?php
 
-$hostname = "localhost";
+/* $hostname = "localhost:3308";
 $username = "root";
 $password = "";
-$databaseName = "project";
+$databaseName = "databasey";
 
 $connect = mysqli_connect($hostname, $username, $password, $databaseName);
 $query = "SELECT * FROM `course`";
 
 $result1 = mysqli_query($connect, $query);
-
+ */
 ?>
 
 <!DOCTYPE html>
@@ -67,30 +67,18 @@ $result1 = mysqli_query($connect, $query);
 
 		    if ($conn->connect_error) {
 		        die("Connection failed: " . $conn->connect_error);
-		    }
-
-		    $sql = "SELECT DISTINCT course.course_title FROM course";
-		    $result = $conn->query($sql);
-
-		    if (!$result) {
-		        die("Query failed: " . $conn->error);
 		    } */
 			require '../templates/connection.php';
 			require '../templates/header.php';
 			require '../templates/navigation.php';
 
 			session_start();
-			// Check if the user is logged in, if not then redirect him to login page
-			if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-				header("location: login.php");
-				exit;
-			}
-		    echo "<select id='search-input'>";
-		    echo "<option value='' disable>Select a course</option>";
-		    while ($row = $result->fetch_assoc()) {
-		        echo "<option value='" . $row["course_title"] . "'>" . $row["course_title"] . "</option>";
+		    $sql = "SELECT DISTINCT course.course_title FROM course";
+		    $result = $conn->query($sql);
+
+		    if (!$result) {
+		        die("Query failed: " . $conn->error);
 		    }
-		    echo "</select>";
 
 		    $result = $conn->query($sql);
 
@@ -118,7 +106,7 @@ $result1 = mysqli_query($connect, $query);
 
 				<tbody>
 				<?php
-					$servername = "localhost:3308";
+					/* $servername = "localhost:3308";
 					$username = "root";
 					$password = "";
 					$database = "databasey";
@@ -131,14 +119,16 @@ $result1 = mysqli_query($connect, $query);
 						die("Connection failed: " . $connection->connect_error);
 
 
-					}
-
+					} */
+					require '../templates/connection.php';
 					// Read all row from database table
-					$sql = "SELECT * FROM student, account_details, registration_participants_class";
-					$result = $connection->query($sql);
+					$sql = "SELECT * FROM student Inner Join account_details On student.account_id = account_details.account_id Inner Join registration_participants_class On registration_participants_class.student_id = student.student_id  ";
+					$result = $conn->query($sql);
 
-					if ($result->num_rows > 0) 
-    				{
+					if (!$result) {
+                    die("Query failed: " . $conn->error);
+                    }
+    				
 
 						while($row = $result->fetch_assoc()) {
 							echo "<tr>
@@ -150,17 +140,16 @@ $result1 = mysqli_query($connect, $query);
 								<td>". $row["office_name"] ."</td>
 							</tr>";
 						}
-					}
-					else {
+					
 
-        				echo "<br> 0 results";
-    				}
 
-    				$connection->close();
+    				#$connection->close();
 				?>
 				</tbody>
 			</table>
 		</div>
+
 	</div>
+    
 </body>
 </html>

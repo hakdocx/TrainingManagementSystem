@@ -19,6 +19,9 @@
 			<li>
 				<a class="nav-link" href="#profile">PROFILE</a>
 			</li>
+			<li>
+				<a class="nav-link" href="../rmmodule/main.php">REPORT</a>
+			</li>
 		</ul>
 	</div>
 </nav>

@@ -86,12 +86,13 @@
 
 </head>
 <body>
-<header>
+    <!-- <header>
       <strong><h1>REPORT MANAGEMENT</h1> </strong>
       <div class="homebutton">
         <a href="main.html"><span class="material-symbols-outlined">HOME</span></a>
       </div>
-  </header>
+    </header> -->
+    
     <?php
     /* $conn = mysqli_connect('localhost', 'root', '', 'project') or die('Unable to connect'); 
     
@@ -101,9 +102,14 @@
 
     require '../templates/connection.php';
 	require '../templates/header.php';
+    require '../templates/navigation.php';
 
 	session_start();
-
+    // Check if the user is logged in, if not then redirect him to login page
+    /* if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+        header("location: login.php");
+        exit;
+    } */
 
     $sql = "SELECT DISTINCT course.course_title FROM course";
     $result = $conn->query($sql);

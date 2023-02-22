@@ -144,12 +144,20 @@
 </head>
 <body> 
     <body>
-        <header>
+        <?php
+            require '../templates/connection.php';
+	        require '../templates/header.php';
+            require '../templates/navigation.php';
+
+        ?>
+        
+        
+        <!-- <header>
               <strong><h1>REPORT MANAGEMENT</h1> </strong>
               <div class="homebutton">
                 <a href="main.html"><span class="material-symbols-outlined">home</span></a>
               </div>
-          </header>
+          </header> -->
 
 
         
@@ -167,7 +175,7 @@
                 </tr>
 
             <tr> 
-                <a href=""> <image src="../assets/images/poo.png" height="30px" width="40px"></image><button class="third"> Participants per title </button>  </a> 
+                <a href="thirreq.php"> <image src="../assets/images/poo.png" height="30px" width="40px"></image><button class="third"> Participants per title </button>  </a> 
             </tr>
                 <br> <br>
             <tr> 

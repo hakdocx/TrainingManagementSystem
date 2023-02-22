@@ -1,9 +1,9 @@
 <?php
 
-$hostname = "localhost";
+$hostname = "localhost:3308";
 $username = "root";
 $password = "";
-$databaseName = "project";
+$databaseName = "databasey";
 
 $connect = mysqli_connect($hostname, $username, $password, $databaseName);
 $query = "SELECT * FROM `course`";
@@ -63,34 +63,18 @@ $result1 = mysqli_query($connect, $query);
 			</div>
 			<br>
 			<?php
-		    /* $conn = mysqli_connect($hostname, $username, $password, $databaseName);
+		    $conn = mysqli_connect($hostname, $username, $password, $databaseName);
 
 		    if ($conn->connect_error) {
 		        die("Connection failed: " . $conn->connect_error);
 		    }
 
-		    $sql = "SELECT DISTINCT course.course_title FROM course";
+		    $sql = "SELECT DISTINCT instructor_id FROM pool_instructor_details";
 		    $result = $conn->query($sql);
 
 		    if (!$result) {
 		        die("Query failed: " . $conn->error);
-		    } */
-			require '../templates/connection.php';
-			require '../templates/header.php';
-			require '../templates/navigation.php';
-
-			session_start();
-			// Check if the user is logged in, if not then redirect him to login page
-			if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-				header("location: login.php");
-				exit;
-			}
-		    echo "<select id='search-input'>";
-		    echo "<option value='' disable>Select a course</option>";
-		    while ($row = $result->fetch_assoc()) {
-		        echo "<option value='" . $row["course_title"] . "'>" . $row["course_title"] . "</option>";
 		    }
-		    echo "</select>";
 
 		    $result = $conn->query($sql);
 
@@ -110,7 +94,7 @@ $result1 = mysqli_query($connect, $query);
 						<th>First Name</th>
 						<th>Middle Name</th>
 						<th>Qualification</th>
-						<th>Unit/Office</th>
+						<th>Designation</th>
 					</tr>
 				</thead>
 				<br>
@@ -134,11 +118,13 @@ $result1 = mysqli_query($connect, $query);
 					}
 
 					// Read all row from database table
-					$sql = "SELECT * FROM student, account_details, registration_participants_class";
+					$sql = "SELECT * FROM pool_instructor_details Inner Join account_details On pool_instructor_details.account_id = account_details.account_id Inner Join registration_course On registration_course.instructor_id = pool_instructor_details.instructor_id  ";
 					$result = $connection->query($sql);
 
-					if ($result->num_rows > 0) 
-    				{
+					if (!$result) {
+                    die("Query failed: " . $connection->error);
+                    }
+    				
 
 						while($row = $result->fetch_assoc()) {
 							echo "<tr>
@@ -147,20 +133,19 @@ $result1 = mysqli_query($connect, $query);
 								<td>". $row["firstname"] ."</td>
 								<td>". $row["middlename"] ."</td>
 								<td>". $row["qualification"] ."</td>
-								<td>". $row["office_name"] ."</td>
+								<td>". $row["designation"] ."</td>
 							</tr>";
 						}
-					}
-					else {
+					
 
-        				echo "<br> 0 results";
-    				}
 
     				$connection->close();
 				?>
 				</tbody>
 			</table>
 		</div>
+
 	</div>
+    
 </body>
 </html>

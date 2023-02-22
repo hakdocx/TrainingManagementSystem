@@ -70,6 +70,12 @@
 	</style>
 </head>
 <body>
+	<?php
+	require '../templates/connection.php';
+	require '../templates/header.php';
+	require '../templates/navigation.php';
+	?>
+	<br>
 	<header>
 	<center>
 	<strong> <h1>Course Report</h1> </strong>
@@ -106,11 +112,12 @@
 				die("Connection failed: " . $conn->connect_error);
 			} */
 
-			require '../templates/connection.php';
-			require '../templates/header.php';
-
-			session_start();
-
+			#session_start();
+			// Check if the user is logged in, if not then redirect him to login page
+			/* if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+				header("location: login.php");
+				exit;
+			} */
 			// Get the start and end dates from the user
 			$start_date = $_POST["start_date"];
 			$end_date = $_POST["end_date"];
