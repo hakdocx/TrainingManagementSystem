@@ -87,7 +87,7 @@
                 </div>
               </div>
             </form>
-            <div class = "list-group overflow-auto" style ='max-height:300px;'>
+            <div class = "list-group overflow-auto" style ='max-height:300px; margin-right: 10px;'>
             <?php 
               if(isset($_POST['course'])) {
                 $course = $_POST['course'];
