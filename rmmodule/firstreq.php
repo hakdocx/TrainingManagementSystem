@@ -80,6 +80,10 @@
             float: center;
         }
 
+        center {
+            margin-top: 80px;
+        }
+
 
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -99,12 +103,12 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     } */
-
+    
     require '../templates/connection.php';
 	require '../templates/header.php';
     require '../templates/navigation.php';
 
-	session_start();
+	#session_start();
     // Check if the user is logged in, if not then redirect him to login page
     /* if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         header("location: login.php");
@@ -177,7 +181,7 @@
 
     $conn->close();
     ?>
-
+    <br margin:500px>
     <script>
     $(document).ready(function(){
         var rows = $("#table tbody tr");
