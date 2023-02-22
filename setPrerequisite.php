@@ -1,9 +1,8 @@
 <?php 
 	session_start();
 	require 'templates/connection.php';
-	
-	if(!isset($_POST['prerequisite_id'])) {
 
+	if(!isset($_POST['prerequisite_id'])) {
 		header("location: index.php");
 	}
 
@@ -19,7 +18,7 @@
 		$query = mysqli_query($conn, $sql);
 		$course = mysqli_fetch_assoc($query);
 
-		if($id = $course['pre_requisite_course']) {
+		if($id == $course['pre_requisite_course']) {
 			header("location: updateCourse.php?id=$id");
 		}
 
@@ -31,11 +30,10 @@
 	$sql = "
 		UPDATE `course` 
 		SET pre_requisite_course = $prereq 
-		WHERE course_id = $id";  
+		WHERE course_id = '$id'";  
+	echo $sql;
 
-	$query = mysqli_query($conn, $sql);
-
-	if($query) {
+	if(mysqli_query($conn, $sql)) {
 		header("location: updateCourse.php?id=$id");
 	}
 
