@@ -167,19 +167,19 @@
                 <h1 class="fc-h1>">W E L C O M E !!</h1> <br> <br>
                 <h4 class="fc-h4"> SELECT THE INFORMATION YOU NEED </h4> </tr> <br> <br> <br> <br>
                  <br>
-                <tr> <a href="firstreq.php"> <image src="../assets/images/book.png" height="30px" width="40px"></image> <button class="first"> Rank per title </button>  </a>
+                <tr> <a href="rankPerTitle.php"> <image src="../assets/images/book.png" height="30px" width="40px"></image> <button class="first"> Rank per title </button>  </a>
             </tr>
            
                 <tr> 
-                    <a href="secreq.php"> <image src="../assets/images/yeye.png" height="30px" width="40px"></image><button class="second"> Inclusive Dates per title </button>  </a> 
+                    <a href="coursePerDate.php"> <image src="../assets/images/yeye.png" height="30px" width="40px"></image><button class="second"> Inclusive Dates per title </button>  </a> 
                 </tr>
 
             <tr> 
-                <a href="thirreq.php"> <image src="../assets/images/poo.png" height="30px" width="40px"></image><button class="third"> Participants per title </button>  </a> 
+                <a href="participantsPerCourse.php"> <image src="../assets/images/poo.png" height="30px" width="40px"></image><button class="third"> Participants per title </button>  </a> 
             </tr>
                 <br> <br>
             <tr> 
-                <a href="forreq.php">  <image src="../assets/images/poooo.png" height="30px" width="40px"> </image><button class="fourth"> Pool Instructors per title </button>  </a> 
+                <a href="instructorPerCourse.php">  <image src="../assets/images/poooo.png" height="30px" width="40px"> </image><button class="fourth"> Pool Instructors per title </button>  </a> 
             </tr>
                 </table>
 <br> <br>
