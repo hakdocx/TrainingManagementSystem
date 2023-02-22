@@ -1,4 +1,5 @@
 <?php 
+  session_start();
 	require '../templates/connection.php';
 
   if(isset($_GET['id'])){

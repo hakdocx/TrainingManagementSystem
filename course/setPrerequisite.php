@@ -36,7 +36,7 @@
 	echo $sql;
 
 	if(mysqli_query($conn, $sql)) {
-		echo "We are here somehow";
+		header("location: updateCourse.php?id=$id");
 	}
 
  ?>
