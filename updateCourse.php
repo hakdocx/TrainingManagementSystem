@@ -91,8 +91,9 @@
                 $sql = "
                   SELECT * 
                   FROM course
-                  WHERE course_title LIKE '%$course%' 
-                  OR course_id = '$course'; 
+                  WHERE (course_title LIKE '%$course%' 
+                  OR course_id = '$course')
+                  AND course_id <> '$id'; 
                   ";
                 $query = mysqli_query($conn, $sql);
                 
