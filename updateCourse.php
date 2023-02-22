@@ -124,6 +124,7 @@
                   }
                   ?>
                   <form method ="POST" action = "clear.php">
+                    <input type="hidden" name="id" value = "<?= $result['course_id'] ?>">
                     <button class="mt-4" id="clear-btn" name = "">Clear Pre-requisite</button>
                   </form>
               </div>
