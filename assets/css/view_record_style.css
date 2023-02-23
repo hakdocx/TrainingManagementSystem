@@ -5,6 +5,10 @@
   border-radius: 10px;
 }
 
+:root {
+  font-size: 12px;
+}
+
 .del-form-box {
   display: flex;
   flex-direction: column;
