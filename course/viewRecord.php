@@ -1,4 +1,6 @@
 <?php 
+  session_start();
+
 	require '../templates/connection.php';
   require '../templates/header.php';
   if(isset($_GET['id'])){
@@ -11,6 +13,24 @@
   $query = "SELECT * FROM `course` WHERE course_id='$id' ";
   $query_run = mysqli_query($conn, $query);
   $result = mysqli_fetch_assoc($query_run);
+
+
+  $query = "SELECT * FROM `course` WHERE course_id='$id' ";
+  $query_run = mysqli_query($conn, $query);
+  $result = mysqli_fetch_assoc($query_run);
+
+  $sql = "
+    SELECT 
+    a.firstname, a.lastname
+    FROM registration_course AS r 
+    JOIN pool_instructor_details AS i 
+    ON r.instructor_id = i.instructor_id
+    JOIN account_details AS a
+    ON a.account_id = i.account_id   
+    WHERE r.course_id = '$id'
+    ";
+
+  $instructors = mysqli_query($conn, $sql);
   
 ?>
 
@@ -42,18 +62,19 @@
 </dialog>
 
 <body style = "font-family: Montserrat; overflow-x:hidden; background-color:#fefcfb;">
-  <div class = "box">
-    <div class="row pb-3" style="background-color: #681a1a; color: white; padding-left:100px; padding-top: 60px;">
-        <a href="index.php" style="text-decoration:none; color:white;">
-          &#8592; Back to View
-        </a>
+  <?php include '../templates/navigation.php' ?>
+  <?php include('../assets/popup/message.php'); ?>
+
+  <div class = "box m-5 p-5">
+    <div class="row p-5 rounded" style="background-color: #681a1a; color: white">
         <h1 style = "font-size: 48px;">
          <?php echo $result['course_title']; ?>
         </h1>
         <h5>
-          #
+          <i class="fa-regular fa-calendar-days"></i>
         <?php echo $result ['number_of_days'] . " Days"; ?>
         </h5>
+        <a href = "index.php" class = "text-decoration-none" style = "color:white">&#8592; View Course List</a>
     </div>      
     <div class="container mt-2 p-5" style="background-color:#fefcfb;;">
       <div class="row">
@@ -98,13 +119,13 @@
                     $course = mysqli_fetch_assoc($query);
                     ?>
                       <li class ="ps-2 pt-1">
-                        <a class="fw-bold" href style="color:#9D2426;"><?= $course['course_title'] ?></a>
+                        <a class="fw-bold" href = "viewRecord.php?id=<?= $course['course_id'] ?>" style="color:#9D2426;"><?= $course['course_title'] ?></a>
                       </li>
                     <?php 
                       $pre_req = $course['pre_requisite_course'];
                   }
                 } else {
-                  echo "<li>Placeholder text</li>";
+                  echo "<li>No prerequisites.</li>";
                 }
                 ?>
             <?php ?>
@@ -115,9 +136,20 @@
             <div class="col-2 me-4 p-0">
               <a href="updateCourse.php?id=<?php echo $id ?>" type="button" class="update-btn-vr">UPDATE</a>
             </div>
+            <?php 
+
+              $sql = "
+                SELECT * 
+                FROM `registration_course`
+                WHERE course_id = $id";
+
+              $query = mysqli_query($conn, $sql);
+              if(!mysqli_query($conn, $sql)) : 
+            ?>
             <div class="col-2 p-0">
               <button type="button" class="del-btn-vr" id ="deleteBtn">DELETE</button>
             </div>
+            <?php endif ?>
           </div>
         </div>
         <div class="col" style="background-color:#fefcfb;">
@@ -125,14 +157,16 @@
             <h4>
               <strong>INSTRUCTORS</strong>
             </h4>
-            <p>
-              Content here.
-            </p>
+            <?php while ($instructor = mysqli_fetch_assoc($instructors)) { ?>
+              <p><?= $instructor['firstname'] . " " . $instructor['lastname'] ?></p>
+            <?php } ?>    
+          
           </div>
         </div>
       </div>
     </div>
   </div>
+  <script src = "../assets/js/message.js"></script>
   <script src = "../assets/js/delete.js"></script>
 </body>
 </html>
