@@ -13,6 +13,24 @@
   $query = "SELECT * FROM `course` WHERE course_id='$id' ";
   $query_run = mysqli_query($conn, $query);
   $result = mysqli_fetch_assoc($query_run);
+
+
+  $query = "SELECT * FROM `course` WHERE course_id='$id' ";
+  $query_run = mysqli_query($conn, $query);
+  $result = mysqli_fetch_assoc($query_run);
+
+  $sql = "
+    SELECT 
+    a.firstname, a.lastname
+    FROM registration_course AS r 
+    JOIN pool_instructor_details AS i 
+    ON r.instructor_id = i.instructor_id
+    JOIN account_details AS a
+    ON a.account_id = i.account_id   
+    WHERE r.course_id = '$id'
+    ";
+
+  $instructors = mysqli_query($conn, $sql);
   
 ?>
 
@@ -139,9 +157,10 @@
             <h4>
               <strong>INSTRUCTORS</strong>
             </h4>
-            <p>
-              Content here.
-            </p>
+            <?php while ($instructor = mysqli_fetch_assoc($instructors)) { ?>
+              <p><?= $instructor['firstname'] . " " . $instructor['lastname'] ?></p>
+            <?php } ?>    
+          
           </div>
         </div>
       </div>
