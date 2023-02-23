@@ -6,63 +6,67 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  overflow-y: hidden;
   background-image: url(../images/Keyboard.png);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: center center;
-  overflow-y: hidden;
+  background-position: center right;
 }
 
-.page-title-rc {
+.page-title {
   font-family: 'Montserrat', sans-serif; 
   letter-spacing: 2px; 
   font-weight: bold;
-  font-size: 60px; 
-  color: white;
-  opacity: 80%;
+  font-size: 50px; 
+  color: #681A1A;
 }
   
-.container-rc {
-  display: flex;
+.container {
+  min-height:100%;
+  margin:0;
+  width:50%;
   justify-content: center;
+  align-content: center;
+  
 }
 
-.form-rc {
-  border-radius: 10px;
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
-  opacity: 90%;
-}
-
-.form-row-rc {
+.form-row {
 	display:flex;
 	flex-direction: column;
 }
 
-.form-row-date-rc {
-	display:flex;
+.form-row-date {
+	display: flex;
+  flex-direction: row;
 }
 
-.lbl-name-rc, .input-box-rc {
-  color:white;
+.lbl-name {
+  color: #373737;
+  font-weight: 500;
 }
 
-.input-box-rc {
-  opacity: 80%;
+.input-box {
   color: black;
+  border-radius: 10px;
+  border: 2px solid #DBDBDB; 
 }
 
-.form-box-container-rc {
-	width: 500px;
+.asterisk {
+  color: #C1121F;
+  font-weight: 500;
+}
+
+.form-box-container {
 	border-radius: 10px;
-  background-color: rgba(200,200,200, 0.3);
 }
 
-#register-btn-rc {
+#register-btn {
   background: #681A1A;
   border: 2px solid #681a1a;
   border-radius: 10px;
   color:white;
   padding: 10px;
+  font-weight: 500;
 }
 
