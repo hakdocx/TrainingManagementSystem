@@ -12,15 +12,32 @@
   <a href="instructor_index.php"><?php
   if (isset ($_POST['insert']))
   {
-    $id=$_POST['id'];
-    $acc_id=$_POST['acc_id'];
+    #$id=$_POST['id'];
+    #$acc_id=$_POST['acc_id'];
+
+    if (isset($_POST['acc_id'])) {
+      $acc_id = $_POST['acc_id'];
+      } else {$acc_id = '';}
+
     $rank=$_POST['rank'];
+    
     $quadeg=$_POST['quadeg'];
+
     $couspe=$_POST['couspe'];
-    $othqua=$_POST['othqua'];
-    $query= "INSERT INTO `pool_instructor_details`(`instructor_id`, `account_id`, `rank`, `qualification_degree`, `course_specialization`, `other_qualification`) 
-    VALUES ('$id','$acc_id','$rank','$quadeg','$couspe','$othqua')";
-    $result = mysqli_query($conn,$query)   ?>  
+    #$othqua=$_POST['othqua'];
+
+    if (isset($_POST['othqua'])) {
+      $othqua = $_POST['othqua'];
+      } else {$othqua = '';}
+
+    #$query= "INSERT INTO `pool_instructor_details`(`instructor_id`, `account_id`, `rank`, `qualification_degree`, `course_specialization`, `other_qualification`) 
+    #VALUES ('$id','$acc_id','$rank','$quadeg','$couspe','$othqua')";
+    
+    $query= "INSERT INTO `pool_instructor_details`(DEFAULT, NULL, `rank`, `qualification_degree`, `course_specialization`, `other_qualification`) 
+    VALUES ('$acc_id',NULL,'$quadeg','$couspe','$othqua')";
+    
+    $result = mysqli_query($conn,$query);
+    ?>  
     <div>
     <button class="button4">Done</button>
     <p class="addsucc ">Added Successfully!</p>
