@@ -304,31 +304,34 @@ dialog::backdrop {
 }
 
 .alert-dismissible {
-  float: right;
+  position:fixed;
+	text-align:center;
+	left: 86%;
+	margin-top: 100px;
 }
 
 .alert-warning {
   color: white;
-	display: inline-block;
   background-color: #00c04b;
 	border-color: #00c04b;
 	border-radius: 5px;
-	width: 15%;
-	padding: 5px;
+	width: 14%;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 0px;
 	font-size: 15px;
-	justify-content: center;
 	text-align: center;
-	height: 50px;
+	box-sizing: border-box;
+	border-left: 5px solid gray;
 }
 
 .gg-check-o {
-  box-sizing: border-box;
-  position: relative;
-	display:inline-flex;
+  position: sticky;
+	display: inline-flex;
   transform: scale(var(--ggs,1));
-  width: 22px;
-  height: 22px;
+  width: 25px;
+  height: 25px;
   border: 2px solid;
   border-radius: 50px;
-	top: 5px;
+	top: 20px;
 }

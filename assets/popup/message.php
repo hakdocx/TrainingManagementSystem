@@ -6,7 +6,12 @@
 ?>
 
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <i class="gg-check-o"> </i> <?= $_SESSION['message']; ?>
+        <div class="col">
+            <i class="gg-check-o"> </i> 
+        </div>  
+        <div class="col">
+            <?= $_SESSION['message']; ?>
+        </div>  
     </div>
 
 <?php 
