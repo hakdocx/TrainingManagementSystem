@@ -134,7 +134,7 @@
 
           <div class="row mt-5">
             <div class="col-2 me-4 p-0">
-              <a href="updateCourse.php?id=<?php echo $id ?>" type="button" class="update-btn-vr">UPDATE</a>
+              <a href="updateCourse.php?id=<?php echo $id ?>" type="button" class="update-btn-vr fs-5">UPDATE</a>
             </div>
             <?php 
 
@@ -147,18 +147,18 @@
               if(!mysqli_query($conn, $sql)) : 
             ?>
             <div class="col-2 p-0">
-              <button type="button" class="del-btn-vr" id ="deleteBtn">DELETE</button>
+              <button type="button" class="del-btn-vr fs-5" id ="deleteBtn">DELETE</button>
             </div>
             <?php endif ?>
           </div>
         </div>
         <div class="col" style="background-color:#fefcfb;">
           <div class="row p-3" style="background-color: white; border: 1px solid #dbdbdb; border-radius: 10px;" >
-            <h4 class="pt-2">
+            <h4 class="pt-2 pb-1">
               <strong>INSTRUCTORS</strong>
             </h4>
             <?php while ($instructor = mysqli_fetch_assoc($instructors)) { ?>
-              <p><?= $instructor['firstname'] . " " . $instructor['lastname'] ?></p>
+              <p class ="fs-5"><?= $instructor['firstname'] . " " . $instructor['lastname'] ?></p>
             <?php } ?>    
           
           </div>
