@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-y: hidden;
+  background-image: url(../images/Keyboard.png);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.page-title {
+  font-family: 'Montserrat', sans-serif; 
+  letter-spacing: 2px; 
+  font-weight: bold;
+  font-size: 50px; 
+  color: #681A1A;
+}
+  
+.container {
+  min-height:100%;
+  margin:0;
+  width:50%;
+  justify-content: center;
+  align-content: center;
+  
+}
+
+.form-row {
+	display:flex;
+	flex-direction: column;
+}
+
+.form-row-date {
+	display: flex;
+  flex-direction: row;
+}
+
+.lbl-name {
+  color: #373737;
+  font-weight: 500;
+}
+
+.input-box {
+  color: black;
+  border-radius: 10px;
+  border: 2px solid #DBDBDB; 
+}
+
+.asterisk {
+  color: #C1121F;
+  font-weight: 500;
+}
+
+.form-box-container {
+	border-radius: 10px;
+}
+
+#register-btn {
+  background: #681A1A;
+  border: 2px solid #681a1a;
+  border-radius: 10px;
+  color:white;
+  padding: 10px;
+  font-weight: 500;
+}
+

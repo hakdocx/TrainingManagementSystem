@@ -5,8 +5,8 @@ Web Development Project is a web-based application that utilize the use of PHP, 
 This project is a requirement for the completion of the course Web Development.
 
 ## Project Requirements
-
-[r2h]:https://github.com/Arc-Data/TrainingManagementSystem/blob/report_mgmt/Requirements.md
+[Project_Requirements.md link](https://github.com/Arc-Data/TrainingManagementSystem/blob/report_mgmt/Requirements.md)
+port_mgmt/Requirements.md
 
 ## Project Overview:
 - user_mgmt                         - User Management Module
@@ -64,6 +64,3 @@ Course-Management-System
 ## Contributions
 WHOLE SECTION BSIT 3-1N SY 2020-2024
 
-## GITHUB Collaborators
-[Contributor Name](https://github.com/Arc-Data)
-[Contributor Name](https://github.com/ron-ligsay)

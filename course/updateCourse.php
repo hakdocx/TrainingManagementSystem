@@ -1,4 +1,5 @@
 <?php 
+  session_start();
 	require '../templates/connection.php';
 
   if(isset($_GET['id'])){
@@ -17,7 +18,6 @@
 <html>
   <head>
 
-  <?php include('../assets/popup/message.php'); ?>
 
     <meta charset = "UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +25,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/update_course_style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
           rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
@@ -35,14 +35,18 @@
 
   </head>
   <body style="font-family: Montserrat; overflow-x:hidden; background-color:#fffcfa">
-  <div class="box">
-    <div class="row" style="background-color: #681a1a; color: white; padding-left:100px; padding-top:70px;">
-        <a href="viewrecord.php?id=<?= $id;?>" style="text-decoration:none; color:white;">
-          &#8592; Back to View
-        </a>
-        <h1 style="color: white;">
-          <strong>Update Course</strong>
+  <?php include '../templates/navigation.php' ?>
+  <?php include('../assets/popup/message.php'); ?>
+  
+  <div class="box m-5 p-5">
+    <div class="row p-5 rounded" style="background-color:#681a1a; color: white">
+        <p><?= $id . " - " . $result['course_title'] ?></p>
+        <h1 style = 'font-size:48px'>
+          Update Course
         </h1>
+        <a href="viewrecord.php?id=<?= $id;?>" style = "color:white !important" >
+          &#8592; Back to View Course
+        </a>
     </div>
     <div class="container mt-4 pe-5 ps-5" style="background-color:#fffcfa;">
         <div class="row mt-1">

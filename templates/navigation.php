@@ -8,10 +8,10 @@
 				<a class="nav-link" href="#landing">HOME</a>
 			</li>
 			<li>
-				<a class="nav-link" href="read.php">STUDENT</a>
+				<a class="nav-link" href="#read.php">STUDENT</a>
 			</li>
 			<li>
-				<a class="nav-link" href="#hobbies">COURSE</a>
+				<a class="nav-link" href="../course">COURSE</a>
 			</li>
 			<li>
 				<a class="nav-link" href="#projects">INSTRUCTORS</a>
