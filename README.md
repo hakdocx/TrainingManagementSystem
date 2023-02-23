@@ -32,18 +32,24 @@ Quick link: [Project_Requirements.md link](https://github.com/Arc-Data/TrainingM
     - UpdateForm.php                - Update Instructor
 - assets                            - This folder contains the files for the front-end.
     - css
+        - registration_course_style.css
         - style.css
         - update_css_style.css
+        - view_record_style.css
     - js
         - delete.js
+        - message.js
         - training-form.
     - images                        - This folder contains the images used in the project.
     - popup
 - templates                         - This folder contains the files for the database connection.
-    - connection.php
-    - header.php
+    - connection.php                - This file contains the database connection.
+    - header.php                    - This file contains the header of the page.
+    - nav.php                       - This file contains the navigation bar of the page.
+- SQL                       	    - this folder contains versions of the database
 - .gitignore                        - This file contains the files that are not to be uploaded to the repository.
 - README.md
+- Requirements.md                    - This file contains the requirements of the project.
 
 
 ## Project Structure
