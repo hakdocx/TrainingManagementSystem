@@ -5,8 +5,8 @@ Web Development Project is a web-based application that utilize the use of PHP, 
 This project is a requirement for the completion of the course Web Development.
 
 ## Project Requirements
-[Project_Requirements.md link](https://github.com/Arc-Data/TrainingManagementSystem/blob/report_mgmt/Requirements.md)
-port_mgmt/Requirements.md
+Quick link: [Project_Requirements.md link](https://github.com/Arc-Data/TrainingManagementSystem/blob/report_mgmt/Requirements.md)
+
 
 ## Project Overview:
 - user_mgmt                         - User Management Module
@@ -16,13 +16,20 @@ port_mgmt/Requirements.md
     - setPrerequisite.php
     - updateCourse.php
     - viewRecord.php
-- rmmodule                          - Report Management Group
+- report                            - Report Management Group
     - main.php                      - Main Page of the Report Management Module
     - hhth.html         
     - rankPerTitle.php              - First Requirement Number of participants per course
     - coursePerDate.php             - Second Requirement Course conducted by date range
     - participantsPerCourse.php     - Third Requirement Participants of the course
     - instructorPerCourse.php       - Fourth Requirement Pool Instructors per course
+- instructor                        - Instructor Management Module
+    - add.php                       - Add Instructor
+    - instructor_index.php          - Main Page of the Instructor Management Module
+    - search.php                    - Search Instructor
+    - style.css                     - CSS Style for the Instructor Management Module
+    - UpdateAddData.php             - Update Instructor
+    - UpdateForm.php                - Update Instructor
 - assets                            - This folder contains the files for the front-end.
     - css
         - style.css
@@ -64,3 +71,7 @@ Course-Management-System
 ## Contributions
 WHOLE SECTION BSIT 3-1N SY 2020-2024
 
+## Collaborators
+- [Arc-Data](https://github.com/Arc-Data)
+- [Ron](https://github.com/Arc-Data)
+- [joshua-olivares]()
