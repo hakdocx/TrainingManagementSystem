@@ -17,7 +17,7 @@ body {
 
 #mtap-course, #implementation, #number-of-days, #course-title{
   border: 2px solid lightgray; 
-  border-radius: 5px; 
+  border-radius: 7px; 
 }
 
 #search-input{
