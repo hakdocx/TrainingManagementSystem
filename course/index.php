@@ -101,7 +101,7 @@
 	</div>
   <div class="container my-3">
     <div class="row">
-      <div class="mx-auto">
+      <div class="col-lg-10 mx-auto">
 				<div class="table-responsive">
 					<table class='table'>
 						<thead>
@@ -110,7 +110,7 @@
 								<th>DURATION</th>
 								<th>YEAR CERTIFIED</th>
 								<th>PREREQUISITE</th>
-								<th>Action</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
