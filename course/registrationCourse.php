@@ -37,21 +37,21 @@
                 <form class="signUp" action="" method="get">
                   <div class="form-container pe-5 ps-5">
                     <div class="form-row mt-4">
-                      <label class="lbl-name fs-5" for='mtap-course'>Instructor ID <label class="asterisk">*</label></label>
+                      <label class="lbl-name fs-5 mb-1" for='mtap-course'>Instructor ID <label class="asterisk">*</label></label>
                       <input class="input-box p-2 fs-5" type="text" name="instructor_id" id ='mtap-course' required>
                     </div>
-                    <div class="form-row-date mt-4">
+                    <div class="form-row-date mt-5">
                       <div class="col me-5">
-                        <label class="lbl-name fs-5" for='mtap-course'>Opening Date <label class="asterisk">*</label></label>
+                        <label class="lbl-name fs-5 mb-1" for='mtap-course'>Opening Date <label class="asterisk">*</label></label>
                         <input class="input-box p-2 fs-5" style='width: 100%;' type="date" name="opening_date" id ='Implementation' required>
                       </div>
                       <div class="col">
-                        <label class="lbl-name fs-5" for='mtap-course'>Closing Date <label class="asterisk">*</label></label>
+                        <label class="lbl-name fs-5 mb-1" for='mtap-course'>Closing Date <label class="asterisk">*</label></label>
                         <input class="input-box p-2 fs-5" style='width: 100%;' type="date" name="closing_date" id ='Implementation' required>
                       </div>
                     </div>
-                    <div class="form-row mt-4">
-                      <label class="lbl-name fs-5" for='mtap-course'>Implementation NR <label class="asterisk">*</label></label>
+                    <div class="form-row mt-5 mb-3">
+                      <label class="lbl-name fs-5 mb-1" for='mtap-course'>Implementation NR <label class="asterisk">*</label></label>
                       <input class="input-box p-2 fs-5" type="text" name="implementation" id ='mtap-course' required>
                     </div>
                     <div>
