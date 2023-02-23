@@ -15,10 +15,6 @@
   $result = mysqli_fetch_assoc($query_run);
 
 
-  $query = "SELECT * FROM `course` WHERE course_id='$id' ";
-  $query_run = mysqli_query($conn, $query);
-  $result = mysqli_fetch_assoc($query_run);
-
   $sql = "
     SELECT 
     a.firstname, a.lastname
