@@ -156,7 +156,7 @@
             <?php while ($instructor = mysqli_fetch_assoc($instructors)) { ?>
               <p class ="fs-5"><?= $instructor['firstname'] . " " . $instructor['lastname'] ?></p>
             <?php } ?>    
-            <a href="registrationCourse.php?id=$id">Assign Instructors</a>
+            <a href="registrationCourse.php?id=<?= $id ?>">Assign Instructors</a>
           </div>
         </div>
       </div>
