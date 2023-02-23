@@ -294,7 +294,7 @@ INSERT INTO `pool_instructor_details` (`instructor_id`, `account_id`, `rank`, `q
 (700000, 100005, 'PCO', 'Associate''s in Degree', 'Computer Science', ''),
 (700001, 100006, 'PCO', 'Bachelor''s in Education', 'Computer Science', ''),
 (700002, 100012, 'PNCO', 'Master''s Degree', 'Math', ''),
-(700003, 100013, 'NUP', 'Doctof of Education Degree', 'Information Technology', '');
+(700003, 100013, 'NUP', 'Doctor of Education Degree', 'Information Technology', '');
 --
 -- Dumping data for table `student`
 --

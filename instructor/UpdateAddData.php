@@ -4,9 +4,12 @@
   <body>
 
 <?php
-  #include 'connectdb.php';?>
+  #include 'connectdb.php';
   require '../templates/connection.php';
-  <a href="PoolofInstructor.php"><?php
+  require '../templates/header.php';
+  require '../templates/navigation.php';
+  ?>
+  <a href="instructor_index.php"><?php
   if (isset ($_POST['insert']))
   {
     $id=$_POST['id'];
@@ -26,7 +29,7 @@
   
 </a>
 
-  <a href="PoolofInstructor.php"><?php
+  <a href="instructor_index.php"><?php
   if (isset ($_POST['update']))
   {
     $id=$_POST['instrucid']; 

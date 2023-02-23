@@ -16,7 +16,7 @@
   <body>
     <header>
     <h1>POOL OF INSTRUCTORS </h1> 
-      <div class="homebutton"><a href="PoolofInstructor.php"><span class="material-symbols-outlined">home</span></a>
+      <div class="homebutton"><a href="instructor_index.php"><span class="material-symbols-outlined">home</span></a>
     </div>
     </header>
 
@@ -24,7 +24,9 @@
 <?php
   #include 'connectdb.php';
   require '../templates/connection.php';
-  
+  require '../templates/header.php';
+  require '../templates/navigation.php';
+
   if(isset($_GET['update1'])){
   $userid=$_GET['update1'];
   $query= "SELECT * FROM account_details iNNER JOIN pool_instructor_details ON account_details.account_id = pool_instructor_details.account_id

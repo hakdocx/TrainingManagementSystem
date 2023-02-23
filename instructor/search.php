@@ -16,7 +16,7 @@
   <body>
     <header>
     <h1>POOL OF INSTRUCTORS </h1> 
-      <div class="homebutton"><a href="PoolofInstructor.php"><span class="material-symbols-outlined">home</span></a>
+      <div class="homebutton"><a href="instructor_index.php"><span class="material-symbols-outlined">home</span></a>
     </div>
     </header>
 
@@ -24,7 +24,8 @@
 <?php
   #include 'connectdb.php';
   require '../templates/connection.php';
-  
+  require '../templates/header.php';
+  require '../templates/navigation.php';
   if(isset($_POST['search'])){
   $name=$_POST['name'];
 
@@ -79,7 +80,7 @@
    <br>
    <br>
    <div class="btnback">
-   <a href="PoolofInstructor.php"><button type=submit >Back</button></a>        
+   <a href="instructor_index.php"><button type=submit >Back</button></a>        
    </div>
 
  <?php
