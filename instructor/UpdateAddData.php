@@ -5,11 +5,13 @@
 
 <?php
   #include 'connectdb.php';
-  require '../templates/connection.php';
   require '../templates/header.php';
   require '../templates/navigation.php';
   ?>
-  <a href="instructor_index.php"><?php
+  <a href="instructor_index.php">
+  
+  <?php
+  require '../templates/connection.php';
   if (isset ($_POST['insert']))
   {
     #$id=$_POST['id'];
@@ -30,11 +32,11 @@
       $othqua = $_POST['othqua'];
       } else {$othqua = '';}
 
-    #$query= "INSERT INTO `pool_instructor_details`(`instructor_id`, `account_id`, `rank`, `qualification_degree`, `course_specialization`, `other_qualification`) 
+    #$query= "INSERT INTO `pool_instructor_details`(`instructor_id`, account_id, `rank`, `qualification_degree`, `course_specialization`, `other_qualification`) 
     #VALUES ('$id','$acc_id','$rank','$quadeg','$couspe','$othqua')";
     
-    $query= "INSERT INTO `pool_instructor_details`(DEFAULT, NULL, `rank`, `qualification_degree`, `course_specialization`, `other_qualification`) 
-    VALUES ('$acc_id',NULL,'$quadeg','$couspe','$othqua')";
+    $query= "INSERT INTO `pool_instructor_details`( `account_id`, `rank`, `qualification_degree`, `course_specialization`, `other_qualification`) 
+    VALUES (NULL,'$rank','$quadeg','$couspe','$othqua')";
     
     $result = mysqli_query($conn,$query);
     ?>  
