@@ -1,7 +1,3 @@
-<?php
-  require '../templates/navigation.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
  
@@ -22,8 +18,9 @@
   </head>
  
   <body>
-    <div class="container">
-      <div class="row align-items-center" style="min-height:100%; background-color: white">
+  <?php include('../templates/navigation.php');?>
+    <div class="container-fluid" id="container">
+      <div class="row align-items-center" style="background-color: white">
         <div class="col pe-5 ps-5">
           <div class="row">
             <a class="fs-5 pe-5 ps-5" href="" style="text-decoration:none; color:#681A1A;">  
