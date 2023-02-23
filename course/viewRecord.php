@@ -140,12 +140,13 @@
                 WHERE course_id = $id";
 
               $query = mysqli_query($conn, $sql);
-              if(!mysqli_query($conn, $sql)) : 
+
+              if(!mysqli_fetch_assoc($query)) :
             ?>
             <div class="col-2 p-0">
               <button type="button" class="del-btn-vr" id ="deleteBtn">DELETE</button>
             </div>
-            <?php endif ?>
+          <?php endif ?>
           </div>
         </div>
         <div class="col" style="background-color:#fefcfb;">
