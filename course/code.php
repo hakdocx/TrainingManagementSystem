@@ -3,7 +3,7 @@ session_start();
 require '../templates/connection.php';
 
 
-if(isset($_POST['save_student']))
+if(isset($_POST['save_course']))
 {
 
     $course_title = mysqli_real_escape_string($conn, $_POST['course_title']);
