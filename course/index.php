@@ -69,7 +69,7 @@
 				</div>
 				<br>
 				<center>
-				  <button name="save_student" type = "submit" class="btn btn-primary mt-3" id="submit-btn" >Submit</button> 
+				  <button name="save_course" type = "submit" class="btn btn-primary mt-3" id="submit-btn" >Submit</button> 
         </center>
 		</form>
 	</dialog>
