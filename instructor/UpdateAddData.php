@@ -4,7 +4,8 @@
   <body>
 
 <?php
-  include 'connectdb.php';?>
+  #include 'connectdb.php';?>
+  require '../templates/connection.php';
   <a href="PoolofInstructor.php"><?php
   if (isset ($_POST['insert']))
   {

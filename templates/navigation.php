@@ -14,13 +14,13 @@
 				<a class="nav-link" href="../course">COURSE</a>
 			</li>
 			<li>
-				<a class="nav-link" href="#projects">INSTRUCTORS</a>
+				<a class="nav-link" href="../instructor/instructor_index.php">INSTRUCTORS</a>
 			</li>
 			<li>
 				<a class="nav-link" href="#profile">PROFILE</a>
 			</li>
 			<li>
-				<a class="nav-link" href="../report/reportIndex.php">REPORT</a>
+				<a class="nav-link" href="../report/report_Index.php">REPORT</a>
 			</li>
 		</ul>
 	</div>

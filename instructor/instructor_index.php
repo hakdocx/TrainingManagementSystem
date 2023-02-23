@@ -13,6 +13,10 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 
 <style>
+header {
+  margin-top: 30px;
+}
+
 .custom-shape-divider-bottom-1676706408 {
     position: absolute;
     bottom: 0;
@@ -40,6 +44,11 @@
 
 <body>
   <header>
+    <?php
+      #require '../templates/connection.php';
+      require '../templates/header.php';
+      require '../templates/navigation.php';
+    ?>
       <strong><h1>POOL OF INSTRUCTORS </h1> </strong>
       <div class="homebutton">
         <a href="PoolofInstructor.php"><span class="material-symbols-outlined">home</span></a>

@@ -22,7 +22,9 @@
 
 <center>
 <?php
-  include 'connectdb.php';
+  #include 'connectdb.php';
+  require '../templates/connection.php';
+  
   if(isset($_POST['search'])){
   $name=$_POST['name'];
 

@@ -22,8 +22,9 @@
 
 <center>
 <?php
-  include 'connectdb.php';
-
+  #include 'connectdb.php';
+  require '../templates/connection.php';
+  
   if(isset($_GET['update1'])){
   $userid=$_GET['update1'];
   $query= "SELECT * FROM account_details iNNER JOIN pool_instructor_details ON account_details.account_id = pool_instructor_details.account_id
