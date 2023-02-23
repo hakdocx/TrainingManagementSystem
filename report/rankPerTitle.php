@@ -50,7 +50,7 @@
             margin-bottom: 20px;
             border-radius: 120px;
             height: 40px;
-            weight: 90px;
+            /* weight: 90px; */
             transition: opacity 1s;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8)  ;
         }
