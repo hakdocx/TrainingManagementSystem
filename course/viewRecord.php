@@ -30,9 +30,14 @@
   
 ?>
 
-<?php include('../assets/popup/message.php'); ?>
+<link rel="stylesheet" type="text/css" href="../assets/css/view_record_style.css">
+</head>
 
-<dialog id ='deleteForm' style="font-family: Montserrat;">
+<body style = "font-family: Montserrat; overflow-x:hidden; background-color:#fefcfb;">
+  <?php include '../templates/navigation.php' ?>
+  <?php include('../assets/popup/message.php'); ?>
+
+  <dialog id ='deleteForm' style="font-family: Montserrat;">
   <div class="del-form-box pt-5 ps-5 pe-5">
     <div class="row">
       <h3 class="del-course-desc-vr">Delete this course?</h3>
@@ -55,14 +60,9 @@
       </div>
     </form>
   </div>
-</dialog>
-
-<body style = "font-family: Montserrat; overflow-x:hidden; background-color:#fefcfb;">
-  <?php include '../templates/navigation.php' ?>
-  <?php include('../assets/popup/message.php'); ?>
-
+  </dialog>
   <div class = "box m-5 p-5">
-    <div class="row p-5 rounded" style="background-color: #681a1a; color: white">
+    <div class="row p-5" style="background-color: #681a1a; color: white; border-radius: 10px;">
         <h1 style = "font-size: 48px;">
          <?php echo $result['course_title']; ?>
         </h1>
