@@ -72,7 +72,7 @@
         </h3>
         <a href = "index.php" class = "text-decoration-none" style = "color:white">&#8592; View Course List</a>
     </div>      
-    <div class="container mt-2 p-5" style="background-color:#fefcfb;;">
+    <div class="container mt-2 p-5">
       <div class="row">
         <div class="col-7 me-4" style="background-color:#fefcfb;">
           <div class="row mb-4 p-3" style="background-color: white; border: 1px solid #dbdbdb; border-radius: 10px;">
@@ -149,7 +149,7 @@
           <?php endif ?>
           </div>
         </div>
-        <div class="col" style="background-color:#fefcfb;">
+        <div class="col">
           <div class="row p-3" style="background-color: white; border: 1px solid #dbdbdb; border-radius: 10px;" >
             <h4 class="pt-2 pb-1">
               <strong>INSTRUCTORS</strong>
@@ -157,7 +157,12 @@
             <?php while ($instructor = mysqli_fetch_assoc($instructors)) { ?>
               <p class ="fs-5"><?= $instructor['firstname'] . " " . $instructor['lastname'] ?></p>
             <?php } ?>    
-            <a href="registrationCourse.php?id=<?= $id ?>">Assign Instructors</a>
+          </div>
+          <div class="row p-3 mt-3" style = "border:1px solid #dbdbdb; background:white; border-radius:10px">
+            <h4 class="pt-2">
+              <strong>REGISTRATION</strong>
+            </h4>
+            <a href = "registrationCourse.php?id=<?= $id ?>" class = "btn" style = "color:white;background:#4a1212">Open Regisration</a>
           </div>
         </div>
       </div>
