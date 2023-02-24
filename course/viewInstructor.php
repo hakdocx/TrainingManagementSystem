@@ -1,7 +1,7 @@
 <?php 
   session_start();
 
-	require '../templates/connection.php';
+  require '../templates/connection.php';
   require '../templates/header.php';
   if(isset($_GET['id'])){
     $id = $_GET['id'];
@@ -17,7 +17,7 @@
 
   $sql = "
     SELECT 
-    a.firstname, a.lastname
+    a.firstname, a.lastname , i.qualification_degree , i.course_specialization
     FROM registration_course AS r 
     JOIN pool_instructor_details AS i 
     ON r.instructor_id = i.instructor_id
@@ -30,7 +30,14 @@
   
 
 ?>
+<style>
+.tableFixHead          { overflow-y: auto; height: 350px; }
+.tableFixHead thead th { position: sticky; top: 0; z-index: 1; }
 
+/* Just common table stuff. Really. */
+table  { border-collapse: collapse; width: 100%; }
+th, td { padding: 8px 16px; }
+</style>
 <link rel="stylesheet" type="text/css" href="../assets/css/view_record_style.css">
 </head>
 
@@ -51,38 +58,34 @@
     </div>  
     <br><br><a href = "viewRecord.php?id=<?php echo $id ?>" class = "text-decoration-none" style = "font-size:15px; color: #681a1a">&#8592; Back to View</a>  
     <center>
-        <div class="row p-5 mt-4" style="background-color: white; border: 1px solid #dbdbdb; border-radius: 10px; width:80%; overflow-y: scroll;" >
-                <h4 class="pt-2 pb-4">
-                <strong style="float:left;">INSTRUCTORS</strong>
-                </h4>  
-                <div class ="fs-5 pb-2 fw-bold">
+        <div class="tableFixHead" style="background-color: white; border: 1px solid #dbdbdb; border-radius: 10px; width:80%;" >
+                <h4 class="pt-2 pb-4 ps-5">
+                <br><strong style="float:left;">INSTRUCTORS</strong><br>
+                </h4>
+
+                <div class ="fs-5 pb-2 pt-1 fw-bold">
                     <table class='table'>
-                            <thead>
-                                <tr>
-                                    <th class ="fw-normal">NAME</th>
-                                    <th class ="fw-normal">QUALIFICATION DEGREE</th>
-                                    <th class ="fw-normal">COURSE SPECIALIZATION</th>
-                                </tr>
-                            </thead>
+                        <thead>
+                            <tr>
+                                <th class ="ps-4 fw-normal" style="background-color:#eee; height:50px;">NAME</th>
+                                <th class ="fw-normal" style="background-color:#eee; height:50px;">QUALIFICATION DEGREE</th>
+                                <th class ="fw-normal" style="background-color:#eee; height:50px;">COURSE SPECIALIZATION</th>
+                            </tr>
+                        </thead> 
+                             
                         <tbody>
                             <?php while ($instructor = mysqli_fetch_assoc($instructors)) { ?>
                                 <tr>
-                                <td class = "p-4 fs-5 mt-5" ><?= $instructor['firstname'] . " " . $instructor['lastname'] ?></td>
-                                <td class = "p-4 fs-5 mt-5" ><?= $instructor['qualification_degree'] ?></td>
-                                <td></td>
-                                <td></td>
-                        
-                
-                                <td></td>
+                                <td class = "p-4 fs-5 mt-5 " ><?= $instructor['firstname'] . " " . $instructor['lastname'] ?></td>
+                                <td class = "p-4 fs-5 mt-5 " ><?= $instructor['qualification_degree'] ?></td>
+                                <td class = "p-4 fs-5 mt-5 " ><?= $instructor['course_specialization'] ?></td>
                                 </tr>
                             <?php } ?> 
                         </tbody>
                     </table>  
                 </div> 
-            </div>
-    </center>
         </div>
-      </div>
+    </center>
   <script src = "../assets/js/message.js"></script>
   <script src = "../assets/js/delete.js"></script>
 </body>
