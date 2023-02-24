@@ -11,10 +11,14 @@
 	}
 
 	// connect to database
-	$con=mysqli_connect("localhost","root","","project");
+	$con=  mysqli_connect("localhost","root","","project");
 
-	if(!$con){
-		die(mysqli_error($con));
+	/* if(!$con){
+		die("Connection failed: " . $con->connect_error);
+	}
+ */
+	if ($con->connect_error) {
+		die("Connection failed: " . $con->connect_error);
 	}
 
 	// initialize variables with empty values (for registration & login)
