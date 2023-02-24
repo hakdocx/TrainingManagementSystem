@@ -29,18 +29,18 @@
 
 					<tr>
 						<td><input type="submit" value="Student" name="btnStudent" class="access-button1"
-								   formaction="/user_mgmt/student/Student-Login.php"/></td>
+								   formaction="user_student/Student-Login.php"/></td>
 					</tr>
 					<tr>
 						<td><input type="submit" value="Instructor" name="btnInstructor" class="access-button2"
-							 	   formaction="/user_mgmt/instructor/Instructor-Login.php"/></td>
+							 	   formaction="instructor/Instructor-Login.php"/></td>
 					</tr>
 					<tr>
 						<td><input type="submit" value="Administrator" name="btnInstructor" class="access-button3"
-							 	   formaction="/user_mgmt/admin/Admin-Login.php"/></td>
+							 	   formaction="admin/Admin-Login.php"/></td>
 					</tr>
 				</table>
-				<p class="register">Create an account? <a href="/user_mgmt/user_registration/Registration-Form.php">Register here.</a></p>
+				<p class="register">Create an account? <a href="user_registration/Registration-Form.php">Register here.</a></p>
 			</form>
 		</div>
 	</div>

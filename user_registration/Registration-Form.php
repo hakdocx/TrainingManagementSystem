@@ -1,6 +1,6 @@
 <?php
 	// include connection file
-	require dirname(__DIR__). "/templates/connection.php";
+	require dirname(__DIR__). "../templates/connection_2.php"; 
 
 	// register the instructor
 	if (isset($_POST['btnRegister'])) {

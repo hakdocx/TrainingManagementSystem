@@ -1,7 +1,7 @@
 <?php
 
 ob_start();
-require dirname(__DIR__).('/templates/connection.php');
+require dirname(__DIR__).('../templates/connection_2.php');
     if(isset($_POST['btnLogout']))
 {
     session_destroy();
