@@ -24,11 +24,11 @@
     JOIN account_details AS a
     ON a.account_id = i.account_id   
     WHERE r.course_id = '$id'
-    LIMIT 3 OFFSET 0
     ";
 
   $instructors = mysqli_query($conn, $sql);
   
+
 ?>
 
 <link rel="stylesheet" type="text/css" href="../assets/css/view_record_style.css">
@@ -38,30 +38,7 @@
   <?php include '../templates/navigation.php' ?>
   <?php include('../assets/popup/message.php'); ?>
 
-  <dialog id ='deleteForm' style="font-family: Montserrat;">
-  <div class="del-form-box pt-5 ps-5 pe-5">
-    <div class="row">
-      <h3 class="del-course-desc-vr">Delete this course?</h3>
-    </div>
-    <div class="row">
-      <hr>
-      <h4 class="del-course-title-vr">
-          <?php echo $result['course_title']; ?> will be remove from the list.
-      </h4>
-    </div>
-    <form action="code.php" method="POST">
-      <div class="row mt-5" id="button-box">
-        <input type="hidden" value="<?=$result['course_id'];?>" name="c_id">
-        <div class="col text-end">
-          <a id="cancel-btn-vr" type="button";>Cancel</a>
-        </div>
-        <div class="col text-start">
-          <button type="submit" name="delete_course" id="del-course-btn">Delete</button>
-        </div>
-      </div>
-    </form>
-  </div>
-  </dialog>
+
   <div class = "box m-5 p-5">
     <div class="row p-5" style="background-color: #681a1a; color: white; border-radius: 10px;">
         <h1 style = "font-size: 48px;">
@@ -71,88 +48,41 @@
           <i class="fa-regular fa-calendar-days"></i>
         <?php echo $result ['number_of_days'] . " Days"; ?>
         </h3>
-        <a href = "index.php" class = "text-decoration-none" style = "color:white">&#8592; View Course List</a>
-    </div>      
-    <div class="container mt-2 p-5">
-      <div class="row">
-        <div class="col-7 me-4" style="background-color:#fefcfb;">
-          <div class="row mb-4 p-3" style="background-color: white; border: 1px solid #dbdbdb; border-radius: 10px;">
-            <h4 class="pt-2">
-              <strong>IMPLEMENTATION</strong>
-            </h4>
-            <p class ="pt-1 fs-5">
-              <?php if ($result['implementation']) {?>
-                <?php echo $result['implementation'];?>
-              <?php }else { 
-                  echo "N/A";?>
-              <?php } ?>
-            </p>
-          </div>
-          
-          <div class="row mb-4 p-3" style="background-color: white; border: 1px solid #dbdbdb; border-radius: 10px;">
-            <h4 class="pt-2">
-              <strong>MTAP COURSE</strong>
-            </h4>
-            <p class ="pt-1 fs-5">
-              <?php if ($result['mtap_course']) {?>
-                <?php echo $result['mtap_course'];?>
-              <?php } else { 
-                  echo "N/A";?>
-              <?php } ?>
-            </p>
-          </div>
-
-        <div class="row mb-4 p-3" style="background-color: white; border: 1px solid #dbdbdb; border-radius: 10px;">
-          <h4 class="pt-2">
-            <strong>PREREQUISITES</strong>
-          </h4>
-          <ul style="padding-left:30px;">
-            <?php 
-                $pre_req = $result["pre_requisite_course"];
-                if ($pre_req){
-                  while($pre_req) {
-                    $sql = "SELECT * FROM course WHERE course_id = '$pre_req'";
-                    $query = mysqli_query($conn, $sql);
-                    $course = mysqli_fetch_assoc($query);
-                    ?>
-                      <li class ="ps-2 pt-1">
-                        <a class="fw-bold fs-5" href = "viewRecord.php?id=<?= $course['course_id'] ?>" style="color:#9D2426;"><?= $course['course_title'] ?></a>
-                      </li>
-                    <?php 
-                      $pre_req = $course['pre_requisite_course'];
-                  }
-                } else {
-                  echo "<li class='fs-5'>No prerequisites.</li>";
-                }
-                ?>
-            <?php ?>
-          </ul>
-        </div>
-
-          <div class="row mt-5">
-            <div class="col-2 me-4 p-0">
-              <a href="updateCourse.php?id=<?php echo $id ?>" type="button" class="update-btn-vr fs-5">UPDATE</a>
+    </div>  
+    <br><br><a href = "viewRecord.php?id=<?php echo $id ?>" class = "text-decoration-none" style = "font-size:15px; color: #681a1a">&#8592; Back to View</a>  
+    <center>
+        <div class="row p-5 mt-4" style="background-color: white; border: 1px solid #dbdbdb; border-radius: 10px; width:80%; overflow-y: scroll;" >
+                <h4 class="pt-2 pb-4">
+                <strong style="float:left;">INSTRUCTORS</strong>
+                </h4>  
+                <div class ="fs-5 pb-2 fw-bold">
+                    <table class='table'>
+                            <thead>
+                                <tr>
+                                    <th class ="fw-normal">NAME</th>
+                                    <th class ="fw-normal">QUALIFICATION DEGREE</th>
+                                    <th class ="fw-normal">COURSE SPECIALIZATION</th>
+                                </tr>
+                            </thead>
+                        <tbody>
+                            <?php while ($instructor = mysqli_fetch_assoc($instructors)) { ?>
+                                <tr>
+                                <td class = "p-4 fs-5 mt-5" ><?= $instructor['firstname'] . " " . $instructor['lastname'] ?></td>
+                                <td class = "p-4 fs-5 mt-5" ><?= $instructor['qualification_degree'] ?></td>
+                                <td></td>
+                                <td></td>
+                        
+                
+                                <td></td>
+                                </tr>
+                            <?php } ?> 
+                        </tbody>
+                    </table>  
+                </div> 
             </div>
-            <?php 
-
-              $sql = "
-                SELECT * 
-                FROM `registration_course`
-                WHERE course_id = $id";
-
-              $query = mysqli_query($conn, $sql);
-
-              if(!mysqli_fetch_assoc($query)) :
-            ?>
-            <div class="col-2 p-0">
-              <button type="button" class="del-btn-vr fs-5" id ="deleteBtn">DELETE</button>
-            </div>
-          <?php endif ?>
-          </div>
+    </center>
         </div>
       </div>
-    </div>
-  </div>
   <script src = "../assets/js/message.js"></script>
   <script src = "../assets/js/delete.js"></script>
 </body>
