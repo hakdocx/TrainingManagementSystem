@@ -16,7 +16,7 @@
   <body>
     <header>
     <h1>POOL OF INSTRUCTORS </h1> 
-      <div class="homebutton"><a href="instructor_index.php"><span class="material-symbols-outlined">home</span></a>
+      <div class="homebutton"><a href="index.php"><span class="material-symbols-outlined">home</span></a>
     </div>
     </header>
 
@@ -80,7 +80,7 @@
    <br>
    <br>
    <div class="btnback">
-   <a href="instructor_index.php"><button type=submit >Back</button></a>        
+   <a href="index.php"><button type=submit >Back</button></a>        
    </div>
 
  <?php
