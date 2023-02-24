@@ -155,14 +155,17 @@
               <strong>INSTRUCTORS</strong>
             </h4>
             <?php while ($instructor = mysqli_fetch_assoc($instructors)) { ?>
-              <p class ="fs-5"><?= $instructor['firstname'] . " " . $instructor['lastname'] ?></p>
+              <div class ="fs-5 pb-2 fw-bold">
+                <img class="img-fluid" src="https://api.iconify.design/ion/person-circle-outline.svg" style="height: 35px;">
+                <?= $instructor['firstname'] . " " . $instructor['lastname'] ?>
+              </div>
             <?php } ?>    
           </div>
           <div class="row p-3 mt-3" style = "border:1px solid #dbdbdb; background:white; border-radius:10px">
             <h4 class="pt-2">
               <strong>REGISTRATION</strong>
             </h4>
-            <a href = "registrationCourse.php?id=<?= $id ?>" class = "btn" style = "color:white;background:#4a1212">Open Regisration</a>
+            <a href="registrationCourse.php?id=<?= $id ?>" class="btn fs-5 p-2" style="color:white;background:#4a1212">Open Regisration</a>
           </div>
         </div>
       </div>
