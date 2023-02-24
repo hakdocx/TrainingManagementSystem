@@ -103,4 +103,35 @@ if(isset($_POST['delete_course']))
     }
 }
 
+if(isset($_POST['register'])) {
+    $course_id = $_POST['course_id'];
+    $instructor_id = mysqli_real_escape_string($conn, $_POST['instructor_id']);
+    $opening_date = date('Y-m-d', strtotime($_POST['opening_date']));
+    $closing_date = date('Y-m-d', strtotime($_POST['closing_date']));
+    $implementation_nr = mysqli_real_escape_string($conn, $_POST['implementation']);
+
+    echo $opening_date . " " . $closing_date;
+
+    $sql = "SELECT * FROM `pool_instructor_details` WHERE instructor_id = $instructor_id";
+    $query = mysqli_query($conn, $sql);
+    $instructor = mysqli_fetch_assoc($query);
+
+    if(!$instructor) {
+        // insert session message about instructor id invalid
+        header("location: index.php");
+        exit(0);
+    }
+
+   $sql = "
+        INSERT INTO `registration_course` (course_id,instructor_id, opening_date, closing_date, implementation_nr)
+        VALUES ($course_id, $instructor_id, $opening_date, $closing_date, $implementation_nr)";
+
+    $query = mysqli_query($conn, $sql);
+
+    if($query) {
+        header("location: viewRecord.php?id=$course_id");
+    } else {
+        echo "Didnt work";
+    }
+}
 ?>

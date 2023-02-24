@@ -2,7 +2,6 @@
 
 	require '../templates/connection.php';
 	require '../templates/header.php';
-	require '../templates/navigation.php';
 
 	session_start();
 
@@ -44,9 +43,12 @@
 
 ?>
 
-<?php include('../assets/popup/message.php'); ?>
+<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+</head>
 
 <body>
+	<?php include '../assets/popup/message.php';?>
+	<?php include '../templates/navigation.php';?>
 	<dialog id ='training-form'>
 		<form method = "POST" action = "code.php">
 			<div class="form-container">
