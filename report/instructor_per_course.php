@@ -72,7 +72,7 @@ $result1 = mysqli_query($connect, $query);
 			require '../templates/header.php';
 			require '../templates/navigation.php';
 
-			session_start();
+			//session_start();
 		    $sql = "SELECT DISTINCT instructor_id FROM pool_instructor_details";
 		    $result = $conn->query($sql);
 

@@ -92,7 +92,7 @@
 	<center>
 	<strong> <h1>Course Report</h1> </strong>
 	<div class="homebutton">
-        <a href="main.php"><span class="material-symbols-outlined">HOME</span></a>
+        <a href="index.php"><span class="material-symbols-outlined">HOME</span></a>
       </div>
 	</header>
 	<div class="chas">
