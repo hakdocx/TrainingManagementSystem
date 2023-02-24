@@ -80,7 +80,7 @@
    <br>
    <br>
    <div class="btnback">
-   <a href="instructor_index.php"><button type=submit >Back</button></a>        
+   <a href="index.php"><button type=submit >Back</button></a>        
    </div>
 
  <?php
