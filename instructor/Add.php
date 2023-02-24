@@ -19,9 +19,10 @@
      require '../templates/navigation.php'; 
      ?>
 
-    <header>
+    
+    <header class="mt-5">
     <h1>POOL OF INSTRUCTORS </h1> 
-      <div margin-top=30px; class="homebutton"><a href="index.php"><span class="material-symbols-outlined">home</span></a>
+      <div  class="homebutton"><a href="index.php"><span class="material-symbols-outlined">home</span></a>
     </div>
     </header>
 
