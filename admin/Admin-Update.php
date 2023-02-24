@@ -58,7 +58,7 @@ if (isset($_POST['save'])) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/user_mgmt/assets/css/Button-Style.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
-  <link rel="stylesheet" href="/user_mgmt/assets/css/Navigation-Style.css"/>
+  <link rel="stylesheet" href="../assets/css/Navigation-Style.css"/>
 
   <title>Update User</title>
 </head>

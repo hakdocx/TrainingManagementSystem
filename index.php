@@ -1,6 +1,6 @@
 <?php
-    //require dirname(__DIR__). "templates/connection_2.php"; 
-    require 'templates/connection_2.php'; 
+    require dirname(__DIR__). "templates/connection_2.php"; 
+    //require 'templates/connection_2.php'; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,8 +21,8 @@
 <body>
     <header>
         <?php
-            //require dirname(__DIR__).('templates/navigation.php');
-            require 'templates/navigation.php'; 
+            require dirname(__DIR__).('templates/navigation.php');
+            //require 'templates/navigation.php'; 
         ?>
     </header>
 

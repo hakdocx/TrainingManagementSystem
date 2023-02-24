@@ -4,8 +4,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="/user_mgmt/assets/css/Access-Level-Style.css"/>
-	<link rel="stylesheet" href="/user_mgmt/assets/css/Body-Style2.css"/>
+	<link rel="stylesheet" href="assets/css/Access-Level-Style.css"/>
+	<link rel="stylesheet" href="assets/css/Body-Style2.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
 
     <style>

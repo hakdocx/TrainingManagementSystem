@@ -16,8 +16,8 @@ require dirname(__DIR__). "../templates/connection_2.php";
         <title>Login System</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
-        <link rel="stylesheet" href="/user_mgmt/assets/css/Button-Style.css">
-        <link rel="stylesheet" href="/user_mgmt/assets/css/Navigation-Style.css"/>
+        <link rel="stylesheet" href="../assets/css/Button-Style.css">
+        <link rel="stylesheet" href="../assets/css/Navigation-Style.css"/>
 
         <style>
         body {
