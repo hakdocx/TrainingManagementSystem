@@ -21,7 +21,7 @@
 
     <header>
     <h1>POOL OF INSTRUCTORS </h1> 
-      <div class="homebutton"><a href="index.php"><span class="material-symbols-outlined">home</span></a>
+      <div margin-top=30px; class="homebutton"><a href="index.php"><span class="material-symbols-outlined">home</span></a>
     </div>
     </header>
 

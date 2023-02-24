@@ -51,7 +51,7 @@ header {
     ?>
       <strong><h1>POOL OF INSTRUCTORS </h1> </strong>
       <div class="homebutton">
-        <a href="instructor_index.php"><span class="material-symbols-outlined">home</span></a>
+        <a href="index.php"><span class="material-symbols-outlined">home</span></a>
       </div>
   </header>
     
