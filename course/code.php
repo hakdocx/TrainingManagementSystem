@@ -114,7 +114,7 @@ if(isset($_POST['register'])) {
 
     $sql = "SELECT * FROM `pool_instructor_details` WHERE instructor_id = $instructor_id";
     $query = mysqli_query($conn, $sql);
-    $instructor = mysqli_fetch($query);
+    $instructor = mysqli_fetch_assoc($query);
 
     if(!$instructor) {
         // insert session message about instructor id invalid
