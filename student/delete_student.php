@@ -1,6 +1,6 @@
 <?php
-require("connection_student.php");
-
+//require("connection_student.php");
+require '../templates/connection.php';
 $students = mysqli_query($conn,"select * from student");
 $j = mysqli_affected_rows($conn);
 
