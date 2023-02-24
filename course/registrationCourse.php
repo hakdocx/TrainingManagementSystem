@@ -30,7 +30,7 @@
     <div class="row align-items-center" style="background-color: white">
       <div class="col pe-5 ps-5">
         <div class="row">
-          <a class="fs-5 pe-5 ps-5" href="" style="text-decoration:none; color:#681A1A;">  
+          <a class="fs-5 pe-5 ps-5" href="viewRecord.php?id=<?= $course_id ?>" style="text-decoration:none; color:#681A1A;">  
             &#8592; Back to View
           </a>
           <h1 class="page-title pt-4 pe-5 ps-5">Course Registration</h1>
