@@ -1,27 +1,48 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style= "background-color: #681A1A;" >
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#portfolio-nav">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="portfolio-nav">
-		<ul class="navbar-nav me-auto">
-			<li>
-				<a class="nav-link" href="#landing">HOME</a>
-			</li>
-			<li>
-				<a class="nav-link" href="#read.php">STUDENT</a>
-			</li>
-			<li>
-				<a class="nav-link" href="../course">COURSE</a>
-			</li>
-			<li>
-				<a class="nav-link" href="../instructor/instructor_index.php">INSTRUCTORS</a>
-			</li>
-			<li>
-				<a class="nav-link" href="#profile">PROFILE</a>
-			</li>
-			<li>
-				<a class="nav-link" href="../report/report_Index.php">REPORT</a>
-			</li>
-		</ul>
-	</div>
-</nav>
+<nav class = "navbar navbar-expand-lg navbar-dark fixed-top" style = "background-color: #681A1A;">
+        <a class = "navbar-brand" href="../homepage.php">Web Development</a>
+        <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#portfolio-nav" aria-controls = "portfolio-nav" aria-expanded = "false" aria-label = "Toggle navigation">
+            <span class = "navbar-toggler-icon"></span>
+        </button>
+		
+        <div class = "collapse navbar-collapse" id = "portfolio-nav">
+            <ul class="nav navbar-nav mr-auto">
+                <li class ="nav-item">
+                    <a class="nav-link" href="../homepage.php">HOME</a>
+                </li>
+                <li class = "nav-item">
+                    <a class="nav-link" href="#">STUDENT</a>
+                </li>
+                <li class = "nav-item">
+                    <a class="nav-link" href="../course/index.php">COURSE</a>
+                </li>
+                <li class = " nav-item">
+                    <a class="nav-link" href="../instructor/instructor_index.php">INSTRUCTORS</a>
+                </li>
+            
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/report/report_Index.php" id="navbarDropdownMenuLink" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        GENERATE REPORT
+                    </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="../report/rankPerTitle.php">By Number of Participants per Course</a>
+                            <a class="dropdown-item" href="../report/coursePerDate.php">By Course conducted by Date Range</a>
+                            <a class="dropdown-item" href="../report/participantsPerCourse.php">By Participants of the Course</a>
+                            <a class="dropdown-item" href="../report/instructorPerCourse.php">By Pool Instructors per Course</a>
+                        </div>
+                </li>
+            </ul>
+
+            <ul class = "nav navbar-nav">
+                <li>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        PROFILE
+                    </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item">User Name</a>
+                            <a class="dropdown-item">User Type</a>
+                        <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Log Out</a>
+                        </div>
+                </li> 
+        </div>
+	</nav>
