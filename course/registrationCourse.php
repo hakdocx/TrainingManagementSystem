@@ -1,7 +1,23 @@
 <?php 
-
+  session_start();
 	require '../templates/connection.php';
 	require '../templates/header.php';
+
+  
+  if(!isset($_GET['id'])) {
+    // insert session message here about having an invalid id
+    header("location: index.php");
+  }
+
+  $course_id = $_GET['id'];
+  $sql = "SELECT * FROM course WHERE course_id = $course_id";
+  $query = mysqli_query($conn, $sql);
+  $course = mysqli_fetch_assoc($query);
+
+  if(!$course) {
+    // insert session message here about having id not found
+    header("location: index.php");
+  }
 
 ?>  
 
@@ -22,7 +38,8 @@
         <div class="row">
           <div class ="row">
             <div class="form">
-              <form class="signUp" action="" method="get">
+              <form class="signUp" action="code.php" method="POST">
+                <input type="hidden" name="course_id" value = "<?= $course_id ?>">
                 <div class="form-container pe-5 ps-5">
                   <div class="form-row mt-4">
                     <label class="lbl-name fs-5 mb-1" for='mtap-course'>Instructor ID <label class="asterisk">*</label></label>
@@ -43,7 +60,7 @@
                     <input class="input-box p-2 fs-5" type="text" name="implementation" id ='mtap-course' required>
                   </div>
                   <div>
-                  <button name="save_student" type="submit" class="btn btn-primary mt-5 fs-5 pe-4 ps-4" id="register-btn" >REGISTER</button> 
+                  <button name="register" type="submit" class="btn btn-primary mt-5 fs-5 pe-4 ps-4" id="register-btn" >REGISTER</button> 
                   </div>
                 </div>
               </form>
