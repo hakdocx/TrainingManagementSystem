@@ -16,18 +16,18 @@
                     <a class="nav-link" href="../course/index.php">COURSE</a>
                 </li>
                 <li class = " nav-item">
-                    <a class="nav-link" href="../instructor/instructor_index.php">INSTRUCTORS</a>
+                    <a class="nav-link" href="../instructor/index.php">INSTRUCTORS</a>
                 </li>
             
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="/report/report_Index.php" id="navbarDropdownMenuLink" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="/report/index.php" id="navbarDropdownMenuLink" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         GENERATE REPORT
                     </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="../report/rankPerTitle.php">By Number of Participants per Course</a>
-                            <a class="dropdown-item" href="../report/coursePerDate.php">By Course conducted by Date Range</a>
-                            <a class="dropdown-item" href="../report/participantsPerCourse.php">By Participants of the Course</a>
-                            <a class="dropdown-item" href="../report/instructorPerCourse.php">By Pool Instructors per Course</a>
+                            <a class="dropdown-item" href="../report/rank_per_title.php">By Number of Participants per Course</a>
+                            <a class="dropdown-item" href="../report/course_per_date.php">By Course conducted by Date Range</a>
+                            <a class="dropdown-item" href="../report/participants_per_course.php">By Participants of the Course</a>
+                            <a class="dropdown-item" href="../report/instructor_per_course.php">By Pool Instructors per Course</a>
                         </div>
                 </li>
             </ul>
