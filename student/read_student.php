@@ -1,8 +1,11 @@
 <?php 
 
-    require_once("connection_student.php");
-    $query = " select * from students_info  ";
-    $result = mysqli_query($mysqli, $query);
+    //require_once("connection_student.php");
+    require '../templates/header.php';
+    require '../templates/navigation.php';
+    require '../templates/connection.php';
+    $query = " select * from student, account_details ";
+    $result = mysqli_query($conn, $query);
 
 ?>
 
@@ -35,13 +38,13 @@
                                         echo "Error: " . mysqli_error($mysqli);
                                     } else {
                                         while ($row = mysqli_fetch_assoc($result)) {
-                                        $first = $row['firstName'];
-                                        $middle = $row['middleName'];
-                                        $last = $row['lastName'];
-                                        $id = $row['studentId'];
-                                        $email = $row['email'];
-                                        $birthdate = $row['birthdate'];
-                                        $course = $row['course'];
+                                        $first = $row['firstname'];
+                                        $middle = $row['middlename'];
+                                        $last = $row['lastname'];
+                                        $id = $row['student_id'];
+                                        $email = $row['username'];
+                                        //$birthdate = $row['birthdate'];
+                                        //$course = $row['course'];
                                         }
                                     }
 
@@ -63,8 +66,8 @@
                                         <td><?php echo $last ?></td>
                                         <td><?php echo $id ?></td>
                                         <td><?php echo $email ?></td>
-                                        <td><?php echo $birthdate ?></td>
-                                        <td><?php echo $course ?></td>
+                                        <!-- <td><?php echo $birthdate ?></td>
+                                        <td><?php echo $course ?></td> -->
                                     </tr>        
                             <?php   
 
