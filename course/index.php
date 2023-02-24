@@ -71,6 +71,7 @@
 				<center>
 				  <button name="save_course" type = "submit" class="btn btn-primary mt-3" id="submit-btn" >Submit</button> 
         </center>
+			</div>
 		</form>
 	</dialog>
 
@@ -103,18 +104,14 @@
     <div class="row">
       <div class="col-lg-10 mx-auto">
 				<div class="table-responsive">
-					<table id="myTable" style="width:100%" class='table borderless'>
-						<colgroup>
-							<col style = 'max-width: 10px;'>
-							<col span = '4' style = 'color:#5b5b5b' />
-						</colgroup>
+					<table class='table'>
 						<thead>
-							<tr style = 'font-weight: 500;'>
-								<td scope = 'col'>COURSE TITLE</th>
-								<td scope = 'col'>DURATION</th>
-								<td scope = 'col'>YEAR CERTIFIED</th>
-								<td scope = 'col'>PREREQUISITE</th>
-								<td scope = 'col'>Action</th>
+							<tr>
+								<th style='width: 30%'>COURSE TITLE</th>
+								<th>DURATION</th>
+								<th>YEAR CERTIFIED</th>
+								<th>PREREQUISITE</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -123,7 +120,7 @@
 								foreach($result as $student) {
 						?>
 							<tr>
-								<td class = "fs-5" style = 'font-weight: 600'><?= $student['course_title']; ?></td>
+								<td class = "fs-5" ><?= $student['course_title']; ?></td>
 								<td class = "fs-5"><?php echo $student['number_of_days'] . " days"; ?></td>
 								
 								<td class = "fs-5">
@@ -159,9 +156,7 @@
 								</td>
 							</tr>
 							<?php }
-								} // else {
-								//		echo "<h5> No Record Found </h5>";
-								//	}
+								}
 							?>
 						</tbody>
 					</table>

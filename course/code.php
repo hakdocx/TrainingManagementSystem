@@ -22,7 +22,7 @@ if(isset($_POST['save_course']))
 
         if($query_run)
         {
-            $_SESSION['message'] = "Course exists, value updated!";
+            $_SESSION['message'] = "Course exists!";
             header("Location: index.php");
             exit(0);
         }
