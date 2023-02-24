@@ -31,7 +31,6 @@
                         </div>
                 </li>
             </ul>
-
             <ul class = "nav navbar-nav">
                 <li>
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
