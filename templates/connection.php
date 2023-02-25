@@ -1,20 +1,20 @@
 <?php
 	// start session
-    if(!isset($_SESSION))
-    {
-        session_start();
-    }
-    else
-    {
-        session_destroy();
-        session_start();
-	}
+    // if(!isset($_SESSION))
+    // {
+    //     session_start();
+    // }
+    // else
+    // {
+    //     session_destroy();
+    //     session_start();
+	// }
 
 	// connect to database
-	$con=mysqli_connect("localhost","root","","project");
+	$conn=mysqli_connect("localhost","root","","project");
 
-	if(!$con){
-		die(mysqli_error($con));
+	if(!$conn){
+		die(mysqli_error($conn));
 	}
 
 	// initialize variables with empty values (for registration & login)
