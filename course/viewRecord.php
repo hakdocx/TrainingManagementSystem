@@ -24,6 +24,7 @@
     JOIN account_details AS a
     ON a.account_id = i.account_id   
     WHERE r.course_id = '$id'
+    LIMIT 3 OFFSET 0
     ";
 
   $instructors = mysqli_query($conn, $sql);
@@ -153,13 +154,16 @@
           <div class="row p-3" style="background-color: white; border: 1px solid #dbdbdb; border-radius: 10px;" >
             <h4 class="pt-2 pb-1">
               <strong>INSTRUCTORS</strong>
-            </h4>
+            </h4>  
+            <div id="myDIV">
             <?php while ($instructor = mysqli_fetch_assoc($instructors)) { ?>
               <div class ="fs-5 pb-2 fw-bold">
                 <img class="img-fluid" src="https://api.iconify.design/ion/person-circle-outline.svg" style="height: 35px;">
                 <?= $instructor['firstname'] . " " . $instructor['lastname'] ?>
               </div>
-            <?php } ?>    
+            <?php } ?>  
+            </div>
+            <a href = "viewInstructor.php?id=<?php echo $id ?>" style = "font-size: 15px; color: #C1121F; text-decoration:none;">  See All </a>  
           </div>
           <div class="row p-3 mt-3" style = "border:1px solid #dbdbdb; background:white; border-radius:10px">
             <h4 class="pt-2">
