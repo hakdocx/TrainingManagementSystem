@@ -63,6 +63,12 @@ html, body {
   border: 2px solid #DBDBDB; 
 }
 
+.input-box:focus {
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
 .asterisk {
   color: #C1121F;
   font-weight: 500;
@@ -80,4 +86,10 @@ html, body {
   padding: 10px;
   font-weight: 500;
 }
+
+.selectize-input, .selectize-dropdown{
+  border: 2px solid #DBDBDB !important; 
+  border-radius: 10px !important;
+}
+
 

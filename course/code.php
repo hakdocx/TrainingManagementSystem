@@ -103,6 +103,7 @@ if(isset($_POST['delete_course']))
     }
 }
 
+
 if(isset($_POST['register'])) {
     $course_id = $_POST['course_id'];
     $instructor_id = mysqli_real_escape_string($conn, $_POST['instructor_id']);
