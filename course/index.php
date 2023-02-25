@@ -3,8 +3,6 @@
 	require '../templates/connection.php';
 	require '../templates/header.php';
 
-	session_start();
-
 	// alter query based on whether search value is present 
 
 	if(isset($_GET['search']) && !empty($_GET['search'])) {

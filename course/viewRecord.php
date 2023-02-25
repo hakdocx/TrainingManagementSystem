@@ -1,5 +1,4 @@
 <?php 
-  session_start();
 
 	require '../templates/connection.php';
   require '../templates/header.php';
