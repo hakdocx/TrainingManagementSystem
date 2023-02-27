@@ -22,7 +22,7 @@
 		if ($row['user_type'] == "admin")
 		{
 			$_SESSION["username"]=$username;
-			header("Location: /user_mgmt/admin/Admin-Module.php");
+			header("Location: Admin-Module.php");
 		}
 		else
 		{
@@ -44,8 +44,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="/user_mgmt/assets/css/Login-Style.css"/>
-	<link rel="stylesheet" href="/user_mgmt/assets/css/Body-Style.css"/>
+	<link rel="stylesheet" href="../assets/css/Login_Style.css"/>
+	<link rel="stylesheet" href="../assets/css/Body_Style.css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
 

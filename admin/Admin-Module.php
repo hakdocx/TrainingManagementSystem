@@ -18,7 +18,7 @@ require dirname(__DIR__).('../templates/connection_2.php');
     initial-scale=1.0">
     <title>User List</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/Button-Style.css">
+    <link rel="stylesheet" href="../assets/css/Button_Style.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
 
     <style>

@@ -10,7 +10,7 @@
                     <a class="nav-link" href="../homepage.php">HOME</a>
                 </li>
                 <li class = "nav-item">
-                    <a class="nav-link" href="#">STUDENT</a>
+                    <a class="nav-link" href="../student/index.php">STUDENT</a>
                 </li>
                 <li class = "nav-item">
                     <a class="nav-link" href="../course/index.php">COURSE</a>
