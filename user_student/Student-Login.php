@@ -1,10 +1,8 @@
 <?php
 	session_start();
-	require '../templates/connection_2.php';
-	
 	// include connection file
-	//require dirname(__DIR__). "/templates/connection.php";
-	
+	require dirname(__DIR__). "../templates/connection_2.php";
+
 	// login the instructor
 	if (isset($_POST['btnLogin'])) {
 

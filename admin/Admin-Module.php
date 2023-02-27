@@ -18,7 +18,7 @@ require dirname(__DIR__).('../templates/connection_2.php');
     initial-scale=1.0">
     <title>User List</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/user_mgmt/assets/css/Button-Style.css">
+    <link rel="stylesheet" href="../assets/css/Button-Style.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
 
     <style>
@@ -33,7 +33,7 @@ require dirname(__DIR__).('../templates/connection_2.php');
 <body>
 <header>
         <?php
-            require dirname(__DIR__).('/navigation.php');
+            require dirname(__DIR__).('../navigation.php');
         ?>
 </header>
     <div class="container">
@@ -78,7 +78,7 @@ require dirname(__DIR__).('../templates/connection_2.php');
                     <td>' . $middlename . '</td>
                     <td>' . $suffix . '</td>
                     <td>
-                    <button type="submit" class="btn btn"><a href="/user_mgmt/admin/Admin-Update.php?
+                    <button type="submit" class="btn btn"><a href="Admin-Update.php?
                     updateid='.$account_id.'" class="text-light" style="text-decoration:none">Update</a></button>
                     </td>
                     </tr>';

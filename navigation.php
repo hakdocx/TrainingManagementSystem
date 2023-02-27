@@ -7,20 +7,22 @@
         <link rel="stylesheet" href="/user_mgmt/assets/css/Navigation-Style.css"/>
     </head>
     <body>
+        <nav>
         <ul>
             <?php
                     if(!isset($_SESSION['username'])){
                 ?>
-                    <li><a href="/user_mgmt/Access-Level.php">Login</a></li>
-                    <li style="margin-left: 930px"><a href="/user_mgmt/user_registration/Registration-Form.php">Register</a></li>
+                    <li><a href="Access-Level.php">Login</a></li>
+                    <li><a href="user_registration/Registration-Form.php">Register</a></li>
             <?php
                 }else{
                 ?>
-                    <li><a href="/user_mgmt/user_update/userProfile.php">User Profile</a></li>
-                    <li style="margin-left: 850px"><a href="/user_mgmt/user_logout/logoutProcess.php">Logout</a></li>
+                    <li><a href="user_update/userProfile.php">User Profile</a></li>
+                    <li><a href="user_logout/logoutProcess.php">Logout</a></li>
                 <?php
                     } 
                 ?>
         </ul>
+        </nav>
     </body>
 </html>

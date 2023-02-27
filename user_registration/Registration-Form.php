@@ -1,6 +1,6 @@
 <?php
 	// include connection file
-	require dirname(__DIR__). "../templates/connection_2.php"; 
+	require dirname(__DIR__). "../templates/connection_2.php";
 
 	// register the instructor
 	if (isset($_POST['btnRegister'])) {
@@ -143,7 +143,7 @@
 
 					</table>
 					<select name="type" id="type" class="options">
-							<option selected="true" disabled="disabled">Select Account Type</option>
+							<option hidden value="">Select Account Type</option>
 							<option value="student" class="options">Student</option>
 							<option value="instructor" class="options">Instructor</option>
 							<option value="admin" class="options">Admin</option>

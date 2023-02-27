@@ -5,8 +5,7 @@ error_reporting(E_ALL);
 
 if(isset($_POST['update'])){
 
-	//include('connection.php');
-	require '../templates/connection_2.php';
+	include('../templates/connection_2.php');
 
 	$userNewUsername = $_POST['updateUsername'];
     $userNewPassword = $_POST['updatePassword'];
@@ -21,8 +20,8 @@ if(isset($_POST['update'])){
 	$sql = "UPDATE account_details SET username = '$userNewUsername', password ='$userNewPassword',
 	lastname='$userNewLName', firstname='$userNewFName', middlename = $userNewMName, suffix = 'userNewSuffix'  WHERE username = '$loggedInUser'";
 
-	$results = mysqli_query($conn,$sql);
-	header('Location:/userProfile/userProfile.php?success=userUpdated');
+	$results = mysqli_query($con,$sql);
+	header('Location:userProfile.php?success=userUpdated');
 	exit;
 	}
 

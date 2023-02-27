@@ -29,7 +29,7 @@ require dirname(__DIR__). "../templates/connection_2.php";
     <body>
         <header>
             <?php
-               require dirname(__DIR__).('/navigation.php');
+               require dirname(__DIR__).('../navigation.php');
             ?>
         </header>
 
