@@ -72,7 +72,7 @@ $result1 = mysqli_query($connect, $query);
 			require '../templates/header.php';
 			require '../templates/navigation.php';
 
-			session_start();
+			//session_start();
 		    $sql = "SELECT DISTINCT course.course_title FROM course";
 		    $result = $conn->query($sql);
 

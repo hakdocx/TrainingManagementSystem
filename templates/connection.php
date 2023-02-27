@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-<?php 
 
-	$conn = mysqli_connect('localhost', 'root', '', 'project');
-
-	if(!$conn) {
-		echo 'Connection error: ' . mysqli_connect_error();
- 	} 
-=======
 <?php
 	// start session
     // if(!isset($_SESSION))
@@ -23,8 +15,8 @@
 	$conn=mysqli_connect("localhost","root","","project");
 
 	if(!$conn){
-		die(mysqli_error($conn));
+		echo 'Connection error: ' . mysqli_connect_error();
+		//die(mysqli_error($conn));
 	}
->>>>>>> 939ab502b70d8b07ab4ad9c3014fdbface9e8fb2
 
  ?>
