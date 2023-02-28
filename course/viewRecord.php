@@ -35,7 +35,7 @@
 
 <body style = "font-family: Montserrat; overflow-x:hidden; background-color:#fefcfb;">
   <?php include '../templates/navigation.php' ?>
-  <?php include('../assets/popup/message.php'); ?>
+  <?php #include('../assets/popup/message.php'); ?>
 
   <dialog id ='deleteForm' style="font-family: Montserrat;">
   <div class="del-form-box pt-5 ps-5 pe-5">

@@ -45,7 +45,7 @@
 </head>
 
 <body>
-	<?php include '../assets/popup/message.php';?>
+	<?php #include '../assets/popup/message.php';?>
 	<?php include '../templates/navigation.php';?>
 	<dialog id ='training-form'>
 		<form method = "POST" action = "code.php">

@@ -19,7 +19,7 @@
 </head>
 <body style="font-family: Montserrat; overflow-x:hidden; background-color:#fffcfa">
 <?php include '../templates/navigation.php' ?>
-<?php include('../assets/popup/message.php'); ?>
+<?php #include('../assets/popup/message.php'); ?>
 
 <div class="box m-5 p-5">
   <div class="row p-5" style="background-color:#681a1a; color: white; border-radius:10px;">
