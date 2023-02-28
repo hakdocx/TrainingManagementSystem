@@ -82,7 +82,8 @@
 	</style>
 </head>
 <body>
-	<?php
+	<?
+	session_start();
 	require '../templates/connection.php';
 	require '../templates/header.php';
 	require '../templates/navigation.php';
@@ -109,6 +110,7 @@
 	</div>
 		<br>
 		<?php
+		
 		if (isset($_POST["start_date"]) && isset($_POST["end_date"])) {
 			/* // Set the database connection parameters
 			$servername = "localhost:3308";

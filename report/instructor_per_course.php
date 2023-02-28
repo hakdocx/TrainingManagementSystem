@@ -63,6 +63,7 @@ $result1 = mysqli_query($connect, $query);
 			</div>
 			<br>
 			<?php
+			session_start();
 		    /* $conn = mysqli_connect($hostname, $username, $password, $databaseName);
 
 		    if ($conn->connect_error) {

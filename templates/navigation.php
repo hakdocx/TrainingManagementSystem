@@ -33,9 +33,10 @@
             </ul>
             <ul>
             <?php 
+            session_start();
             require 'connection.php';
             //echo $_SESSION['username'];
-            
+           
             ///echo $_SESSION['user_type'];
             ?>
             <?php
@@ -48,21 +49,21 @@
                 ?>
                     <!-- <li><a href="../user/userProfile.php">User Profile</a></li>
                     <li><a href="../user/logoutProcess.php">Logout</a></li> -->
-            <ul class = "nav navbar-nav">
-                <li>
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        PROFILE
-                    </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item">User Name  <?php echo ucfirst($_SESSION['username']);  ?></a>
-                            <a class="dropdown-item">User Type</a>
-                        <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Log Out</a>
-                        </div>
-                </li> 
-            </ul>  
+                    <ul class = "nav navbar-nav">
+                        <li>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                PROFILE
+                            </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item">User Name  <?php echo ucfirst($_SESSION['username']);  ?></a>
+                                    <a class="dropdown-item">User Type</a>
+                                <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Log Out</a>
+                                </div>
+                        </li> 
+                    </ul>  
                 <?php
-                    } 
+                } 
             ?>  
         </ul>
               

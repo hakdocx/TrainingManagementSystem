@@ -68,6 +68,7 @@ $result1 = mysqli_query($connect, $query);
 		    if ($conn->connect_error) {
 		        die("Connection failed: " . $conn->connect_error);
 		    } */
+			session_start();
 			require '../templates/connection.php';
 			require '../templates/header.php';
 			require '../templates/navigation.php';

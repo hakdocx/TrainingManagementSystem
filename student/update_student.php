@@ -49,6 +49,7 @@
 
 <body>
 	<?php
+	session_start();
 	$table = "tblstudent";
 	include("connection.php");
 

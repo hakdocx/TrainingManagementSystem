@@ -98,6 +98,7 @@
     </header> -->
     
     <?php
+    session_start();
     /* $conn = mysqli_connect('localhost', 'root', '', 'project') or die('Unable to connect'); 
     
     if ($conn->connect_error) {

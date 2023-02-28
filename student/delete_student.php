@@ -1,4 +1,5 @@
 <?php
+session_start();
 //require("connection_student.php");
 require '../templates/connection.php';
 $students = mysqli_query($conn,"select * from student");

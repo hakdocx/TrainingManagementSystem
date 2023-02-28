@@ -1,5 +1,5 @@
 <?php 
-
+    session_start();
     //require_once("connection_student.php");
     require '../templates/header.php';
     require '../templates/navigation.php';
