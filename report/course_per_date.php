@@ -82,14 +82,15 @@
 	</style>
 </head>
 <body>
-	<?
+<?
 	session_start();
-	require '../templates/connection.php';
-	require '../templates/header.php';
+	//require '../templates/connection.php';
+	//require '../templates/header.php';
 	require '../templates/navigation.php';
 	?>
 	<br>
 	<header>
+	
 	<center>
 	<strong> <h1>Course Report</h1> </strong>
 	<div class="homebutton">

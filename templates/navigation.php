@@ -33,8 +33,8 @@
             </ul>
             <ul>
             <?php 
-            session_start();
-            require 'connection.php';
+            //session_start();
+            //require 'connection.php';
             //echo $_SESSION['username'];
            
             ///echo $_SESSION['user_type'];

@@ -22,6 +22,7 @@
 <body>
     <header>
         <?php
+            session_start();
             #require dirname(__DIR__).('navigation.php');
             //require '../navigation.php';
             require '../templates/navigation.php';
