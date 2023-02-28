@@ -182,7 +182,8 @@ c.course_title,
 a.firstname, 
 a.lastname, 
 r.opening_date, 
-r.closing_date 
+r.closing_date,
+r.course_reg_id
 FROM 
 registration_course r
 JOIN 
@@ -221,7 +222,7 @@ while($row = mysqli_fetch_assoc($students)){
     echo "<td>
     <div class=container1>
     <div class=deleter>
-    <a class=click href=#>VIEW</a>
+    <a class=click href='course-registration-details.php?id={$row["course_reg_id"]}'>VIEW</a>
     </div>
     </div>
     
