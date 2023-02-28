@@ -589,7 +589,7 @@
     <?php
     #require '../templates/connection.php';
     #require '../templates/header.php';
-    require 'templates/navigation.php';
+    require '../templates/navigation.php';
     ?>
 
     <div class="rectangle"></div>

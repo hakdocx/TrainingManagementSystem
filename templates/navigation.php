@@ -33,9 +33,9 @@
             </ul>
             <ul>
             <?php 
-            require 'connection.php';
-            echo $_SESSION['username'];
-            echo $_SESSION['user_type'];
+            //require 'connection.php';
+            //echo $_SESSION['username'];
+            ///echo $_SESSION['user_type'];
             ?>
             <?php
                     if(!isset($_SESSION['username'])){
