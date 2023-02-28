@@ -99,9 +99,8 @@
     .first-class {
     color: yellow;
     margin-top: 100px;
-    margin-left: 100px;
     margin-bottom: 5px;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 300;
     text-align: center;
     font-weight: bold;
