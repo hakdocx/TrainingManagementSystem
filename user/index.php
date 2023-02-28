@@ -29,8 +29,7 @@
     </header>
 
     <div align="center">
-
-    <?php
+    <br margin:30 >    <?php
         if(isset($_GET['success'])){
             if($_GET['success'] == 'loggedOut'){
                 ?>

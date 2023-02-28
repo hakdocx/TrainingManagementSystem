@@ -1,5 +1,5 @@
 <nav class = "navbar navbar-expand-lg navbar-dark fixed-top" style = "background-color: #681A1A;">
-        <a class = "navbar-brand" href="../homepage.php">Web Development</a>
+        <a class = "navbar-brand" href="../user/homepage.php">Web Development</a>
         <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#portfolio-nav" aria-controls = "portfolio-nav" aria-expanded = "false" aria-label = "Toggle navigation">
             <span class = "navbar-toggler-icon"></span>
         </button>
@@ -33,8 +33,9 @@
             </ul>
             <ul>
             <?php 
-            //require 'connection.php';
+            require 'connection.php';
             //echo $_SESSION['username'];
+            
             ///echo $_SESSION['user_type'];
             ?>
             <?php
@@ -53,7 +54,7 @@
                         PROFILE
                     </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item">User Name</a>
+                            <a class="dropdown-item">User Name  <?php echo ucfirst($_SESSION['username']);  ?></a>
                             <a class="dropdown-item">User Type</a>
                         <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Log Out</a>

@@ -1,7 +1,7 @@
 
 <?php
 	//start session
-    if(!isset($_SESSION))
+/*     if(!isset($_SESSION))
      {
          session_start();
     }
@@ -9,7 +9,7 @@
          session_destroy();
          session_start();
 	}
-
+ */
 	$conn = mysqli_connect('localhost', 'root', '', 'project');
 
 	if(!$conn){

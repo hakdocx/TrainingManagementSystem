@@ -23,7 +23,7 @@
 			$_SESSION["username"]=$username;
 			$_SESSION["user_type"]="student";
 			//header("Location: ../index.php");
-			header("Location: homepage.php");
+			header("Location: index.php");
 		}
 		else
 		{
