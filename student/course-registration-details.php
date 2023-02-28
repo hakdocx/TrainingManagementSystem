@@ -10,8 +10,8 @@
 	$registrationId = $_GET['id'];
 
 	// check whether id parameter is invalid
-	$sql = "SELECT * FROM registration_course WHERE registration_course_id = $registrationId";
-	$query = mysqli_connect($con, $sql);
+	$sql = "SELECT * FROM registration_course WHERE course_reg_id = $registrationId";
+	$query = mysqli_query($conn, $sql);
 	$registrationCourse = mysqli_fetch_assoc($query);
 
 	if(!$registrationCourse) {
