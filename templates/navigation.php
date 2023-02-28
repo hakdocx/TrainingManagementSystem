@@ -38,21 +38,27 @@
             </ul>
             
             <ul class="nav navbar-nav mr-auto">
-            <?phpif(!isset($_SESSION['username'])){?>
+            <?php
+            if(!isset($_SESSION['username'])){
+            ?>
                <!--  <div class = "collapse navbar-collapse" id = "portfolio-nav">
                     <ul class="nav navbar-nav mr-auto"> -->
                         <li class = "nav-item"><a class="nav-link"href="../Access-Level.php">Login</a></li>
                         <li class = "nav-item"><a class="nav-link" href="../user/Registration-Form.php">Register</a></li>
                     <!-- </ul>
                 </div> -->
-            <?php}else{?>  
+            <?php
+            }else{
+            ?>  
                 <!-- <div class = "collapse navbar-collapse" id = "portfolio-nav">
                     <ul class="nav navbar-nav mr-auto"> -->
                         <li class = "nav-item"><a class="nav-link"> <?php echo ucfirst($_SESSION['firstname']);  ?> (<?php echo $_SESSION['user_type']?>)</a>    </li>
                         <li class = "nav-item"><a class="nav-link" href="../user/logoutProcess.php">Log Out</a> </li>
                    <!--  </ul>
                 </div>  -->
-            <?php}?>  
+            <?php
+            }
+            ?>  
             </ul>
               
         </div>

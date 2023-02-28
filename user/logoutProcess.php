@@ -5,4 +5,4 @@ session_start();
 
 session_destroy();
 
-header("Location:../user/index.php?success=loggedOut");
+header("Location: ../user/index.php?success=loggedOut");
