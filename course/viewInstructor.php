@@ -42,7 +42,7 @@ th, td { padding: 8px 16px; }
 
 <body style = "font-family: Montserrat; overflow-x:hidden; background-color:#fefcfb;">
   <?php include '../templates/navigation.php' ?>
-  <?php include('../assets/popup/message.php'); ?>
+  <?php #include('../assets/popup/message.php'); ?>
 
 
   <div class = "box m-5 p-5">
