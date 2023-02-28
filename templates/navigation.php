@@ -32,10 +32,12 @@
                 </li>
             </ul>
             <ul>
-            <?php echo $_SESSION['username']?>
-            <?php echo $_SESSION['user_type']?>
+            <?php 
+            require 'connection.php';
+            echo $_SESSION['username'];
+            echo $_SESSION['user_type'];
+            ?>
             <?php
-                //require 'connection.php';
                     if(!isset($_SESSION['username'])){
                 ?>
                     <li><a href="Access-Level.php">Login</a></li>
