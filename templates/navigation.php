@@ -56,7 +56,7 @@
                             </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item">User Name  <?php echo ucfirst($_SESSION['username']);  ?></a>
-                                    <a class="dropdown-item">User Type</a>
+                                    <a class="dropdown-item">User Type<?php echo $_SESSION['user_type']?></a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Log Out</a>
                                 </div>
