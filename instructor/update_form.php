@@ -22,6 +22,7 @@
 
 <center>
 <?php
+session_start();
   #include 'connectdb.php';
   require '../templates/connection.php';
   require '../templates/header.php';
