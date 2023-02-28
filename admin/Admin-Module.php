@@ -1,7 +1,7 @@
 <?php
 
 ob_start();
-require dirname(__DIR__).('../templates/connection_2.php');
+require dirname(__DIR__).('../templates/connection.php');
     if(isset($_POST['btnLogout']))
 {
     session_destroy();
@@ -57,7 +57,7 @@ require dirname(__DIR__).('../templates/connection_2.php');
                 <?php
 
                 $sql = "Select * from `account_details`";
-                $result = mysqli_query($con, $sql);
+                $result = mysqli_query($conn, $sql);
                 if ($result) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         $account_id = $row['account_id'];

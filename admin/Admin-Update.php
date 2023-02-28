@@ -1,7 +1,7 @@
 <?php
 
 ob_start();
-require dirname(__DIR__). "../templates/connection_2.php";
+require dirname(__DIR__). "../templates/connection.php";
     if(isset($_POST['btnLogout']))
 {
     session_destroy();
@@ -9,7 +9,7 @@ require dirname(__DIR__). "../templates/connection_2.php";
 
 $account_id=$_GET['updateid'];
 $sql = "Select * from `account_details` where account_id=$account_id";
-$result = mysqli_query($con, $sql);
+$result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
 $username = $row['username'];
@@ -31,7 +31,7 @@ if (isset($_POST['save'])) {
   $suffix = $_POST['suffix'];
 
   $sql = "update `account_details` set account_id=$account_id, username='$username', password='$password', user_type = '$user_type', lastname='$lastname', firstname='$firstname', middlename ='$middlename', suffix='$suffix' where account_id=$account_id";
-  $result = mysqli_query($con, $sql);
+  $result = mysqli_query($conn, $sql);
   if ($result) {
     // echo "Data added successfully.";
     echo "User Updated Successfully";
@@ -39,7 +39,7 @@ if (isset($_POST['save'])) {
     header('location: Admin-Module.php');
 
   } else {
-    die(mysqli_error($con));
+    die(mysqli_error($conn));
   }
 }
 

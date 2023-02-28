@@ -1,9 +1,9 @@
 <?php 
 
-    require_once("..\templates\connection_2.php");
+    require_once("../templates/connection.php");
     //require '../templates/connection.php';
     $query = " select * from student  ";
-    $result = mysqli_query($con, $query);
+    $result = mysqli_query($conn, $query);
 
 ?>
 
