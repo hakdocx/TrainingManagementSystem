@@ -1,5 +1,5 @@
 
-<nav class = "navbar navbar-expand-lg navbar-dark fixed-top" style = "background-color: #681A1A;">
+<nav class = "navbar navbar-expand-lg navbar-dark fixed-top pe-5 ps-5" style = "background-color: #681A1A;">
 
         <a class = "navbar-brand" href="../user/homepage.php">Web Development</a>
         <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#portfolio-nav" aria-controls = "portfolio-nav" aria-expanded = "false" aria-label = "Toggle navigation">
