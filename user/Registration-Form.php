@@ -156,7 +156,7 @@
 					<p style="color: #FF0000" class="error"><i><?php echo $username_err; ?></i></p>
 					<p style="color: #FF0000" class="error"><i><?php echo $error; ?></i></p>
 
-				    <p class="login">Already have an account? <a href="/user_mgmt/Access-Level.php">Log In.</a></p>
+				    <p class="login">Already have an account? <a href="../Access-Level.php">Log In.</a></p>
 			</form>
 			<hr class="line2">
 		</div>
