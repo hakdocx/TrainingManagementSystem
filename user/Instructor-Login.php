@@ -22,7 +22,7 @@
 		{
 			$_SESSION["username"]=$username;
 			$_SESSION["user_type"]="instructor";
-			header("Location: index.php");
+			header("Location: ../index.php");
 		}
 		else
 		{

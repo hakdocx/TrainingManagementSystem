@@ -40,13 +40,13 @@
             <?php
                     if(!isset($_SESSION['username'])){
                 ?>
-                    <li><a href="Access-Level.php">Login</a></li>
-                    <li><a href="user_registration/Registration-Form.php">Register</a></li>
+                    <li><a href="../Access-Level.php">Login</a></li>
+                    <li><a href="../user/Registration-Form.php">Register</a></li>
             <?php
                 }else{
                 ?>
-                    <li><a href="user_update/userProfile.php">User Profile</a></li>
-                    <li><a href="user_logout/logoutProcess.php">Logout</a></li>
+                    <li><a href="../user/userProfile.php">User Profile</a></li>
+                    <li><a href="../user/logoutProcess.php">Logout</a></li>
                 <?php
                     } 
             ?>
