@@ -49,7 +49,7 @@ session_start();
   
 </a>
 
-  <a href="instructor_index.php"><?php
+  <a href="index.php"><?php
   if (isset ($_POST['update']))
   {
     $id=$_POST['instrucid']; 

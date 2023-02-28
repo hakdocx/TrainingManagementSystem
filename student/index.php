@@ -189,8 +189,8 @@
             JUMP TO:
         </button>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="addparticipants.php">ADD PARTICIPANT</a></li>
-            <li><a class="dropdown-item" href="search-database-rev-2.php">SEARCH DATABASE</a></li>
+            <li><a class="dropdown-item" href="add_participants.php">ADD PARTICIPANT</a></li>
+            <li><a class="dropdown-item" href="search_database.php">SEARCH DATABASE</a></li>
         </ul>
         </div>
     </div>

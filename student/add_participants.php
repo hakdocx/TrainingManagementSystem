@@ -1,7 +1,7 @@
 <?php 
 session_start();
-include "connection.php";
-include "navigation-2.php";
+include "../templates/connection.php";
+
 
   if (isset($_POST['submit'])) {
     
@@ -138,6 +138,7 @@ include "navigation-2.php";
 </head>
 
 <body>
+    <?php include "../templates/navigation.php"; ?>
     <div class = "add">ADD PARTICIPANT</div>
     <div class="container">
         <fieldset>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "connection.php";
+include "../templates/connection.php";
 
 $cookie_name = "showInstructions";
 $cookie_value = "true";
@@ -145,8 +145,9 @@ if(isset($_GET['deleteBtn'])){
 </head>
 
 <body>
+	<?php include "../templates/navigation.php"; ?>
 	<!--NAVBAR-->
-	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #681A1A;">
+	<!-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #681A1A;">
 		<a class="navbar-brand" href=#>Web Development</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#portfolio-nav" aria-controls="portfolio-nav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -193,7 +194,9 @@ if(isset($_GET['deleteBtn'])){
 					</div>
 				</li>
 		</div>
-	</nav>
+	</nav> -->
+
+
 
 	<!--SEARCH-->
 	<div class="container-md d-flex flex-column my-5">
