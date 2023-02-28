@@ -12,22 +12,23 @@
 
 		// get students' details from database
 		$sql = "SELECT * FROM `account_details` WHERE `username` = '$username' AND `password` = '$password'";
+
 		$result = mysqli_query($conn, $sql);
 
 		// if result matched, table row should be 1
 		if($row = mysqli_fetch_array($result))
 	{
 
-		if ($row['user_type'] == "student")
+		if ($row['user_type'] == "admin")
 		{
 			$_SESSION["username"]=$username;
-			$_SESSION["user_type"]="student";
-			//header("Location: ../index.php");
-			header("Location: ../homepage.php");
+			$_SESSION["user_type"]="admin";
+			header("Location: Admin-Module.php");
 		}
 		else
 		{
 			$error = "Invalid credentials. Please try again.";
+
 		}
 
 	}else
@@ -55,7 +56,8 @@
     }
     </style>
 
-	<title>Student-Login</title>
+
+	<title>Admin-Login</title>
 </head>
 <body>
 	<div class="row">
@@ -66,15 +68,14 @@
 		<div class="rside">
 			<hr class="line1">
 			<form class="login-form" method="post" name="login">
-						<h1 class="login-title">STUDENT LOG IN FORM</h1>
+						<h1 class="login-title">ADMIN LOG IN FORM</h1>
 						<p class = "reminder">Kindly login according to your registered credentials.</p>
-
 				<table>
 					<tr>
 						<div class="Icon-inside">
 							<i class="fa fa-user fa-2x" aria-hidden="true"></i>
 							<td><input type="text" class="login-input" name="username" placeholder="Username" required/></td>
-            </div>
+						</div>
 					</tr>
 					<tr>
 						<div class="Icon-inside1">
