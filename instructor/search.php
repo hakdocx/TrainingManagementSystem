@@ -4,7 +4,7 @@
 <title>Pool of Instructors</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -16,12 +16,13 @@
   <body>
     <header>
     <h1>POOL OF INSTRUCTORS </h1> 
-      <div class="homebutton"><a href="instructor_index.php"><span class="material-symbols-outlined">home</span></a>
+      <div class="homebutton"><a href="index.php"><span class="material-symbols-outlined">home</span></a>
     </div>
     </header>
 
 <center>
 <?php
+session_start();
   #include 'connectdb.php';
   require '../templates/connection.php';
   require '../templates/header.php';
@@ -80,7 +81,7 @@
    <br>
    <br>
    <div class="btnback">
-   <a href="instructor_index.php"><button type=submit >Back</button></a>        
+   <a href="index.php"><button type=submit >Back</button></a>        
    </div>
 
  <?php
