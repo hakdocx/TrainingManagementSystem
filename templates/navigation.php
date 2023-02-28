@@ -7,7 +7,7 @@
         </button>
 		
         <div class = "collapse navbar-collapse" id = "portfolio-nav">
-            <ul class="nav navbar-nav mr-auto">
+            <ul class="nav navbar-nav me-auto">
                 <li class ="nav-item">
                     <a class="nav-link" href="../user/homepage.php">HOME</a>
                 </li>
@@ -37,7 +37,7 @@
                 </li>
             </ul>
             
-            <ul class="nav navbar-nav mr-auto">
+            <ul class="nav navbar-nav ms-auto">
             <?php if(!isset($_SESSION['username'])){ ?>
                <!--  <div class = "collapse navbar-collapse" id = "portfolio-nav">
                     <ul class="nav navbar-nav mr-auto"> -->
