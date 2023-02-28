@@ -28,7 +28,7 @@
     </header>
 
     <Center>
-    <form action="UpdateAddData.php" method="post">
+    <form action="update_add_data.php" method="post">
       <input type="text" name="id" >
       <span>INSTRUCTOR ID</span><br>
       <input type="text" name="acc_id" >
