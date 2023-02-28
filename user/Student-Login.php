@@ -18,16 +18,16 @@
 		if($row = mysqli_fetch_array($result))
 	{
 
-		if ($row['user_type'] == "instructor")
+		if ($row['user_type'] == "student")
 		{
 			$_SESSION["username"]=$username;
-			$_SESSION["user_type"]="instructor";
-			header("Location: ../index.php");
+			$_SESSION["user_type"]="student";
+			//header("Location: ../index.php");
+			header("Location: homepage.php");
 		}
 		else
 		{
 			$error = "Invalid credentials. Please try again.";
-
 		}
 
 	}else
@@ -35,8 +35,8 @@
 			$error = "Invalid credentials. Please try again.";
 
 		}
-	}
 
+	}
 ?>
 
 <!DOCTYPE html>
@@ -55,8 +55,7 @@
     }
     </style>
 
-
-	<title>Instructor-Login</title>
+	<title>Student-Login</title>
 </head>
 <body>
 	<div class="row">
@@ -67,14 +66,15 @@
 		<div class="rside">
 			<hr class="line1">
 			<form class="login-form" method="post" name="login">
-							<h1 class="login-title">INSTRUCTOR LOG IN FORM</h1>
-							<p class = "reminder">Kindly login according to your registered credentials.</p>
+						<h1 class="login-title">STUDENT LOG IN FORM</h1>
+						<p class = "reminder">Kindly login according to your registered credentials.</p>
+
 				<table>
 					<tr>
 						<div class="Icon-inside">
 							<i class="fa fa-user fa-2x" aria-hidden="true"></i>
 							<td><input type="text" class="login-input" name="username" placeholder="Username" required/></td>
-						</div>
+            </div>
 					</tr>
 					<tr>
 						<div class="Icon-inside1">
@@ -83,6 +83,7 @@
 						</div>
 					</tr>
 				</table>
+
 				<input type="submit" value="Log in" name="btnLogin" class="login-button"/>
 				<p class="error"><i><?php echo $error; ?></i></p>
 			</form>
