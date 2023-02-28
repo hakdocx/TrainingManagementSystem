@@ -1,7 +1,6 @@
 <?php
-session_start();
-require '../templates/connection.php';
 
+require '../templates/connection.php';
 
 if(isset($_POST['save_course']))
 {
