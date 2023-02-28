@@ -45,13 +45,9 @@
             <?php
                 }else{
                 ?>
-                    <li><a href="../user/userProfile.php">User Profile</a></li>
-                    <li><a href="../user/logoutProcess.php">Logout</a></li>
-                <?php
-                    } 
-            ?>
-        </ul>
-            <!-- <ul class = "nav navbar-nav">
+                    <!-- <li><a href="../user/userProfile.php">User Profile</a></li>
+                    <li><a href="../user/logoutProcess.php">Logout</a></li> -->
+            <ul class = "nav navbar-nav">
                 <li>
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         PROFILE
@@ -63,6 +59,11 @@
                             <a class="dropdown-item" href="#">Log Out</a>
                         </div>
                 </li> 
-            </ul>     -->
+            </ul>  
+                <?php
+                    } 
+            ?>  
+        </ul>
+              
         </div>
 	</nav>

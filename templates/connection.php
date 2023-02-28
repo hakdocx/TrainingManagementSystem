@@ -17,4 +17,9 @@
 		//die(mysqli_error($conn));
 	}
 
+    	// initialize variables with empty values (for registration & login)
+	$error = "";
+	$username_err = "";
+	$entry_added = "";
+	$entry_error = "";
  ?>
