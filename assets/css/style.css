@@ -232,7 +232,7 @@ dialog::backdrop {
 .btn-primary {
   color: #fff;
   background-color: #681a1a;
-	border-color: #681a1a;
+  border-color: #681a1a;
 }
 
 .input[type=search]:placeholder {

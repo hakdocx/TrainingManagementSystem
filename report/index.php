@@ -43,16 +43,11 @@
     text-decoration: none;
     color: #ffe000;
     }
-    body {
-         background-image: url('../assets/images/hehee.jpg');
-         background-repeat: no-repeat;
-         background-attachment: fixed;
-        background-size: cover;
-        }
+
     
     .first {
-        background-color: maroon;
-        color: yellow;
+        background-color: #681a1a;
+        color: wheat;
        text-align: center;
        height: 50px;
        width: 220px;
@@ -62,8 +57,8 @@
        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8)  ;
     }
     .second {
-        background-color: maroon;
-        color: yellow;
+        background-color: #681a1a;
+        color: wheat;
         text-align: center;
         height: 50px;
        width: 220px;
@@ -74,8 +69,8 @@
        
     }
     .third {
-        background-color: maroon;
-        color: yellow;
+        background-color: #681a1a;
+        color: wheat;
         text-align: center;
         height: 50px;
        width: 220px;
@@ -85,8 +80,8 @@
        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8)  ;
     }
     .fourth {
-        background-color: maroon;
-        color: yellow;
+        background-color: #681a1a;
+        color: wheat;
         text-align: center;
         height: 50px;
        width: 220px;
@@ -97,7 +92,7 @@
     }
 
     .first-class {
-    color: yellow;
+    color: gray;
     margin-top: 100px;
     margin-bottom: 5px;
     font-size: 17px;
