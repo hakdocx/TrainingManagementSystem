@@ -7,7 +7,7 @@
         <div class = "collapse navbar-collapse" id = "portfolio-nav">
             <ul class="nav navbar-nav mr-auto">
                 <li class ="nav-item">
-                    <a class="nav-link" href="../homepage.php">HOME</a>
+                    <a class="nav-link" href="../user/homepage.php">HOME</a>
                 </li>
                 <li class = "nav-item">
                     <a class="nav-link" href="../student/index.php">STUDENT</a>

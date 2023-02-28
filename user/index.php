@@ -23,7 +23,8 @@
     <header>
         <?php
             #require dirname(__DIR__).('navigation.php');
-            require '../navigation.php';
+            //require '../navigation.php';
+            require '../templates/navigation.php';
         ?>
     </header>
 
