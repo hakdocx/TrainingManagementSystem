@@ -10,8 +10,7 @@
          session_start();
 	}
 
-	// connect to database
-	$conn=mysqli_connect("localhost","root","","project");
+	$conn = mysqli_connect('localhost', 'root', '', 'project');
 
 	if(!$conn){
 		echo 'Connection error: ' . mysqli_connect_error();
