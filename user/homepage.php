@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <?php session_start();
-    ?>
-	<meta charset = "utf-8">
-	<meta name = "viewport" content = "width=device-width, initial-scale=1">
-	<title>Dashboard</title>
+<?php session_start();
 
-	<link rel = "preconnect" href="https://fonts.googleapis.com">
-    <link rel = "preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href = "https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-	
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel = "stylesheet" type="text/css" href="assests/css/style.css">
+    require '../templates/connection.php';
+    require '../templates/header.php';
+
+?>
+
     <style>
         .rectangle {
             position: absolute;
@@ -22,7 +14,6 @@
             top: 169px;
             background-color: #681A1A;
         }
-
         .rectangle2 {
             position: absolute;
             width: 419.4px;
@@ -31,7 +22,6 @@
             top: 169px;
             background-color: #681A1A;
         }
-
         .rectangle3 {
             position: absolute;
             width: 420px;
@@ -535,7 +525,6 @@
 
             color: #FFFFFF;
         }
-        
     </style>
 </head>
 
@@ -590,8 +579,6 @@
 	</nav> -->
     <?php
     
-    #require '../templates/connection.php';
-    #require '../templates/header.php';
     require '../templates/navigation.php';
     ?>
 
