@@ -9,6 +9,7 @@
 		// variable declaration
 		$username = $_POST['username'];
 		$password = $_POST['password'];
+		$firstname = " ";
 
 		// get students' details from database
 		$sql = "SELECT * FROM `account_details` WHERE `username` = '$username' AND `password` = '$password'";
@@ -21,7 +22,8 @@
 		if ($row['user_type'] == "instructor")
 		{
 			$_SESSION["username"]=$username;
-			$_SESSION["user_type"]="instructor";
+			$_SESSION["user_type"]="Instructor";
+			$_SESSION["firstname"]=$row["firstname"];
 			header("Location: index.php");
 		}
 		else

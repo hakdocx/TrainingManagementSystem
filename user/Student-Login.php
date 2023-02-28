@@ -9,7 +9,8 @@
 		// variable declaration
 		$username = $_POST['username'];
 		$password = $_POST['password'];
-
+		$firstname = " ";
+		
 		// get students' details from database
 		$sql = "SELECT * FROM `account_details` WHERE `username` = '$username' AND `password` = '$password'";
 		$result = mysqli_query($conn, $sql);
@@ -22,6 +23,7 @@
 		{
 			$_SESSION["username"]=$username;
 			$_SESSION["user_type"]="student";
+			$_SESSION["firstname"]=$row["firstname"];
 			//header("Location: ../index.php");
 			header("Location: index.php");
 		}

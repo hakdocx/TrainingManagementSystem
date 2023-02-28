@@ -9,6 +9,7 @@
 		// variable declaration
 		$username = $_POST['username'];
 		$password = $_POST['password'];
+		$firstname = " ";
 
 		// get students' details from database
 		$sql = "SELECT * FROM `account_details` WHERE `username` = '$username' AND `password` = '$password'";
@@ -23,6 +24,7 @@
 		{
 			$_SESSION["username"]=$username;
 			$_SESSION["user_type"]="admin";
+			$_SESSION["firstname"]=$row["firstname"];
 			header("Location: Admin-Module.php");
 		}
 		else

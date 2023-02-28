@@ -1,4 +1,6 @@
+
 <nav class = "navbar navbar-expand-lg navbar-dark fixed-top" style = "background-color: #681A1A;">
+
         <a class = "navbar-brand" href="../user/homepage.php">Web Development</a>
         <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#portfolio-nav" aria-controls = "portfolio-nav" aria-expanded = "false" aria-label = "Toggle navigation">
             <span class = "navbar-toggler-icon"></span>
@@ -42,26 +44,41 @@
             <?php
                     if(!isset($_SESSION['username'])){
                 ?>
-                    <li><a href="../Access-Level.php">Login</a></li>
-                    <li><a href="../user/Registration-Form.php">Register</a></li>
+                <div class = "collapse navbar-collapse" id = "portfolio-nav">
+                    <ul class="nav navbar-nav mr-auto">
+                    <li class = "nav-item"><a class="nav-link"href="../Access-Level.php">Login</a></li>
+                    <li class = "nav-item"><a class="nav-link" href="../user/Registration-Form.php">Register</a></li>
+                    </ul>
+                    </div>
             <?php
                 }else{
-                ?>
+                ?>  
+                <div class = "collapse navbar-collapse" id = "portfolio-nav">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class = "nav-item">
+                            <a class="nav-link"> <?php echo ucfirst($_SESSION['firstname']);  ?> (<?php echo $_SESSION['user_type']?>)</a>    
+                        </li>
+                        <li class = "nav-item">
+                            <a class="nav-link" href="../user/logoutProcess.php">Log Out</a>   
+                        </li>
+                    </ul>
+                </div>
+                   
                     <!-- <li><a href="../user/userProfile.php">User Profile</a></li>
                     <li><a href="../user/logoutProcess.php">Logout</a></li> -->
-                    <ul class = "nav navbar-nav">
+                    <!-- <ul class = "nav navbar-nav">
                         <li>
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 PROFILE
                             </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item">User Name  <?php echo ucfirst($_SESSION['username']);  ?></a>
-                                    <a class="dropdown-item">User Type<?php echo $_SESSION['user_type']?></a>
+                                    <a class="dropdown-item">User Name  <?php //echo ucfirst($_SESSION['username']);  ?></a>
+                                    <a class="dropdown-item">User Type<?php //echo $_SESSION['user_type']?></a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">Log Out</a>
                                 </div>
                         </li> 
-                    </ul>  
+                    </ul>  --> 
                 <?php
                 } 
             ?>  
