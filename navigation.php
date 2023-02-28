@@ -17,7 +17,7 @@
             <?php
                 }else{
                 ?>
-                    <li><a href="user_update/userProfile.php">User Profile</a></li>
+                    <li><a href="user_update/userProfile.php">User Profile<?php echo $_SESSION['user_type']?></a></li>
                     <li><a href="user_logout/logoutProcess.php">Logout</a></li>
                 <?php
                     } 

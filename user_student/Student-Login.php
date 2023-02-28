@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	// include connection file
-	require dirname(__DIR__). "../templates/connection_2.php";
+	require dirname(__DIR__). "../templates/connection.php";
 
 	// login the instructor
 	if (isset($_POST['btnLogin'])) {
@@ -12,7 +12,7 @@
 
 		// get students' details from database
 		$sql = "SELECT * FROM `account_details` WHERE `username` = '$username' AND `password` = '$password'";
-		$result = mysqli_query($con, $sql);
+		$result = mysqli_query($conn, $sql);
 
 		// if result matched, table row should be 1
 		if($row = mysqli_fetch_array($result))
@@ -21,6 +21,7 @@
 		if ($row['user_type'] == "student")
 		{
 			$_SESSION["username"]=$username;
+			$_SESSION["user_type"]="student";
 			//header("Location: ../index.php");
 			header("Location: ../homepage.php");
 		}

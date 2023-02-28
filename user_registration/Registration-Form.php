@@ -1,6 +1,6 @@
 <?php
 	// include connection file
-	require dirname(__DIR__). "../templates/connection_2.php";
+	require dirname(__DIR__). "../templates/connection.php";
 
 	// register the instructor
 	if (isset($_POST['btnRegister'])) {
@@ -15,7 +15,7 @@
 		$user_type = $_POST['type'];
 
 		$check_uid = "select * from account_details order by account_id desc limit 1";
-		$checkresult = mysqli_query($con,$check_uid);
+		$checkresult = mysqli_query($conn,$check_uid);
 
 		// validate username
 		if (empty(trim($_POST['username']))) {
@@ -29,7 +29,7 @@
 		else {
 			$sql = "SELECT account_id FROM account_details WHERE username = ?"; // if username is already taken
 
-			if($stmt = mysqli_prepare($con, $sql)) {
+			if($stmt = mysqli_prepare($conn, $sql)) {
 				mysqli_stmt_bind_param($stmt, "s", $param_username);
 
 				$param_username = trim($_POST["username"]);
@@ -61,7 +61,7 @@
 
 			{
 				$sql = "INSERT INTO account_details (username, password, user_type, lastname, firstname, middlename, suffix) VALUES ('$username','$password', '$user_type', '$lname', '$fname', '$mname', '$suffix')";
-				$result = mysqli_query($con, $sql);
+				$result = mysqli_query($conn, $sql);
 				if($result)
 				{
 					$entry_added = "You have been registered successfully. Please login to continue.";
@@ -72,7 +72,7 @@
 	}
 }
 	// close connection
-	mysqli_close($con);
+	mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
