@@ -22,67 +22,38 @@
                 </li>
             
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="../report/index.php" id="navbarDropdownMenuLink" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link" href="../report/index.php">
                         GENERATE REPORT
                     </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <!-- <a class="nav-link dropdown-toggle" href="../report/index.php" id="navbarDropdownMenuLink" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        GENERATE REPORT
+                    </a> -->
+                        <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="../report/rank_per_title.php">By Number of Participants per Course</a>
                             <a class="dropdown-item" href="../report/course_per_date.php">By Course conducted by Date Range</a>
                             <a class="dropdown-item" href="../report/participants_per_course.php">By Participants of the Course</a>
                             <a class="dropdown-item" href="../report/instructor_per_course.php">By Pool Instructors per Course</a>
-                        </div>
+                        </div> -->
                 </li>
             </ul>
-            <ul>
-            <?php 
-            //session_start();
-            //require 'connection.php';
-            //echo $_SESSION['username'];
-           
-            ///echo $_SESSION['user_type'];
-            ?>
-            <?php
-                    if(!isset($_SESSION['username'])){
-                ?>
-                <div class = "collapse navbar-collapse" id = "portfolio-nav">
-                    <ul class="nav navbar-nav mr-auto">
-                    <li class = "nav-item"><a class="nav-link"href="../Access-Level.php">Login</a></li>
-                    <li class = "nav-item"><a class="nav-link" href="../user/Registration-Form.php">Register</a></li>
-                    </ul>
-                    </div>
-            <?php
-                }else{
-                ?>  
-                <div class = "collapse navbar-collapse" id = "portfolio-nav">
-                    <ul class="nav navbar-nav mr-auto">
-                        <li class = "nav-item">
-                            <a class="nav-link"> <?php echo ucfirst($_SESSION['firstname']);  ?> (<?php echo $_SESSION['user_type']?>)</a>    
-                        </li>
-                        <li class = "nav-item">
-                            <a class="nav-link" href="../user/logoutProcess.php">Log Out</a>   
-                        </li>
-                    </ul>
-                </div>
-                   
-                    <!-- <li><a href="../user/userProfile.php">User Profile</a></li>
-                    <li><a href="../user/logoutProcess.php">Logout</a></li> -->
-                    <!-- <ul class = "nav navbar-nav">
-                        <li>
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                PROFILE
-                            </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item">User Name  <?php //echo ucfirst($_SESSION['username']);  ?></a>
-                                    <a class="dropdown-item">User Type<?php //echo $_SESSION['user_type']?></a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Log Out</a>
-                                </div>
-                        </li> 
-                    </ul>  --> 
-                <?php
-                } 
-            ?>  
-        </ul>
+            
+            <ul class="nav navbar-nav mr-auto">
+            <?phpif(!isset($_SESSION['username'])){?>
+               <!--  <div class = "collapse navbar-collapse" id = "portfolio-nav">
+                    <ul class="nav navbar-nav mr-auto"> -->
+                        <li class = "nav-item"><a class="nav-link"href="../Access-Level.php">Login</a></li>
+                        <li class = "nav-item"><a class="nav-link" href="../user/Registration-Form.php">Register</a></li>
+                    <!-- </ul>
+                </div> -->
+            <?php}else{?>  
+                <!-- <div class = "collapse navbar-collapse" id = "portfolio-nav">
+                    <ul class="nav navbar-nav mr-auto"> -->
+                        <li class = "nav-item"><a class="nav-link"> <?php echo ucfirst($_SESSION['firstname']);  ?> (<?php echo $_SESSION['user_type']?>)</a>    </li>
+                        <li class = "nav-item"><a class="nav-link" href="../user/logoutProcess.php">Log Out</a> </li>
+                   <!--  </ul>
+                </div>  -->
+            <?php}?>  
+            </ul>
               
         </div>
 	</nav>
