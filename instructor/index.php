@@ -17,7 +17,9 @@
 header {
   margin-top: 50px;
 }
-
+body{
+  overflow-y: hidden;
+}
 .custom-shape-divider-bottom-1676706408 {
     position: absolute;
     bottom: 0;
@@ -44,18 +46,14 @@ header {
 </head>
 
 <body>
-  <header>
+ 
     <?php
     session_start();
       #require '../templates/connection.php';
       require '../templates/header.php';
       require '../templates/navigation.php';
     ?>
-      <strong><h1>POOL OF INSTRUCTORS </h1> </strong>
-      <div class="homebutton">
-        <a href="index.php"><span class="material-symbols-outlined">home</span></a>
-      </div>
-  </header>
+
     
 
 
