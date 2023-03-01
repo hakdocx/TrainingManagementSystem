@@ -55,10 +55,12 @@
         Registered Students
       </h2>
     </div>
-    <div class="row w-75 fs-6">
+    <div class="row">
       <div class="col-md-auto p-2">
           <button class="btn pe-4 ps-4" style="background-color:#681A1A; border-radius: 10px; color:white; height: 50px;">ADD STUDENT</button>
       </div>
+    </div>
+    <div class="row w-75 fs-6">
       <div class="col pt-2 pb-2">
         <div class="input-group">
           <span class="input-group-append">
