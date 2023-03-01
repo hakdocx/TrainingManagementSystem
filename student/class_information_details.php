@@ -1,4 +1,39 @@
-<?php require('../templates/header.php'); ?>
+<?php 
+  require '../templates/connection.php';
+  require '../templates/header.php'; 
+
+  if(!isset($_GET['regId']) && !isset($_GET['classId'])) {
+    header("location: courses.php");
+  }
+
+  $registrationCourseId = $_GET['regId'];
+  $classId = $_GET['classId'];
+
+  $sql = "
+    SELECT a.firstname, a.lastname, s.student_id
+    FROM account_details a
+    JOIN student s
+    ON s.account_id = a.account_id
+    JOIN registration_participants_class rpc
+    ON rpc.student_id = s.student_id
+    JOIN registration_course rc
+    ON rc.course_reg_id = rpc.course_reg_id
+    ";
+
+  $query = mysqli_query($conn, $sql);
+  $registeredStudents = mysqli_fetch_assoc($query);
+
+
+  $sql = "
+    SELECT *
+    FROM class_information_details
+    WHERE class_info_id = $classId
+  ";
+
+  $query = mysqli_query($conn, $sql);
+  $classInfo = mysqli_fetch_assoc($query);
+
+?>
 
 <style>
   td {
