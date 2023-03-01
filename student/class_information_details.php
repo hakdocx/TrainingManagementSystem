@@ -55,10 +55,10 @@
     </h1>
     <div class="row w-75 fs-6" style="font-weight:500;">
       <div class="col">
-          CLASS NUMBER
+          CLASS ID
       </div>
       <div class="col fw-bold">
-          Placeholder
+          <?= $classInfo['class_info_id'] ?>
       </div>
     </div>
     <div class="row w-75 fs-6" style="font-weight:500;">
@@ -66,7 +66,7 @@
           LETTER ORDER NUMBER
       </div>
       <div class="col fw-bold">
-          NA
+          <?= $classInfo['letter_order_number'] ?>
       </div>
     </div>
     <div class="row w-75 fs-6" style="font-weight:500;">
@@ -74,7 +74,7 @@
           GENERAL ORDER
       </div>
       <div class="col fw-bold">
-          NA
+          <?= $classInfo['general_order'] ?>
       </div>
     </div>
     <div class="row w-75 fs-6 mb-5" style="font-weight:500;">
@@ -82,7 +82,7 @@
           CERTIFICATION CONTROL NUMBER
       </div>
       <div class="col fw-bold">
-          NA
+          <?= $classInfo['cert_ctrl_no'] ?>
       </div>
     </div>
     <div class="row mt-4 mb-4">
