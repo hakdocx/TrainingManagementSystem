@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3308:3308
--- Generation Time: Feb 22, 2023 at 11:45 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- Host: 127.0.0.1
+-- Generation Time: Feb 28, 2023 at 10:16 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `databasey`
+-- Database: `project`
 --
 
 -- --------------------------------------------------------
@@ -36,7 +36,7 @@ CREATE TABLE `account_details` (
   `firstname` varchar(50) NOT NULL,
   `middlename` varchar(50) NOT NULL,
   `suffix` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `account_details`
@@ -72,7 +72,7 @@ CREATE TABLE `class_information_details` (
   `general_order` varchar(30) NOT NULL,
   `cert_ctrl_no` varchar(30) NOT NULL,
   `student_reg_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `class_information_details`
@@ -100,25 +100,27 @@ INSERT INTO `class_information_details` (`class_info_id`, `class_number`, `lette
 CREATE TABLE `course` (
   `course_id` int(11) NOT NULL,
   `course_title` varchar(30) NOT NULL,
-  `number_of_days` int(11) NOT NULL,
-  `mtap_course` varchar(10) NOT NULL,
-  `pre_requisite_course` int(11) NOT NULL,
-  `implementation` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `number_of_days` int(11) NOT NULL DEFAULT 1,
+  `mtap_course` varchar(200) DEFAULT NULL,
+  `pre_requisite_course` int(11) DEFAULT NULL,
+  `implementation` varchar(200) DEFAULT NULL,
+  `year_certified` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `course`
 --
 
-INSERT INTO `course` (`course_id`, `course_title`, `number_of_days`, `mtap_course`, `pre_requisite_course`, `implementation`) VALUES
-(300000, 'Programming 1', 0, '', 0, ''),
-(300001, 'Programming 2', 0, '', 300001, ''),
-(300002, 'Object Oriented Programing', 0, '', 0, ''),
-(300003, 'Calculus', 0, '', 0, ''),
-(300004, 'Calculus 2', 0, '', 300003, ''),
-(300005, 'Information Management', 0, '', 0, ''),
-(300006, 'Database Administration', 0, '', 300005, ''),
-(300007, 'Web Development', 0, '', 0, '');
+INSERT INTO `course` (`course_id`, `course_title`, `number_of_days`, `mtap_course`, `pre_requisite_course`, `implementation`, `year_certified`) VALUES
+(300000, 'Programming 1', 0, '', NULL, '', 2000),
+(300001, 'Programming 2', 0, '', 300000, '', 1990),
+(300002, 'Object Oriented Programing', 0, '', NULL, '', 1990),
+(300003, 'Calculus', 0, '', NULL, '', 2000),
+(300004, 'Calculus 2', 0, '', 300003, '', 2000),
+(300005, 'Information Management', 0, '', NULL, '', 2010),
+(300006, 'Database Administration', 0, '', 300005, '', 2010),
+(300007, 'Web Development', 0, '', NULL, '', 2000),
+(300008, 'Mathematics', 30, '', NULL, '', 0);
 
 -- --------------------------------------------------------
 
@@ -128,22 +130,24 @@ INSERT INTO `course` (`course_id`, `course_title`, `number_of_days`, `mtap_cours
 
 CREATE TABLE `pool_instructor_details` (
   `instructor_id` int(11) NOT NULL,
-  `account_id` int(11) NOT NULL,
+  `account_id` int(11) DEFAULT NULL,
   `rank` varchar(15) NOT NULL,
-  `qualification_degree` varchar(50) NOT NULL,
+  `qualification_degree` varchar(50) DEFAULT NULL,
   `course_specialization` varchar(50) NOT NULL,
-  `other_qualification` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `other_qualification` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pool_instructor_details`
 --
 
 INSERT INTO `pool_instructor_details` (`instructor_id`, `account_id`, `rank`, `qualification_degree`, `course_specialization`, `other_qualification`) VALUES
-(700000, 100005, 'PCO', '', 'Computer Science', ''),
-(700001, 100006, 'PCO', '', 'Computer Science', ''),
-(700002, 100012, 'PNCO', '', 'Math', ''),
-(700003, 100013, 'NUP', '', 'Information Technology', '');
+(700000, 100005, 'PCO', 'Associate\'s in Degree', 'Computer Science', ''),
+(700001, 100006, 'PCO', 'Bachelor\'s in Education', 'Computer Science', ''),
+(700002, 100012, 'PNCO', 'Master\'s Degree', 'Math', ''),
+(700003, 100013, 'NUP', 'Doctor of Education Degree', 'Information Technology', ''),
+(700008, NULL, 'NUP', 'Doctor of Education Degree', 'Information Technology', ''),
+(700009, NULL, 'NUP', 'Doctor of Education Degree', 'Information Technology', '');
 
 -- --------------------------------------------------------
 
@@ -153,12 +157,12 @@ INSERT INTO `pool_instructor_details` (`instructor_id`, `account_id`, `rank`, `q
 
 CREATE TABLE `registration_course` (
   `course_reg_id` int(11) NOT NULL,
-  `course_id` int(11) NOT NULL,
-  `instructor_id` int(11) NOT NULL,
-  `opening_date` date NOT NULL,
-  `closing_date` date NOT NULL,
-  `implementation_nr` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `course_id` int(11) DEFAULT NULL,
+  `instructor_id` int(11) DEFAULT NULL,
+  `opening_date` date DEFAULT NULL,
+  `closing_date` date DEFAULT NULL,
+  `implementation_nr` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `registration_course`
@@ -169,10 +173,11 @@ INSERT INTO `registration_course` (`course_reg_id`, `course_id`, `instructor_id`
 (400001, 300003, 700002, '2022-11-01', '2023-02-28', 0),
 (400002, 300002, 700001, '2022-11-01', '2023-02-28', 0),
 (400003, 300005, 700001, '2022-11-01', '2023-02-28', 0),
-(400004, 300001, 700000, '2023-01-01', '2023-04-30', 0),
+(400004, 300000, 700000, '2023-01-01', '2023-04-30', 0),
 (400005, 300004, 700002, '2023-01-01', '2023-04-30', 0),
 (400006, 300007, 700003, '2023-01-01', '2023-04-30', 0),
-(400007, 300006, 700001, '2023-01-01', '2023-04-30', 0);
+(400007, 300006, 700001, '2023-01-01', '2023-04-30', 0),
+(400008, 300008, 700000, '0000-00-00', '0000-00-00', 120);
 
 -- --------------------------------------------------------
 
@@ -182,27 +187,28 @@ INSERT INTO `registration_course` (`course_reg_id`, `course_id`, `instructor_id`
 
 CREATE TABLE `registration_participants_class` (
   `student_reg_id` int(11) NOT NULL,
-  `course_reg_id` int(11) NOT NULL,
-  `student_id` int(11) NOT NULL,
-  `qualification` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `course_reg_id` int(11) DEFAULT NULL,
+  `student_id` int(11) DEFAULT NULL,
+  `qualification` varchar(50) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `registration_participants_class`
 --
 
-INSERT INTO `registration_participants_class` (`student_reg_id`, `course_reg_id`, `student_id`, `qualification`) VALUES
-(500000, 400000, 200000, 'Satisfactory'),
-(500001, 400001, 200000, 'Satisfactory'),
-(500002, 400002, 200000, 'Satisfactory'),
-(500003, 400000, 200001, 'Very Satisfactory'),
-(500004, 400001, 200001, 'Extremely Satisfactory'),
-(500005, 400002, 200001, 'Satisfactory'),
-(500006, 400002, 200002, 'Satisfactory'),
-(500007, 400003, 200002, 'Very Satisfactory'),
-(500008, 400004, 200002, 'Extremely Satisfactory'),
-(500009, 400002, 200003, 'Satisfactory'),
-(500010, 400003, 200003, 'Satisfactory');
+INSERT INTO `registration_participants_class` (`student_reg_id`, `course_reg_id`, `student_id`, `qualification`, `status`) VALUES
+(500000, 400000, 200000, 'Satisfactory', 0),
+(500001, 400001, 200000, 'Satisfactory', 0),
+(500002, 400002, 200000, 'Satisfactory', 0),
+(500003, 400000, 200001, 'Very Satisfactory', 0),
+(500004, 400001, 200001, 'Extremely Satisfactory', 0),
+(500005, 400002, 200001, 'Satisfactory', 0),
+(500006, 400002, 200002, 'Satisfactory', 0),
+(500007, 400003, 200002, 'Very Satisfactory', 0),
+(500008, 400004, 200002, 'Extremely Satisfactory', 0),
+(500009, 400002, 200003, 'Satisfactory', 0),
+(500010, 400003, 200003, 'Satisfactory', 0);
 
 -- --------------------------------------------------------
 
@@ -215,7 +221,7 @@ CREATE TABLE `student` (
   `account_id` int(11) NOT NULL,
   `rank` varchar(15) NOT NULL,
   `office_name` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `student`
@@ -253,7 +259,8 @@ ALTER TABLE `class_information_details`
 -- Indexes for table `course`
 --
 ALTER TABLE `course`
-  ADD PRIMARY KEY (`course_id`);
+  ADD PRIMARY KEY (`course_id`),
+  ADD KEY `course_ibfk_1` (`pre_requisite_course`);
 
 --
 -- Indexes for table `pool_instructor_details`
@@ -305,19 +312,19 @@ ALTER TABLE `class_information_details`
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=300008;
+  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=300009;
 
 --
 -- AUTO_INCREMENT for table `pool_instructor_details`
 --
 ALTER TABLE `pool_instructor_details`
-  MODIFY `instructor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=700004;
+  MODIFY `instructor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=700010;
 
 --
 -- AUTO_INCREMENT for table `registration_course`
 --
 ALTER TABLE `registration_course`
-  MODIFY `course_reg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=400008;
+  MODIFY `course_reg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=400009;
 
 --
 -- AUTO_INCREMENT for table `registration_participants_class`
@@ -340,6 +347,12 @@ ALTER TABLE `student`
 --
 ALTER TABLE `class_information_details`
   ADD CONSTRAINT `class_information_details_ibfk_1` FOREIGN KEY (`student_reg_id`) REFERENCES `registration_participants_class` (`student_reg_id`);
+
+--
+-- Constraints for table `course`
+--
+ALTER TABLE `course`
+  ADD CONSTRAINT `course_ibfk_1` FOREIGN KEY (`pre_requisite_course`) REFERENCES `course` (`course_id`);
 
 --
 -- Constraints for table `pool_instructor_details`
