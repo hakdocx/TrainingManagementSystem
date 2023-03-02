@@ -32,43 +32,22 @@ include "connection_student.php";
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>TITLEEEE</title>
+	<title>Training Management System</title>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 	
 
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
 	<link rel="stylesheet" type="text/css" href="./style.css">
 </head>
-<body>
-	<nav class="navbar navbar-expand-lg navbar-dark sticky-top" style= "background-color: #681A1A;">
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#portfolio-nav">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="portfolio-nav">
-			<ul class="navbar-nav me-auto">
-				<li>
-					<a class="nav-link" href="#landing">HOME</a>
-				</li>
-				<li>
-					<a class="nav-link" href="read_student.php">STUDENT</a>
-				</li>
-        <li>
-          <a class="nav-link" href="#hobbies">COURSE</a>
-        </li>
-				<li>
-					<a class="nav-link" href="#projects">INSTRUCTORS</a>
-				</li>
-				<li>
-					<a class="nav-link" href="#profile">PROFILE</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
-<h2>Student Information </h2>
+<body style="text-align:center; font-family: Montserrat;">
+  <?php
+    require '../templates/navigation.php'
+  ?>
+<h2 class="mt-4">Student Information </h2>
 
 <form action="" method="POST">
   <fieldset>
@@ -84,6 +63,7 @@ include "connection_student.php";
     <br>
     Course & Section:<br>
     <input type="text" name="course_sec">
+    <br>
     <br>
     <input type="Submit" name="Submit" value="Submit">
   </fieldset>

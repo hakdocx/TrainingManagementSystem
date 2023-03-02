@@ -30,7 +30,7 @@
 
             }
         th, td {
-            background-color:maroon;
+            background-color: #681a1a;
             color: white ;
             border: 2px solid black;
             text-align: center;
@@ -41,7 +41,7 @@
         }
 
         #search-input {
-            background-color: maroon;
+            background-color: #681a1a;
             color: #f0ece2; 
             font-size: 15px;
             border: 2px solid black;
@@ -164,7 +164,7 @@
             </tr>
         </thead>";
         echo "<tr>";
-        echo "<td colspan = '5' style='color: maroon;'>Select Course To View Records</td>";
+        echo "<td colspan = '5' style='background-color: #681A1A; color: white;'>Select Course To View Records</td>";
         echo "</tr>";
 
     while ($row = $result->fetch_assoc()) {

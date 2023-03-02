@@ -73,11 +73,12 @@
         color: wheat;
         text-align: center;
         height: 50px;
-       width: 220px;
-       margin: center;
-       margin-right: 50px;
-       border-radius: 25px;
-       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8)  ;
+        width: 220px;
+        margin: center;
+        margin-right: 50px;
+        border-radius: 25px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8)  ;
+        
     }
     .fourth {
         background-color: #681a1a;
@@ -102,8 +103,6 @@
     letter-spacing: 5px;
     font-family: Montserrat;
     float: center;
-    cursor: pointer;
-    
     }
 
     .first:hover {
@@ -171,19 +170,19 @@
                 <h1 class="fc-h1>">W E L C O M E !!</h1> <br> <br>
                 <h4 class="fc-h4"> SELECT THE INFORMATION YOU NEED </h4> </tr> <br> <br> <br> <br>
                  <br>
-                <tr> <a href="rank_per_title.php"> <image src="../assets/images/book.png" height="30px" width="40px"></image> <button class="first"> Rank per title </button>  </a>
+                <tr> <a href="rank_per_title.php" style="text-decoration:none;"> <image src="../assets/images/military_tech.png" height="40px" width="40px" style="margin-right: 10px;"></image> <button class="first"> Rank per title </button>  </a>
             </tr>
            
                 <tr> 
-                    <a href="course_per_date.php"> <image src="../assets/images/yeye.png" height="30px" width="40px"></image><button class="second"> Inclusive Dates per title </button>  </a> 
+                    <a href="course_per_date.php" style="text-decoration:none;"> <image src="../assets/images/event_available.png" height="40px" width="40px" style="margin-right: 10px;"></image><button class="second"> Inclusive Dates per title </button>  </a> 
                 </tr>
 
             <tr> 
-                <a href="participants_per_course.php"> <image src="../assets/images/poo.png" height="30px" width="40px"></image><button class="third"> Participants per title </button>  </a> 
+                <a href="participants_per_course.php" style="text-decoration:none;"> <image src="../assets/images/groups.png" height="40px" width="40px" style="margin-right: 10px;"></image><button class="third"> Participants per title </button>  </a> 
             </tr>
                 <br> <br>
             <tr> 
-                <a href="instructor_per_course.php">  <image src="../assets/images/poooo.png" height="30px" width="40px"> </image><button class="fourth"> Pool Instructors per title </button>  </a> 
+                <a href="instructor_per_course.php" style="text-decoration:none;">  <image src="../assets/images/badge.png" height="40px" width="40px" style="margin-right: 10px;"> </image><button class="fourth"> Pool Instructors per title </button>  </a> 
             </tr>
                 </table>
 <br> <br>

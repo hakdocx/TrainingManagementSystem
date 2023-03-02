@@ -469,16 +469,6 @@
 
             color: #FFFFFF;
         }
-        .shape1{
-            position: absolute;
-            width: 26.92px;
-            height: 26.92px;
-            left: 265.64px;
-            top: 364.64px;
-
-            border: 3px solid #D9D9D9;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }
         .professors{
             position: absolute;
             width: 172.48px;
@@ -528,7 +518,7 @@
     </style>
 </head>
 
-<body>
+<body style="font-family: Montserrat;">
 <!-- 	<nav class = "navbar navbar-expand-lg navbar-dark fixed-top" style = "background-color: #681A1A;">
         <a class = "navbar-brand" href=#>Web Development</a>
         <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#portfolio-nav" aria-controls = "portfolio-nav" aria-expanded = "false" aria-label = "Toggle navigation">
@@ -578,8 +568,21 @@
         </div>
 	</nav> -->
     <?php
-    
     require '../templates/navigation.php';
+    $sql = "SELECT COUNT(account_id) AS student_total FROM account_details WHERE user_type='student'";
+
+    $result = mysqli_query($conn,$sql);
+    $no_students = mysqli_fetch_assoc($result); 
+
+    $sql = "SELECT COUNT(account_id) AS instructor_total FROM account_details WHERE user_type='instructor'";
+
+    $result = mysqli_query($conn,$sql);
+    $no_instructors = mysqli_fetch_assoc($result);
+
+    $sql = "SELECT COUNT(course_reg_id) AS class_total FROM registration_course";
+
+    $result = mysqli_query($conn,$sql);
+    $no_classes = mysqli_fetch_assoc($result);
     ?>
 
     <div class="rectangle"></div>
@@ -624,12 +627,11 @@
     <div class = "ann3">FOUNDATION DAY</div>
     <div class = "ann41"></div>
     <div class = "ann4">FINALIZATION OF GRADES</div>
-    <div class = "fiveh">500</div>
-    <div class = "cteach">250</div>
+    <div class = "fiveh"> <?php echo $no_students['student_total'];?> </div>
+    <div class = "cteach"> <?php echo $no_instructors['instructor_total'];?> </div>
     <div class = "students">STUDENTS</div>
-    <div class = "shape1"></div>
-    <div class = "professors">PROFESSORS</div>
-    <div class = "cclass">50</div>
+    <div class = "professors">INSTRUCTORS</div>
+    <div class = "cclass"><?php echo $no_classes['class_total'];?></div>
     <div class = "class">CLASSES</div>
     
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

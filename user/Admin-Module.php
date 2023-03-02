@@ -17,7 +17,7 @@ require dirname(__DIR__).('../templates/connection.php');
     <meta name="viewport" content="width=device-width,
     initial-scale=1.0">
     <title>User List</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/Button_Style.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
 
@@ -33,13 +33,14 @@ require dirname(__DIR__).('../templates/connection.php');
 <body>
 <header>
         <?php
+            session_start();
             require dirname(__DIR__).('../templates/navigation.php');
         ?>
 </header>
-    <div class="container">
+    <div class="container pt-5">
 
         </button>
-        <table class="table">
+        <table class="table mt-5">
             <thead>
                 <tr>
                     <th scope="col">Account ID</th>

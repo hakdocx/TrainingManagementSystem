@@ -9,7 +9,7 @@ session_start();
   require '../templates/header.php';
   require '../templates/navigation.php';
   ?>
-  <a href="instructor_index.php">
+  <a href="index.php">
   
   <?php
   require '../templates/connection.php';

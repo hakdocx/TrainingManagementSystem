@@ -14,7 +14,7 @@ if(isset($_GET['id'])){
     
     echo "<br><b>Record has been deleted successfully!</b>";
     
-    header("Location: read_student.php");
+    header("Location: index.php");
     exit;
     }
 ?>

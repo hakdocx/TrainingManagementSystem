@@ -20,6 +20,7 @@
     </style>
 </head>
 <body>
+    <br><br><br>
     <header>
         <?php
             session_start();

@@ -1,5 +1,5 @@
 
-<nav class = "navbar navbar-expand-lg navbar-dark fixed-top pe-5 ps-5 h-18" style = "background-color: #681A1A;">
+<nav class = "navbar navbar-expand-lg navbar-dark fixed-top pe-5 ps-5 h-18" style = "background-color: #681A1A; padding-top: 5px; padding-bottom: 5px;">
 
         <a class = "navbar-brand" href="../user/homepage.php" style="font-size:23px;" >Web Development</a>
         <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#portfolio-nav" aria-controls = "portfolio-nav" aria-expanded = "false" aria-label = "Toggle navigation">
@@ -39,15 +39,15 @@
             <?php if(!isset($_SESSION['username'])){ ?>
                <!--  <div class = "collapse navbar-collapse" id = "portfolio-nav">
                     <ul class="nav navbar-nav mr-auto"> -->
-                        <li class = "nav-item"><a class="nav-link"href="../Access-Level.php"style="font-size:15px;" >Login</a></li>
-                        <li class = "nav-item"><a class="nav-link" href="../user/Registration-Form.php"style="font-size:15px;">Register</a></li>
+                        <li class = "nav-item"><a class="nav-link" style="font-size: 15px;" href="../Access-Level.php"style="font-size:15px;" >Login</a></li>
+                        <li class = "nav-item"><a class="nav-link" style="font-size: 15px;" href="../user/Registration-Form.php"style="font-size:15px;">Register</a></li>
                     <!-- </ul>
                 </div> -->
             <?php }else{ ?>  
                 <!-- <div class = "collapse navbar-collapse" id = "portfolio-nav">
                     <ul class="nav navbar-nav mr-auto"> -->
-                        <li class = "nav-item"><a class="nav-link"> <?php echo ucfirst($_SESSION['firstname']);  ?> (<?php echo $_SESSION['user_type']?>)</a>    </li>
-                        <li class = "nav-item"><a class="nav-link" href="../user/logoutProcess.php">Log Out</a> </li>
+                        <li class = "nav-item"><a class="nav-link" style="font-size: 15px;" > <?php echo ucfirst($_SESSION['firstname']);  ?> (<?php echo $_SESSION['user_type']?>)</a>    </li>
+                        <li class = "nav-item"><a class="nav-link" style="font-size: 15px;" href="../user/logoutProcess.php">Log Out</a> </li>
                    <!--  </ul>
                 </div>  -->
             <?php } ?>  
