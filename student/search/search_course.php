@@ -177,8 +177,8 @@
                     <div class="card mt-5">
                         <table class="table table-bordered">
                              <?php 
-                                    $con = mysqli_connect("localhost","root","","finals");
-
+                                    //$con = mysqli_connect("localhost","root","","finals");
+                                    include "../../templates/connection.php"
                                     if(isset($_GET['course_id']))
                                     {
                                         $course_id = $_GET['course_id'];
