@@ -181,7 +181,10 @@ $(document).ready(function(){
 </head>
 <body>
 
-<?php include '../templates/navigation.php'; ?> 
+<?php 
+  session_start();
+  include '../templates/navigation.php'; 
+?> 
 
 <div class="container">
 <?php
