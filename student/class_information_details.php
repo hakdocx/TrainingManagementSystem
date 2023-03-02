@@ -6,11 +6,23 @@
     header("location: courses.php");
   }
 
+  if(isset($_GET['search'])) {
+    $sql = "
+      SELECT *
+      FROM student s 
+      JOIN account_details a 
+      ON s.account_id = a.account_id
+      JOIN registration_participants_class rpc
+      ON rpc.student_id = s.student_id
+      JOIN class_information_details c
+    ";
+  }
+
   $registrationCourseId = $_GET['regId'];
   $classId = $_GET['classId'];
 
   $sql = "
-    SELECT a.firstname, a.lastname, s.student_id
+    SELECT DISTINCT a.firstname, a.lastname, s.student_id, rpc.student_reg_idz
     FROM account_details a
     JOIN student s
     ON s.account_id = a.account_id
@@ -18,10 +30,12 @@
     ON rpc.student_id = s.student_id
     JOIN registration_course rc
     ON rc.course_reg_id = rpc.course_reg_id
+    JOIN class_information_details c
+    ON c.class_number = rpc.course_reg_id
+    WHERE c.class_number = $registrationCourseId 
     ";
 
-  $query = mysqli_query($conn, $sql);
-  $registeredStudents = mysqli_fetch_assoc($query);
+  $registeredStudents = mysqli_query($conn, $sql);
 
 
   $sql = "
@@ -118,14 +132,12 @@
             </thead> 
                   
             <tbody>
+              <?php while (  $students = mysqli_fetch_assoc($registeredStudents)) { ?>
               <tr>
-                <td class="ps-3">12345</td>
-                <td class="ps-3">Emman Macaya</td>
-              </tr>
-              <tr>
-                <td class="ps-3">12345</td>
-                <td class="ps-3">Emman Macaya</td>
-              </tr>
+                <td class="ps-3"><?= $students['student_id'] ?></td>
+                <td class="ps-3"><?= $students['firstname'] . " " . $students['lastname']  . " " . $students['student_reg_id'] ?></td>
+              </tr>  
+              <?php } ?>
             </tbody>
         </table>  
       </div>
