@@ -8,6 +8,7 @@
 
 body {
 	margin:0;
+	overflow-y: hidden;
 	font-family: 'Montserrat', sans-serif;
 	background:#ffffff;
 }
@@ -313,3 +314,26 @@ dialog::backdrop {
   border-radius: 50px;
 	top: 20px;
 }
+
+    
+.custom-shape-divider-bottom-1676706408 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    }
+
+    .custom-shape-divider-bottom-1676706408 svg {
+    position: relative;
+    display: block;
+    width: calc(118% + 1.3px);
+    height: 112px;
+    transform: rotateY(180deg);
+    }
+
+    .custom-shape-divider-bottom-1676706408 .shape-fill {
+    fill: #681A1A;
+    }

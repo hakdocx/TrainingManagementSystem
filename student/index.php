@@ -13,107 +13,38 @@
 
     <style>
         .rectangle {
-            position: absolute;
-            width: 420px;
+            width: 350px;
             height: 233.33px;
-            left: 79px;
-            top: 191px;
             background-color: #681A1A;
+            border-radius: 15px;
         }
         .rectangle2 {
-            position: absolute;
-            width: 420px;
+            width: 350px;
             height: 233.33px;
-            left: 511px;
-            top: 191px;
             background-color: #681A1A;
-
+            border-radius: 15px;
         }
 
         .rectangle3 {
-            position: absolute;
-            width: 420px;
+            width: 350px;
             height: 233.33px;
-            left: 942px;
-            top: 191px;
             background-color: #681A1A;
+            border-radius: 15px;
         }
         
-        .unicalendar{
-            position: absolute;
-            width: 221px;
-            height: 86px;
-            left: 179px;
-            top: 265px;
-
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 35px;
-            line-height: 43px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-
-            color: #FFFFFF;
-
-            mix-blend-mode: normal;
-        }
-        .executivememo{
-            position: absolute;
-            width: 206px;
-            height: 86px;
-            left: 608px;
-            top: 265px;
-
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 35px;
-            line-height: 43px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-
-            color: #FFFFFF;
-
-            mix-blend-mode: normal;
-        }
-        .registration{
-            position: absolute;
-            width: 274px;
-            height: 43px;
-            left: 1015px;
-            top: 287px;
-
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 35px;
-            line-height: 43px;
-            /* identical to box height */
-
-            display: flex;
-            align-items: center;
-            text-align: center;
-
-            color: #FFFFFF;
-
-            mix-blend-mode: normal;
-        }
+    
         .jumpto{
-            position: absolute;
-            width: 176px;
-            height: 43px;
-            left: 632px;
-            top: 512px;
-
+           
+            justify-content: center;
+            justify-items: center;
+            padding-right: 45px;
+            padding-top: 100px;
             font-family: 'Montserrat';
             font-style: normal;
             font-weight: 700;
             font-size: 35px;
             line-height: 43px;
-            /* identical to box height */
+    
 
             display: flex;
             align-items: center;
@@ -123,83 +54,91 @@
 
             mix-blend-mode: normal;
         }
+
+
+
+.custom-shape-divider-bottom-1676706408 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1676706408 svg {
+    position: relative;
+    display: block;
+    width: calc(118% + 1.3px);
+    height: 112px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1676706408 .shape-fill {
+    fill: #681A1A;
+}
+
+
+
         </style>
     </head>
     <br><br><br><a href = "../user/homepage.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>
     <body style="font-family: Montserrat;">
-	    <!--     <nav class = "navbar navbar-expand-lg navbar-dark fixed-top" style = "background-color: #681A1A;">
-        <a class = "navbar-brand" href=#>Web Development</a>
-        <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#portfolio-nav" aria-controls = "portfolio-nav" aria-expanded = "false" aria-label = "Toggle navigation">
-            <span class = "navbar-toggler-icon"></span>
-        </button>
-		
-        <div class = "collapse navbar-collapse" id = "portfolio-nav">
-            <ul class="nav navbar-nav mr-auto">
-                <li class ="nav-item">
-                    <a class="nav-link" href="homepage.php">HOME</a>
-                </li>
-                <li class = "nav-item">
-                    <a class="nav-link" href="studentlandingpage.php">STUDENT</a>
-                </li>
-                <li class = "nav-item">
-                    <a class="nav-link" href="#">COURSE</a>
-                </li>
-                <li class = " nav-item">
-                    <a class="nav-link" href="#">INSTRUCTORS</a>
-                </li>
-            
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"  data-bs-toggle="dropdown" aria-expanded="false">
-                        GENERATE REPORT
-                    </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">By Number of Participants per Course</a><li>
-                            <a class="dropdown-item" href="#">By Course conducted by Date Range</a><li>
-                            <a class="dropdown-item" href="#">By Participants of the Course</a></li>
-                            <a class="dropdown-item" href="#">By Pool Instructors per Course</a></li>
-    </ul>
-                </li>
-            </ul>
-
-            <ul class = "nav navbar-nav ms-auto">
-                <li>
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        PROFILE
-                    </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item">User Name</a></li>
-                            <li><a class="dropdown-item">User Type</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Log In/Out</a></li>
-                        </ul>
-                </li> 
-            </ul>
-        </div>
-	</nav> -->
+	
     <?php 
     require '../templates/navigation.php';
     ?>
-    <div class="rectangle"></div>
-    <div class="rectangle2"></div>
-    <div class="rectangle3"></div>
-    <div class="unicalendar">UNIVERSITY CALENDAR</div>
-    <div class="executivememo">EXECUTIVE MEMO</div>
-    <div class="registration">REGISTRATION</div>
+  
+
+
+  <div class="container">
+    <div class="row pt-5">
+        <div class="col">
+        <div class="rectangle">  <h1 style="color:white; text-align: center; font-size: 40px; padding-top:60px;">UNIVERSITY CALENDAR</h1></div>
+        </div>
+    
+
+        <div class="col">
+        <div class="rectangle2"> <h1 style="color:white; text-align: center; font-size: 40px;  padding-top:70px;">EXECUTIVE MEMO</h1></div>
+        </div>
+    
+
+        <div class="col">
+        <div class="rectangle3">  <h1 style="color:white; text-align: center; padding-top: 90px; font-size: 40px; ">REGISTRATION</h1></div>
+        </div>
+    </div>
+
     <div class="jumpto">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle" style="width:280px"type="button" data-bs-toggle="dropdown" aria-expanded="false">
             JUMP TO:
         </button>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu" style="text-align: center;">
             <li><a class="dropdown-item" href="add_participants.php">ADD PARTICIPANT</a></li>
             <li><a class="dropdown-item" href="search_database.php">SEARCH DATABASE</a></li>
-            <li><a class="dropdown-item" href="class_information_details.php">CLASS INFORMATION DETIALS</a></li>
-            <li><a class="dropdown-item" href="classinfo_student.php">Class Info Student</a></li>
+            <li><a class="dropdown-item" href="class_information_details.php">CLASS INFORMATION DETAILS</a></li>
             <li><a class="dropdown-item" href="create_student.php">CREATE STUDENT</a></li>
         </ul>
         </div>
+
     </div>
+
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 
+
     </body>
+    <footer>
+      <div class="custom-shape-divider-bottom-1676706408">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+          <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+          <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+          </svg>
+      </div>
+    </footer>
 </html>    

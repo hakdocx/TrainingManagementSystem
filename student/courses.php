@@ -14,7 +14,7 @@
         }
 
         body {
-            background-color: #FFFCFA;
+          
             font-family: 'Montserrat', sans-serif;
         }
 

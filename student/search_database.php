@@ -124,8 +124,9 @@ if(isset($_GET['deleteBtn'])){
 
 	<style>
 		body {
-			background: #F2EFEB;
 			height: 100%;
+            
+            font-family: 'Montserrat', sans-serif;
 		}
 		.btnA, .btnB{
           background: #681A1A;
@@ -217,7 +218,7 @@ if(isset($_GET['deleteBtn'])){
 																																} ?>">
 					</div>
 					<div class="col-0 align-self-end mx-2">
-						<button type="submit" name="searchBtn" class="mx-1 btn btn-primary">Enter</button>
+						<button type="submit" name="searchBtn" class="mx-1 btn btn-primary" style="background-color:#681a1a; border:none;">Enter</button>
 					</div>
 					<div class="col-2 align-self-end mx-0">
 						<div class="dropdown">

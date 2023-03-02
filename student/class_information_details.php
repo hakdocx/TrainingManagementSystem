@@ -62,9 +62,10 @@
 <body style ="font-family: Montserrat;">
   <?php include "../templates/navigation.php"; ?>
   <div class="container p-5 mt-5">
-    <a href="" class="mt-5 pt-5" style="color: #681A1A; text-decoration:none" >
+    <a href="course-registration-details.php?id=<?= $classId ?>" class="mt-5 pt-5" style="color: #681A1A; text-decoration:none" >
       &#8592; Back to View Course
     </a>
+
     <h1 class="mt-5 mb-4" style = 'font-size:50px; color: #681A1A; font-weight:700'>
       Class Information Details
     </h1>
