@@ -109,7 +109,7 @@
     </div>
 
 	</header>
-	<a href = "../user/homepage.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>  
+	<a href = "index.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>  
 	<div class="chas">
 		<center>
 		<form action="" method="post"> <br> <br> <br>
