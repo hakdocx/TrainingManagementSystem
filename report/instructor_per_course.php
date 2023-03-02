@@ -50,7 +50,7 @@ $result1 = mysqli_query($connect, $query);
 		}
 	</style>
 </head>
-
+<br><a href = "index.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>
 <body style="margin: 50px; font-family: Montserrat;">
 	<div class="container">
 		<div class="table-wrapper">

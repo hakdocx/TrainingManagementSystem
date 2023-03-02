@@ -46,7 +46,7 @@
 		header h1 {
 				font-size: 20px;
 				padding: 2px;
-				color: #ffe000;
+				color: white;
 		}
 		#search-input {
 			background-color: maroon;
@@ -109,7 +109,7 @@
     </div>
 
 	</header>
-
+	<a href = "../user/homepage.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>  
 	<div class="chas">
 		<center>
 		<form action="" method="post"> <br> <br> <br>

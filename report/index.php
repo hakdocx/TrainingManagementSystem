@@ -133,6 +133,11 @@
             background-color: rgb(140, 42, 165);
         }
 
+    .fix-me{
+        position: fixed;
+        top: 70px;
+        left: 10px;
+    }
 
    
 
@@ -162,14 +167,13 @@
               </div>
           </header> -->
 
-
+          <br><br><br><a href = "../user/homepage.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>  
         
             <div class="first-class">
                 <table>
-               <tr> 
-                <h1 class="fc-h1>">W E L C O M E !!</h1> <br> <br>
+               <tr> <br>
+                <h1 class="fc-h1>">Generate Report</h1> <br> 
                 <h4 class="fc-h4"> SELECT THE INFORMATION YOU NEED </h4> </tr> <br> <br> <br> <br>
-                 <br>
                 <tr> <a href="rank_per_title.php" style="text-decoration:none;"> <image src="../assets/images/military_tech.png" height="40px" width="40px" style="margin-right: 10px;"></image> <button class="first"> Rank per title </button>  </a>
             </tr>
            
@@ -187,6 +191,8 @@
                 </table>
 <br> <br>
         </div>
+    
+
 
 </body>
 </html>
