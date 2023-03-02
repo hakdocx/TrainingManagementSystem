@@ -1,5 +1,6 @@
 
 <?php 
+	session_start();
 	require '../templates/connection.php'; 
 	require '../templates/header.php';
 
@@ -79,16 +80,16 @@
 	<style>
 		body{
 			margin: 100px;
+			
 		}
 		.title_container{
 			margin: 100px;
-			margin-bottom: 50px;
+			margin-bottom: 20px;
 			width: 75%;
 			background-color: #681A1A;
 			border-radius: 10px;
 			padding: 20px 90px;
 			color: white;
-			
 		}
 		.display-6{
 			font-size: 20px;
@@ -125,57 +126,73 @@
 		.class_details{
 			width: 75%;
 		}
+
+		.asterisk {
+			color:red;
+		}
+		
 		table {
 			border-spacing: 0px;
 			width: 75%;
 			border-radius: 10px;
+			border: none;
 		}
 
-		table td, table th {
+		th {
 			padding: .75em;
-			vertical-align: middle;
+			vertical-align: top;
 			text-align: center;
-			border-top: 1px solid #0d0d0d;
+			border: none;
+		}
+
+    td {
+			padding: .75em;
+			vertical-align: top;
+			border: 1px solid #DBDBDB;
+			border-bottom: none;
+			border-left: none;
+			border-right: none;
+			text-align: center;
 			overflow: hidden;
-			border-radius: 10px;
 		}
 		a{
 			text-decoration: none;
 			color: #681A1A;
-			font-weight: bold;
 		}
+
 		a:hover{
 			color: #681A1A;
 		}
+
 	</style>
 	<script type="text/javascript" src = "../assets/js/dialog.js" defer></script>
 </head>
-<body>
+<body style="font-family: Montserrat; align-items: center;">
 	<?php require '../templates/navigation.php' ?>
-	<dialog id = 'dialog'>
+	<dialog id = 'dialog' style="border:white; border-radius: 10px;">
 		<form method = "POST" action = "course-registration-details.php?id=<?= $registrationId ?>">
-			<div class="form-container">
-				<h2> Create a Class </h2>
-				<div class = "form-row mt-3">
+			<div class="form-container p-3 pe-4 ps-4">
+				<h2> Create a class </h2>
+				<div class = "form-row mt-3 mb-3" style="display:flex; flex-direction:column;">
 					<label for = 'letter-order-number' class = "fw-bold" style="color: #5B5B5B">
-						Letter Order Number<span class="asterisk">*</span>
+						Letter Order Number <span class="asterisk"> *</span>
 					</label>
-					<input style='font-size: 17px;' type="text" name="letter-order-number" id ='letter-order-number' required>
+					<input class="p-1" style='font-size: 17px; border: 2px solid #DBDBDB; border-radius: 7px;' type="text" name="letter-order-number" id ='letter-order-number' required>
 				</div>
-				<div class = "form-row mt-2">
+				<div class = "form-row mt-2 mb-3" style="display:flex; flex-direction:column;">
 					<label for = 'general-order' class = "fw-bold" style="color: #5B5B5B" >
-						General Order<span class="asterisk">*</span>
+						General Order <span class="asterisk"> *</span>
 					</label>
-					<input style='font-size: 17px;' type="number" name="general-order" id ='general-order' required>
+					<input class="p-1" style='font-size: 17px; border: 2px solid #DBDBDB; border-radius: 7px;' type="text" name="general-order" id ='general-order' required>
 				</div>
-				<div class = "form-row mt-2">
+				<div class = "form-row mt-2 mb-3" style="display:flex; flex-direction:column;">
 					<label for = 'cert-ctrl-no' class = "fw-bold" style="color: #5B5B5B">
-						Certification Control Number <span class = "asterisk">*</span>
+						Certification Control Number <span class = "asterisk"> *</span>
 					</label>
-					<input style='font-size: 17px;' type="text" name="cert-ctrl-no" id ='cert-ctrl-no'>
+					<input class="p-1" style='font-size: 17px; border: 2px solid #DBDBDB; border-radius: 7px;' type="text" name="cert-ctrl-no" id ='cert-ctrl-no'>
 				</div>
-				<div class="text-center">
-				  <button name="add-class" type = "submit" class="btn btn-primary mt-3" id="submit-btn" >Submit</button> 
+				<div class="text-center mb-2">
+				  <button name="add-class" type = "submit" class="btn btn-primary mt-3" id="submit-btn" style="background-color: #681A1A; border: 2px solid #681A1A;">Submit</button> 
 				</div>
 			</div>
 		</form>
@@ -217,8 +234,7 @@
 	<div class="d-flex flex-column align-items-center">
 		<div class="class_details mx-auto">
 			<h2>Unassigned Classes</h2>
-
-			<table class='table table-bordered table-rounded w-50'>
+			<table class='table w-75' style="border-radius: 10px; outline: 1px solid #DBDBDB;">
 				<thead>
 					<tr>
 						<th scope='col'>CLASS NUMBER</th>
@@ -267,22 +283,31 @@
 		</div>
 	</div>
 	<?php } ?>
-	<div class="classes_container d-flex align-items-center mx-auto">
-		<form class="search_form" method="POST">
-			<div class="input-group">
-				<input class="form-control flex-shrink-0" type="text" name = "class_id" placeholder="Search Classes" aria-label="default input example">
-				<div class="input-group-append">
-					<button class="btn btn-secondary w-auto" type="button">
-						<i class="fa fa-search"></i>
-					</button>
-				</div>
-		  	</div>
-		</form>
+	<div class="classes_container mx-auto">
+		<div class="row">
+			<h2>Assigned Classes</h2>
+		</div>
+		<div class="row">
+			<div class="col-md-auto">
+				<button class="btn btn-primary mt-2" id="add_class_btn" name="add_class_btn" style="border: 2px solid #681A1A">Add More Classes</button>
+			</div>
+			<div class="col pt-2">
+				<form class="search_form" method="POST">
+					<div class="input-group" style="width: 530px;">
+						<input class="form-control flex-shrink-0" type="text" name = "class_id" placeholder="Search Classes" aria-label="default input example">
+						<div class="input-group-append">
+							<button class="btn btn-secondary w-auto" type="button">
+								<i class="fa fa-search"></i>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
 	</div>
 	<div class="d-flex flex-column align-items-center">
-		<div class="class_details mx-auto">
-		<h2>Assigned Classes</h2>
-			<table class='table table-bordered table-rounded w-50'>
+		<div class="class_details">
+			<table class='table w-75' style="border-radius: 10px; outline: 1px solid #DBDBDB;">
 				<thead>
 					<tr>
 						<th scope='col'>CLASS NUMBER</th>
@@ -325,7 +350,6 @@
 					?>
 				</tbody>
 			</table>
-			<button class="btn btn-primary" id="add_class_btn" name="add_class_btn">Add More Classes</button>
 		</div>
 	</div>
 	

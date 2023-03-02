@@ -111,14 +111,14 @@
       </div>
     </div>
 
-    <div class="row row-cols-2 w-50 my-4">
+    <!-- <div class="row row-cols-2 w-50 my-4">
         <div class="col-md-auto">
           <button class="btn pe-4 ps-4" style="font-weight: 600; border: 2px solid #681A1A; border-radius: 10px; color:#681A1A; height: 50px;">UPDATE</button>
         </div>
         <div class="col-md-auto">
           <button class="btn pe-4 ps-4" style="font-weight: 600; background-color:#681A1A; border-radius: 10px; color:white; height: 50px;">DELETE</button>
         </div>
-      </div>
+    </div> -->
     <div class="row w-75 mb-2">
       <h2 class="" style = 'font-size:30px; font-weight: 700'>
         Registered Students

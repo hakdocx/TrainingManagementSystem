@@ -191,10 +191,10 @@
         </button>
         <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="add_participants.php">ADD PARTICIPANT</a></li>
-            <li><a class="dropdown-item" href="search_database.php">SEARCH DATABASE</a></li>
+            <li><a class="dropdown-item" href="search_database.php">SEARCH DATABASE</a></li>    
             <li><a class="dropdown-item" href="class_information_details.php">CLASS INFORMATION DETIALS</a></li>
-            <li><a class="dropdown-item" href="classinfo_student.php">Class Info Student</a></li>
             <li><a class="dropdown-item" href="create_student.php">CREATE STUDENT</a></li>
+            <!-- <li><a class="dropdown-item" href="read_student.php">READ STUDENT</a></li> -->
         </ul>
         </div>
     </div>
