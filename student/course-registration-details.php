@@ -316,7 +316,7 @@
 							echo "<td>
 									<div class='container1'>
 										<div class='deleter'>
-											<a class='click' href='class_information_details.php?regId={$class_number}&classId={$row_class['class_info_id']}'>VIEW</a>
+											<a class='click' href='class_information_details.php?regId={$registrationId}&classId={$row_class['class_info_id']}'>VIEW</a>
 										</div>
 									</div>
 								</td>";
