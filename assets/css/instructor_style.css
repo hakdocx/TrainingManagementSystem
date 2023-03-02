@@ -64,29 +64,19 @@ input {
 }
 
 input[type=text] {
+  
 	color: #0b090a;
   border: 2px solid;
   border-color: #252422;
   border-radius: 10% 10% 10% 10% / 100% 100% 100% 100% ;
-  padding: 15px 20px;
+  padding: 20px 20px;
   box-sizing: border-box;
   resize: none;
   font-weight: 600;
+  
 }
 
-form span{
-  position: absolute;
-  left: 30%;
-  margin-top: 1px;
-  padding: 0 3px;
-  font-size: 10px;
-  color: #252422;
-  text-transform: uppercase;
-  font-weight: 600;
-  background: #fffcfa;
-  pointer-events: none;
-  
-  }
+
 
 button {
   width: 120px;

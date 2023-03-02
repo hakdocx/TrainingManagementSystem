@@ -20,32 +20,81 @@
      require '../templates/navigation.php'; 
      ?>
 
-    
-    <header class="mt-5">
-    <h1>POOL OF INSTRUCTORS </h1> 
-      <div  class="homebutton"><a href="index.php"><span class="material-symbols-outlined">home</span></a>
-    </div>
-    </header>
 
-    <Center>
-    <form action="update_add_data.php" method="post">
-      <input type="text" name="id" >
-      <span>INSTRUCTOR ID</span><br>
-      <input type="text" name="acc_id" >
-      <span>ACCOUNT ID</span><br>
-      <input type="text" name="rank" >
-      <span>RANK</span><br>
-      <input type="text" name="quadeg">
-      <span>Qualification Degree</span><br>
-      <input type="text" name="couspe">
-      <span>Course Specialization</span><br>
-      <input type="text" name="othqua">
-      <span>Other Qualification</span><br>
-      <div>
-      <button type="submit" name="insert" >Add </button>
-      </div>
-    </form>
-    </Center>
+<style>
+  .box1 {
+  width: auto;
+  height: auto;
+  padding: 50px;
+  margin-top: 75px;
+  margin-bottom: 75px;
+  border-radius: 10px;
+}
+
+form span{
+  text-align: center;
+  padding: 0 3px;
+  font-size: 14px;
+  color: #252422;
+  text-transform: uppercase;
+  font-weight: 600;
+  pointer-events: none;
+  float: left;
+  }
+
+</style>
+
+      <Center> 
+    <div class="box1">
+          <form action="update_add_data.php" method="post">
+            <div class = "col">
+              <span>INSTRUCTOR ID</span>
+            </div>
+              <div class = "col">
+                <input type="text" name="id" >
+             </div>
+            <div class = "col">
+              <span>ACCOUNT ID</span>
+            </div>
+              <div class = "col">
+                <input type="text" name="acc_id" >
+              </div>
+
+            <div class = "col">
+              <span>RANK</span>
+            </div>
+              <div class = "col">
+                <input type="text" name="rank" >
+              </div>
+
+            <div class = "col">
+              <span>Qualification Degree</span>
+            </div>
+              <div class = "col">
+                <input type="text" name="quadeg">
+              </div>
+
+            <div class = "col">
+              <span>Course Specialization</span>
+            </div>
+              <div class = "col">
+                <input type="text" name="couspe">
+              </div>
+
+            <div class = "col">
+              <span>Other Qualification</span>
+            </div>
+              <div class = "col">
+                <input type="text" name="othqua">
+              </div>
+              <br>
+            <div>
+              <button type="submit" name="insert" >Add </button>
+            </div>
+          </form>
+      </Center>
+    </div>
+
    </body>
    </html>
 
