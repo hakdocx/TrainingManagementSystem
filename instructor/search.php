@@ -12,14 +12,15 @@
 
 
   </head>
-
+  
   <body>
+    <br><br>
     <header>
     <h1>POOL OF INSTRUCTORS </h1> 
       <div class="homebutton"><a href="index.php"><span class="material-symbols-outlined">home</span></a>
     </div>
     </header>
-
+    <br><a href = "index.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>
 <center>
 <?php
 session_start();

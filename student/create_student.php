@@ -52,7 +52,8 @@ include '../templates/connection.php';
   </style>
 </head>
 <body style="text-align:center; font-family: Montserrat;">
-  <?php
+<br><br><br><a href = "index.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>
+<?php
     require '../templates/navigation.php';
   ?>
 <div class="container mt-5">
