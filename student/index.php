@@ -193,7 +193,7 @@
             <li><a class="dropdown-item" href="search_database.php">SEARCH DATABASE</a></li>
             <li><a class="dropdown-item" href="class_information_details.php">CLASS INFORMATION DETIALS</a></li>
             <li><a class="dropdown-item" href="classinfo_student.php">Class Info Student</a></li>
-            <li><a class="dropdown-item" href="create_student.php">CREATE_STUDENT</a></li>
+            <li><a class="dropdown-item" href="create_student.php">CREATE STUDENT</a></li>
         </ul>
         </div>
     </div>
