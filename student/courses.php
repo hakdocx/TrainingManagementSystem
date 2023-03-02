@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -182,7 +185,6 @@ $(document).ready(function(){
 <body>
 
 <?php 
-  session_start();
   include '../templates/navigation.php'; 
 ?> 
 
