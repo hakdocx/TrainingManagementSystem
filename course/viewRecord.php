@@ -15,7 +15,7 @@
 
 
   $sql = "
-    SELECT 
+    SELECT DISTINCT
     a.firstname, a.lastname
     FROM registration_course AS r 
     JOIN pool_instructor_details AS i 
