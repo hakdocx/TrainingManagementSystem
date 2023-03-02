@@ -56,9 +56,9 @@ body{
 
     
 
-
+<br><br><br><a href = "../user/homepage.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>
   <center>
-
+  
     <div class="divsearch">
     <form class="search" action="search.php" method="POST">
       <input type="text" name="name" placeholder="Enter Last Name or Training Course">

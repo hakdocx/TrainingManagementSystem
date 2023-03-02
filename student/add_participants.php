@@ -138,6 +138,7 @@ include "../templates/connection.php";
 </head>
 
 <body>
+<br><br><br><a href = "../user/homepage.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>
     <?php include "../templates/navigation.php"; ?>
     <div class = "add">ADD PARTICIPANT</div>
     <div class="container">
