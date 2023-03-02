@@ -469,16 +469,6 @@
 
             color: #FFFFFF;
         }
-        .shape1{
-            position: absolute;
-            width: 26.92px;
-            height: 26.92px;
-            left: 265.64px;
-            top: 364.64px;
-
-            border: 3px solid #D9D9D9;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }
         .professors{
             position: absolute;
             width: 172.48px;
@@ -640,7 +630,6 @@
     <div class = "fiveh"> <?php echo $no_students['student_total'];?> </div>
     <div class = "cteach"> <?php echo $no_instructors['instructor_total'];?> </div>
     <div class = "students">STUDENTS</div>
-    <div class = "shape1"></div>
     <div class = "professors">INSTRUCTORS</div>
     <div class = "cclass"><?php echo $no_classes['class_total'];?></div>
     <div class = "class">CLASSES</div>
