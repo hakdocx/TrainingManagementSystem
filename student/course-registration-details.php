@@ -172,15 +172,23 @@
 				</thead>
 				<tbody>
 					<?php
-						$class_query = "SELECT class_information_details.class_info_id, class_number, COUNT(student_reg_id) AS student_count FROM class_information_details WHERE student_reg_id IN (
-															SELECT student_reg_id FROM registration_participants_class WHERE course_reg_id IN (
-																SELECT course_reg_id FROM registration_course WHERE course_id = " . $row_account['course_id'] . " AND instructor_id = " . $row_account['instructor_id'] .
-															"))
-														GROUP BY class_number;";
+						$class_query = "SELECT rcp.course_reg_id, cid.class_info_id, COUNT(rcp.student_reg_id) AS student_count 
+										FROM registration_participants_class AS rcp 
+										JOIN class_information_details AS cid ON rcp.class_info_id = cid.class_info_id 
+										JOIN registration_course AS rco ON rcp.course_reg_id = rco.course_reg_id 
+										WHERE rco.course_id = " . $row_account['course_id'] . " AND rco.instructor_id = " . $row_account['instructor_id'] . " 
+										GROUP BY rcp.course_reg_id 
+										ORDER BY rcp.course_reg_id ASC;";
 						$query = mysqli_query($conn, $class_query);
 
+						if (!$query) {
+							echo "Error in SQL syntax: " . mysqli_error($conn);
+						} else {
+							// code to handle successful query
+						}
+
 						while($row_class = mysqli_fetch_assoc($query)){
-							$class_number = $row_class['class_number'];
+							$class_number = $row_class['course_reg_id'];
 							$student_count = $row_class["student_count"];
 							echo "<tr>";
 							echo "<td>$class_number</td>";
