@@ -17,6 +17,7 @@
 </head>
 <body>
 	<div class="row">
+
 			<form class="access-form" method="post" name="login">
 				<h1 class="access-title">WELCOME!</h1>
 				<h5 class="access-title">Choose your destination based on your access level.</h5>
@@ -24,7 +25,7 @@
 				<input type="submit" value="Student" name="btnStudent" class="access-button" formaction="user/Student-Login.php"/>
 				<input type="submit" value="Instructor" name="btnInstructor" class="access-button" formaction="user/Instructor-Login.php"/>
 				<input type="submit" value="Administrator" name="btnInstructor" class="access-button" formaction="user/Admin-Login.php"/>
-				<p class="register">Create an account? <a href="user/Registration-Form.php">Register here.</a></p>
+				<p class="register">Create an account? <a class="reg" href="user/Registration-Form.php">Register here.</a></p>
 				</div>
 			</form>
 	</div>

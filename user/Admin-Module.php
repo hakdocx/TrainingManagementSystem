@@ -2,11 +2,9 @@
 
 ob_start();
 require dirname(__DIR__).('../templates/connection.php');
-    if(isset($_POST['btnLogout']))
-{
-    session_destroy();
-}
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,30 +15,92 @@ require dirname(__DIR__).('../templates/connection.php');
     <meta name="viewport" content="width=device-width,
     initial-scale=1.0">
     <title>User List</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/Button_Style.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 
     <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-    }
+        body {
+
+          font-family: 'Montserrat', sans-serif;
+        }
+
+        .row{
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .btn2{
+            margin-left: 80px;
+            background-color: #681a1a;
+            color: white;
+            padding: 10px 5px 10px 25px;
+            border-radius: 6px;
+            border: none;
+            width: 10%;
+            font-size: 18px;
+
+        }
+
+        .btn2:hover{
+            background-color: #4a0b0b;
+            color: #fffcfa;
+            text-decoration: none;
+
+        }
+
+        .Icon-inside{
+            position: relative;
+        }
+
+        .Icon-inside i {
+            position: absolute;
+            left: 100px;
+            top: 8px;
+            padding: 6px 20px;
+            color: #fff;
+            margin-left: -9px;
+            opacity: 90%;
+        }
+
     </style>
 
 
 </head>
+<br>
+<br>
 
 <body>
 <header>
-        <?php
-            session_start();
-            require dirname(__DIR__).('../templates/navigation.php');
-        ?>
+    <?php
+        session_start();
+        #require dirname(_DIR_).('navigation.php');
+        //require '../navigation.php';
+        require '../templates/navigation.php';
+    ?>
 </header>
-    <div class="container pt-5">
+<br>
 
+<form method=POST>
+        <div class="Icon-inside">
+            <div  margin-left="80px;" class='row col offset-1'>
+            <i class="fa fa-arrow-left fa-1x" aria-hidden="true"></i>
+            <input type=submit name=go_back class=btn2 value="Go Back">
+                </form>
+                          <?php
+                        if (isset($_POST['go_back'])) {
+                            header("location: index.php");
+                        }
+                        ?>
+                     </div>
+        </div>
+<br>
+    <div class="container">
         </button>
-        <table class="table mt-5">
+        <table class="table">
             <thead>
                 <tr>
                     <th scope="col">Account ID</th>
@@ -93,6 +153,17 @@ require dirname(__DIR__).('../templates/connection.php');
         </table>
 
     </div>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .navbar-brand {
+            margin-right: 16px;
+            margin-left: 0px;
+        }
+    </style>
 
 </body>
 

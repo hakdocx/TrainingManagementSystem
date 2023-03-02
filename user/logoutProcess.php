@@ -3,6 +3,8 @@ session_start();
 
 
 
-session_destroy();
+if (session_destroy()){
 
 header("Location:../user/index.php?success=loggedOut");
+
+}

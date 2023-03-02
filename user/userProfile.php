@@ -1,11 +1,10 @@
 <?php
 
 ob_start();
+
+session_start();
 require dirname(__DIR__). "../templates/connection.php";
-    if(isset($_POST['btnLogout']))
-{
-    session_destroy();
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -16,22 +15,80 @@ require dirname(__DIR__). "../templates/connection.php";
         <title>Login System</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
-        <link rel="stylesheet" href="../assets/css/Button-Style.css">
-        <link rel="stylesheet" href="../assets/css/Navigation-Style.css"/>
+        <link rel="stylesheet" href="../assets/css/Button_Style.css"/>
+        <link rel="stylesheet" href="../assets/css/Navigation_Style.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <style>
         body {
+
           font-family: 'Montserrat', sans-serif;
         }
+
+        .row{
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .btn2{
+            margin-left: 80px;
+            background-color: #681a1a;
+            color: white;
+            padding: 10px 5px 10px 25px;
+            border-radius: 6px;
+            border: none;
+            width: 10%;
+            font-size: 18px;
+
+        }
+
+        .btn2:hover{
+            background-color: #4a0b0b;
+            color: #fffcfa;
+            text-decoration: none;
+            cursor: pointer;
+
+        }
+
+        .Icon-inside{
+            position: relative;
+        }
+
+        .Icon-inside i {
+            position: absolute;
+            left: 100px;
+            top: 8px;
+            padding: 6px 20px;
+            color: #fff;
+            margin-left: -9px;
+            opacity: 90%;
+        }
+
+        .update_message{
+          text-align: center;
+          color: #681a1a;
+          font-size: 17px;
+          family-family: 'Montserrat';
+        }
+
         </style>
 
     </head>
     <body>
-        <header>
-            <?php
-               require dirname(__DIR__).('../navigation.php');
-            ?>
-        </header>
+            <br>
+                <form method=POST>
+                    <div class="Icon-inside">
+                     <div  margin-left="80px;" class='row col offset-1'>
+                        <i class="fa fa-arrow-left fa-1x" aria-hidden="true"></i>
+                        <input type=submit name=go_back class=btn2 value="Go Back">
+                </form>
+                          <?php
+                        if (isset($_POST['go_back'])) {
+                            header("location: index.php");
+                        }
+                        ?>
+                     </div>
+                    </div>
 
         <div align="center">
                 <h2 class="update-user-info">UPDATE USER INFORMATION</h2>
@@ -96,7 +153,7 @@ require dirname(__DIR__). "../templates/connection.php";
                             `middlename` = '$_POST[updateMname]', `suffix` = '$_POST[updateSuffix]' WHERE `username` = '$_POST[updateUsername]'";
                             mysqli_query($conn, $sql);
 
-                                echo "User Updated Successfully";
+                                echo '<p class=update_message><i>User Updated Successfully</i></p>';
                                 header("refresh: 1");
                             }
                     }

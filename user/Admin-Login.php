@@ -13,7 +13,6 @@
 
 		// get students' details from database
 		$sql = "SELECT * FROM `account_details` WHERE `username` = '$username' AND `password` = '$password'";
-
 		$result = mysqli_query($conn, $sql);
 
 		// if result matched, table row should be 1
@@ -25,7 +24,7 @@
 			$_SESSION["username"]=$username;
 			$_SESSION["user_type"]="admin";
 			$_SESSION["firstname"]=$row["firstname"];
-			header("Location: Admin-Module.php");
+			header("Location: ../user/Admin-Module.php");
 		}
 		else
 		{
@@ -58,13 +57,13 @@
     }
     </style>
 
-
 	<title>Admin-Login</title>
 </head>
 <body>
+
 	<div class="row">
 		<div class="lside">
-
+			<p class="back"><a href="../Access-Level.php"><span class="arrow">&#8592;</span>Go Back</a></p>
 		</div>
 
 		<div class="rside">

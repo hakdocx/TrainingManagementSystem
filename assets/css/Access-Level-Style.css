@@ -75,11 +75,13 @@ h5.access-title {
   margin-top: 0px;
 }
 
-a:link {
-  color: #666;
+a.reg:link, a.reg:visited {
+  color: #681a1a;
+  opacity: 100%;
+  text-decoration: underline;
 }
 
-a:hover {
+a.reg:hover {
   text-decoration: underline;
-  color: #681a1a;
+  color: #666;
 }

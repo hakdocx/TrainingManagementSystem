@@ -113,4 +113,30 @@ hr.line2{
   margin: -40px auto 50px;
 }
 
+p.back{
+    font-family: Montserrat, sans-serif;;
+    font-size: 25px;
+    line-height: 100px;
+    text-align: left;
+    padding-left: 30px;
+}
 
+a:link, a:visited {
+  color: #fffcfa;
+  opacity: 50%;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #fffcfa;
+  opacity: 100%;
+}
+
+span.arrow {
+  content: "\2190";
+  color: white;
+  padding-right: 15px;
+  font-size: 2.5rem;
+}

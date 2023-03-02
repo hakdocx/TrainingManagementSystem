@@ -1,3 +1,12 @@
+<?php
+        session_start();
+
+        require '../templates/connection.php';
+        // require '../templates/header.php';
+        require '../templates/navigation.php';
+
+    ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,9 +26,7 @@
 header {
   margin-top: 50px;
 }
-body{
-  overflow-y: hidden;
-}
+
 .custom-shape-divider-bottom-1676706408 {
     position: absolute;
     bottom: 0;
@@ -46,19 +53,17 @@ body{
 </head>
 
 <body>
- 
-    <?php
-    session_start();
-      #require '../templates/connection.php';
-      require '../templates/header.php';
-      require '../templates/navigation.php';
-    ?>
+  <header>
+      <strong><h1>POOL OF INSTRUCTORS </h1> </strong>
+      <div class="homebutton">
+        <a href="index.php"><span class="material-symbols-outlined">home</span></a>
+      </div>
+  </header>
 
-    
 
-<br><br><br><a href = "../user/homepage.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>
+
   <center>
-  
+
     <div class="divsearch">
     <form class="search" action="search.php" method="POST">
       <input type="text" name="name" placeholder="Enter Last Name or Training Course">
@@ -83,5 +88,5 @@ body{
     </footer>
 
   </body>
-  
+
 </html>
