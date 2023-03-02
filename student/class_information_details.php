@@ -14,11 +14,7 @@
       FROM student s
       JOIN account_details a 
       ON s.account_id = a.account_id
-      JOIN registration_participants_class rpc 
-      ON rpc.student_id = s.student_id 
-      JOIN class_information_details cid 
-      ON cid.class_info_id = rpc.class_info_id
-      WHERE a.firstname LIKE '%{$_POST['search']}%' 
+      WHERE a.firstname LIKE '{$_POST['search']}%' 
     ";
 
     $searchStudents = mysqli_query($conn, $sql);
