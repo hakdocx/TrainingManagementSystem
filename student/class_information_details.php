@@ -14,7 +14,11 @@
       FROM student s
       JOIN account_details a 
       ON s.account_id = a.account_id
-      WHERE a.firstname LIKE '%{$_POST['search']}%'
+      JOIN registration_participants_class rpc 
+      ON rpc.student_id = s.student_id 
+      JOIN class_information_details cid 
+      ON cid.class_info_id = rpc.class_info_id
+      WHERE a.firstname LIKE '%{$_POST['search']}%' 
     ";
 
     $searchStudents = mysqli_query($conn, $sql);
@@ -154,8 +158,9 @@
         </div>
       </form>
     </div>
-    <?php if ($searchStudents): ?>
+    <?php if(isset($_POST['search'])): ?>
     <div class="row w-75 fs-6 mt-4">
+      <a href="class_information_details.php?regId=<?= $registrationCourseId ?>&classId=<?= $classId ?>">Clear results</a>
       <div class="">
         <table class='table' style="border-radius: 10px; outline: 2px solid #DBDBDB;">
             <thead>
