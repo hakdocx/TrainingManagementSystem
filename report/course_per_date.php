@@ -88,11 +88,12 @@
 	session_start();
 	//require '../templates/connection.php';
 	//require '../templates/header.php';
-	//require '../templates/navigation.php';
+	require '../templates/navigation.php';
 	?>
 	<header>
-	<?php
-	require '../templates/navigation.php';
+	<?
+	//session_start();
+	//require '../templates/navigation.php';
 	?>
 	<center>
 	<strong> <h1>Course Report</h1> </strong>
