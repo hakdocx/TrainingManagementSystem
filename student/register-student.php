@@ -14,28 +14,26 @@
 			FROM registration_participants_class rpc
 			WHERE rpc.student_id = $studentId
 			AND rpc.class_info_id = $classId
-			AND rpc.course_reg_id = $regId"
+			AND rpc.course_reg_id = $regId
+		";
 		$query = mysqli_query($conn, $sql);
 		$result = mysqli_fetch_assoc($query);
 
-		if($result) {
+		if(!$result) {
 			$sql = "
 				INSERT INTO registration_participants_class (class_info_id, course_reg_id, student_id) 
 				VALUES ('$classId', '$regId', '$studentId')
 				";
 			$query = mysqli_query($conn, $sql);	
 		
-			if($query) {
-			$param = array(
-				'regId' => $regId,
-				'classId' => $classId
-			);
-			$para = http_build_query($param);
-			header("location: class_information_details.php?$para");
-			}
-		} else {
-			echo "Something seems wrong";
 		}
+
+		$param = array(
+			'regId' => $regId,
+			'classId' => $classId
+		);
+		$para = http_build_query($param);
+		header("location: class_information_details.php?$para");
 	}
 
  ?>
