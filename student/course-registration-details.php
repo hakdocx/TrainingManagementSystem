@@ -7,8 +7,34 @@
 	if(!isset($_GET['id'])) {
 		header("location: courses.php");
 	}
-	
+
 	$registrationId = $_GET['id'];
+
+	if(isset($_POST['add-class'])) {
+		$letterOrderNumber = mysqli_real_escape_string($conn, $_POST['letter-order-number']);
+		$generalOrder = mysqli_real_escape_string($conn, $_POST['general-order']);
+		$certCtrlNum = mysqli_real_escape_string($conn, $_POST['cert-ctrl-no']);
+
+		// $sql = "
+		// 	SELECT * FROM class_information_details 
+		// 	WHERE letter_order_number = $letterOrderNumber && general_order = $generalOrder && cert_ctrl_no = $certCtrlNum 
+		// ";
+		// $query = mysqli_query($conn, $sql);
+		// $class = mysqli_fetch_assoc($query);
+
+		// if(!$class) {
+		$sql = "
+			INSERT INTO class_information_details (letter_order_number, general_order, cert_ctrl_no) 
+			VALUES ($letterOrderNumber, $generalOrder, $certCtrlNum)
+		";
+		$query = mysqli_query($conn, $sql);
+
+		if($query) {
+			header("location: course-registration-details.php?id=$registrationId");
+		} else {
+			echo "Didnt do squat";
+		}	
+	} 
 
 	// check whether id parameter is invalid
 	$sql = "SELECT * FROM registration_course WHERE course_reg_id = $registrationId";
@@ -37,9 +63,17 @@
 	$row_account = mysqli_fetch_assoc($query);
 
 
+	$sql = "
+		SELECT c.*
+		FROM class_information_details c 
+		LEFT 
+		JOIN registration_participants_class rpc 
+		ON rpc.class_info_id = c.class_info_id 
+		WHERE rpc.class_info_id IS NULL 
+	";
+	$query = mysqli_query($conn, $sql);
 	
-	
-
+	$classes = mysqli_fetch_assoc($query);
 
 ?>
 	<style>
@@ -120,9 +154,36 @@
 	<?php require '../templates/navigation.php' ?>
 	<dialog id = 'dialog'>
 		<form method = "POST" action = "course-registration-details.php?id=<?= $registrationId ?>">
+			<div class="form-container">
+				<h2> Create a Class </h2>
+				<div class = "form-row mt-3">
+					<label for = 'letter-order-number' class = "fw-bold" style="color: #5B5B5B">
+						Letter Order Number<span class="asterisk">*</span>
+					</label>
+					<input style='font-size: 17px;' type="text" name="letter-order-number" id ='letter-order-number' required>
+				</div>
+				<div class = "form-row mt-2">
+					<label for = 'general-order' class = "fw-bold" style="color: #5B5B5B" >
+						General Order<span class="asterisk">*</span>
+					</label>
+					<input style='font-size: 17px;' type="number" name="general-order" id ='general-order' required>
+				</div>
+				<div class = "form-row mt-2">
+					<label for = 'cert-ctrl-no' class = "fw-bold" style="color: #5B5B5B">
+						Certification Control Number <span class = "asterisk">*</span>
+					</label>
+					<input style='font-size: 17px;' type="text" name="cert-ctrl-no" id ='cert-ctrl-no'>
+				</div>
+				<div class="text-center">
+				  <button name="add-class" type = "submit" class="btn btn-primary mt-3" id="submit-btn" >Submit</button> 
+				</div>
+			</div>
+		</form>
 
 		</form>
 	</dialog>
+
+
 	<div class="title_container mx-auto">
 		<?= "<h1>" . $row_account['course_title'] . "</h1>" ?>
 		<div class="deets_container">
@@ -152,6 +213,60 @@
 		</div>
 	</div>
 	
+	<?php if($classes) { ?>
+	<div class="d-flex flex-column align-items-center">
+		<div class="class_details mx-auto">
+			<h2>Unassigned Classes</h2>
+
+			<table class='table table-bordered table-rounded w-50'>
+				<thead>
+					<tr>
+						<th scope='col'>CLASS NUMBER</th>
+						<th scope='col'>LETTER ORDER NUMBER</th>
+						<th scope='col'>GENERAL ORDER</th>
+						<th scope='col'></th>        
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+						$class_query = "
+							SELECT c.*
+							FROM class_information_details c 
+							LEFT 
+							JOIN registration_participants_class rpc 
+							ON rpc.class_info_id = c.class_info_id 
+							WHERE rpc.class_info_id IS NULL";
+						$query = mysqli_query($conn, $class_query);
+
+						if (!$query) {
+							echo "Error in SQL syntax: " . mysqli_error($conn);
+						} else {
+							// code to handle successful query
+						}
+
+						while($row_class = mysqli_fetch_assoc($query)){
+							$class_number = $row_class['class_info_id'];
+							$letter_order_number = $row_class["letter_order_number"];
+							$general_order = $row_class["general_order"];
+							echo "<tr>";
+							echo "<td>$class_number</td>";
+							echo "<td>$letter_order_number</td>";
+							echo "<td>$general_order</td>";
+							echo "<td>
+									<div class='container1'>
+										<div class='deleter'>
+											<a class='click' href='class_information_details.php?regId=$registrationId&classId={$row_class['class_info_id']}'>VIEW</a>
+										</div>
+									</div>
+								</td>";
+							echo "</tr>";
+						}
+					?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<?php } ?>
 	<div class="classes_container d-flex align-items-center mx-auto">
 		<form class="search_form" method="POST">
 			<div class="input-group">
@@ -166,6 +281,7 @@
 	</div>
 	<div class="d-flex flex-column align-items-center">
 		<div class="class_details mx-auto">
+		<h2>Assigned Classes</h2>
 			<table class='table table-bordered table-rounded w-50'>
 				<thead>
 					<tr>
@@ -181,8 +297,8 @@
 										JOIN class_information_details AS cid ON rcp.class_info_id = cid.class_info_id 
 										JOIN registration_course AS rco ON rcp.course_reg_id = rco.course_reg_id 
 										WHERE rco.course_id = " . $row_account['course_id'] . " AND rco.instructor_id = " . $row_account['instructor_id'] . " 
-										GROUP BY rcp.course_reg_id 
-										ORDER BY rcp.course_reg_id ASC;";
+										GROUP BY rcp.class_info_id 
+										ORDER BY rcp.class_info_id ASC;";
 						$query = mysqli_query($conn, $class_query);
 
 						if (!$query) {
@@ -192,7 +308,7 @@
 						}
 
 						while($row_class = mysqli_fetch_assoc($query)){
-							$class_number = $row_class['course_reg_id'];
+							$class_number = $row_class['class_info_id'];
 							$student_count = $row_class["student_count"];
 							echo "<tr>";
 							echo "<td>$class_number</td>";
