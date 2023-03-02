@@ -96,7 +96,7 @@
         <a href="main.html"><span class="material-symbols-outlined">HOME</span></a>
       </div>
     </header> -->
-    
+    <br><br><br><a href = "index.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>
     <?php
     session_start();
     /* $conn = mysqli_connect('localhost', 'root', '', 'project') or die('Unable to connect'); 

@@ -125,6 +125,7 @@
         }
         </style>
     </head>
+    <br><br><br><a href = "../user/homepage.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>
     <body style="font-family: Montserrat;">
 	    <!--     <nav class = "navbar navbar-expand-lg navbar-dark fixed-top" style = "background-color: #681A1A;">
         <a class = "navbar-brand" href=#>Web Development</a>

@@ -6,6 +6,8 @@
     header("location: courses.php");
   }
 
+  $registrationCourseId = $_GET['regId'];
+  $classId = $_GET['classId'];
 
   if(isset($_POST['search']) ) {
     $firstname = $_POST['search'];
@@ -14,14 +16,11 @@
       FROM student s
       JOIN account_details a 
       ON s.account_id = a.account_id
-      WHERE a.firstname LIKE '{$_POST['search']}%' 
+      WHERE a.firstname LIKE '{$_POST['search']}%'
     ";
 
     $searchStudents = mysqli_query($conn, $sql);
   }
-
-  $registrationCourseId = $_GET['regId'];
-  $classId = $_GET['classId'];
 
   $sql = "
     SELECT DISTINCT a.firstname, a.lastname, s.student_id, rpc.student_reg_id
@@ -163,6 +162,7 @@
                 <tr>
                     <th class="ps-3" style="height:50px;">ID</th>
                     <th class="ps-3" style="height:50px;">NAME</th>
+                    <th></th>
                 </tr>
             </thead> 
                   
@@ -171,6 +171,16 @@
               <tr>
                 <td class="ps-3"><?= $student['student_id'] ?></td>
                 <td class="ps-3"><?= $student['firstname'] . " " . $student['lastname']?></td>
+                <td>
+                  
+                  <form method = "POST" action = "register-student.php">
+                    <input type="hidden" name="regId" value = "<?= $registrationCourseId ?>">
+                    <input type="hidden" name="classId" value = "<?= $classId ?>">
+                    <input type="hidden" name = "studentId" value="<?= $student['student_id'] ?>">
+                    <button type = "submit" name = "add-student">Add Student</button>
+                  </form>
+                  
+                </td>
               </tr>  
               <?php } ?>
             </tbody>
