@@ -22,7 +22,7 @@
   $classId = $_GET['classId'];
 
   $sql = "
-    SELECT DISTINCT a.firstname, a.lastname, s.student_id, rpc.student_reg_idz
+    SELECT DISTINCT a.firstname, a.lastname, s.student_id, rpc.student_reg_id
     FROM account_details a
     JOIN student s
     ON s.account_id = a.account_id
@@ -31,8 +31,8 @@
     JOIN registration_course rc
     ON rc.course_reg_id = rpc.course_reg_id
     JOIN class_information_details c
-    ON c.class_number = rpc.course_reg_id
-    WHERE c.class_number = $registrationCourseId 
+    ON c.class_info_id = rpc.class_info_id
+    WHERE c.class_info_id = $classId && rc.course_reg_id = $registrationCourseId
     ";
 
   $registeredStudents = mysqli_query($conn, $sql);

@@ -11,6 +11,5 @@ const closeDialog = (e) => {
 	}
 };
 
-
 trainingBtn.addEventListener('click', openDialog);
 trainingDialog.addEventListener('click', closeDialog);
