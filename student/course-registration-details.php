@@ -114,11 +114,15 @@
 			color: #681A1A;
 		}
 	</style>
-
+	<script type="text/javascript" src = "../assets/js/dialog.js" defer></script>
 </head>
 <body>
-	
 	<?php require '../templates/navigation.php' ?>
+	<dialog id = 'dialog'>
+		<form method = "POST" action = "course-registration-details.php?id=<?= $registrationId ?>">
+
+		</form>
+	</dialog>
 	<div class="title_container mx-auto">
 		<?= "<h1>" . $row_account['course_title'] . "</h1>" ?>
 		<div class="deets_container">
