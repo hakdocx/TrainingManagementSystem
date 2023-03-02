@@ -57,6 +57,16 @@
     border-right: none;
     border-bottom: none;
   }
+  #delete_btn{
+    background-color: #681A1A;
+    font-weight: 500;
+  }
+  #delete_btn:hover{
+    background-color: white;
+    color: #681A1A;
+    border-color: #681A1A;
+    font-weight: 500;
+  }
 </style>
 </head>
 <body style ="font-family: Montserrat;">
@@ -130,6 +140,14 @@
               <tr>
                 <td class="ps-3"><?= $students['student_id'] ?></td>
                 <td class="ps-3"><?= $students['firstname'] . " " . $students['lastname']  . " " . $students['student_reg_id'] ?></td>
+                <td>
+                  <form action="register-student.php" method="POST">
+                    <input type="hidden" name = "student_reg_id" value="<?= $students['student_reg_id'] ?>">
+                    <input type="hidden" name="classId" value = "<?= $classId ?>">
+                    <input type="hidden" name = "regId" value="<?= $registrationCourseId ?>">
+                    <button class = "btn btn-primary" id = "delete_btn" type = "submit" name = "delete-student">Delete Registration</button>
+                  </form>
+                </td>
               </tr>  
               <?php } ?>
             </tbody>
