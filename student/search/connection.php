@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("localhost","root","","finals");
+$con=mysqli_connect("localhost","root","","project");
 
 if($con){
 	

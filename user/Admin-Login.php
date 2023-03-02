@@ -62,9 +62,6 @@
 	<title>Admin-Login</title>
 </head>
 <body>
-	<?php
-		//include "../templates/navigation.php";
-	?>
 	<div class="row">
 		<div class="lside">
 

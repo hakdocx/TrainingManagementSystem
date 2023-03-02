@@ -1,30 +1,28 @@
 
-<nav class = "navbar navbar-expand-lg navbar-dark fixed-top" style = "background-color: #681A1A;">
+<nav class = "navbar navbar-expand-lg navbar-dark fixed-top pe-5 ps-5 h-18" style = "background-color: #681A1A;">
 
-        <a class = "navbar-brand" href="../user/homepage.php">Web Development</a>
+        <a class = "navbar-brand" href="../user/homepage.php" style="font-size:23px;" >Web Development</a>
         <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#portfolio-nav" aria-controls = "portfolio-nav" aria-expanded = "false" aria-label = "Toggle navigation">
             <span class = "navbar-toggler-icon"></span>
         </button>
 		
         <div class = "collapse navbar-collapse" id = "portfolio-nav">
-            <ul class="nav navbar-nav mr-auto">
+            <ul class="nav navbar-nav me-auto">
                 <li class ="nav-item">
-                    <a class="nav-link" href="../user/homepage.php">HOME</a>
+                    <a class="nav-link" href="../user/homepage.php" style="font-size:15px;">HOME</a>
                 </li>
                 <li class = "nav-item">
-                    <a class="nav-link" href="../student/index.php">STUDENT</a>
+                    <a class="nav-link" href="../student/index.php" style="font-size:15px;">STUDENT</a>
                 </li>
                 <li class = "nav-item">
-                    <a class="nav-link" href="../course/index.php">COURSE</a>
+                    <a class="nav-link" href="../course/index.php" style="font-size:15px;">COURSE</a>
                 </li>
                 <li class = " nav-item">
-                    <a class="nav-link" href="../instructor/index.php">INSTRUCTORS</a>
+                    <a class="nav-link" href="../instructor/index.php" style="font-size:15px;">INSTRUCTORS</a>
                 </li>
             
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="../report/index.php">
-                        GENERATE REPORT
-                    </a>
+                    <a class="nav-link" href="../report/index.php" style="font-size:15px;" >GENERATE REPORT</a>
                     <!-- <a class="nav-link dropdown-toggle" href="../report/index.php" id="navbarDropdownMenuLink" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         GENERATE REPORT
                     </a> -->
@@ -37,28 +35,41 @@
                 </li>
             </ul>
             
+<<<<<<< HEAD
             <ul class="nav navbar-nav mr-auto">
             <?php
             if(!isset($_SESSION['username'])){
             ?>
+=======
+            <ul class="nav navbar-nav ms-auto">
+            <?php if(!isset($_SESSION['username'])){ ?>
+>>>>>>> d002a61dc3e665c62a300d60e31b6087fe8790cb
                <!--  <div class = "collapse navbar-collapse" id = "portfolio-nav">
                     <ul class="nav navbar-nav mr-auto"> -->
-                        <li class = "nav-item"><a class="nav-link"href="../Access-Level.php">Login</a></li>
-                        <li class = "nav-item"><a class="nav-link" href="../user/Registration-Form.php">Register</a></li>
+                        <li class = "nav-item"><a class="nav-link"href="../Access-Level.php"style="font-size:15px;" >Login</a></li>
+                        <li class = "nav-item"><a class="nav-link" href="../user/Registration-Form.php"style="font-size:15px;">Register</a></li>
                     <!-- </ul>
                 </div> -->
+<<<<<<< HEAD
             <?php
             }else{
             ?>  
+=======
+            <?php }else{ ?>  
+>>>>>>> d002a61dc3e665c62a300d60e31b6087fe8790cb
                 <!-- <div class = "collapse navbar-collapse" id = "portfolio-nav">
                     <ul class="nav navbar-nav mr-auto"> -->
                         <li class = "nav-item"><a class="nav-link"> <?php echo ucfirst($_SESSION['firstname']);  ?> (<?php echo $_SESSION['user_type']?>)</a>    </li>
                         <li class = "nav-item"><a class="nav-link" href="../user/logoutProcess.php">Log Out</a> </li>
                    <!--  </ul>
                 </div>  -->
+<<<<<<< HEAD
             <?php
             }
             ?>  
+=======
+            <?php } ?>  
+>>>>>>> d002a61dc3e665c62a300d60e31b6087fe8790cb
             </ul>
               
         </div>

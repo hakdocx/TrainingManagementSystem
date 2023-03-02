@@ -7,6 +7,8 @@ This project is a requirement for the completion of the course Web Development.
 ## Project Requirements
 Quick link: [Project_Requirements.md link](https://github.com/Arc-Data/TrainingManagementSystem/blob/report_mgmt/Requirements.md)
 
+## Set-up
+Download the file Database_design_v_1.3 or the latest version, then open your phpMyAdmin and create a database called `Project` then import the downloaded sql file to your database. After that you should be able to open a connection with your database.
 
 ## Project Overview:
 - user_mgmt                         - User Management Module
