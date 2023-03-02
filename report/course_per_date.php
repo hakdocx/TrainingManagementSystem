@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 	<title>Course Report</title>
 	<style>
@@ -32,7 +32,7 @@
             background-color: #681a1a;
             background-size: cover;
             height: 60px;
-			margin-top: 80px;
+			margin-top: 90px;
         }
 
         header h1 {
@@ -84,21 +84,24 @@
 	</style>
 </head>
 <body>
-<?
+	<?
 	session_start();
 	//require '../templates/connection.php';
 	//require '../templates/header.php';
+	//require '../templates/navigation.php';
+	?>
+	<header>
+	<?php
 	require '../templates/navigation.php';
 	?>
-	<br>
-	<header>
-	
 	<center>
 	<strong> <h1>Course Report</h1> </strong>
 	<div class="homebutton">
         <a href="index.php"><span class="material-symbols-outlined">HOME</span></a>
-      </div>
+    </div>
+
 	</header>
+
 	<div class="chas">
 		<form action="" method="post"> <br> <br> <br> <center>
 			<label for="start_date"> Start Date:</label>
@@ -108,12 +111,14 @@
 			<input type="date" name="end_date" id="end_date">
 			<br>
 			<input class="button" type="submit" value="Generate Report">
-	</center>
+
+	
 		</form>
 	</div>
+	</center>
 		<br>
 		<?php
-		
+		require '../templates/connection.php';
 		if (isset($_POST["start_date"]) && isset($_POST["end_date"])) {
 			/* // Set the database connection parameters
 			$servername = "localhost:3308";
