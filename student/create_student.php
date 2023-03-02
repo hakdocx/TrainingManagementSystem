@@ -45,7 +45,6 @@ include "connection_student.php";
 </head>
 <body style="text-align:center; font-family: Montserrat;">
   <?php
-    session_start();
     require '../templates/navigation.php'
   ?>
 <h2 class="mt-4">Student Information </h2>
