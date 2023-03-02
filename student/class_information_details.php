@@ -6,16 +6,18 @@
     header("location: courses.php");
   }
 
-  if(isset($_GET['search'])) {
+
+  if(isset($_POST['search']) ) {
+    $firstname = $_POST['search'];
     $sql = "
-      SELECT *
-      FROM student s 
+      SELECT s.*, a.* 
+      FROM student s
       JOIN account_details a 
       ON s.account_id = a.account_id
-      JOIN registration_participants_class rpc
-      ON rpc.student_id = s.student_id
-      JOIN class_information_details c
+      WHERE a.firstname LIKE '%{$_POST['search']}%'
     ";
+
+    $searchStudents = mysqli_query($conn, $sql);
   }
 
   $registrationCourseId = $_GET['regId'];
@@ -99,28 +101,21 @@
           <?= $classInfo['cert_ctrl_no'] ?>
       </div>
     </div>
-    <div class="row mt-4 mb-4">
-      <div class="col-md-auto p-2">
-          <button class="btn pe-4 ps-4" style="background-color:#681A1A; border-radius: 10px; color:white; height: 50px;">ADD STUDENT</button>
+
+    <div class="row row-cols-2 w-50 my-4">
+        <div class="col-md-auto">
+          <button class="btn pe-4 ps-4" style="font-weight: 600; border: 2px solid #681A1A; border-radius: 10px; color:#681A1A; height: 50px;">UPDATE</button>
+        </div>
+        <div class="col-md-auto">
+          <button class="btn pe-4 ps-4" style="font-weight: 600; background-color:#681A1A; border-radius: 10px; color:white; height: 50px;">DELETE</button>
+        </div>
       </div>
-    </div>
     <div class="row w-75 mb-2">
       <h2 class="" style = 'font-size:30px; font-weight: 700'>
         Registered Students
       </h2>
     </div>
-    <div class="row w-75 fs-6">
-      <div class="col pt-2 pb-2">
-        <div class="input-group">
-          <span class="input-group-append">
-            <span class="btn" id="search-icon" style="opacity: 50%; padding:12px; margin-left: 5px; position:absolute;">
-              <i class="fa fa-search"></i>
-            </span>
-          </span>
-          <input class="fs-6 w-100" type="search" id="search-bar" placeholder="Search for student" name='student_name' style="padding: 5px 45px; height:50px; border-radius:10px; border: 2px solid #DBDBDB;">
-        </div>
-      </div>
-    </div>
+    
     <div class="row w-75 fs-6 mt-4">
       <div class="">
         <table class='table' style="border-radius: 10px; outline: 2px solid #DBDBDB;">
@@ -141,13 +136,45 @@
             </tbody>
         </table>  
       </div>
-      <div class="row row-cols-2 w-50 mt-4">
-        <div class="col-md-auto">
-          <button class="btn pe-4 ps-4" style="font-weight: 600; border: 2px solid #681A1A; border-radius: 10px; color:#681A1A; height: 50px;">UPDATE</button>
+
+    <div class="row w-75 fs-6">
+      <h2 class="" style = 'font-size:30px; font-weight: 700'>
+        Add Students
+      </h2>
+      <form method = "POST" action = "class_information_details.php?regId=<?= $registrationCourseId ?>&classId=<?= $classId ?>">
+        <div class="col pt-2 pb-2">
+          <div class="input-group">
+            <span class="input-group-append">
+              <span class="btn" id="search-icon" style="opacity: 50%; padding:12px; margin-left: 5px; position:absolute;">
+                <i class="fa fa-search"></i>
+              </span>
+            </span>
+            <input class="fs-6 w-100" type="search" id="search-bar" placeholder="Search for student" name='search' style="padding: 5px 45px; height:50px; border-radius:10px; border: 2px solid #DBDBDB;">
+          </div>
         </div>
-        <div class="col-md-auto">
-          <button class="btn pe-4 ps-4" style="font-weight: 600; background-color:#681A1A; border-radius: 10px; color:white; height: 50px;">DELETE</button>
-        </div>
+      </form>
+    </div>
+    <?php if ($searchStudents): ?>
+    <div class="row w-75 fs-6 mt-4">
+      <div class="">
+        <table class='table' style="border-radius: 10px; outline: 2px solid #DBDBDB;">
+            <thead>
+                <tr>
+                    <th class="ps-3" style="height:50px;">ID</th>
+                    <th class="ps-3" style="height:50px;">NAME</th>
+                </tr>
+            </thead> 
+                  
+            <tbody>
+              <?php while ($student = mysqli_fetch_assoc($searchStudents)) { ?>
+              <tr>
+                <td class="ps-3"><?= $student['student_id'] ?></td>
+                <td class="ps-3"><?= $student['firstname'] . " " . $student['lastname']?></td>
+              </tr>  
+              <?php } ?>
+            </tbody>
+        </table>  
       </div>
+    <?php endif ?>
   </div>
 </body>
