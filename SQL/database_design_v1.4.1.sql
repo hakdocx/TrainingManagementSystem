@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2023 at 04:21 AM
+-- Generation Time: Mar 02, 2023 at 04:25 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -181,14 +181,14 @@ CREATE TABLE `registration_participants_class` (
   `student_id` int(11) DEFAULT NULL,
   `qualification` varchar(50) DEFAULT NULL,
   `status` tinyint(1) NOT NULL DEFAULT 0,
-  `Class_info_ID` int(11) DEFAULT NULL
+  `class_info_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `registration_participants_class`
 --
 
-INSERT INTO `registration_participants_class` (`student_reg_id`, `course_reg_id`, `student_id`, `qualification`, `status`, `Class_info_ID`) VALUES
+INSERT INTO `registration_participants_class` (`student_reg_id`, `course_reg_id`, `student_id`, `qualification`, `status`, `class_info_id`) VALUES
 (500000, 400000, 200000, 'Satisfactory', 0, 600000),
 (500001, 400001, 200000, 'Satisfactory', 0, 600000),
 (500002, 400002, 200000, 'Satisfactory', 0, 600000),
@@ -274,7 +274,7 @@ ALTER TABLE `registration_participants_class`
   ADD PRIMARY KEY (`student_reg_id`),
   ADD KEY `course_reg_id` (`course_reg_id`),
   ADD KEY `student_id` (`student_id`),
-  ADD KEY `registration_participants_class_ibfk_3` (`Class_info_ID`);
+  ADD KEY `registration_participants_class_ibfk_3` (`class_info_id`);
 
 --
 -- Indexes for table `student`
