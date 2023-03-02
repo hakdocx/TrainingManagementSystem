@@ -30,7 +30,7 @@
 
             }
         th, td {
-            background-color: #681a1a;
+            background-color:maroon;
             color: white ;
             border: 2px solid black;
             text-align: center;
@@ -41,7 +41,7 @@
         }
 
         #search-input {
-            background-color: #681a1a;
+            background-color: maroon;
             color: #f0ece2; 
             font-size: 15px;
             border: 2px solid black;
@@ -50,7 +50,7 @@
             margin-bottom: 20px;
             border-radius: 120px;
             height: 40px;
-            /* weight: 90px; */
+            weight: 90px;
             transition: opacity 1s;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8)  ;
         }
@@ -80,41 +80,24 @@
             float: center;
         }
 
-        center {
-            margin-top: 80px;
-        }
-
 
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 <body>
-    <!-- <header>
+<header>
       <strong><h1>REPORT MANAGEMENT</h1> </strong>
       <div class="homebutton">
         <a href="main.html"><span class="material-symbols-outlined">HOME</span></a>
       </div>
-    </header> -->
-    <br><br><br><a href = "index.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>
+  </header>
     <?php
-    session_start();
-    /* $conn = mysqli_connect('localhost', 'root', '', 'project') or die('Unable to connect'); 
-    
+    $conn = mysqli_connect("localhost:3308", "root", "", "databasey") or die('Unable to connect'); 
+
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
-    } */
-    
-    require '../templates/connection.php';
-	require '../templates/header.php';
-    require '../templates/navigation.php';
-
-	#session_start();
-    // Check if the user is logged in, if not then redirect him to login page
-    /* if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-        header("location: login.php");
-        exit;
-    } */
+    }
 
     $sql = "SELECT DISTINCT course.course_title FROM course";
     $result = $conn->query($sql);
@@ -133,9 +116,7 @@
     $sql = "SELECT course.course_title, 
             SUM(CASE WHEN student.rank='NUP' THEN 1 ELSE 0 END) AS NUP,
             SUM(CASE WHEN student.rank='PNCO' THEN 1 ELSE 0 END) AS PNCO,
-            SUM(CASE WHEN student.rank='PC
-            
-            O' THEN 1 ELSE 0 END) AS PCO,
+            SUM(CASE WHEN student.rank='PCO' THEN 1 ELSE 0 END) AS PCO,
             COUNT(DISTINCT student.student_id) AS total_ranks
             FROM student
             LEFT JOIN registration_participants_class ON student.student_id = registration_participants_class.student_id
@@ -164,7 +145,7 @@
             </tr>
         </thead>";
         echo "<tr>";
-        echo "<td colspan = '5' style='background-color: #681A1A; color: white;'>Select Course To View Records</td>";
+        echo "<td colspan = '5' style='color: maroon;'>Select Course To View Records</td>";
         echo "</tr>";
 
     while ($row = $result->fetch_assoc()) {
@@ -182,7 +163,7 @@
 
     $conn->close();
     ?>
-    
+
     <script>
     $(document).ready(function(){
         var rows = $("#table tbody tr");
@@ -198,4 +179,3 @@
 
 </body>
 </html>
-
