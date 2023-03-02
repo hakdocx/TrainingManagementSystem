@@ -33,6 +33,7 @@ require dirname(__DIR__).('../templates/connection.php');
 <body>
 <header>
         <?php
+            session_start();
             require dirname(__DIR__).('../templates/navigation.php');
         ?>
 </header>

@@ -12,7 +12,6 @@
 	<style>
 		*{
             font-family: 'Montserrat', sans-serif;
-            margin: 6px;
         }
 		
 		nav {
@@ -21,39 +20,48 @@
 		table {
 			margin: auto;
 			border-collapse: collapse;
-			border: 1px solid black;
+			outline: 1px solid black;
+			border-radius: 10px;
 		}
-		th, td {
+		td {
 			border: 1px solid black;
+			border-bottom: none;
+			border-right: none;
+			border-left: none;
+			padding: 5px;
+			padding-right: 20px;
+		}
+		th {
 			padding: 5px;
 		}
 
-        header{
-            background-color: #681a1a;
-            background-size: cover;
-            height: 60px;
-			margin-top: 90px;
-        }
+		header{
+				background-color: #681a1a;
+				background-size: cover;
+				height: 60px;
+				margin-top: 60px;
+				padding: 15px;
+		}
 
-        header h1 {
-            font-size: 20px;
-            padding: 2px;
-            color: #ffe000;
-        }
+		header h1 {
+				font-size: 20px;
+				padding: 2px;
+				color: #ffe000;
+		}
 		#search-input {
-            background-color: maroon;
-            color: #f0ece2; 
-            font-size: 15px;
-            border: 2px solid black;
-            padding: 5px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            border-radius: 120px;
-            height: 40px;
-            weight: 90px;
-            transition: opacity 1s;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8)  ;
-        }
+			background-color: maroon;
+			color: #f0ece2; 
+			font-size: 15px;
+			border: 2px solid black;
+			padding: 5px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			border-radius: 120px;
+			height: 40px;
+			width: 90px;
+			transition: opacity 1s;
+			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8)  ;
+    }
 
 		center {
 			font-size: 14px;
@@ -64,8 +72,8 @@
 		}
 		
         .homebutton{
-            float: right ;
-             margin-top: -45px;
+             float: right ;
+             margin-top: -35px;
              margin-right: 30px;
         }
 
@@ -84,9 +92,8 @@
 	</style>
 </head>
 <body>
-	<?
+	<?php
 	session_start();
-	//require '../templates/connection.php';
 	//require '../templates/header.php';
 	//require '../templates/navigation.php';
 	?>
@@ -103,19 +110,20 @@
 	</header>
 
 	<div class="chas">
-		<form action="" method="post"> <br> <br> <br> <center>
+		<center>
+		<form action="" method="post"> <br> <br> <br>
 			<label for="start_date"> Start Date:</label>
 			<input type="date" name="start_date" id="start_date">
+			<br>
 			<br>
 			<label for="end_date">End Date:</label>
 			<input type="date" name="end_date" id="end_date">
 			<br>
 			<input class="button" type="submit" value="Generate Report">
-
-	
+		</center>	
 		</form>
 	</div>
-	</center>
+		<center>
 		<br>
 		<?php
 		require '../templates/connection.php';
@@ -172,6 +180,7 @@
 			$conn->close();
 		}
 		?>
-	</center>
+		</center>
+		</center>
 </body>
 </html>

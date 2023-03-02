@@ -38,10 +38,10 @@ $result1 = mysqli_query($connect, $query);
 		}
 		.table-title{
 			padding-bottom: 15px;
-			background: #800000;
+			background: #681A1A;
 			color: #fff;
 			padding: 16px 30px;
-			margin: -20px -25px 10px;
+			margin-top: 20px;
 			border-radius: 3px 3px 0 0;
 		}
 		.table-title h2{
@@ -51,13 +51,13 @@ $result1 = mysqli_query($connect, $query);
 	</style>
 </head>
 
-<body style="margin: 50px;">
+<body style="margin: 50px; font-family: Montserrat;">
 	<div class="container">
 		<div class="table-wrapper">
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
-						<h2>Course<b>Participants</b></h2>
+						<h2>Course Participants</h2>
 					</div>
 				</div>
 			</div>
