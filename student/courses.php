@@ -57,15 +57,25 @@
         table {
             border-spacing: 0px;
             width: 100%;
-            border: 1px solid black;
-            margin-top: 150px;
+            border-radius: 10px;
+            outline: 2px solid #DBDBDB;
+            margin-top: 75px;
+            margin-bottom: 75px;
         }
 
-        table td, table th {
+        th {
+          padding: .75em;
+          vertical-align: top;
+        }
+
+        table td {
             padding: .75em;
             vertical-align: top;
+            border: 2px solid #DBDBDB;
+            border-left: none; 
+            border-right: none;
+            border-bottom: none;
             text-align: center;
-            border-top: 1px solid #0d0d0d;
             overflow: hidden;
         }
         table td:last-child{
