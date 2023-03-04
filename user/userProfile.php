@@ -14,7 +14,7 @@ require dirname(__DIR__). "../templates/connection.php";
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login System</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
         <link rel="stylesheet" href="../assets/css/Button-Style.css">
         <link rel="stylesheet" href="../assets/css/Navigation-Style.css"/>
@@ -30,13 +30,12 @@ require dirname(__DIR__). "../templates/connection.php";
         <header>
             <br><br><br>
             <?php
-               //require dirname(__DIR__).('../navigation.php');
                session_start();
-               //include '../navigation.php';
+               include '../templates/navigation.php';
             ?>
         </header>
 
-        <div align="center">
+        <div align-items="center">
                 <h2 class="update-user-info">UPDATE USER INFORMATION</h2>
 
             <div class="row">

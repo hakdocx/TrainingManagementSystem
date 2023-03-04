@@ -95,21 +95,33 @@
   <div class="container">
     <div class="row pt-5">
         <div class="col">
-        <div class="rectangle">  <h1 style="color:white; text-align: center; font-size: 40px; padding-top:60px;">UNIVERSITY CALENDAR</h1></div>
+            <a class= "text-decoration-none" href="search_database.php">
+                <div class="rectangle d-flex align-items-center"> 
+                    <h1 style="color:white; text-align: center; font-size: 40px;">UNIVERSITY CALENDAR</h1>
+                </div>
+            </a>
         </div>
     
 
         <div class="col">
-        <div class="rectangle2"> <h1 style="color:white; text-align: center; font-size: 40px;  padding-top:70px;">EXECUTIVE MEMO</h1></div>
+            <a class= "text-decoration-none" href="class_information_details.php">
+                <div class="rectangle2 d-flex align-items-center"> 
+                    <h1 style="color:white; text-align: center; font-size: 40px;">CLASS INFORMATION DETAILS</h1>
+                </div>
+            </a>
         </div>
     
 
         <div class="col">
-        <div class="rectangle3">  <h1 style="color:white; text-align: center; padding-top: 90px; font-size: 40px; ">REGISTRATION</h1></div>
+            <a class= "text-decoration-none" href="create_student.php">
+                <div class="rectangle3 d-flex align-items-center justify-content-center">  
+                    <h1 style="color:white; text-align: center;">ADD STUDENT</h1>
+                </div>
+            </a>
         </div>
     </div>
 
-    <div class="jumpto">
+    <!-- <div class="jumpto">
         <button class="btn btn-secondary dropdown-toggle" style="width:280px"type="button" data-bs-toggle="dropdown" aria-expanded="false">
             JUMP TO:
         </button>
@@ -118,11 +130,11 @@
             <li><a class="dropdown-item" href="search_database.php">SEARCH DATABASE</a></li>    
             <li><a class="dropdown-item" href="class_information_details.php">CLASS INFORMATION DETAILS</a></li>
             <li><a class="dropdown-item" href="create_student.php">CREATE STUDENT</a></li>
-            <!-- <li><a class="dropdown-item" href="read_student.php">READ STUDENT</a></li> -->
+            <li><a class="dropdown-item" href="read_student.php">READ STUDENT</a></li> 
         </ul>
-        </div>
+    </div> -->
 
-    </div>
+</div>
 
 
 
