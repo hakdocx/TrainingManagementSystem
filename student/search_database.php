@@ -102,7 +102,7 @@ if(isset($_GET['deleteBtn'])){
     // enable foreign key checks
     mysqli_query($conn, 'SET FOREIGN_KEY_CHECKS=1;');
     
-    header("Location: search-database.php");
+    header("Location: search_database.php");
     exit;
     }
 
