@@ -31,7 +31,7 @@
                     <?php if((isset($_SESSION['username']) && $_SESSION['user_type'] == 'admin')): ?>
                     <!-- </li> -->
                     <li class ="nav-item">
-                        <a class="nav-link" href="../user/Admin-Module.php">UPDATE DATABASE</a>
+                        <a class="nav-link" href="../user/Admin-Module.php" style="font-size:15px;">UPDATE DATABASE</a>
                     </li>
                     <?php endif;  ?>
                 <!-- </li> -->
@@ -53,7 +53,7 @@
                 <!-- <div class = "collapse navbar-collapse" id = "portfolio-nav">
                     <ul class="nav navbar-nav mr-auto"> -->
                     <?php
-
+                    require '../templates/connection.php';
                     $sql = "SELECT * FROM account_details";
                     $records = mysqli_query($conn, "SELECT * from account_details WHERE username = '$_SESSION[username]'");
 

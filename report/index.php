@@ -1,4 +1,6 @@
-
+<?php
+        session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -171,12 +173,9 @@
 <body> 
     <body>
     <?php
-        session_start();
-
         require '../templates/connection.php';
         // require '../templates/header.php';
         require '../templates/navigation.php';
-
     ?>
         
         
