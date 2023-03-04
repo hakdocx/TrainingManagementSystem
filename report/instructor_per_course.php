@@ -99,7 +99,7 @@ $result1 = mysqli_query($connect, $query);
 						<th>Last Name</th>
 						<th>First Name</th>
 						<th>Middle Name</th>
-						<th>Designation</th>
+						<!-- th>Designation</th> -->
 					</tr>
 				</thead>
 				<br>

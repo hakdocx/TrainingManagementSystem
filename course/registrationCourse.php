@@ -61,7 +61,7 @@ $instructors = mysqli_query($conn, $sql_instructor);
                 <input type="hidden" name="course_id" value = "<?= $course_id ?>">
                 <div class="form-container pe-5 ps-5">
                   <div class="form-row mt-4">
-                    <label class="lbl-name fs-5 mb-1" for='select-state'>Instructor ID <label class="asterisk">*</label></label>
+                    <label class="lbl-name fs-5 mb-1" for='select-state'>Instructor <label class="asterisk">*</label></label>
                     <select class="fs-5 rounded" name="instructor_id" id="select-state" placeholder="Select an instructor...">
                         <option value=""></option>
                         <?php while ($instructor = mysqli_fetch_assoc($instructors)) { ?>
