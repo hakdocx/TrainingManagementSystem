@@ -40,8 +40,8 @@
             
 
 
-    <div class="right-side">
-            <ul class="nav navbar-nav mr-auto">
+<!--     <div class="right-side"> -->
+            <ul class="nav navbar-nav ms-auto">
             <?php if(!isset($_SESSION['username'])){ ?>
                <!--  <div class = "collapse navbar-collapse" id = "portfolio-nav">
                     <ul class="nav navbar-nav mr-auto"> -->
@@ -68,6 +68,6 @@
                 </div>  -->
             <?php } ?>
             </ul>
-            </div> <!-- right-side -->
+           <!--  </div> --> <!-- right-side -->
         </div>  <!-- collapse nav bar -->
 </nav>
