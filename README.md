@@ -82,4 +82,4 @@ WHOLE SECTION BSIT 3-1N SY 2020-2024
 ## Collaborators
 - [Arc-Data](https://github.com/Arc-Data)
 - [Ron](https://github.com/Arc-Data)
-- [Add users]()
+- [Luis Arambulo](https://github.com/luwesaram)
