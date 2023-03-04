@@ -116,7 +116,7 @@
         <ul class="dropdown-menu" style="text-align: center;">
             <li><a class="dropdown-item" href="add_participants.php">ADD PARTICIPANT</a></li>
             <li><a class="dropdown-item" href="search_database.php">SEARCH DATABASE</a></li>    
-            <li><a class="dropdown-item" href="class_information_details.php">CLASS INFORMATION DETIALS</a></li>
+            <li><a class="dropdown-item" href="class_information_details.php">CLASS INFORMATION DETAILS</a></li>
             <li><a class="dropdown-item" href="create_student.php">CREATE STUDENT</a></li>
             <!-- <li><a class="dropdown-item" href="read_student.php">READ STUDENT</a></li> -->
         </ul>
