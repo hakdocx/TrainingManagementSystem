@@ -35,7 +35,7 @@ require dirname(__DIR__). "../templates/connection.php";
             ?>
         </header>
 
-        <div align-items="center">
+        <div style ="align-items:center; text-align:center;">
                 <h2 class="update-user-info">UPDATE USER INFORMATION</h2>
 
             <div class="row">
@@ -59,34 +59,34 @@ require dirname(__DIR__). "../templates/connection.php";
                                     <label for=updateUsername class=text-field-name>Username</label>
                                     <input type=text name=updateUsername class=form-control value='$username' disabled>
                                 </div>
-
+                                <br>
                                 <div class='form-group row'>
                                     <label for=updatePassword class=text-field-name>Password</label>
                                     <input type=password name=updatePassword class=form-control value='$password'>
                                 </div>
-
+                                <br>
                                 <div class='form-group row'>
                                     <label for=updateLname class=text-field-name>Last Name</label>
                                     <input type=text name=updateLname class=form-control value='$lname'>
                                 </div>
-
+                                <br>
                                 <div class='form-group row'>
                                     <label for=updateFname class=text-field-name>First Name</label>
                                     <input type=text name=updateFname class=form-control value='$fname'>
                                 </div>
-
+                                <br>
                                 <div class='form-group row'>
                                     <label for=updateMname class=text-field-name>Middle Name</label>
                                     <input type=text name=updateMname class=form-control value='$mname'>
                                 </div>
-
+                                <br>
                                 <div class='form-group row'>
                                     <label for=updateSuffix class=text-field-name>Suffix</label>
                                     <input type=text name=updateSuffix class=form-control value='$suffix'>
                                 </div>
-
-                                <div class='form-group row'>
-                                    <input type=submit name=update  class=btn btn value=Update>
+                                <br>
+                                <div class='form-group row d-flex align-items-center justify-content-center'>
+                                    <input type=submit name=update class=btn btn value=Update style='background-color: #681A1A; width: 25%; color:white;'>
                                 </div>";
 
 
