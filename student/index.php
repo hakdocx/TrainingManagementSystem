@@ -115,9 +115,15 @@
         </button>
         <ul class="dropdown-menu" style="text-align: center;">
             <li><a class="dropdown-item" href="add_participants.php">ADD PARTICIPANT</a></li>
+<<<<<<< HEAD
             <li><a class="dropdown-item" href="search_database.php">SEARCH DATABASE</a></li>
             <li><a class="dropdown-item" href="class_information_details.php">CLASS INFORMATION DETAILS</a></li>
+=======
+            <li><a class="dropdown-item" href="search_database.php">SEARCH DATABASE</a></li>    
+            <li><a class="dropdown-item" href="class_information_details.php">CLASS INFORMATION DETIALS</a></li>
+>>>>>>> c32738bd24dbf024f88372fd8c4c6089777bdb8a
             <li><a class="dropdown-item" href="create_student.php">CREATE STUDENT</a></li>
+            <!-- <li><a class="dropdown-item" href="read_student.php">READ STUDENT</a></li> -->
         </ul>
         </div>
 

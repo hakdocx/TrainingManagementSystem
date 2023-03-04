@@ -35,5 +35,21 @@
 		$para = http_build_query($param);
 		header("location: class_information_details.php?$para");
 	}
+	
+	if (isset($_POST['delete-student'])) {
+		$student_reg_id = $_POST['student_reg_id'];
+		$regId = $_POST['regId'];
+		$classId = $_POST['classId'];
+		
+		$query = "DELETE FROM registration_participants_class WHERE student_reg_id = '$student_reg_id'";
+		$result = mysqli_query($conn, $query);
+		
+		if ($result) {
+		  header("Location: class_information_details.php?regId=$regId&classId=$classId");
+		  exit();
+		} else {
+		  echo "Error deleting record: " . mysqli_error($conn);
+		}
+	}
 
  ?>

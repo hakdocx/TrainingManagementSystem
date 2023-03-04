@@ -167,6 +167,7 @@
 	</style>
 	<script type="text/javascript" src = "../assets/js/dialog.js" defer></script>
 </head>
+<a href = "index.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-top: -20px; margin-left: 10px">&#8592; Back to View</a>
 <body style="font-family: Montserrat; align-items: center;">
 	<?php require '../templates/navigation.php' ?>
 	<dialog id = 'dialog' style="border:white; border-radius: 10px;">

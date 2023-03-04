@@ -18,8 +18,8 @@ require dirname(__DIR__). "../templates/connection.php";
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
         <link rel="stylesheet" href="../assets/css/Button-Style.css">
         <link rel="stylesheet" href="../assets/css/Navigation-Style.css"/>
-
-        <style>
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ -->        <style>
         body {
           font-family: 'Montserrat', sans-serif;
         }
@@ -28,8 +28,11 @@ require dirname(__DIR__). "../templates/connection.php";
     </head>
     <body>
         <header>
+            <br><br><br>
             <?php
-               require dirname(__DIR__).('../navigation.php');
+               //require dirname(__DIR__).('../navigation.php');
+               session_start();
+               //include '../navigation.php';
             ?>
         </header>
 
@@ -39,7 +42,8 @@ require dirname(__DIR__). "../templates/connection.php";
             <div class="row">
                 <div class="col-md-6 offset-3">
                 <?php
-
+                    //session_start();
+                    include '../templates/connection.php';
                     $sql = "SELECT * FROM account_details";
                     $records = mysqli_query($conn, "SELECT * from account_details WHERE username = '$_SESSION[username]'");
 

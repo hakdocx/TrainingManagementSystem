@@ -57,12 +57,26 @@
     border-right: none;
     border-bottom: none;
   }
+  #delete_btn{
+    background-color: #681A1A;
+    font-weight: 500;
+  }
+  #delete_btn:hover{
+    background-color: white;
+    color: #681A1A;
+    border-color: #681A1A;
+    font-weight: 500;
+  }
 </style>
 </head>
 <body style ="font-family: Montserrat;">
   <?php include "../templates/navigation.php"; ?>
   <div class="container p-5 mt-5">
+<<<<<<< HEAD
     <a href="course-registration-details.php?id=<?= $classId ?>" class="mt-5 pt-5" style="color: #681A1A; text-decoration:none" >
+=======
+    <a href="course-registration-details.php?id=<?= $registrationCourseId ?>" class="mt-5 pt-5" style="color: #681A1A; text-decoration:none" >
+>>>>>>> c32738bd24dbf024f88372fd8c4c6089777bdb8a
       &#8592; Back to View Course
     </a>
 
@@ -127,17 +141,33 @@
             </thead> 
                   
             <tbody>
-              <?php while (  $students = mysqli_fetch_assoc($registeredStudents)) { ?>
-              <tr>
-                <td class="ps-3"><?= $students['student_id'] ?></td>
-                <td class="ps-3"><?= $students['firstname'] . " " . $students['lastname']  . " " . $students['student_reg_id'] ?></td>
-              </tr>  
+              <?php $affected = mysqli_num_rows($registeredStudents);
+                    if ($affected) {
+                      while ($students = mysqli_fetch_assoc($registeredStudents)) { ?>
+                    <tr>
+                      <td class="ps-3"><?= $students['student_id'] ?></td>
+                      <td class="ps-3"><?= $students['firstname'] . " " . $students['lastname']  . " " . $students['student_reg_id'] ?></td>
+                      <td>
+                        <form action="register-student.php" method="POST">
+                          <input type="hidden" name = "student_reg_id" value="<?= $students['student_reg_id'] ?>">
+                          <input type="hidden" name="classId" value = "<?= $classId ?>">
+                          <input type="hidden" name = "regId" value="<?= $registrationCourseId ?>">
+                          <button style="border:2px solid #681A1A;" class = "btn btn-primary" id = "delete_btn" type = "submit" name = "delete-student">Delete Registration</button>
+                        </form>
+                      </td>
+                    </tr>  
+              <?php  } ?>
+              <?php } else { ?>
+                  <tr>
+                    <td class="ps-3">N/A</td>
+                    <td class="ps-3">N/A</td>
+                  </tr>
               <?php } ?>
             </tbody>
         </table>  
       </div>
 
-    <div class="row w-75 fs-6">
+    <div class="row w-75 fs-6 mt-4">
       <h2 class="" style = 'font-size:30px; font-weight: 700'>
         Add Students
       </h2>
@@ -155,8 +185,8 @@
       </form>
     </div>
     <?php if(isset($_POST['search'])): ?>
-    <div class="row w-75 fs-6 mt-4">
-      <a href="class_information_details.php?regId=<?= $registrationCourseId ?>&classId=<?= $classId ?>">Clear results</a>
+    <div class="row w-75 fs-6 mt-3">
+      <a class="mb-3" href="class_information_details.php?regId=<?= $registrationCourseId ?>&classId=<?= $classId ?>">Clear results</a>
       <div class="">
         <table class='table' style="border-radius: 10px; outline: 2px solid #DBDBDB;">
             <thead>
@@ -178,7 +208,7 @@
                     <input type="hidden" name="regId" value = "<?= $registrationCourseId ?>">
                     <input type="hidden" name="classId" value = "<?= $classId ?>">
                     <input type="hidden" name = "studentId" value="<?= $student['student_id'] ?>">
-                    <button type = "submit" name = "add-student">Add Student</button>
+                    <button class="p-1 pe-3 ps-3"type = "submit" name = "add-student" style="background-color:#681A1A; color:white; border-radius: 10px; border: 2px solid #681A1A;">Add Student</button>
                   </form>
                   
                 </td>

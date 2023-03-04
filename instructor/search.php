@@ -61,7 +61,7 @@ session_start();
 			<td><?php echo $row['course_specialization']; ?></td>
       <td><?php echo $row['other_qualification']; ?></td>
 			<td>
-				<a href="UpdateForm.php?update1= <?php echo $row['account_id']; ?>" ><button type="submit" class="button3" > Update</button> </a>
+				<a href="update_form.php?update1= <?php echo $row['account_id']; ?>" ><button type="submit" class="button3" > Update</button> </a>
 			</td>
 		</tr>
 	<?php } ?>
@@ -86,7 +86,7 @@ session_start();
    <br>
    <br>
    <div class="btnback">
-   <a href="PoolofInstructor.php"><button type=submit >Back</button></a>        
+   <a href="index.php"><button type=submit >Back</button></a>        
    </div><?php
  }
 }

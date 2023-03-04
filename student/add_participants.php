@@ -143,7 +143,11 @@ include "../templates/connection.php";
 </head>
 
 <body>
+<<<<<<< HEAD
 <br><br><br><a href = "../student/index.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>
+=======
+<br><br><br><a href = "index.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Back to View</a>
+>>>>>>> c32738bd24dbf024f88372fd8c4c6089777bdb8a
     <?php include "../templates/navigation.php"; ?>
     <div class = "add">ADD PARTICIPANT</div>
     <div class="container">

@@ -94,11 +94,11 @@ $result1 = mysqli_query($connect, $query);
 		    <table class="table table-stripped table-hover">
 		    	<thead>
 					<tr>
+						<th>Course</th>
 						<th>Rank</th>
 						<th>Last Name</th>
 						<th>First Name</th>
 						<th>Middle Name</th>
-						<th>Qualification</th>
 						<th>Unit/Office</th>
 					</tr>
 				</thead>
@@ -123,25 +123,43 @@ $result1 = mysqli_query($connect, $query);
 					} */
 					require '../templates/connection.php';
 					// Read all row from database table
-					$sql = "SELECT * FROM student Inner Join account_details On student.account_id = account_details.account_id Inner Join registration_participants_class On registration_participants_class.student_id = student.student_id  ";
+					$sql = "SELECT DISTINCT course_title FROM course";
 					$result = $conn->query($sql);
 
 					if (!$result) {
-                    die("Query failed: " . $conn->error);
-                    }
-    				
-
-						while($row = $result->fetch_assoc()) {
-							echo "<tr>
-								<td>". $row["rank"] ."</td>
-								<td>". $row["lastname"] ."</td>
-								<td>". $row["firstname"] ."</td>
-								<td>". $row["middlename"] ."</td>
-								<td>". $row["qualification"] ."</td>
-								<td>". $row["office_name"] ."</td>
-							</tr>";
-						}
-					
+						die("Query failed: " . $connection->error);
+					}
+							//Dropdown List
+							echo "<center> <select id='search-input'></center>" ;
+							echo "<option value='' disable> Select a course  </option>";
+							while ($row = $result->fetch_assoc()) {
+								echo "<option value='" . $row["course_title"] . "'>" . $row["course_title"] . "</option>";
+							}
+							echo "</select>";
+							$sql = "SELECT * FROM student Inner Join account_details On student.account_id = account_details.account_id Inner Join registration_participants_class On registration_participants_class.student_id = student.student_id  
+							Inner Join registration_course On registration_participants_class.course_reg_id = registration_course.course_reg_id
+							Inner Join course On registration_course.course_id = course.course_id ";
+							$result = $conn->query($sql);
+		
+							if (!$result) {
+							die("Query failed: " . $connection->error);
+							}
+							
+		
+								while($row = $result->fetch_assoc()) {
+									echo "<tr>
+		
+										<td>". $row["course_title"] ."</td>
+										<td>". $row["rank"] ."</td>
+										<td>". $row["lastname"] ."</td>
+										<td>". $row["firstname"] ."</td>
+										<td>". $row["middlename"] ."</td>
+										<td>". $row["office_name"] ."</td>
+									</tr>";
+								}
+							
+		
+		
 
 
     				#$connection->close();

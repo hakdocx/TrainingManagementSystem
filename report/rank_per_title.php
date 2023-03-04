@@ -133,9 +133,7 @@
     $sql = "SELECT course.course_title, 
             SUM(CASE WHEN student.rank='NUP' THEN 1 ELSE 0 END) AS NUP,
             SUM(CASE WHEN student.rank='PNCO' THEN 1 ELSE 0 END) AS PNCO,
-            SUM(CASE WHEN student.rank='PC
-            
-            O' THEN 1 ELSE 0 END) AS PCO,
+            SUM(CASE WHEN student.rank='PCO' THEN 1 ELSE 0 END) AS PCO,
             COUNT(DISTINCT student.student_id) AS total_ranks
             FROM student
             LEFT JOIN registration_participants_class ON student.student_id = registration_participants_class.student_id
@@ -149,6 +147,7 @@
         die("Query failed: " . $conn->error);
     }
 
+ 
     echo "<div class='tab'>";
     echo "<table style='border: 1px solid black;' id='table'>";
     echo "<thead>
@@ -164,7 +163,7 @@
             </tr>
         </thead>";
         echo "<tr>";
-        echo "<td colspan = '5' style='background-color: #681A1A; color: white;'>Select Course To View Records</td>";
+        echo "<td colspan = '5' style='color: maroon;'>Select Course To View Records</td>";
         echo "</tr>";
 
     while ($row = $result->fetch_assoc()) {
@@ -180,7 +179,7 @@
     echo "</table>";
     echo "</div>";
 
-    $conn->close();
+    //$conn->close();
     ?>
     
     <script>
