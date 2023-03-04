@@ -49,7 +49,7 @@ session_start();
       $othqua=$row['other_qualification'];
     }
     ?>
-    <form action="UpdateAddData.php" method="post">
+    <form action="update_add_data.php" method="post">
     <input type="text" name="instrucid" value="<?php echo $instructor_id;?>">
      <span>INSTRUCTOR ID</span><br>
      <input type="text" name="accid" value="<?php echo  $account_id;?>"readonly>

@@ -33,7 +33,7 @@ function displayRow($result)
 			$name = $row["fullname"];
 			$course = $row["course_title"];
 			$year = $row["year_certified"];
-			$classnum = $row["class_number"];
+			/* $classnum = $row["class_number"]; */
 			$student_id = $row['student_id'];
 			$account_id = $row['account_id'];
 			$rank = $row['rank'];
@@ -46,7 +46,6 @@ function displayRow($result)
 				<td>$name</td>
 				<td>$course</td>
 				<td>$year</td>
-				<td>$classnum</td>
 				<td>$student_id</td>
 				<td>$account_id</td>
 				<td>$rank</td>
@@ -55,7 +54,7 @@ function displayRow($result)
 					<button type='button' class='mx-1 btn btn-warning' data-bs-toggle='modal' data-bs-target='#updateModal' data-stud='$student_id' data-acc='$account_id' data-rank='$rank' data-office='$office'>Update</button>
 					<button type='button' class='mx-1 btn btn-danger' data-bs-toggle='modal'
 					
-					data-bs-target='#deleteModal' data-stud='$student_id' data-classnum='$classnum'>Delete</button>
+					data-bs-target='#deleteModal' data-stud='$student_id' >Delete</button>
 				</td>
 			</tr>
 			";
@@ -77,31 +76,33 @@ function displayRow($result)
 
 if (isset($_GET['updateBtn'])) {
 
-	$con = mysqli_connect("localhost", "root", "", "project");
+	//$con = mysqli_connect("localhost", "root", "", "project");
+	include "../templates/connection.php";
 	$query = "UPDATE student SET rank = '$_GET[rankname]', office_name= '$_GET[officename]' WHERE student_id = '$_GET[studname]'";
 
-	$query_run = mysqli_query($con, $query);
+	$query_run = mysqli_query($conn, $query);
 }
 
 
 if(isset($_GET['deleteBtn'])){
-	$conn = mysqli_connect("localhost", "root", "", "project");
-
+	//$conn = mysqli_connect("localhost", "root", "", "project");
+	include "../templates/connection.php";
     $id = $_GET['studid'];
-    $class_number = $_GET['classn'];
+    //$class_number = $_GET['classn'];
 
     // disable foreign key checks
     mysqli_query($conn, 'SET FOREIGN_KEY_CHECKS=0;');
 
     // delete the record from the registration_participants_class table
-    $query = "DELETE FROM registration_participants_class WHERE student_id = $id AND course_reg_id = $class_number";
+    //$query = "DELETE FROM registration_participants_class WHERE student_id = $id AND course_reg_id = $class_number";
+	$query = "DELETE FROM registration_participants_class WHERE student_id = $id ";
 
     mysqli_query($conn,$query);
     
     // enable foreign key checks
     mysqli_query($conn, 'SET FOREIGN_KEY_CHECKS=1;');
     
-    header("Location: search-database-rev-2.php");
+    header("Location: search-database.php");
     exit;
     }
 
@@ -227,7 +228,7 @@ if(isset($_GET['deleteBtn'])){
 								<option value="name">Name</option>
 								<option value="course">Course</option>
 								<option value="year">Year</option>
-								<option value="number">Class Number</option>
+								<!-- <option value="number">Class Number</option> -->
 							</select>
 						</div>
 					</div>
@@ -257,7 +258,7 @@ if(isset($_GET['deleteBtn'])){
 							<th scope="col">Name</th>
 							<th scope="col">Course</th>
 							<th scope="col">Year</th>
-							<th scope="col">Class Number</th>
+							<!-- <th scope="col">Class Number</th> -->
 							<th scope="col">Student ID</th>
 							<th scope="col">Account ID</th>
 							<th scope="col">Rank</th>
@@ -267,7 +268,8 @@ if(isset($_GET['deleteBtn'])){
 					</thead>
 					<tbody>
 						<?php
-						$con = mysqli_connect("localhost", "root", "", "project");
+						//$con = mysqli_connect("localhost", "root", "", "project");
+						include '../templates/connection.php';
 						$x = 0; //row number
 						$rowInfo = array();
 
@@ -279,14 +281,15 @@ if(isset($_GET['deleteBtn'])){
 
 							//FILTER BY NAME
 							if (strcmp($val, "name") == 0) { //if strings are equal
-								$query = "SELECT concat(A.firstname, ' ' , A.lastname) AS fullname, O.course_title, O.year_certified, I.class_number, S.student_id, A.account_id, S.rank, S.office_name
+								//$query = "SELECT concat(A.firstname, ' ' , A.lastname) AS fullname, O.course_title, O.year_certified, I.class_number, S.student_id, A.account_id, S.rank, S.office_name
+								$query = "SELECT concat(A.firstname, ' ' , A.lastname) AS fullname, O.course_title, O.year_certified,  S.student_id, A.account_id, S.rank, S.office_name
 								FROM student AS S
 								INNER JOIN account_details AS A
 								ON S.account_id = A.account_id
 								INNER JOIN registration_participants_class AS R
 								ON S.student_id = R.student_id
-								INNER JOIN class_information_details AS I
-								ON R.student_reg_id = I.student_reg_id
+								/* INNER JOIN class_information_details AS I
+								ON R.student_reg_id = I.student_reg_id */
 								INNER JOIN registration_course as C
 								ON R.course_reg_id = C.course_reg_id
 								INNER JOIN course AS O
@@ -295,7 +298,7 @@ if(isset($_GET['deleteBtn'])){
 								"; //like - searches any value that starts with the input
 
 								//resultset
-								$query_run = mysqli_query($con, $query);
+								$query_run = mysqli_query($conn, $query);
 								displayRow($query_run);
 							} elseif (strcmp($val, "course") == 0) {
 								$query = "SELECT concat(A.firstname, ' ' , A.lastname) AS fullname, O.course_title, O.year_certified, I.class_number, S.student_id, A.account_id, S.rank, S.office_name
@@ -312,7 +315,7 @@ if(isset($_GET['deleteBtn'])){
 								ON C.course_id = O.course_id
 									WHERE O.course_title LIKE '$inputs%';             
 								";
-								$query_run = mysqli_query($con, $query);
+								$query_run = mysqli_query($conn, $query);
 								displayRow($query_run);
 							} elseif (strcmp($val, "year") == 0) {
 								$query = "SELECT DISTINCT concat(A.firstname, ' ' , A.lastname) AS fullname, O.course_title, O.year_certified, I.class_number, S.student_id, A.account_id, S.rank, S.office_name
@@ -329,7 +332,7 @@ if(isset($_GET['deleteBtn'])){
 								ON C.course_id = O.course_id
 									WHERE O.year_certified = '$inputs';           
 								";
-								$query_run = mysqli_query($con, $query);
+								$query_run = mysqli_query($conn, $query);
 								displayRow($query_run);
 							} elseif (strcmp($val, "number") == 0) {
 								$query = "SELECT concat(A.firstname, ' ' , A.lastname) AS fullname, O.course_title, O.year_certified, I.class_number, S.student_id, A.account_id, S.rank, S.office_name
@@ -346,7 +349,7 @@ if(isset($_GET['deleteBtn'])){
 								ON C.course_id = O.course_id
 									WHERE I.class_number = '$inputs';         
 								";
-								$query_run = mysqli_query($con, $query);
+								$query_run = mysqli_query($conn, $query);
 								displayRow($query_run);
 							}
 						}

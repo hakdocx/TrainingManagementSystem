@@ -37,7 +37,7 @@ session_start();
     #VALUES ('$id','$acc_id','$rank','$quadeg','$couspe','$othqua')";
     
     $query= "INSERT INTO `pool_instructor_details`( `account_id`, `rank`, `qualification_degree`, `course_specialization`, `other_qualification`) 
-    VALUES (NULL,'$rank','$quadeg','$couspe','$othqua')";
+    VALUES ($acc_id,'$rank','$quadeg','$couspe','$othqua')";
     
     $result = mysqli_query($conn,$query);
     ?>  
@@ -59,7 +59,7 @@ session_start();
     $couspe=$_POST['couspe'];
     $othqua=$_POST['othqua'];
 
-    $query= "UPDATE `pool_instructor_details` SET `instructor_id`='$id', `rank`='$rank',`qualification_degree`='$quadeg',`course_specialization`='$couspe',`other_qualification`='$othqua' WHERE `account_id`='$accid'";
+    $query= "UPDATE `pool_instructor_details` SET `instructor_id`='$id', `account_id`='$accid',`rank`='$rank',`qualification_degree`='$quadeg',`course_specialization`='$couspe',`other_qualification`='$othqua' WHERE `account_id`='$accid'";
      $result = mysqli_query($conn,$query);?>
      <div>
      <button class="button2">Done</button>
