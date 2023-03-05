@@ -104,7 +104,7 @@ $result1 = mysqli_query($connect, $query);
 				</thead>
 				<br>
 				<br>
-
+					<a href="downloadstudents.php"> <button type="submit" class="" name="submit"> DOWNLOAD EXCEL FILE </button> </a>
 				<tbody>
 				<?php
 					/* $servername = "localhost:3308";
