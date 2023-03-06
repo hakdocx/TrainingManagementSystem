@@ -283,7 +283,7 @@ if(isset($_GET['deleteBtn'])){
 							//FILTER BY NAME
 							if (strcmp($val, "name") == 0) { //if strings are equal
 								//$query = "SELECT concat(A.firstname, ' ' , A.lastname) AS fullname, O.course_title, O.year_certified, I.class_number, S.student_id, A.account_id, S.rank, S.office_name
-								$query = "SELECT concat(A.firstname, ' ' , A.lastname) AS fullname, O.course_title, O.year_certified,  S.student_id, A.account_id, S.rank, S.office_name
+								$query = "SELECT concat(A.firstname, ' ' , A.lastname, ' ', A.suffix) AS fullname, O.course_title, O.year_certified,  S.student_id, A.account_id, S.rank, S.office_name
 								FROM student AS S
 								INNER JOIN account_details AS A
 								ON S.account_id = A.account_id
@@ -302,14 +302,12 @@ if(isset($_GET['deleteBtn'])){
 								$query_run = mysqli_query($conn, $query);
 								displayRow($query_run);
 							} elseif (strcmp($val, "course") == 0) {
-								$query = "SELECT concat(A.firstname, ' ' , A.lastname) AS fullname, O.course_title, O.year_certified, I.class_number, S.student_id, A.account_id, S.rank, S.office_name
+								$query = "SELECT concat(A.firstname, ' ' , A.lastname, ' ', A.suffix) AS fullname, O.course_title, O.year_certified, S.student_id, A.account_id, S.rank, S.office_name
 								FROM student AS S
 								INNER JOIN account_details AS A
 								ON S.account_id = A.account_id
 								INNER JOIN registration_participants_class AS R
 								ON S.student_id = R.student_id
-								INNER JOIN class_information_details AS I
-								ON R.student_reg_id = I.student_reg_id
 								INNER JOIN registration_course as C
 								ON R.course_reg_id = C.course_reg_id
 								INNER JOIN course AS O
@@ -319,14 +317,12 @@ if(isset($_GET['deleteBtn'])){
 								$query_run = mysqli_query($conn, $query);
 								displayRow($query_run);
 							} elseif (strcmp($val, "year") == 0) {
-								$query = "SELECT DISTINCT concat(A.firstname, ' ' , A.lastname) AS fullname, O.course_title, O.year_certified, I.class_number, S.student_id, A.account_id, S.rank, S.office_name
+								$query = "SELECT DISTINCT concat(A.firstname, ' ' , A.lastname, ' ', A.suffix) AS fullname, O.course_title, O.year_certified, S.student_id, A.account_id, S.rank, S.office_name
 								FROM student AS S
 								INNER JOIN account_details AS A
 								ON S.account_id = A.account_id
 								INNER JOIN registration_participants_class AS R
 								ON S.student_id = R.student_id
-								INNER JOIN class_information_details AS I
-								ON R.student_reg_id = I.student_reg_id
 								INNER JOIN registration_course as C
 								ON R.course_reg_id = C.course_reg_id
 								INNER JOIN course AS O
@@ -336,14 +332,12 @@ if(isset($_GET['deleteBtn'])){
 								$query_run = mysqli_query($conn, $query);
 								displayRow($query_run);
 							} elseif (strcmp($val, "number") == 0) {
-								$query = "SELECT concat(A.firstname, ' ' , A.lastname) AS fullname, O.course_title, O.year_certified, I.class_number, S.student_id, A.account_id, S.rank, S.office_name
+								$query = "SELECT concat(A.firstname, ' ' , A.lastname, ' ', A.suffix) AS fullname, O.course_title, O.year_certified, S.student_id, A.account_id, S.rank, S.office_name
 								FROM student AS S
 								INNER JOIN account_details AS A
 								ON S.account_id = A.account_id
 								INNER JOIN registration_participants_class AS R
 								ON S.student_id = R.student_id
-								INNER JOIN class_information_details AS I
-								ON R.student_reg_id = I.student_reg_id
 								INNER JOIN registration_course as C
 								ON R.course_reg_id = C.course_reg_id
 								INNER JOIN course AS O
