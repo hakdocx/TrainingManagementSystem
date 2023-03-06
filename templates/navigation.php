@@ -45,7 +45,7 @@
             <?php if(!isset($_SESSION['username'])){ ?>
                <!--  <div class = "collapse navbar-collapse" id = "portfolio-nav">
                     <ul class="nav navbar-nav mr-auto"> -->
-                        <li class = "nav-item"><a class="nav-link"href="../Access-Level.php">Login</a></li>
+                        <li class = "nav-item"><a class="nav-link"href="../user/Login.php">Login</a></li>
                         <li class = "nav-item"><a class="nav-link" href="../user/Registration-Form.php">Register</a></li>
                     <!-- </ul>
                 </div> -->
