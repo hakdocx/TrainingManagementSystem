@@ -1,116 +1,219 @@
-/*login form inside right side column*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
-.login-form {
-    margin: 80px auto 12px;
-    width: 880px;
-    height: 483px;
-    padding: 20px 38px 30px;
-    float: right;
-    text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/*log in title in log in page*/
-h1.login-title {
+:root{
+    --primary:#681a1a;
+    --secondary:#666;
+    --bg-light:#fffcfa;
+}
+
+body{
+    font-family: Montserrat, sans-serif;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+    to top,
+    #fffcfa 0%,
+    #fffcfa 40%,
+    #681a1a 40%,
+    #681a1a 100%
+  );
+} 
+
+
+.portal{
+    display: grid;
+    place-items: center;
+    min-height: 88vh;
+}
+
+.portal form{
+    background: var(--bg-light);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: min(100%, 520px);
+    padding: 70px;
+    display: grid;
+    gap: 1rem;
+    border-radius: 10px;
+
+}
+
+.title h1{
+    font-size: 2rem;
+    position: relative;
+    padding-left: 25px;
     color: #681a1a;
-    margin-bottom: 15px;
-    font-size: 40px;
-    font-weight: 300;
-    text-align: center;
-    font-weight: bold;
-    word-spacing: 3px;
-    font-family: Montserrat;
+    padding-bottom: 5px;
 }
 
-p.reminder{
-    color: #666;
-    font-size: 15px;
-    margin-bottom: 30px;
-    letter-spacing: 0.5px;
-    word-spacing: 1px;
-    font-family: Montserrat;
+.title h1::before, .title h1::after{
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--primary);
+    left: 0;
+    top: 12px;
+    border-radius: 50%;
 }
 
-/*log in text fields in log in page*/
-.login-input {
-    font-size: 20px;
-    font-family: Montserrat;
-    border: 1px solid #ccc;
+.title h1::after{
+    animation: pulse 1.3s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.7);
+        opacity: 0;
+    }
+}
+
+
+.title p{
+    color: var(--secondary);
+    font-size: .9rem;
+}
+
+input, button, .options{
+    font: inherit;
+    border: 2px solid transparent;
+    outline: 2px solid transparent;
     border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-    margin-left: 240px;
-    height: 55px;
-    width: 320px;
-    padding-left: 55px;
 }
 
-/*log in button styles*/
-.login-button {
-    color: #fffcfa;
-    background: #681a1a;
-    border: 0;
-    outline: 0;
-    width: 320px;
-    height: 50px;
-    font-size: 30px;
-    font-family: Montserrat;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 8px 0px 15px;
+span{
+    color: var(--primary);
+    display: flex;
 }
 
-.login-button:hover {
-  background-color: #4a0b0b;
+span::before, span::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: var(--primary);
+    margin: auto;
 }
 
-/*error messages*/
-p.error{
-    color: #681a1a;
-    font-size: 15px;
-    text-align: center;
-    margin-top: 10px;
-    letter-spacing: 0.5px;
-    word-spacing: 1px;
+span::before{
+    margin-right: 0.25rem;
 }
 
-.Icon-inside, .Icon-inside1 {
+span::after{
+    margin-left: 0.25rem;
+}
+
+.input-field{
     position: relative;
 }
 
-.Icon-inside i {
+.input-field input{
+    background: #eeeeee;
+    padding: 23px 15px 7px;
+    width: 100%;
+    transition: .3s ease;
+}
+
+.input-field label{
     position: absolute;
-    left: 250px;
-    top: 3px;
-    padding: 11px 20px;
-    color: #681a1a;
-    margin-left: -9px;
-    opacity: 90%;
+    color: var(--secondary);
+    left: 15px;
+    top: 16px;
+    transition: .3s ease;
 }
 
-.Icon-inside1 i {
-    position: absolute;
-    left: 250px;
-    top: 70px;
-    padding: 11px 20px;
-    color: #681a1a;
-    margin-left: -9px;
-    opacity: 90%;
+.input-field input:focus ~ label, .input-field input:not(:placeholder-shown) ~ label{
+    font-size: .85rem;
+    top: 5px;
 }
 
-hr.line1{
-  border-top: 1px solid #681a1a;
-  width: 80%;
-  float: right;
-  margin: 50px auto 0px;
+.input-field input:focus{
+    border: 2px solid var(--primary);
 }
 
-hr.line2{
-  border-top: 1px solid #681a1a;
-  width: 80%;
-  float: left;
-  margin: -40px auto 50px;
+.input-field input:focus ~ label{
+    color: var(--primary);
 }
 
+.options{
+   color: var(--secondary);
+   background: #eeeeee;
+   padding: 15px 15px 15px;
+   width: 100%;
+   text-align: center;
+   font-size: 1rem; 
+}
 
+#login{
+    font-size: 1.4rem;
+    background: var(--primary);
+    color: #fffcfa;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#login:hover{
+  background-color: #4a0b0b;
+}
+
+#register{
+    font-size: .9rem;
+    text-align: center;
+    color: var(--secondary);
+}
+
+#register a{
+    text-decoration: none;
+    color: var(--primary);
+}
+
+#back{
+    font-size: 1.5rem;
+    background: none;
+    color: #fffcfa;
+    opacity: 70%;
+    position: relative;
+    top: 25px;
+    margin-left: 35px;
+    cursor: pointer;
+}
+
+#back a:link, a:visited {
+  color: #fffcfa;
+  opacity: 70%;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+#back:hover{
+    text-decoration: none;
+    color: white;
+    opacity: 100%;
+}
+
+.error{
+    color: var(--primary);
+    font-size: .9rem;
+    text-align: center;
+}
+
+@media screen and (max-width:480px) {
+    .portal form{
+        background: transparent;
+        box-shadow: none;
+        padding: 30px;
+    }
+}
