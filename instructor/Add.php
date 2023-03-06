@@ -43,7 +43,6 @@ form span{
   }
 
 </style>
-
       <Center> 
     <div class="box1">
           <form action="update_add_data.php" method="post">
@@ -57,7 +56,7 @@ form span{
               <span>ACCOUNT ID</span>
             </div>
               <div class = "col">
-                <input type="text" name="acc_id" >
+                <input type="text" name="acc_id">
               </div>
 
             <div class = "col">
