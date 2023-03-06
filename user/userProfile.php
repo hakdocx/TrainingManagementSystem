@@ -27,6 +27,7 @@ require dirname(__DIR__). "../templates/connection.php";
 
     </head>
     <body>
+        <br><br><br><a href = "../user/index.php" class = "text-decoration-none" style = "font-size:15px; color: #681a1a; margin-left: 10px">&#8592; Go Back</a>
         <header>
             <br><br><br>
             <?php
