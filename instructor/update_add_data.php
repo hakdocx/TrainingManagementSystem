@@ -36,16 +36,27 @@ session_start();
     #$query= "INSERT INTO `pool_instructor_details`(`instructor_id`, account_id, `rank`, `qualification_degree`, `course_specialization`, `other_qualification`) 
     #VALUES ('$id','$acc_id','$rank','$quadeg','$couspe','$othqua')";
     
-    $query= "INSERT INTO `pool_instructor_details`( `account_id`, `rank`, `qualification_degree`, `course_specialization`, `other_qualification`) 
-    VALUES ($acc_id,'$rank','$quadeg','$couspe','$othqua')";
+    $sql= "SELECT * FROM `pool_instructor_details` WHERE account_id='$acc_id'";
+    $result = mysqli_query($conn,$sql) ;
     
-    $result = mysqli_query($conn,$query);
-    ?>  
-    <div>
-    <button class="button4">Done</button>
-    <p class="addsucc ">Added Successfully!</p>
-</div><?php
-  }?>
+
+    if (mysqli_num_rows($result) > 0) {?>
+      <a href="Add.php">
+      <div>
+      <button class="button5">BACK</button>
+      <p class="addfail ">Account ID already Exist in Instructor Details!</p>
+       </div></a><?php
+  	}else{
+      $query= "INSERT INTO `pool_instructor_details`(`instructor_id`, `account_id`, `rank`, `qualification_degree`, `course_specialization`, `other_qualification`) 
+      VALUES ('$id','$acc_id','$rank','$quadeg','$couspe','$othqua')";
+  	  $result = mysqli_query($conn,$query); ?>
+  	   <a href="index.php">
+     <div>
+     <button class="button4">Done</button>
+     <p class="addsucc ">Added Successfully!</p>
+      </div></a><?php
+  	}
+}?>
   
 </a>
 
