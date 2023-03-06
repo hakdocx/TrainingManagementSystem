@@ -354,7 +354,7 @@ if(isset($_GET['deleteBtn'])){
 			</div>
 		</div>
 
-		<!-- table navigation
+		<!-- table navigation -->
 		<div class="row-md my-2">
 			<nav aria-label="Table navigation">
 				<ul class="pagination justify-content-end">
@@ -370,7 +370,7 @@ if(isset($_GET['deleteBtn'])){
 				</ul>
 			</nav>
 		</div>
-		-->
+		
 	</div>
 
 	<!--UPDATE-->
